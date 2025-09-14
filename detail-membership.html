@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <script type="text/javascript" src="https://fieldd-scripts.s3.amazonaws.com/leadForm/fieldd-lead-form.js"></script>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shine Club Membership | Save up to 40% on Car Detailing | Gilbert AZ</title>
+  <meta name="description" content="Join Shine Club for VIP car detailing in Gilbert, Mesa & Chandler. Save 30-40% with monthly maintenance plans starting at $117. Never drive a dirty car again. Cancel anytime.">
+  <link rel="canonical" href="https://shinedesignaz.com/shine-club.html">
+  <link rel="icon" href="/assets/images/favicon.ico">
+  <meta name="theme-color" content="#0ea5e9">
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Shine Club - VIP Car Detailing Membership | Save 40%">
+  <meta property="og:description" content="Join the exclusive Shine Club. Monthly car detailing from $117. Priority booking, member rewards, and a perpetually clean car.">
+  <meta property="og:url" content="https://shinedesignaz.com/shine-club.html">
+  <meta property="og:image" content="/assets/images/shine-club-og.webp">
+  <meta property="og:site_name" content="Shine Design - Shine Club Membership">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Shine Club - Never Drive Dirty Again | Save 40%">
+  <meta name="twitter:description" content="VIP car detailing membership. Monthly plans from $117. Join Gilbert's premier auto care club.">
+  <meta name="twitter:image" content="/assets/images/shine-club-og.webp">
+  
+  <!-- Preloads -->
+  <link rel="preload" href="/assets/images/shine-club-hero.webp" as="image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fieldd-scripts.s3.amazonaws.com">
+
+  <style>
+    :root{--brand:#0ea5e9;--brand-dark:#0284c7;--brand-light:#38bdf8;--gold:#fbbf24;--text:#0f172a;--muted:#475569;--bg:#fff;--green:#10b981}
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,sans-serif;color:var(--text);background:var(--bg);line-height:1.6}
+    a{color:var(--brand);text-decoration:none}a:hover{text-decoration:underline}
+    .container{max-width:1200px;margin:0 auto;padding:0 16px}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+    
+    /* Header styles */
+    header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-bottom:1px solid #e2e8f0}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:12px;height:64px}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--brand)}
+    .brand img{height:36px;width:auto}
+    .nav-links{display:none;gap:16px;align-items:center}
+    .nav-links a{font-weight:600;color:var(--text)}
+    .cta{display:inline-block;background:var(--brand);color:#fff;padding:10px 20px;border-radius:999px;font-weight:700;border:2px solid var(--brand);transition:all .2s}
+    .cta:hover{background:#fff;color:var(--brand);text-decoration:none;transform:translateY(-1px)}
+    .menu-btn{background:none;border:none;padding:8px;font-size:28px;cursor:pointer}
+    @media(min-width:920px){.nav-links{display:flex}.menu-btn{display:none}}
+    
+    /* Hero Section - VIP Theme with Blue */
+    .hero{position:relative;background:linear-gradient(135deg,rgba(14,165,233,.94),rgba(2,132,199,.92)),url('/assets/images/shine-club-hero.webp') center/cover;color:#fff;padding:80px 0 64px}
+    .vip-badge{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(90deg,var(--gold),#f59e0b);color:#000;padding:8px 16px;border-radius:999px;font-weight:700;font-size:14px;margin-bottom:16px}
+    .hero h1{font-size:36px;line-height:1.15;margin-bottom:16px}
+    @media(min-width:768px){.hero h1{font-size:48px}}
+    .hero-lead{font-size:20px;opacity:.95;margin-bottom:24px}
+    .value-props{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:24px}
+    .prop{display:inline-flex;align-items:center;gap:6px;font-size:16px}
+    .prop svg{width:20px;height:20px;color:var(--gold)}
+    .cta-group{display:flex;flex-wrap:wrap;gap:12px}
+    .cta-gold{background:var(--gold);color:#000;border-color:var(--gold)}
+    .cta-gold:hover{background:transparent;color:#fff}
+    .savings-ticker{display:inline-block;background:rgba(16,185,129,.2);border:1px solid rgba(16,185,129,.4);padding:8px 16px;border-radius:999px;margin-top:16px;font-size:14px}
+    
+    /* Pricing Table Section */
+    .pricing{padding:64px 0;background:#f0f9ff}
+    .pricing-intro{text-align:center;max-width:700px;margin:0 auto 48px}
+    .compare-badge{display:inline-block;background:#fee2e2;color:#dc2626;padding:6px 12px;border-radius:999px;font-size:14px;font-weight:600;margin-bottom:16px}
+    .pricing-table{background:#fff;border-radius:24px;overflow:hidden;box-shadow:0 10px 40px rgba(0,0,0,.08);max-width:1000px;margin:0 auto}
+    .table-header{background:linear-gradient(90deg,var(--brand),var(--brand-dark));color:#fff;padding:24px;text-align:center}
+    .table-grid{display:grid;grid-template-columns:1fr repeat(3,1fr);align-items:center;text-align:center}
+    .table-row{display:contents}
+    .table-row:nth-child(even) > div{background:#f0f9ff}
+    .table-cell{padding:20px 12px;border-bottom:1px solid #e5e7eb}
+    .table-cell:first-child{font-weight:700;text-align:left;padding-left:24px}
+    .price{font-size:24px;font-weight:700;color:var(--brand)}
+    .price small{display:block;font-size:12px;color:var(--muted);font-weight:400;margin-top:4px}
+    .popular{position:relative}
+    .popular::after{content:"MOST POPULAR";position:absolute;top:-8px;right:50%;transform:translateX(50%);background:var(--gold);color:#000;padding:2px 8px;border-radius:999px;font-size:10px;font-weight:700}
+    @media(max-width:768px){
+      .table-grid{grid-template-columns:1fr 1fr}
+      .table-cell:nth-child(3),.table-cell:nth-child(4){display:none}
+    }
+    
+    /* Benefits Section */
+    .benefits{padding:64px 0}
+    .benefit-grid{display:grid;gap:32px;margin-top:48px}
+    @media(min-width:768px){.benefit-grid{grid-template-columns:repeat(3,1fr)}}
+    .benefit-card{text-align:center;padding:32px 24px;border:2px solid #e5e7eb;border-radius:16px;transition:all .3s}
+    .benefit-card:hover{border-color:var(--brand);transform:translateY(-4px);box-shadow:0 12px 24px rgba(14,165,233,.15)}
+    .benefit-icon{width:64px;height:64px;margin:0 auto 16px;padding:16px;background:linear-gradient(135deg,#e0f2fe,#bae6fd);border-radius:50%;color:var(--brand)}
+    .benefit-card h3{font-size:20px;margin-bottom:8px}
+    .benefit-card p{color:var(--muted);font-size:15px}
+    
+    /* How It Works - Conversational */
+    .how-it-works{padding:64px 0;background:#f8fafc}
+    .step-cards{display:grid;gap:24px;margin-top:48px}
+    @media(min-width:768px){.step-cards{grid-template-columns:repeat(2,1fr)}}
+    .step-card{background:#fff;border-radius:16px;padding:32px;display:flex;gap:24px;align-items:flex-start}
+    .step-num{flex-shrink:0;width:48px;height:48px;background:var(--brand);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:20px}
+    .step-content h3{font-size:20px;margin-bottom:8px}
+    .step-content p{color:var(--muted);line-height:1.7}
+    
+    /* Testimonials */
+    .testimonials{padding:64px 0}
+    .testimonial-grid{display:grid;gap:24px;margin-top:48px}
+    @media(min-width:768px){.testimonial-grid{grid-template-columns:repeat(3,1fr)}}
+    .testimonial{background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:24px}
+    .stars{color:var(--gold);margin-bottom:12px}
+    .testimonial p{font-style:italic;margin-bottom:16px;line-height:1.7}
+    .author{display:flex;align-items:center;gap:12px}
+    .avatar{width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,var(--brand),var(--brand-dark))}
+    .author-info strong{display:block;font-size:14px}
+    .author-info span{font-size:12px;color:var(--muted)}
+    
+    /* FAQ Voice Search Optimized */
+    .faq{padding:64px 0;background:#f0f9ff}
+    .faq-items{max-width:800px;margin:48px auto 0}
+    .faq-item{background:#fff;border-radius:12px;margin-bottom:16px;overflow:hidden}
+    .faq-question{width:100%;text-align:left;padding:20px 24px;background:#fff;border:none;font-size:18px;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;align-items:center;transition:background .2s}
+    .faq-question:hover{background:#f0f9ff}
+    .faq-answer{padding:0 24px 20px;color:var(--muted);line-height:1.7;display:none}
+    .faq-item.active .faq-answer{display:block}
+    .faq-icon{transition:transform .3s}
+    .faq-item.active .faq-icon{transform:rotate(180deg)}
+    
+    /* CTA Section */
+    .final-cta{padding:80px 0;background:linear-gradient(135deg,var(--brand),var(--brand-dark));color:#fff;text-align:center}
+    .final-cta h2{font-size:40px;margin-bottom:16px}
+    .guarantee{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.3);padding:8px 16px;border-radius:999px;margin-top:24px}
+    
+    /* Footer */
+    footer{background:#0b1220;color:#d1d5db;padding:48px 0 24px}
+    
+    /* Form container */
+    fieldd-lead-form{display:block;max-width:420px;margin:0 auto;width:100%}
+  </style>
+
+  <!-- Comprehensive Schema Markup for Voice Search -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Product",
+        "@id": "https://shinedesignaz.com/shine-club.html#membership",
+        "name": "Shine Club Car Detailing Membership",
+        "description": "VIP car detailing membership program with monthly, bi-monthly, and quarterly maintenance plans. Save up to 40% on regular detailing services.",
+        "brand": {
+          "@type": "Brand",
+          "name": "Shine Design"
+        },
+        "offers": [
+          {
+            "@type": "Offer",
+            "name": "Monthly Car Maintenance",
+            "price": "117",
+            "priceCurrency": "USD",
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "price": "117",
+              "priceCurrency": "USD",
+              "unitText": "MONTH"
+            }
+          },
+          {
+            "@type": "Offer",
+            "name": "Monthly Small SUV Maintenance",
+            "price": "137",
+            "priceCurrency": "USD",
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "price": "137",
+              "priceCurrency": "USD",
+              "unitText": "MONTH"
+            }
+          },
+          {
+            "@type": "Offer",
+            "name": "Monthly Truck Maintenance",
+            "price": "157",
+            "priceCurrency": "USD",
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "price": "157",
+              "priceCurrency": "USD",
+              "unitText": "MONTH"
+            }
+          }
+        ],
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "reviewCount": "142",
+          "bestRating": "5"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How much does Shine Club membership cost?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Shine Club membership starts at $117 per month for cars, $137 for small SUVs, $157 for trucks, and $167 for large SUVs. We also offer bi-monthly and quarterly plans with slightly different pricing. All plans include full maintenance detailing service."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What's included in a Shine Club maintenance detail?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Each maintenance detail includes interior vacuuming, surface cleaning, window cleaning, exterior wash, wheel cleaning, tire dressing, and quick wax application. It's designed to keep your vehicle looking great between deep cleans."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I cancel my Shine Club membership anytime?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes, Shine Club has no long-term contracts. You can cancel anytime with 24 hours notice before your next scheduled service. We believe in earning your business every month."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I schedule my Shine Club appointments?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Members get priority booking through our app or member portal. You can set a recurring schedule or book each appointment individually. Rescheduling is free with 24 hours notice."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is the first detail included in the membership price?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "If your vehicle needs a deep clean on the first visit, we'll perform that service at our standard one-time rate. After that initial deep clean, all subsequent visits are at your discounted member rate."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "SubscriptionService",
+        "name": "Shine Club",
+        "provider": {
+          "@type": "AutomotiveBusiness",
+          "name": "Shine Design",
+          "telephone": "+1-480-528-8227",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Gilbert",
+            "addressRegion": "AZ"
+          }
+        },
+        "termsOfService": "https://shinedesignaz.com/terms",
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Membership Plans",
+          "itemListElement": [
+            {"@type": "Offer", "name": "Monthly Plan"},
+            {"@type": "Offer", "name": "Bi-Monthly Plan"},
+            {"@type": "Offer", "name": "Quarterly Plan"}
+          ]
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="sr-only" href="#main">Skip to content</a>
+  
+  <div id="site-header" data-chrome-path="/partials/header.html" data-chrome-version="2025-09-13"></div>
+
+  <main id="main">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <div class="vip-badge">
+          ⭐ VIP MEMBERSHIP PROGRAM
+        </div>
+        <h1>Never Drive a Dirty Car Again with Shine Club</h1>
+        <p class="hero-lead">Join Gilbert's premier car care membership and save up to 40% on professional detailing. Your car stays pristine, automatically.</p>
+        
+        <div class="value-props">
+          <div class="prop">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/>
+            </svg>
+            <span>Save 30-40% vs one-time services</span>
+          </div>
+          <div class="prop">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+            </svg>
+            <span>Priority scheduling</span>
+          </div>
+          <div class="prop">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/>
+            </svg>
+            <span>Cancel anytime</span>
+          </div>
+        </div>
+        
+        <div class="cta-group">
+          <a class="cta cta-gold" href="#pricing">View Member Rates</a>
+          <a class="cta" href="tel:+14805288227" style="background:transparent;border-color:#fff">📞 (480) 528-8227</a>
+        </div>
+        
+        <div class="savings-ticker">
+          💰 Members save an average of $840 per year on detailing
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Table -->
+    <section class="pricing" id="pricing">
+      <div class="container">
+        <div class="pricing-intro">
+          <span class="compare-badge">One-time detail: $199+ | Member rate: from $117</span>
+          <h2 style="font-size:36px;margin:16px 0">Shine Club Member Rates</h2>
+          <p style="color:var(--muted);font-size:18px">Choose your vehicle size and preferred frequency. All plans include our complete maintenance detail service.</p>
+        </div>
+        
+        <div class="pricing-table">
+          <div class="table-header">
+            <h3 style="font-size:24px;margin-bottom:4px">Maintenance Detail Member Pricing</h3>
+            <p style="opacity:.9;font-size:14px">Flexible scheduling • Autopay convenience • 24hr reschedule</p>
+          </div>
+          
+          <div class="table-grid">
+            <div class="table-row">
+              <div class="table-cell" style="font-weight:700;background:var(--brand);color:#fff">Vehicle Size</div>
+              <div class="table-cell" style="background:var(--brand);color:#fff">Monthly</div>
+              <div class="table-cell popular" style="background:var(--brand);color:#fff">Bi-Monthly</div>
+              <div class="table-cell" style="background:var(--brand);color:#fff">Quarterly</div>
+            </div>
+            
+            <div class="table-row">
+              <div class="table-cell">Car</div>
+              <div class="table-cell">
+                <div class="price">$117<small>every month</small></div>
+              </div>
+              <div class="table-cell">
+                <div class="price">$147<small>every 2 months</small></div>
+              </div>
+              <div class="table-cell">
+                <div class="price">$167<small>every 3 months</small></div>
+              </div>
+            </div>
+            
+            <div class="table-row">
+              <div class="table-cell">Small SUV</div>
+              <div class="table-cell">
+                <div class="price">$137<small>every month</small></div>
+              </div>
+              <div class="table-cell">
+                <div class="price">$167<small>every 2 months</small></div>
+              </div>
+              <div class="table-cell">
+                <div class="price">$187<small>every 3 months</small></div>
+              </div>
+            </div>
+            
+            <div class="table-row">
+              <div class="table-cell">Truck</div>
+              <div class="table-cell">
+                <div class="price">$157<small>every month</small></div>
+              </div>
+              <div class="table-cell">
+                <div class="price">$187<small>every 2 months</small></div>
+              </div>
+              <div class="table-cell">
+                <div class="price">$207<small>every 3 months</small></div>
+              </div>
+            </div>
+            
+            <div class="table-row">
+              <div class="table-cell">Large SUV</div>
+              <div class="table-cell">
+                <div class="price">$167<small>every month</small></div>
+              </div>
+              <div class="table-cell">
+                <div class="price">$197<small>every 2 months</small></div>
+              </div>
+              <div class="table-cell">
+                <div class="price">$217<small>every 3 months</small></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <p style="text-align:center;margin-top:24px;color:var(--muted);font-size:14px">
+          * First visit may require a deep clean at standard rates if needed • Prices are for recurring maintenance details
+        </p>
+      </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits">
+      <div class="container">
+        <h2 style="text-align:center;font-size:36px;margin-bottom:16px">Why Smart Car Owners Choose Shine Club</h2>
+        <p style="text-align:center;color:var(--muted);max-width:700px;margin:0 auto">Beyond the savings, membership transforms how you think about car care</p>
+        
+        <div class="benefit-grid">
+          <div class="benefit-card">
+            <svg class="benefit-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </svg>
+            <h3>VIP Treatment</h3>
+            <p>Priority booking, dedicated support, and member-only perks like free add-ons</p>
+          </div>
+          <div class="benefit-card">
+            <svg class="benefit-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M15 1H9v2h6V1zm-4 13h2V8h-2v6zm8.03-6.61l1.42-1.42c-.43-.51-.9-.99-1.41-1.41l-1.42 1.42C16.07 4.74 14.12 4 12 4c-4.97 0-9 4.03-9 9s4.02 9 9 9 9-4.03 9-9c0-2.12-.74-4.07-1.97-5.61zM12 20c-3.87 0-7-3.13-7-7s3.13-7 7-7 7 3.13 7 7-3.13 7-7 7z"/>
+            </svg>
+            <h3>Set & Forget</h3>
+            <p>Automated scheduling means your car stays clean without you thinking about it</p>
+          </div>
+          <div class="benefit-card">
+            <svg class="benefit-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M11.8 10.9c-2.27-.59-3-1.2-3-2.15 0-1.09 1.01-1.85 2.7-1.85 1.78 0 2.44.85 2.5 2.1h2.21c-.07-1.72-1.12-3.3-3.21-3.81V3h-3v2.16c-1.94.42-3.5 1.68-3.5 3.61 0 2.31 1.91 3.46 4.7 4.13 2.5.6 3 1.48 3 2.41 0 .69-.49 1.79-2.7 1.79-2.06 0-2.87-.92-2.98-2.1h-2.2c.12 2.19 1.76 3.42 3.68 3.83V21h3v-2.15c1.95-.37 3.5-1.5 3.5-3.55 0-2.84-2.43-3.81-4.7-4.4z"/>
+            </svg>
+            <h3>Budget-Friendly</h3>
+            <p>Predictable monthly pricing that's 30-40% less than one-time services</p>
+          </div>
+          <div class="benefit-card">
+            <svg class="benefit-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M1 21h22L12 2 1 21zm12-3h-2v-2h2v2zm0-4h-2v-4h2v4z"/>
+            </svg>
+            <h3>Protect Your Investment</h3>
+            <p>Regular maintenance preserves your car's value and prevents costly damage</p>
+          </div>
+          <div class="benefit-card">
+            <svg class="benefit-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+            </svg>
+            <h3>Flexible Terms</h3>
+            <p>No contracts, cancel anytime, reschedule with 24hr notice</p>
+          </div>
+          <div class="benefit-card">
+            <svg class="benefit-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1.19 14.19L10 13V7h1.5v5.25l2.69 2.69-.75.75z"/>
+            </svg>
+            <h3>Time Freedom</h3>
+            <p>We come to you - save hours every month vs driving to a car wash</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+      <div class="container">
+        <h2 style="text-align:center;font-size:36px;margin-bottom:16px">Getting Started is Simple</h2>
+        <p style="text-align:center;color:var(--muted);max-width:600px;margin:0 auto">Join hundreds of members who've discovered the easiest way to keep their car pristine</p>
+        
+        <div class="step-cards">
+          <div class="step-card">
+            <div class="step-num">1</div>
+            <div class="step-content">
+              <h3>Choose Your Plan</h3>
+              <p>Pick your vehicle size and how often you want service. Monthly is most popular for that always-clean feeling, but bi-monthly works great too.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">2</div>
+            <div class="step-content">
+              <h3>Schedule Your First Detail</h3>
+              <p>We'll assess if your car needs an initial deep clean (one-time rate) or if we can jump straight into maintenance mode. Either way, you're set!</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">3</div>
+            <div class="step-content">
+              <h3>Enjoy Automatic Service</h3>
+              <p>Your car gets detailed on schedule, automatically. Use our app to reschedule anytime. Most members say it's the best decision they've made for their car.</p>
+            </div>
+          </div>
+          <div class="step-card">
+            <div class="step-num">4</div>
+            <div class="step-content">
+              <h3>Earn Rewards</h3>
+              <p>Every 6th detail is 50% off. Plus get member-only perks like free upgrades, priority booking for ceramic coating, and exclusive seasonal offers.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+      <div class="container">
+        <h2 style="text-align:center;font-size:36px;margin-bottom:16px">Shine Club Members Love the Convenience</h2>
+        <p style="text-align:center;color:var(--muted);max-width:600px;margin:0 auto">Real reviews from real members</p>
+        
+        <div class="testimonial-grid">
+          <div class="testimonial">
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+            <p>"Having my car detailed monthly has been a game changer. I feel like I'm driving a new car every month. Worth every penny!"</p>
+            <div class="author">
+              <div class="avatar"></div>
+              <div class="author-info">
+                <strong>Sarah M.</strong>
+                <span>Monthly Member • Gilbert</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial">
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+            <p>"The convenience factor alone makes it worth it. They come to my office, detail while I work. My car always looks amazing."</p>
+            <div class="author">
+              <div class="avatar"></div>
+              <div class="author-info">
+                <strong>Mike R.</strong>
+                <span>Bi-Monthly Member • Mesa</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial">
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+            <p>"I calculated I'm saving about $70 per detail compared to one-time services. Plus the priority scheduling is clutch."</p>
+            <div class="author">
+              <div class="avatar"></div>
+              <div class="author-info">
+                <strong>Jennifer L.</strong>
+                <span>Monthly Member • Chandler</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section - Voice Search Optimized -->
+    <section class="faq">
+      <div class="container">
+        <h2 style="text-align:center;font-size:36px;margin-bottom:16px">Questions About Shine Club?</h2>
+        <p style="text-align:center;color:var(--muted);max-width:600px;margin:0 auto">Everything you need to know about membership</p>
+        
+        <div class="faq-items">
+          <div class="faq-item">
+            <button class="faq-question">
+              How much does Shine Club membership cost?
+              <span class="faq-icon">▼</span>
+            </button>
+            <div class="faq-answer">
+              Shine Club membership starts at $117 per month for cars, $137 for small SUVs, $157 for trucks, and $167 for large SUVs. We also offer bi-monthly and quarterly plans with slightly different pricing. All plans include full maintenance detailing service at your location.
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <button class="faq-question">
+              What's included in a Shine Club maintenance detail?
+              <span class="faq-icon">▼</span>
+            </button>
+            <div class="faq-answer">
+              Each maintenance detail includes complete interior vacuuming, surface cleaning and protection, leather/fabric treatment, all window cleaning, full exterior hand wash, wheel and tire detailing, quick spray wax, and door jamb cleaning. It typically takes 2-3 hours and keeps your car looking showroom fresh.
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <button class="faq-question">
+              Can I cancel my Shine Club membership anytime?
+              <span class="faq-icon">▼</span>
+            </button>
+            <div class="faq-answer">
+              Absolutely! Shine Club has no long-term contracts or cancellation fees. You can cancel anytime with 24 hours notice before your next scheduled service. We believe in earning your business every single month through exceptional service.
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <button class="faq-question">
+              How do I schedule my Shine Club appointments?
+              <span class="faq-icon">▼</span>
+            </button>
+            <div class="faq-answer">
+              Members get priority booking through our member app or online portal. You can set a recurring schedule (like every first Monday) or book each appointment individually. Rescheduling is always free with 24 hours notice. Most members love the set-and-forget recurring option.
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <button class="faq-question">
+              Is mobile service available for Shine Club members?
+              <span class="faq-icon">▼</span>
+            </button>
+            <div class="faq-answer">
+              Yes! All Shine Club services are mobile - we come to you. Whether you're at home, work, or the gym, our fully equipped mobile units bring everything needed. This is included in your membership at no extra charge.
+            </div>
+          </div>
+          
+          <div class="faq-item">
+            <button class="faq-question">
+              What if my car needs a deep clean first?
+              <span class="faq-icon">▼</span>
+            </button>
+            <div class="faq-answer">
+              If your vehicle needs a deep clean on the first visit, we'll perform that service at our standard one-time rate (typically $199-299 depending on size and condition). After that initial deep clean, all subsequent visits are at your discounted member rate. Most cars only need this once.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+      <div class="container">
+        <h2>Ready to Join Shine Club?</h2>
+        <p style="font-size:20px;margin-bottom:32px;opacity:.95">Your car deserves better than occasional attention</p>
+        
+        <div style="background:rgba(255,255,255,.1);border-radius:24px;padding:32px;max-width:500px;margin:0 auto">
+          <h3 style="font-size:24px;margin-bottom:24px">Start Your Membership</h3>
+          <fieldd-lead-form code="I-HCZQ"></fieldd-lead-form>
+        </div>
+        
+        <div class="guarantee">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/>
+          </svg>
+          100% Satisfaction Guaranteed • Cancel Anytime
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <div id="site-footer" data-chrome-path="/partials/footer.html" data-chrome-version="2025-09-13"></div>
+  
+  <script>
+    // FAQ Toggle
+    document.querySelectorAll('.faq-question').forEach(button => {
+      button.addEventListener('click', () => {
+        const item = button.parentElement;
+        item.classList.toggle('active');
+      });
+    });
+    
+    // Smooth scroll to pricing
+    document.querySelectorAll('a[href="#pricing"]').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        document.getElementById('pricing').scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  </script>
+  
+  <script defer src="/site-chrome.js" data-chrome-version="2025-09-13"></script>
+  <script defer src="/navigation.js"></script>
+  <script defer src="/action-buttons.js"></script>
+</body>
+</html>

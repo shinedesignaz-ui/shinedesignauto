@@ -1,27 +1,27 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Thank You | Shine Design Mobile Detailing</title>
-  <meta name="description" content="Thanks for reaching out to Shine Design. Your request was received. See next steps, summary, and options to manage your appointment." />
-  <link rel="canonical" href="https://shinedesignaz.com/thank-you.html" />
-  <link rel="icon" href="/assets/images/favicon.ico" />
-  <meta name="theme-color" content="#0ea5e9" />
-  <!-- OG/Twitter -->
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Thank You | Shine Design Mobile Detailing" />
-  <meta property="og:description" content="We received your message. See next steps and manage your booking." />
-  <meta property="og:url" content="https://shinedesignaz.com/thank-you.html" />
-  <meta property="og:image" content="/assets/images/og-image.webp" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Thank You | Shine Design Mobile Detailing" />
-  <meta name="twitter:description" content="We received your message. See next steps and manage your booking." />
-  <meta name="twitter:image" content="/assets/images/og-image.webp" />
-  <link rel="preload" href="/assets/images/hero-bg.webp" as="image" />
-
-  <style>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Thank You | Shine Design Mobile Detailing</title>
+<meta content="Thanks for reaching out to Shine Design. Your request was received. See next steps, summary, and options to manage your appointment." name="description"/>
+<link href="https://shinedesignaz.com/thank-you.html" rel="canonical"/>
+<link href="/assets/images/favicon.ico" rel="icon"/>
+<meta content="#0ea5e9" name="theme-color"/>
+<!-- OG/Twitter -->
+<meta content="website" property="og:type"/>
+<meta content="Thank You | Shine Design Mobile Detailing" property="og:title"/>
+<meta content="We received your message. See next steps and manage your booking." property="og:description"/>
+<meta content="https://shinedesignaz.com/thank-you.html" property="og:url"/>
+<meta content="/assets/images/og-image.webp" property="og:image"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Thank You | Shine Design Mobile Detailing" name="twitter:title"/>
+<meta content="We received your message. See next steps and manage your booking." name="twitter:description"/>
+<meta content="/assets/images/og-image.webp" name="twitter:image"/>
+<link as="image" href="/assets/images/hero-bg.webp" rel="preload"/>
+<style>
     :root{--brand:#0ea5e9;--brand-dark:#0284c7;--text:#0f172a;--muted:#475569;--bg:#fff}
     *{box-sizing:border-box}
     body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";color:var(--text);background:var(--bg);line-height:1.6}
@@ -80,10 +80,9 @@
     .micro-footer a{color:#93e4ff;font-weight:600}
     .micro-footer a:hover{color:#fff;text-decoration:underline}
   </style>
-<link rel="stylesheet" href="/header-styles.css">
-
-  <!-- JSON-LD: WebPage + Breadcrumb -->
-  <script type="application/ld+json">
+<link href="/header-styles.css" rel="stylesheet"/>
+<!-- JSON-LD: WebPage + Breadcrumb -->
+<script type="application/ld+json">
   {
     "@context":"https://schema.org",
     "@graph":[
@@ -96,168 +95,69 @@
   }
   </script>
 </head>
-<body>
-  <a class="sr-only" href="#main">Skip to content</a>
-  <header class="main-header" id="main-header">
-  <div class="header-container">
-    <div class="header-content">
+<body><div data-chrome-path="/partials/header.html" data-chrome-version="2025-09-13" id="site-header"></div>
+<a class="sr-only" href="#main">Skip to content</a>
 
-    <a class="brand" href="/">
-      <img src="/assets/images/logo.webp" alt="Shine Design logo">
-    </a>
+<section class="hero">
+<div class="container">
+<div aria-hidden="true" class="check">
+<svg fill="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9 16.2l-3.5-3.6-1.4 1.4L9 19 20.3 7.7 18.9 6.3z"></path></svg>
+</div>
+<h1>Thanks! We got your request 🎉</h1>
+<p class="muted" id="thanksSubtitle">We’ll text you shortly to confirm details. Below are next steps and options.</p>
+<div class="cta-row">
+<a class="cta" href="/services/">Explore Services</a>
+<a class="cta" href="/pricing.html" style="background:#fff;color:var(--brand);border-color:#fff">See Pricing</a>
+</div>
+</div>
+</section>
+<main id="main">
+<section class="section">
+<div class="container grid two">
+<!-- Left: Next steps / details -->
+<div class="card"><div class="pad">
+<h2>What happens next</h2>
+<ul class="list" id="nextSteps">
+<li>You’ll receive a text confirmation with your appointment time.</li>
+<li>Reply to reschedule or add notes (gate codes, parking, special requests).</li>
+<li>We arrive on time with water &amp; power (when feasible). Shade helps but isn’t required.</li>
+</ul>
+<div class="cta-row" style="margin-top:10px">
+<a class="cta" href="https://booknow.shinedesignaz.com/" rel="nofollow">Manage / Reschedule</a>
+<a class="cta" href="#" id="addToCal" style="background:#fff;color:var(--brand);border-color:#fff">Add to Calendar</a>
+</div>
+</div></div>
+<!-- Right: Request summary (auto-filled from URL params) -->
+<div class="card"><div class="pad">
+<h2>Request summary</h2>
+<p class="small muted">(Auto‑fills if you came from a form)</p>
+<ul class="list" id="summaryList"></ul>
+</div></div>
+</div>
+</section>
+<!-- Suggested add-ons -->
+<section class="section">
+<div class="container">
+<h2>Popular add‑ons customers love</h2>
+<div class="addons">
+<div class="addon"><strong>Headlight Restoration</strong><p class="muted">Clear hazy lenses for better night visibility.</p></div>
+<div class="addon"><strong>Glass Sealant</strong><p class="muted">Water‑repellent treatment for safer wet driving.</p></div>
+<div class="addon"><strong>Trim Restore</strong><p class="muted">Revives faded plastics for a like‑new look.</p></div>
+</div>
+</div>
+</section>
+<!-- CTA Banner -->
+<section class="container cta-banner">
+<div>
+<h2 style="margin:0">Want to lock in the shine?</h2>
+<p style="margin:4px 0 0">Add a ceramic coating or PPF—ask us during confirmation.</p>
+</div>
+<a class="cta" href="https://booknow.shinedesignaz.com/" rel="nofollow">Get a Fast Quote</a>
+</section>
+</main><div data-chrome-path="/partials/footer.html" data-chrome-version="2025-09-13" id="site-footer"></div>
 
-    <!-- Desktop nav -->
-    <nav class="nav-links" aria-label="Primary">
-      <a href="/services/">Services</a>
-      <a href="/locations/">Locations</a>
-      <a href="/pricing/">Pricing</a>
-      <a href="/gallery.html">Gallery</a>
-      <a href="/reviews.html">Reviews</a>
-      <a href="/faq.html">FAQ</a>
-      <a href="/about.html">About</a>
-      <a href="/contact.html">Contact</a>
-      <a class="cta" href="https://booknow.shinedesignaz.com/" target="_blank" rel="noopener">Book Now</a>
-    </nav>
 
-    <button class="menu-btn" aria-label="Open menu" aria-controls="mobile-nav" aria-expanded="false">☰</button>
-  </div>
-
-  <!-- Mobile nav -->
-  <nav id="mobile-nav" aria-label="Mobile" hidden>
-    <div class="mobile-panel container">
-      <a href="/services/">Services</a>
-      <a href="/locations/">Locations</a>
-      <a href="/pricing/">Pricing</a>
-      <a href="/gallery.html">Gallery</a>
-      <a href="/reviews.html">Reviews</a>
-      <a href="/faq.html">FAQ</a>
-      <a href="/about.html">About</a>
-      <a href="/contact.html">Contact</a>
-      <a class="cta" href="https://booknow.shinedesignaz.com/" target="_blank" rel="noopener">Book Now</a>
-
-      <!-- Sticky call/text bar -->
-      <div class="mobile-call">
-        <div class="btn-row">
-          <a class="btn-call" href="tel:+14805288227" aria-label="Call Shine Design at (480) 528-8227">
-            <svg viewBox="0 0 24 24" aria-hidden="true" class="icon-phone">
-              <path d="M6.6 10.8a15.8 15.8 0 006.6 6.6l2.2-2.2a1.5 1.5 0 011.6-.36c1.27.46 2.65.7 4.04.7a1 1 0 011 1v3.7a1 1 0 01-1 1C12.3 22 2 11.7 2 3a1 1 0 011-1h3.7a1 1 0 011 1c0 1.39.24 2.77.7 4.04.17.53.04 1.11-.36 1.52L6.6 10.8z"/>
-            </svg>
-            <span>Call</span>
-          </a>
-          <a class="btn-text" href="sms:+14805288227" aria-label="Text Shine Design at (480) 528-8227">
-            <svg viewBox="0 0 24 24" aria-hidden="true" class="icon-text">
-              <path d="M4 4h16v12H5.17L4 17.17V4zm0-2a2 2 0 00-2 2v20l4-4h14a2 2 0 002-2V4a2 2 0 00-2-2H4z"/>
-            </svg>
-            <span>Text</span>
-          </a>
-        </div>
-        <div class="hours">Open Daily: 8am – 6pm</div>
-      </div>
-    </div>
-  </nav>
-</header>
-  <section class="hero">
-    <div class="container">
-      <div class="check" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.2l-3.5-3.6-1.4 1.4L9 19 20.3 7.7 18.9 6.3z"/></svg>
-      </div>
-      <h1>Thanks! We got your request 🎉</h1>
-      <p class="muted" id="thanksSubtitle">We’ll text you shortly to confirm details. Below are next steps and options.</p>
-      <div class="cta-row">
-        <a class="cta" href="/services/">Explore Services</a>
-        <a class="cta" style="background:#fff;color:var(--brand);border-color:#fff" href="/pricing.html">See Pricing</a>
-      </div>
-    </div>
-  </section>
-
-  <main id="main">
-    <section class="section">
-      <div class="container grid two">
-        <!-- Left: Next steps / details -->
-        <div class="card"><div class="pad">
-          <h2>What happens next</h2>
-          <ul class="list" id="nextSteps">
-            <li>You’ll receive a text confirmation with your appointment time.</li>
-            <li>Reply to reschedule or add notes (gate codes, parking, special requests).</li>
-            <li>We arrive on time with water & power (when feasible). Shade helps but isn’t required.</li>
-          </ul>
-          <div class="cta-row" style="margin-top:10px">
-            <a class="cta" href="https://booknow.shinedesignaz.com/" rel="nofollow">Manage / Reschedule</a>
-            <a class="cta" style="background:#fff;color:var(--brand);border-color:#fff" id="addToCal" href="#">Add to Calendar</a>
-          </div>
-        </div></div>
-
-        <!-- Right: Request summary (auto-filled from URL params) -->
-        <div class="card"><div class="pad">
-          <h2>Request summary</h2>
-          <p class="small muted">(Auto‑fills if you came from a form)</p>
-          <ul class="list" id="summaryList"></ul>
-        </div></div>
-      </div>
-    </section>
-
-    <!-- Suggested add-ons -->
-    <section class="section">
-      <div class="container">
-        <h2>Popular add‑ons customers love</h2>
-        <div class="addons">
-          <div class="addon"><strong>Headlight Restoration</strong><p class="muted">Clear hazy lenses for better night visibility.</p></div>
-          <div class="addon"><strong>Glass Sealant</strong><p class="muted">Water‑repellent treatment for safer wet driving.</p></div>
-          <div class="addon"><strong>Trim Restore</strong><p class="muted">Revives faded plastics for a like‑new look.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA Banner -->
-    <section class="container cta-banner">
-      <div>
-        <h2 style="margin:0">Want to lock in the shine?</h2>
-        <p style="margin:4px 0 0">Add a ceramic coating or PPF—ask us during confirmation.</p>
-      </div>
-      <a class="cta" href="https://booknow.shinedesignaz.com/" rel="nofollow">Get a Fast Quote</a>
-    </section>
-  </main>
-
-  <div class="micro-footer">
-    <div class="container">Detailing, ceramic coating, PPF & tint across Gilbert, Mesa, Chandler, Queen Creek & San Tan Valley. <a href="tel:+14805288227" style="color:#0ea5e9;font-weight:700">Call 480‑528‑8227</a></div>
-  </div>
-
-  <footer>
-    <div class="container foot-grid">
-      <div>
-        <img src="/assets/images/shine-design-logo-blue.webp" alt="Shine Design logo" style="height:36px" />
-        <p class="small">© {year} Shine Design, LLC • Insured • East Valley, AZ</p>
-        <p class="small"><a href="/privacy.html">Privacy</a> • <a href="/terms.html">Terms</a> • <a href="/contact.html">Contact</a> • <a href="/sitemap.xml">Sitemap</a></p>
-      </div>
-      <div>
-        <strong>Services</strong><br />
-        <a href="/services/ceramic-coating.html">Ceramic Coating</a><br />
-        <a href="/services/paint-protection-film.html">PPF</a><br />
-        <a href="/services/window-tinting.html">Window Tint</a><br />
-        <a href="/services/paint-correction.html">Paint Correction</a><br />
-        <a href="/services/interior-detailing.html">Interior Detailing</a><br />
-        <a href="/services/exterior-detailing.html">Exterior Detailing</a>
-      </div>
-      <div>
-        <strong>Locations</strong><br />
-        <a href="/locations/gilbert.html">Gilbert</a><br />
-        <a href="/locations/mesa.html">Mesa</a><br />
-        <a href="/locations/chandler.html">Chandler</a><br />
-        <a href="/locations/queen-creek.html">Queen Creek</a><br />
-        <a href="/locations/san-tan-valley.html">San Tan Valley</a>
-      </div>
-      <div>
-        <strong>Book</strong><br />
-        <a class="cta" href="https://booknow.shinedesignaz.com/" rel="nofollow">Book Now</a><br />
-        <p class="small" style="margin-top:6px">Call/Text <a href="tel:+14805288227">(480) 528-8227</a></p>
-      </div>
-    </div>
-    <div class="container" style="padding-bottom:24px">
-      <p class="small">This site is protected by reCAPTCHA and the Google <a href="https://policies.google.com/privacy">Privacy Policy</a> and <a href="https://policies.google.com/terms">Terms of Service</a> apply.</p>
-    </div>
-  </footer>
-
-  <script>
+<script>
     // Year token
     document.addEventListener('DOMContentLoaded',()=>{
       document.querySelectorAll('footer .small').forEach(el=>el.innerHTML=el.innerHTML.replace('{year}', new Date().getFullYear()))
@@ -332,5 +232,5 @@
       }
     })();
   </script>
-</body>
+<script data-chrome-version="2025-09-13" defer="" src="/site-chrome.js"></script><script defer="" src="/navigation.js"></script><script defer="" src="/action-buttons.js"></script></body>
 </html>

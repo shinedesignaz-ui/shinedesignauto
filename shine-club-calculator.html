@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shine Club Savings Calculator | See How Much You'll Save</title>
+  <meta name="description" content="Calculate your savings with Shine Club membership. Compare monthly, bi-monthly, and quarterly car detailing plans to one-time services. Save up to $1000+ per year.">
+  
+  <style>
+    :root {
+      --brand: #0ea5e9;
+      --brand-dark: #0284c7;
+      --brand-light: #38bdf8;
+      --gold: #fbbf24;
+      --green: #10b981;
+      --red: #ef4444;
+      --text: #0f172a;
+      --muted: #64748b;
+      --light-bg: #f0f9ff;
+      --white: #ffffff;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+      min-height: 100vh;
+      padding: 20px;
+      color: var(--text);
+    }
+    
+    .calculator-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: var(--white);
+      border-radius: 24px;
+      box-shadow: 0 20px 60px rgba(14, 165, 233, 0.15);
+      overflow: hidden;
+    }
+    
+    .header {
+      background: linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 100%);
+      color: var(--white);
+      padding: 40px;
+      text-align: center;
+    }
+    
+    .header h1 {
+      font-size: 36px;
+      margin-bottom: 12px;
+      font-weight: 700;
+    }
+    
+    .header p {
+      font-size: 18px;
+      opacity: 0.95;
+    }
+    
+    .savings-badge {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--text);
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-weight: 600;
+      margin-top: 16px;
+      font-size: 14px;
+    }
+    
+    .calculator-body {
+      padding: 40px;
+    }
+    
+    .input-section {
+      display: grid;
+      gap: 32px;
+      margin-bottom: 40px;
+    }
+    
+    @media (min-width: 768px) {
+      .input-section {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    
+    .input-group {
+      background: var(--light-bg);
+      padding: 24px;
+      border-radius: 16px;
+      border: 2px solid transparent;
+      transition: all 0.3s;
+    }
+    
+    .input-group:hover {
+      border-color: var(--brand);
+    }
+    
+    .input-group h3 {
+      font-size: 20px;
+      margin-bottom: 16px;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .input-group label {
+      display: block;
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+    
+    .radio-group {
+      display: grid;
+      gap: 12px;
+    }
+    
+    .radio-option {
+      display: flex;
+      align-items: center;
+      padding: 12px 16px;
+      background: var(--white);
+      border: 2px solid #e2e8f0;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.2s;
+      position: relative;
+    }
+    
+    .radio-option:hover {
+      border-color: var(--brand);
+      transform: translateX(4px);
+    }
+    
+    .radio-option input[type="radio"] {
+      margin-right: 12px;
+      width: 20px;
+      height: 20px;
+      accent-color: var(--brand);
+    }
+    
+    .radio-option.selected {
+      background: var(--white);
+      border-color: var(--brand);
+      box-shadow: 0 4px 12px rgba(14, 165, 233, 0.15);
+    }
+    
+    .radio-option .price {
+      margin-left: auto;
+      font-weight: 600;
+      color: var(--brand);
+    }
+    
+    .popular-tag {
+      position: absolute;
+      top: -8px;
+      right: 16px;
+      background: var(--gold);
+      color: var(--text);
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-size: 10px;
+      font-weight: 700;
+    }
+    
+    .results-section {
+      background: linear-gradient(135deg, #f0f9ff 0%, #ffffff 100%);
+      border-radius: 20px;
+      padding: 32px;
+      border: 2px solid var(--brand);
+    }
+    
+    .results-grid {
+      display: grid;
+      gap: 24px;
+      margin-bottom: 32px;
+    }
+    
+    @media (min-width: 768px) {
+      .results-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    
+    .result-card {
+      text-align: center;
+      padding: 20px;
+      background: var(--white);
+      border-radius: 16px;
+      border: 1px solid #e2e8f0;
+    }
+    
+    .result-card.highlight {
+      background: linear-gradient(135deg, var(--green) 0%, #059669 100%);
+      color: var(--white);
+      transform: scale(1.05);
+      box-shadow: 0 8px 24px rgba(16, 185, 129, 0.25);
+    }
+    
+    .result-label {
+      font-size: 14px;
+      margin-bottom: 8px;
+      opacity: 0.9;
+    }
+    
+    .result-value {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    
+    .result-detail {
+      font-size: 12px;
+      opacity: 0.8;
+    }
+    
+    .comparison-chart {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 24px;
+      margin-top: 24px;
+    }
+    
+    .chart-title {
+      font-size: 20px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    
+    .bar-chart {
+      display: flex;
+      gap: 32px;
+      align-items: flex-end;
+      justify-content: center;
+      height: 200px;
+      margin-bottom: 16px;
+    }
+    
+    .bar-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      flex: 1;
+      max-width: 150px;
+    }
+    
+    .bar {
+      width: 100%;
+      background: linear-gradient(180deg, var(--brand-light) 0%, var(--brand) 100%);
+      border-radius: 8px 8px 0 0;
+      position: relative;
+      transition: all 0.5s ease;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding-top: 12px;
+    }
+    
+    .bar.one-time {
+      background: linear-gradient(180deg, #fca5a5 0%, var(--red) 100%);
+    }
+    
+    .bar-value {
+      color: var(--white);
+      font-weight: 700;
+      font-size: 18px;
+    }
+    
+    .bar-label {
+      font-size: 14px;
+      color: var(--muted);
+      text-align: center;
+    }
+    
+    .cta-section {
+      margin-top: 32px;
+      text-align: center;
+      padding: 32px;
+      background: linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 100%);
+      border-radius: 16px;
+      color: var(--white);
+    }
+    
+    .cta-section h3 {
+      font-size: 28px;
+      margin-bottom: 12px;
+    }
+    
+    .cta-section p {
+      font-size: 16px;
+      margin-bottom: 24px;
+      opacity: 0.95;
+    }
+    
+    .cta-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    .btn {
+      padding: 14px 28px;
+      border-radius: 999px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.2s;
+      display: inline-block;
+      border: 2px solid transparent;
+    }
+    
+    .btn-primary {
+      background: var(--gold);
+      color: var(--text);
+      border-color: var(--gold);
+    }
+    
+    .btn-primary:hover {
+      background: transparent;
+      color: var(--white);
+      transform: translateY(-2px);
+    }
+    
+    .btn-secondary {
+      background: transparent;
+      color: var(--white);
+      border-color: var(--white);
+    }
+    
+    .btn-secondary:hover {
+      background: var(--white);
+      color: var(--brand);
+    }
+    
+    .savings-indicator {
+      animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+    
+    .icon {
+      width: 24px;
+      height: 24px;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    
+    .detail-frequency {
+      margin-top: 20px;
+      padding: 16px;
+      background: #fef3c7;
+      border-radius: 12px;
+      text-align: center;
+    }
+    
+    .detail-frequency strong {
+      color: #92400e;
+    }
+  </style>
+</head>
+<body>
+  <div class="calculator-container">
+    <div class="header">
+      <h1>🧮 Shine Club Savings Calculator</h1>
+      <p>See exactly how much you'll save with membership vs one-time services</p>
+      <div class="savings-badge">Most members save $800+ per year!</div>
+    </div>
+    
+    <div class="calculator-body">
+      <div class="input-section">
+        <div class="input-group">
+          <h3>
+            <span class="icon">🚗</span>
+            Select Your Vehicle Size
+          </h3>
+          <div class="radio-group">
+            <label class="radio-option" data-vehicle="car">
+              <input type="radio" name="vehicle" value="car" checked>
+              <span>Car (Sedan, Coupe)</span>
+              <span class="price">from $117/mo</span>
+            </label>
+            <label class="radio-option" data-vehicle="small-suv">
+              <input type="radio" name="vehicle" value="small-suv">
+              <span>Small SUV (RAV4, CRV)</span>
+              <span class="price">from $137/mo</span>
+            </label>
+            <label class="radio-option" data-vehicle="truck">
+              <input type="radio" name="vehicle" value="truck">
+              <span>Truck (F-150, Silverado)</span>
+              <span class="price">from $157/mo</span>
+            </label>
+            <label class="radio-option" data-vehicle="large-suv">
+              <input type="radio" name="vehicle" value="large-suv">
+              <span>Large SUV (Tahoe, Suburban)</span>
+              <span class="price">from $167/mo</span>
+            </label>
+          </div>
+        </div>
+        
+        <div class="input-group">
+          <h3>
+            <span class="icon">📅</span>
+            Choose Your Plan Frequency
+          </h3>
+          <div class="radio-group">
+            <label class="radio-option" data-frequency="monthly">
+              <input type="radio" name="frequency" value="monthly" checked>
+              <span>Monthly</span>
+              <span class="price">Best value!</span>
+            </label>
+            <label class="radio-option" data-frequency="bimonthly">
+              <input type="radio" name="frequency" value="bimonthly">
+              <span>Bi-Monthly</span>
+              <span class="price">Most popular</span>
+              <span class="popular-tag">POPULAR</span>
+            </label>
+            <label class="radio-option" data-frequency="quarterly">
+              <input type="radio" name="frequency" value="quarterly">
+              <span>Quarterly</span>
+              <span class="price">Good start</span>
+            </label>
+          </div>
+        </div>
+      </div>
+      
+      <div class="results-section">
+        <div class="results-grid">
+          <div class="result-card">
+            <div class="result-label">Your Member Rate</div>
+            <div class="result-value" id="member-rate">$117</div>
+            <div class="result-detail">per service</div>
+          </div>
+          <div class="result-card">
+            <div class="result-label">One-Time Service Cost</div>
+            <div class="result-value" id="onetime-rate">$199</div>
+            <div class="result-detail">regular price</div>
+          </div>
+          <div class="result-card highlight savings-indicator">
+            <div class="result-label">You Save</div>
+            <div class="result-value" id="savings-per-service">$82</div>
+            <div class="result-detail">per detail (41%)</div>
+          </div>
+        </div>
+        
+        <div class="comparison-chart">
+          <h3 class="chart-title">Annual Cost Comparison</h3>
+          <div class="bar-chart">
+            <div class="bar-group">
+              <div class="bar" id="member-bar" style="height: 60%">
+                <span class="bar-value" id="member-annual">$1,404</span>
+              </div>
+              <div class="bar-label">Shine Club<br>Member</div>
+            </div>
+            <div class="bar-group">
+              <div class="bar one-time" id="onetime-bar" style="height: 100%">
+                <span class="bar-value" id="onetime-annual">$2,388</span>
+              </div>
+              <div class="bar-label">One-Time<br>Services</div>
+            </div>
+          </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 24px; padding: 20px; background: #f0fdf4; border-radius: 12px;">
+          <h3 style="color: var(--green); font-size: 32px; margin-bottom: 8px;">
+            Annual Savings: <span id="annual-savings">$984</span>
+          </h3>
+          <p style="color: #15803d;">That's like getting <strong id="free-details">4 details</strong> completely FREE every year!</p>
+        </div>
+        
+        <div class="detail-frequency">
+          <p>With your selected plan, you'll receive <strong id="services-per-year">12 professional details</strong> per year.</p>
+        </div>
+      </div>
+      
+      <div class="cta-section">
+        <h3>Ready to Start Saving?</h3>
+        <p>Join Shine Club today and lock in these member rates!</p>
+        <div class="cta-buttons">
+          <a href="https://shinedesignaz.com/shine-club" class="btn btn-primary">Join Shine Club Now</a>
+          <a href="tel:4805288227" class="btn btn-secondary">📞 (480) 528-8227</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    // Pricing data
+    const pricing = {
+      membership: {
+        car: { monthly: 117, bimonthly: 147, quarterly: 167 },
+        'small-suv': { monthly: 137, bimonthly: 167, quarterly: 187 },
+        truck: { monthly: 157, bimonthly: 187, quarterly: 207 },
+        'large-suv': { monthly: 167, bimonthly: 197, quarterly: 217 }
+      },
+      oneTime: {
+        car: 199,
+        'small-suv': 229,
+        truck: 259,
+        'large-suv': 279
+      },
+      servicesPerYear: {
+        monthly: 12,
+        bimonthly: 6,
+        quarterly: 4
+      }
+    };
+    
+    // Get elements
+    const vehicleInputs = document.querySelectorAll('input[name="vehicle"]');
+    const frequencyInputs = document.querySelectorAll('input[name="frequency"]');
+    const vehicleOptions = document.querySelectorAll('[data-vehicle]');
+    const frequencyOptions = document.querySelectorAll('[data-frequency]');
+    
+    // Update UI elements
+    const memberRateEl = document.getElementById('member-rate');
+    const onetimeRateEl = document.getElementById('onetime-rate');
+    const savingsPerServiceEl = document.getElementById('savings-per-service');
+    const memberAnnualEl = document.getElementById('member-annual');
+    const onetimeAnnualEl = document.getElementById('onetime-annual');
+    const annualSavingsEl = document.getElementById('annual-savings');
+    const freeDetailsEl = document.getElementById('free-details');
+    const servicesPerYearEl = document.getElementById('services-per-year');
+    const memberBarEl = document.getElementById('member-bar');
+    const onetimeBarEl = document.getElementById('onetime-bar');
+    
+    function updateCalculator() {
+      // Get selected values
+      const vehicle = document.querySelector('input[name="vehicle"]:checked').value;
+      const frequency = document.querySelector('input[name="frequency"]:checked').value;
+      
+      // Update selected styles
+      vehicleOptions.forEach(opt => {
+        opt.classList.toggle('selected', opt.dataset.vehicle === vehicle);
+      });
+      frequencyOptions.forEach(opt => {
+        opt.classList.toggle('selected', opt.dataset.frequency === frequency);
+      });
+      
+      // Calculate values
+      const memberRate = pricing.membership[vehicle][frequency];
+      const onetimeRate = pricing.oneTime[vehicle];
+      const servicesPerYear = pricing.servicesPerYear[frequency];
+      const savingsPerService = onetimeRate - memberRate;
+      const savingsPercent = Math.round((savingsPerService / onetimeRate) * 100);
+      
+      const memberAnnual = memberRate * servicesPerYear;
+      const onetimeAnnual = onetimeRate * servicesPerYear;
+      const annualSavings = onetimeAnnual - memberAnnual;
+      const freeDetails = Math.round(annualSavings / memberRate);
+      
+      // Update display
+      memberRateEl.textContent = `$${memberRate}`;
+      onetimeRateEl.textContent = `$${onetimeRate}`;
+      savingsPerServiceEl.textContent = `$${savingsPerService}`;
+      savingsPerServiceEl.parentElement.querySelector('.result-detail').textContent = `per detail (${savingsPercent}%)`;
+      
+      memberAnnualEl.textContent = `$${memberAnnual.toLocaleString()}`;
+      onetimeAnnualEl.textContent = `$${onetimeAnnual.toLocaleString()}`;
+      annualSavingsEl.textContent = `$${annualSavings.toLocaleString()}`;
+      freeDetailsEl.textContent = `${freeDetails} details`;
+      
+      servicesPerYearEl.textContent = `${servicesPerYear} professional details`;
+      
+      // Update bar heights
+      const maxAmount = onetimeAnnual;
+      const memberHeight = (memberAnnual / maxAmount) * 100;
+      memberBarEl.style.height = `${memberHeight}%`;
+      onetimeBarEl.style.height = '100%';
+      
+      // Add animation
+      memberBarEl.style.animation = 'none';
+      onetimeBarEl.style.animation = 'none';
+      setTimeout(() => {
+        memberBarEl.style.animation = '';
+        onetimeBarEl.style.animation = '';
+      }, 10);
+    }
+    
+    // Add event listeners
+    vehicleInputs.forEach(input => input.addEventListener('change', updateCalculator));
+    frequencyInputs.forEach(input => input.addEventListener('change', updateCalculator));
+    
+    // Initialize
+    updateCalculator();
+  </script>
+</body>
+</html>
