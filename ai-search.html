@@ -142,8 +142,10 @@
   }
   </script>
 
-  <!-- Site-wide styles for header/footer (v11 for cache-bust) -->
-  <link rel="stylesheet" href="/assets/css/header-styles.css?v=11" data-chrome-version="11">
+  <!-- Site-wide styles for header/footer -->
+  <link rel="stylesheet" href="/assets/css/header-styles.css" data-chrome-version="12">
+  <!-- Fallback to ensure hidden works even if CSS is cached weirdly -->
+  <style>#mobile-nav[hidden]{display:none}</style>
 
   <!-- Page-specific styles (header/nav/footer rules removed to avoid conflicts) -->
   <style>
@@ -419,9 +421,62 @@
   <div id="site-footer" data-chrome-path="/partials/footer.html"></div>
 
   <!-- Site chrome (loads header/footer) -->
-  <script src="/assets/js/site-chrome.js" defer data-chrome-version="11"></script>
+  <script src="/assets/js/site-chrome.js" defer data-chrome-version="12"></script>
   <!-- Floating buttons + calculator -->
   <script defer src="/assets/js/action-buttons.js"></script>
+
+  <!-- Fallback: ensure hamburger works even if chrome didn’t wire yet -->
+  <script>
+  window.addEventListener('DOMContentLoaded', function () {
+    function ensureMenuWired() {
+      if (typeof window._wireNavOnce === 'function') window._wireNavOnce();
+
+      const btn = document.querySelector('.menu-btn');
+      let menu = document.getElementById('mobile-nav');
+      if (!btn) return false;
+
+      // Create a simple drawer if the partial didn’t provide one
+      if (!menu) {
+        menu = document.createElement('nav');
+        menu.id = 'mobile-nav';
+        menu.setAttribute('hidden','');
+        menu.setAttribute('aria-label','Mobile');
+        const panel = document.createElement('div');
+        panel.className = 'mobile-panel';
+        // Try to clone desktop links (after header inject)
+        document.querySelectorAll('.nav-links > a, .nav-dropdown .dropdown-menu a').forEach(a => {
+          const m = document.createElement('a');
+          m.href = a.getAttribute('href');
+          m.textContent = (a.textContent || '').trim();
+          panel.appendChild(m);
+        });
+        menu.appendChild(panel);
+        document.body.appendChild(menu);
+      }
+
+      if (btn.dataset._wired === '1') return true;
+      btn.dataset._wired = '1';
+      btn.setAttribute('aria-controls','mobile-nav');
+      btn.setAttribute('aria-expanded','false');
+
+      function open(){ menu.removeAttribute('hidden'); btn.setAttribute('aria-expanded','true'); }
+      function close(){ menu.setAttribute('hidden',''); btn.setAttribute('aria-expanded','false'); }
+
+      btn.addEventListener('click', () => { menu.hasAttribute('hidden') ? open() : close(); });
+      document.addEventListener('click', (e) => {
+        if (!menu.hasAttribute('hidden') && !btn.contains(e.target) && !menu.contains(e.target)) close();
+      }, { passive: true });
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && !menu.hasAttribute('hidden')) close();
+      });
+
+      return true;
+    }
+
+    // Try immediately; if header inject is slightly late, try again shortly
+    if (!ensureMenuWired()) setTimeout(ensureMenuWired, 150);
+  });
+  </script>
 
   <!-- Analytics & page interactions -->
   <script>
