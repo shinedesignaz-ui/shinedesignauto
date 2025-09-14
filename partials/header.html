@@ -1,177 +1,172 @@
- <!-- HEADER COMPONENT -->
-  <header class="main-header" id="main-header">
-    <div class="header-container">
-      <div class="header-content">
-        
-        <!-- Logo/Brand -->
-        <a href="/" class="brand" aria-label="Shine Design Home">
-          <img src="/assets/images/logo.webp" alt="Shine Design Logo">
+<!-- HEADER PARTIAL -->
+<header class="main-header" id="main-header">
+  <div class="header-container">
+    <div class="header-content">
 
-        <!-- Desktop Navigation -->
-        <nav class="nav-links" aria-label="Primary">
-          
-          <!-- Services Dropdown -->
-          <div class="nav-dropdown">
-            <a href="/services/">Services <span class="arrow">▼</span></a>
-            <div class="dropdown-menu">
-              <div class="dropdown-label">Detailing Services</div>
-              <a href="/services/mobile-detailing.html">Mobile Detailing</a>
-              <a href="/services/ceramic-coating.html">Ceramic Coating</a>
-              <a href="/services/paint-correction.html">Paint Correction</a>
-              <a href="/services/paint-protection-film.html">Paint Protection Film</a>
-              <a href="/services/window-tinting.html">Window Tint</a>
-              <a href="/services/rv-detailing.html">RV Detailing</a>
-              <a href="/services/boat-detailing.html">Boat Detailing</a>
-              <a href="/services/aircraft-detailing.html">Aircraft Detailing</a>
-              <div class="dropdown-divider"></div>
-              <div class="dropdown-label">Detailing Services</div>
-              <a href="/services/interior-detailing.html">Interior Detailing</a>
-              <a href="/services/exterior-detailing.html">Exterior Detailing</a>
-              <a href="/services/car-detailing.html">Car Detailing</a>
-              <a href="/services/fleet-services.html">Fleet Services</a>
-            </div>
-          </div>
-          
-          <!-- Locations Dropdown -->
-          <div class="nav-dropdown">
-            <a href="/locations/">Locations <span class="arrow">▼</span></a>
-            <div class="dropdown-menu">
-              <a href="/locations/gilbert.html">Gilbert</a>
-              <a href="/locations/mesa.html">Mesa</a>
-              <a href="/locations/chandler.html">Chandler</a>
-              <a href="/locations/queen-creek.html">Queen Creek</a>
-              <a href="/locations/san-tan-valley.html">San Tan Valley</a>
-              <a href="/locations/tempe.html">Tempe</a>
-              <a href="/locations/scottsdale.html">Scottsdale</a>
-              <a href="/locations/phoenix.html">Phoenix</a>
-              <a href="/locations/florence.html">Florence</a>
-              <a href="/locations/gold-canyon.html">Gold Canyon</a>
-              <div class="dropdown-divider"></div>
-              <a href="/locations/">View All Areas →</a>
-            </div>
-          </div>
-          
-          <!-- Pricing Dropdown -->
-          <div class="nav-dropdown">
-            <a href="/pricing/">Pricing <span class="arrow">▼</span></a>
-            <div class="dropdown-menu">
-              <div class="dropdown-label">Service Pricing</div>
-              <a href="/pricing/mobile-detailing.html">Mobile Detailing</a>
-              <a href="/pricing/ceramic-coating.html">Ceramic Coating</a>
-              <a href="/pricing/paint-correction.html">Paint Correction</a>
-              <a href="/pricing/rv-motorhome.html">RV Detailing</a>
-              <a href="/pricing/boat-detailing.html">Boat Detailing</a>
-              <a href="/pricing/window-tint.html">Window Tint</a>
-               <div class="dropdown-divider"></div>
-              <a href="/pricing/">View All Pricing →</a>
-            </div>
-          </div>
-          
-          <a href="/gallery.html">Gallery</a>
-          <a href="/reviews.html">Reviews</a>
-          <a href="/faq.html">FAQ</a>
-          <a href="/about.html">About</a>
-          <a href="/contact.html">Contact</a>
-          <a class="cta" href="https://booknow.shinedesignaz.com/" target="_blank" rel="noopener">Book Now</a>
-        </nav>
+      <!-- Logo/Brand -->
+      <a href="/" class="brand" aria-label="Shine Design Home">
+        <img src="/assets/images/logo.webp" alt="Shine Design Logo" width="140" height="36" decoding="async">
+      </a>
 
-        <!-- Mobile Menu Button -->
-        <button class="menu-btn" aria-label="Open menu" aria-controls="mobile-nav" aria-expanded="false">☰</button>
-      </div>
-    </div>
-
-    <!-- Mobile Navigation Dropdown -->
-    <nav id="mobile-nav" aria-label="Mobile" hidden>
-      <div class="mobile-panel">
-        
-        <!-- Services Mobile Dropdown -->
-        <div class="mobile-dropdown">
-          <button aria-expanded="false">
-            Services <span class="arrow">▼</span>
-          </button>
-          <div class="mobile-submenu">
-            <div class="submenu-label">Detailing Services</div>
-              <a href="/services/mobile-detailing.html">Mobile Detailing</a>
-              <a href="/services/ceramic-coating.html">Ceramic Coating</a>
-              <a href="/services/paint-correction.html">Paint Correction</a>
-              <a href="/services/paint-protection-film.html">Paint Protection Film</a>
-              <a href="/services/window-tinting.html">Window Tint</a>
-              <a href="/services/rv-detailing.html">RV Detailing</a>
-              <a href="/services/boat-detailing.html">Boat Detailing</a>
-              <a href="/services/aircraft-detailing.html">Aircraft Detailing</a>
-              <div class="dropdown-divider"></div>
-              <div class="dropdown-label">Detailing Services</div>
-              <a href="/services/interior-detailing.html">Interior Detailing</a>
-              <a href="/services/exterior-detailing.html">Exterior Detailing</a>
-              <a href="/services/car-detailing.html">Car Detailing</a>
-              <a href="/services/fleet-services.html">Fleet Services</a>
+      <!-- Desktop Navigation -->
+      <nav class="nav-links" aria-label="Primary">
+        <!-- Services -->
+        <div class="nav-dropdown">
+          <a href="/services/">Services <span class="arrow" aria-hidden="true">▼</span></a>
+          <div class="dropdown-menu" role="menu">
+            <div class="dropdown-label">Detailing Services</div>
+            <a href="/services/mobile-detailing.html">Mobile Detailing</a>
+            <a href="/services/ceramic-coating.html">Ceramic Coating</a>
+            <a href="/services/paint-correction.html">Paint Correction</a>
+            <a href="/services/paint-protection-film.html">Paint Protection Film</a>
+            <a href="/services/window-tinting.html">Window Tint</a>
+            <a href="/services/rv-detailing.html">RV Detailing</a>
+            <a href="/services/boat-detailing.html">Boat Detailing</a>
+            <a href="/services/aircraft-detailing.html">Aircraft Detailing</a>
+            <div class="dropdown-divider"></div>
+            <div class="dropdown-label">Detailing Services</div>
+            <a href="/services/interior-detailing.html">Interior Detailing</a>
+            <a href="/services/exterior-detailing.html">Exterior Detailing</a>
+            <a href="/services/car-detailing.html">Car Detailing</a>
+            <a href="/services/fleet-services.html">Fleet Services</a>
           </div>
         </div>
-        
-        <!-- Locations Mobile Dropdown -->
-        <div class="mobile-dropdown">
-          <button aria-expanded="false">
-            Locations <span class="arrow">▼</span>
-          </button>
-          <div class="mobile-submenu">
-              <a href="/locations/gilbert.html">Gilbert</a>
-              <a href="/locations/mesa.html">Mesa</a>
-              <a href="/locations/chandler.html">Chandler</a>
-              <a href="/locations/queen-creek.html">Queen Creek</a>
-              <a href="/locations/san-tan-valley.html">San Tan Valley</a>
-              <a href="/locations/tempe.html">Tempe</a>
-              <a href="/locations/scottsdale.html">Scottsdale</a>
-              <a href="/locations/phoenix.html">Phoenix</a>
-              <a href="/locations/florence.html">Florence</a>
-              <a href="/locations/gold-canyon.html">Gold Canyon</a>
-              <div class="dropdown-divider"></div>
-              <a href="/locations/">View All Areas →</a>
+
+        <!-- Locations -->
+        <div class="nav-dropdown">
+          <a href="/locations/">Locations <span class="arrow" aria-hidden="true">▼</span></a>
+          <div class="dropdown-menu" role="menu">
+            <a href="/locations/gilbert.html">Gilbert</a>
+            <a href="/locations/mesa.html">Mesa</a>
+            <a href="/locations/chandler.html">Chandler</a>
+            <a href="/locations/queen-creek.html">Queen Creek</a>
+            <a href="/locations/san-tan-valley.html">San Tan Valley</a>
+            <a href="/locations/tempe.html">Tempe</a>
+            <a href="/locations/scottsdale.html">Scottsdale</a>
+            <a href="/locations/phoenix.html">Phoenix</a>
+            <a href="/locations/florence.html">Florence</a>
+            <a href="/locations/gold-canyon.html">Gold Canyon</a>
+            <div class="dropdown-divider"></div>
+            <a href="/locations/">View All Areas →</a>
           </div>
         </div>
-        
-        <!-- Pricing Mobile Dropdown -->
-        <div class="mobile-dropdown">
-          <button aria-expanded="false">
-            Pricing <span class="arrow">▼</span>
-          </button>
-          <div class="mobile-submenu">
-            <div class="submenu-label">Service Pricing</div>
-              <a href="/pricing/mobile-detailing.html">Mobile Detailing</a>
-              <a href="/pricing/ceramic-coating.html">Ceramic Coating</a>
-              <a href="/pricing/paint-correction.html">Paint Correction</a>
-              <a href="/pricing/rv-motorhome.html">RV Detailing</a>
-              <a href="/pricing/boat-detailing.html">Boat Detailing</a>
-              <a href="/pricing/window-tint.html">Window Tint</a>
-               <div class="dropdown-divider"></div>
-              <a href="/pricing/">View All Pricing →</a>
+
+        <!-- Pricing -->
+        <div class="nav-dropdown">
+          <a href="/pricing/">Pricing <span class="arrow" aria-hidden="true">▼</span></a>
+          <div class="dropdown-menu" role="menu">
+            <div class="dropdown-label">Service Pricing</div>
+            <a href="/pricing/mobile-detailing.html">Mobile Detailing</a>
+            <a href="/pricing/ceramic-coating.html">Ceramic Coating</a>
+            <a href="/pricing/paint-correction.html">Paint Correction</a>
+            <a href="/pricing/rv-motorhome.html">RV Detailing</a>
+            <a href="/pricing/boat-detailing.html">Boat Detailing</a>
+            <a href="/pricing/window-tint.html">Window Tint</a>
+            <div class="dropdown-divider"></div>
+            <a href="/pricing/">View All Pricing →</a>
           </div>
         </div>
-        
+
         <a href="/gallery.html">Gallery</a>
         <a href="/reviews.html">Reviews</a>
         <a href="/faq.html">FAQ</a>
         <a href="/about.html">About</a>
         <a href="/contact.html">Contact</a>
         <a class="cta" href="https://booknow.shinedesignaz.com/" target="_blank" rel="noopener">Book Now</a>
+      </nav>
 
-        <!-- Mobile Call/Text Bar -->
-        <div class="mobile-call">
-          <div class="btn-row">
-            <a class="btn-call" href="tel:+14805288227" aria-label="Call (480) 528-8227">
-              <svg viewBox="0 0 24 24" aria-hidden="true" class="icon-phone">
-                <path d="M6.6 10.8a15.8 15.8 0 006.6 6.6l2.2-2.2a1.5 1.5 0 011.6-.36c1.27.46 2.65.7 4.04.7a1 1 0 011 1v3.7a1 1 0 01-1 1C12.3 22 2 11.7 2 3a1 1 0 011-1h3.7a1 1 0 011 1c0 1.39.24 2.77.7 4.04.17.53.04 1.11-.36 1.52L6.6 10.8z"/>
-              </svg>
-              <span>Call</span>
-            </a>
-            <a class="btn-text" href="sms:+14805288227" aria-label="Text (480) 528-8227">
-              <svg viewBox="0 0 24 24" aria-hidden="true" class="icon-text">
-                <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/>
-              </svg>
-              <span>Text</span>
-            </a>
-          </div>
-          <div class="hours">Open Daily: 8am – 6pm</div>
+      <!-- Mobile Menu Button -->
+      <button class="menu-btn" aria-label="Open menu" aria-controls="mobile-nav" aria-expanded="false">☰</button>
+    </div>
+  </div>
+
+  <!-- Mobile Navigation Drawer -->
+  <nav id="mobile-nav" aria-label="Mobile" hidden>
+    <div class="mobile-panel">
+
+      <!-- Services -->
+      <div class="mobile-dropdown">
+        <button aria-expanded="false">Services <span class="arrow" aria-hidden="true">▼</span></button>
+        <div class="mobile-submenu" hidden>
+          <div class="submenu-label">Detailing Services</div>
+          <a href="/services/mobile-detailing.html">Mobile Detailing</a>
+          <a href="/services/ceramic-coating.html">Ceramic Coating</a>
+          <a href="/services/paint-correction.html">Paint Correction</a>
+          <a href="/services/paint-protection-film.html">Paint Protection Film</a>
+          <a href="/services/window-tinting.html">Window Tint</a>
+          <a href="/services/rv-detailing.html">RV Detailing</a>
+          <a href="/services/boat-detailing.html">Boat Detailing</a>
+          <a href="/services/aircraft-detailing.html">Aircraft Detailing</a>
+          <div class="dropdown-divider"></div>
+          <div class="dropdown-label">Detailing Services</div>
+          <a href="/services/interior-detailing.html">Interior Detailing</a>
+          <a href="/services/exterior-detailing.html">Exterior Detailing</a>
+          <a href="/services/car-detailing.html">Car Detailing</a>
+          <a href="/services/fleet-services.html">Fleet Services</a>
         </div>
       </div>
-    </nav>
-  </header>
+
+      <!-- Locations -->
+      <div class="mobile-dropdown">
+        <button aria-expanded="false">Locations <span class="arrow" aria-hidden="true">▼</span></button>
+        <div class="mobile-submenu" hidden>
+          <a href="/locations/gilbert.html">Gilbert</a>
+          <a href="/locations/mesa.html">Mesa</a>
+          <a href="/locations/chandler.html">Chandler</a>
+          <a href="/locations/queen-creek.html">Queen Creek</a>
+          <a href="/locations/san-tan-valley.html">San Tan Valley</a>
+          <a href="/locations/tempe.html">Tempe</a>
+          <a href="/locations/scottsdale.html">Scottsdale</a>
+          <a href="/locations/phoenix.html">Phoenix</a>
+          <a href="/locations/florence.html">Florence</a>
+          <a href="/locations/gold-canyon.html">Gold Canyon</a>
+          <div class="dropdown-divider"></div>
+          <a href="/locations/">View All Areas →</a>
+        </div>
+      </div>
+
+      <!-- Pricing -->
+      <div class="mobile-dropdown">
+        <button aria-expanded="false">Pricing <span class="arrow" aria-hidden="true">▼</span></button>
+        <div class="mobile-submenu" hidden>
+          <div class="submenu-label">Service Pricing</div>
+          <a href="/pricing/mobile-detailing.html">Mobile Detailing</a>
+          <a href="/pricing/ceramic-coating.html">Ceramic Coating</a>
+          <a href="/pricing/paint-correction.html">Paint Correction</a>
+          <a href="/pricing/rv-motorhome.html">RV Detailing</a>
+          <a href="/pricing/boat-detailing.html">Boat Detailing</a>
+          <a href="/pricing/window-tint.html">Window Tint</a>
+          <div class="dropdown-divider"></div>
+          <a href="/pricing/">View All Pricing →</a>
+        </div>
+      </div>
+
+      <a href="/gallery.html">Gallery</a>
+      <a href="/reviews.html">Reviews</a>
+      <a href="/faq.html">FAQ</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <a class="cta" href="https://booknow.shinedesignaz.com/" target="_blank" rel="noopener">Book Now</a>
+
+      <!-- Mobile Call/Text Bar -->
+      <div class="mobile-call">
+        <div class="btn-row">
+          <a class="btn-call" href="tel:+14805288227" aria-label="Call (480) 528-8227">
+            <svg viewBox="0 0 24 24" aria-hidden="true" class="icon-phone">
+              <path d="M6.6 10.8a15.8 15.8 0 006.6 6.6l2.2-2.2a1.5 1.5 0 011.6-.36c1.27.46 2.65.7 4.04.7a1 1 0 011 1v3.7a1 1 0 01-1 1C12.3 22 2 11.7 2 3a1 1 0 011-1h3.7a1 1 0 011 1c0 1.39.24 2.77.7 4.04.17.53.04 1.11-.36 1.52L6.6 10.8z"/>
+            </svg>
+            <span>Call</span>
+          </a>
+          <a class="btn-text" href="sms:+14805288227" aria-label="Text (480) 528-8227">
+            <svg viewBox="0 0 24 24" aria-hidden="true" class="icon-text">
+              <path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H6l-2 2V4h16v12z"/>
+            </svg>
+            <span>Text</span>
+          </a>
+        </div>
+        <div class="hours">Open Daily: 8am – 6pm</div>
+      </div>
+    </div>
+  </nav>
+</header>
+<!-- END HEADER PARTIAL -->
