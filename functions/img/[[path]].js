@@ -17,7 +17,7 @@ export async function onRequestGet(context) {
   const q = parseInt(url.searchParams.get("q") || "75", 10);
   const fmt = url.searchParams.get("fmt") || "auto";
 
-  // Limit widths for better cache hit rates
+  // Improve cache hit rates by limiting widths
   const ALLOWED = [72, 140, 400, 800, 960, 1280, 1600, 2000];
   const width = ALLOWED.includes(w) ? w : undefined;
 
@@ -33,12 +33,13 @@ export async function onRequestGet(context) {
 
   const res = await fetch(originURL.toString(), options);
 
-  // Add long cache + simple debug headers
+  // Pass through headers + add long cache
   const headers = new Headers(res.headers);
   headers.set("Cache-Control", "public, max-age=31536000, immutable");
-  headers.set("X-Img-Origin", originPath);
-  headers.set("X-Img-Width", width ? String(width) : "orig");
-  headers.set("X-Img-Format", fmt);
 
   return new Response(res.body, { status: res.status, statusText: res.statusText, headers });
 }
+// Example: /img/services/ceramic-coating.jpg?w=800&q=75&fmt=auto
+// Example: /img/logo.png?w=140&fmt=webp
+// Example: /img/team/keegan.jpg?w=400&fmt=avif
+// Example: /img/team/keegan.jpg (original image, no resizing)
