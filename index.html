@@ -11,16 +11,16 @@
   <link rel="icon" href="/assets/images/favicon.ico">
   <meta name="theme-color" content="#0ea5e9">
 
-  <!-- Social -->
+  <!-- Social (use JPG for broad crawler support) -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Shine Design Mobile Detailing | #1 Detailing, Ceramic Coating, PPF in East Valley AZ">
   <meta property="og:description" content="Mobile auto detailing, ceramic coating, paint protection film (PPF), window tint & paint correction across Gilbert, Mesa, Chandler, Queen Creek & San Tan Valley. Book today.">
   <meta property="og:url" content="https://shinedesignaz.com/">
-  <meta property="og:image" content="/assets/images/og-image.webp">
+  <meta property="og:image" content="/assets/images/og-image.jpg">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Shine Design Mobile Detailing | #1 Detailing, Ceramic Coating, PPF in East Valley AZ">
   <meta name="twitter:description" content="Mobile auto detailing, ceramic coating, paint protection film (PPF), window tint & paint correction across Gilbert, Mesa, Chandler, Queen Creek & San Tan Valley. Book today.">
-  <meta name="twitter:image" content="/assets/images/og-image.webp">
+  <meta name="twitter:image" content="/assets/images/og-image.jpg">
 
   <!-- Preconnect to speed up third-party -->
   <link rel="preconnect" href="https://booknow.shinedesignaz.com" crossorigin>
@@ -84,7 +84,7 @@
     .card .pad{padding:16px}
     .card h3{margin:0 0 6px;font-size:20px}
     .card p{margin:0 0 12px;color:var(--muted)}
-    .pill{display:inline-block;font-size:12px;font-weight:700;padding:6px 10px;border-radius:999px;background:var(--brand);color:#fff} /* improved contrast */
+    .pill{display:inline-block;font-size:12px;font-weight:700;padding:6px 10px;border-radius:999px;background:var(--brand);color:#fff}
 
     /* Reviews */
     .reviews{background:#f8fafc}
@@ -105,7 +105,7 @@
     /* Footer */
     footer{background:#0b1220;color:#d1d5db;padding:32px 0 24px 0}
     .foot-grid, footer .container{padding-left:16px;padding-right:16px}
-    footer a{color:#60a5fa} /* brighter for contrast */
+    footer a{color:#60a5fa}
     .foot-grid{display:grid;grid-template-columns:1fr;gap:18px;padding:28px 0}
     @media(min-width:920px){.foot-grid{grid-template-columns:repeat(4,1fr)}}
     .small{font-size:12px;color:#9ca3af}
@@ -114,7 +114,7 @@
     .micro-footer{background:#111;padding:12px 0;font-size:14px;color:#ccc;text-align:center}
     .micro-footer .container{display:flex;justify-content:center;align-items:center;gap:8px;flex-wrap:wrap}
 
-    /* --- Accessibility targeting for Fieldd form (third-party) --- */
+    /* Fieldd form tweaks */
     fieldd-lead-form, #lead-form-anchor { display:block; max-width:420px; margin:0 auto; width:100% }
     fieldd-lead-form input, fieldd-lead-form textarea { color: var(--text); border-color:#94a3b8 }
     fieldd-lead-form input::placeholder, fieldd-lead-form textarea::placeholder { color:#475569 }
@@ -122,29 +122,12 @@
     fieldd-lead-form button, .vfPrakkFNZ4f_IUyItwg { background: var(--brand) !important; color:#fff !important; border:2px solid var(--brand); border-radius:999px; font-weight:700 }
     fieldd-lead-form a { text-decoration: underline }
 
-    /* Keyboard focus visibility */
     :focus-visible { outline: 3px solid #94caff; outline-offset: 2px }
   </style>
 
   <!-- JSON-LD (unchanged) -->
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {"@type":"Organization","@id":"https://shinedesignaz.com/#org","name":"Shine Design, LLC","legalName":"Shine Design, LLC","alternateName":"Shine Design Mobile Detailing","url":"https://shinedesignaz.com","logo":{"@id":"https://shinedesignaz.com/#logo"},"sameAs":["https://twitter.com/shinedesignaz","https://www.facebook.com/shinedesigndetail/","https://www.youtube.com/@shinedesignaz","https://www.instagram.com/shinedesigndetail/","https://www.linkedin.com/company/shinedesignaz/","https://www.pinterest.com/shinedesignaz/","https://www.yelp.com/biz/shine-design-mobile-detailing-gilbert-2","https://www.bbb.org/us/az/san-tan-valley/profile/auto-detailing/shine-design-mobile-detailing-1126-1000147089","https://www.tiktok.com/@shinedesigndetailing"],"contactPoint":[{"@type":"ContactPoint","contactType":"customer service","telephone":"+1-480-528-8227","email":"mailto:shinedesignaz@gmail.com","areaServed":"US-AZ","availableLanguage":"en"}]},
-      {"@type":"ImageObject","@id":"https://shinedesignaz.com/#logo","url":"https://shinedesignaz.com/assets/images/logo.png","contentUrl":"https://shinedesignaz.com/assets/images/logo.png"},
-      {"@type":"ImageObject","@id":"https://shinedesignaz.com/#og-image","url":"https://shinedesignaz.com/assets/images/og-image.webp","contentUrl":"https://shinedesignaz.com/assets/images/og-image.webp"},
-      {"@type":"WebSite","@id":"https://shinedesignaz.com/#website","url":"https://shinedesignaz.com","name":"Shine Design Mobile Detailing","publisher":{"@id":"https://shinedesignaz.com/#org"},"inLanguage":"en"},
-      {"@type":"WebPage","@id":"https://shinedesignaz.com/#homepage","url":"https://shinedesignaz.com/","name":"Shine Design: Mobile Detailing in Gilbert & East Valley AZ","description":"Mobile detailing, ceramic coating, PPF, window tint, and paint correction. We come to you across Gilbert, Mesa, Chandler, Queen Creek & the East Valley.","isPartOf":{"@id":"https://shinedesignaz.com/#website"},"primaryImageOfPage":{"@id":"https://shinedesignaz.com/#og-image"},"breadcrumb":{"@id":"https://shinedesignaz.com/#breadcrumbs"},"inLanguage":"en"},
-      {"@type":"AutomotiveBusiness","@id":"https://shinedesignaz.com/#local","name":"Shine Design Mobile Detailing","url":"https://shinedesignaz.com","image":{"@id":"https://shinedesignaz.com/#og-image"},"telephone":"+1-480-528-8227","email":"mailto:shinedesignaz@gmail.com","priceRange":"$$","parentOrganization":{"@id":"https://shinedesignaz.com/#org"},"address":{"@type":"PostalAddress","streetAddress":"3519 E Loma Vista St","addressLocality":"Gilbert","addressRegion":"AZ","postalCode":"85295","addressCountry":"US"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"05:00","closes":"20:00"}],"serviceArea":[{"@type":"Place","name":"Gilbert, AZ"},{"@type":"Place","name":"Mesa, AZ"},{"@type":"Place","name":"Chandler, AZ"},{"@type":"Place","name":"Queen Creek, AZ"},{"@type":"Place","name":"San Tan Valley, AZ"},{"@type":"Place","name":"Scottsdale, AZ"},{"@type":"Place","name":"Tempe, AZ"},{"@type":"Place","name":"Phoenix, AZ"}],"knowsAbout":["mobile auto detailing","interior detailing","exterior detailing","ceramic coating","paint protection film","PPF","paint correction","window tint","fleet detailing","boat detailing"],"hasOfferCatalog":{"@type":"OfferCatalog","name":"Detailing & Protection Services","itemListElement":[{"@type":"OfferCatalog","name":"Detailing Packages","itemListElement":[{"@type":"Offer","name":"Interior Detailing","itemOffered":{"@type":"Service","name":"Interior Detailing","url":"https://shinedesignaz.com/services/interior-detailing.html","description":"Vacuum, steam, shampoo & extraction, leather care; odor & pet hair options."}},{"@type":"Offer","name":"Exterior Detailing","itemOffered":{"@type":"Service","name":"Exterior Detailing","url":"https://shinedesignaz.com/services/exterior-detailing.html","description":"Hand wash, decon, sealant, wheels & tires; seasonal protection."}},{"@type":"Offer","name":"Full Detail","itemOffered":{"@type":"Service","name":"Full Detail","url":"https://shinedesignaz.com/services/full-detail.html","description":"Complete interior deep clean + exterior decon & sealant."}}]},{"@type":"OfferCatalog","name":"Paint Enhancement & Correction","itemListElement":[{"@type":"Offer","name":"Enhancement Polish","itemOffered":{"@type":"Service","name":"Enhancement Polish","url":"https://shinedesignaz.com/services/paint-correction.html#enhancement","description":"Single-stage machine polish for 50–70% defect reduction."}},{"@type":"Offer","name":"Paint Correction","itemOffered":{"@type":"Service","name":"Paint Correction","url":"https://shinedesignaz.com/services/paint-correction.html#correction","description":"Two-stage correction targeting 70–85% correction on daily drivers."}},{"@type":"Offer","name":"Show Car Finish","itemOffered":{"@type":"Service","name":"Show Car Finish","url":"https://shinedesignaz.com/services/paint-correction.html#show","description":"Multi-stage jeweling for 85–95% perfection and maximum clarity."}}]},{"@type":"OfferCatalog","name":"Coatings & Film","itemListElement":[{"@type":"Offer","name":"Ceramic Coating","itemOffered":{"@type":"Service","name":"Ceramic Coating","url":"https://shinedesignaz.com/services/ceramic-coating.html","description":"Durable nano coating with UV resistance and easy-clean gloss."}},{"@type":"Offer","name":"Paint Protection Film (PPF)","itemOffered":{"@type":"Service","name":"Paint Protection Film (PPF)","url":"https://shinedesignaz.com/services/paint-protection-film.html","description":"Self-healing film shielding high-impact areas from chips & scratches."}},{"@type":"Offer","name":"Window Tint","itemOffered":{"@type":"Service","name":"Window Tint","url":"https://shinedesignaz.com/services/window-tinting.html","description":"Dyed, carbon, and ceramic IR films for heat & glare reduction."}}]},{"@type":"OfferCatalog","name":"Specialty & Fleet","itemListElement":[{"@type":"Offer","name":"Fleet Detailing","itemOffered":{"@type":"Service","name":"Fleet Detailing","url":"https://shinedesignaz.com/services/fleet-detailing.html","description":"Onsite multi-vehicle programs for dealers & fleets."}},{"@type":"Offer","name":"Boat Detailing","itemOffered":{"@type":"Service","name":"Boat Detailing","url":"https://shinedesignaz.com/services/boat-detailing.html","description":"Wash, decon, gelcoat polishing, and marine coatings."}}]}} ,
-      {"@type":"FAQPage","@id":"https://shinedesignaz.com/#faq","mainEntity":[
-        {"@type":"Question","name":"Do you come to my home or office?","acceptedAnswer":{"@type":"Answer","text":"Yes—we're mobile across Gilbert, Mesa, Chandler, Queen Creek and the East Valley."}},
-        {"@type":"Question","name":"How long does a full detail take?","acceptedAnswer":{"@type":"Answer","text":"Most full details take 3–5 hours depending on size and condition."}},
-        {"@type":"Question","name":"Is ceramic coating worth it in Arizona heat?","acceptedAnswer":{"@type":"Answer","text":"Yes—ceramic adds UV resistance and makes washing faster while protecting clear coat."}}
-      ]},
-      {"@type":"BreadcrumbList","@id":"https://shinedesignaz.com/#breadcrumbs","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://shinedesignaz.com/"}]}
-    ]
-  }
+  {"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://shinedesignaz.com/#org","name":"Shine Design, LLC","legalName":"Shine Design, LLC","alternateName":"Shine Design Mobile Detailing","url":"https://shinedesignaz.com","logo":{"@id":"https://shinedesignaz.com/#logo"},"sameAs":["https://twitter.com/shinedesignaz","https://www.facebook.com/shinedesigndetail/","https://www.youtube.com/@shinedesignaz","https://www.instagram.com/shinedesigndetail/","https://www.linkedin.com/company/shinedesignaz/","https://www.pinterest.com/shinedesignaz/","https://www.yelp.com/biz/shine-design-mobile-detailing-gilbert-2","https://www.bbb.org/us/az/san-tan-valley/profile/auto-detailing/shine-design-mobile-detailing-1126-1000147089","https://www.tiktok.com/@shinedesigndetailing"],"contactPoint":[{"@type":"ContactPoint","contactType":"customer service","telephone":"+1-480-528-8227","email":"mailto:shinedesignaz@gmail.com","areaServed":"US-AZ","availableLanguage":"en"}]},{"@type":"ImageObject","@id":"https://shinedesignaz.com/#logo","url":"https://shinedesignaz.com/assets/images/logo.png","contentUrl":"https://shinedesignaz.com/assets/images/logo.png"},{"@type":"ImageObject","@id":"https://shinedesignaz.com/#og-image","url":"https://shinedesignaz.com/assets/images/og-image.jpg","contentUrl":"https://shinedesignaz.com/assets/images/og-image.jpg"},{"@type":"WebSite","@id":"https://shinedesignaz.com/#website","url":"https://shinedesignaz.com","name":"Shine Design Mobile Detailing","publisher":{"@id":"https://shinedesignaz.com/#org"},"inLanguage":"en"},{"@type":"WebPage","@id":"https://shinedesignaz.com/#homepage","url":"https://shinedesignaz.com/","name":"Shine Design: Mobile Detailing in Gilbert & East Valley AZ","description":"Mobile detailing, ceramic coating, PPF, window tint, and paint correction. We come to you across Gilbert, Mesa, Chandler, Queen Creek & the East Valley.","isPartOf":{"@id":"https://shinedesignaz.com/#website"},"primaryImageOfPage":{"@id":"https://shinedesignaz.com/#og-image"},"breadcrumb":{"@id":"https://shinedesignaz.com/#breadcrumbs"},"inLanguage":"en"},{"@type":"AutomotiveBusiness","@id":"https://shinedesignaz.com/#local","name":"Shine Design Mobile Detailing","url":"https://shinedesignaz.com","image":{"@id":"https://shinedesignaz.com/#og-image"},"telephone":"+1-480-528-8227","email":"mailto:shinedesignaz@gmail.com","priceRange":"$$","parentOrganization":{"@id":"https://shinedesignaz.com/#org"},"address":{"@type":"PostalAddress","streetAddress":"3519 E Loma Vista St","addressLocality":"Gilbert","addressRegion":"AZ","postalCode":"85295","addressCountry":"US"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],"opens":"05:00","closes":"20:00"}],"serviceArea":[{"@type":"Place","name":"Gilbert, AZ"},{"@type":"Place","name":"Mesa, AZ"},{"@type":"Place","name":"Chandler, AZ"},{"@type":"Place","name":"Queen Creek, AZ"},{"@type":"Place","name":"San Tan Valley, AZ"},{"@type":"Place","name":"Scottsdale, AZ"},{"@type":"Place","name":"Tempe, AZ"},{"@type":"Place","name":"Phoenix, AZ"}],"knowsAbout":["mobile auto detailing","interior detailing","exterior detailing","ceramic coating","paint protection film","PPF","paint correction","window tint","fleet detailing","boat detailing"],"hasOfferCatalog":{"@type":"OfferCatalog","name":"Detailing & Protection Services","itemListElement":[{"@type":"OfferCatalog","name":"Detailing Packages","itemListElement":[{"@type":"Offer","name":"Interior Detailing","itemOffered":{"@type":"Service","name":"Interior Detailing","url":"https://shinedesignaz.com/services/interior-detailing.html","description":"Vacuum, steam, shampoo & extraction, leather care; odor & pet hair options."}},{"@type":"Offer","name":"Exterior Detailing","itemOffered":{"@type":"Service","name":"Exterior Detailing","url":"https://shinedesignaz.com/services/exterior-detailing.html","description":"Hand wash, decon, sealant, wheels & tires; seasonal protection."}},{"@type":"Offer","name":"Full Detail","itemOffered":{"@type":"Service","name":"Full Detail","url":"https://shinedesignaz.com/services/full-detail.html","description":"Complete interior deep clean + exterior decon & sealant."}}]},{"@type":"OfferCatalog","name":"Paint Enhancement & Correction","itemListElement":[{"@type":"Offer","name":"Enhancement Polish","itemOffered":{"@type":"Service","name":"Enhancement Polish","url":"https://shinedesignaz.com/services/paint-correction.html#enhancement","description":"Single-stage machine polish for 50–70% defect reduction."}},{"@type":"Offer","name":"Paint Correction","itemOffered":{"@type":"Service","name":"Paint Correction","url":"https://shinedesignaz.com/services/paint-correction.html#correction","description":"Two-stage correction targeting 70–85% correction on daily drivers."}},{"@type":"Offer","name":"Show Car Finish","itemOffered":{"@type":"Service","name":"Show Car Finish","url":"https://shinedesignaz.com/services/paint-correction.html#show","description":"Multi-stage jeweling for 85–95% perfection and maximum clarity."}}]},{"@type":"OfferCatalog","name":"Coatings & Film","itemListElement":[{"@type":"Offer","name":"Ceramic Coating","itemOffered":{"@type":"Service","name":"Ceramic Coating","url":"https://shinedesignaz.com/services/ceramic-coating.html","description":"Durable nano coating with UV resistance and easy-clean gloss."}},{"@type":"Offer","name":"Paint Protection Film (PPF)","itemOffered":{"@type":"Service","name":"Paint Protection Film (PPF)","url":"https://shinedesignaz.com/services/paint-protection-film.html","description":"Self-healing film shielding high-impact areas from chips & scratches."}},{"@type":"Offer","name":"Window Tint","itemOffered":{"@type":"Service","name":"Window Tint","url":"https://shinedesignaz.com/services/window-tinting.html","description":"Dyed, carbon, and ceramic IR films for heat & glare reduction."}}]},{"@type":"OfferCatalog","name":"Specialty & Fleet","itemListElement":[{"@type":"Offer","name":"Fleet Detailing","itemOffered":{"@type":"Service","name":"Fleet Detailing","url":"https://shinedesignaz.com/services/fleet-detailing.html","description":"Onsite multi-vehicle programs for dealers & fleets."}},{"@type":"Offer","name":"Boat Detailing","itemOffered":{"@type":"Service","name":"Boat Detailing","url":"https://shinedesignaz.com/services/boat-detailing.html","description":"Wash, decon, gelcoat polishing, and marine coatings."}}]}} ,{"@type":"FAQPage","@id":"https://shinedesignaz.com/#faq","mainEntity":[{"@type":"Question","name":"Do you come to my home or office?","acceptedAnswer":{"@type":"Answer","text":"Yes—we're mobile across Gilbert, Mesa, Chandler, Queen Creek and the East Valley."}},{"@type":"Question","name":"How long does a full detail take?","acceptedAnswer":{"@type":"Answer","text":"Most full details take 3–5 hours depending on size and condition."}},{"@type":"Question","name":"Is ceramic coating worth it in Arizona heat?","acceptedAnswer":{"@type":"Answer","text":"Yes—ceramic adds UV resistance and makes washing faster while protecting clear coat."}}]},{"@type":"BreadcrumbList","@id":"https://shinedesignaz.com/#breadcrumbs","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://shinedesignaz.com/"}]}]}
   </script>
 
   <!-- Optional: site-wide nav helpers (kept deferred) -->
@@ -313,9 +296,12 @@
   })();
   </script>
 
-  <!-- HERO with real image (no file changes) -->
+  <!-- HERO -->
   <section class="hero">
-    <img class="bg" src="/assets/images/hero-bg.webp" alt="" width="2000" height="1200" fetchpriority="high" decoding="async">
+    <picture>
+      <source type="image/webp" srcset="/assets/images/hero-bg.webp">
+      <img class="bg" src="/assets/images/hero-bg.jpg" alt="" width="2000" height="1200" fetchpriority="high" decoding="async">
+    </picture>
     <div class="container">
       <div class="kickers">
         <a href="https://maps.app.goo.gl/yZZMMBRYVYBUFqHq8" target="_blank" rel="noopener" style="text-decoration:none;color:inherit;"><span>⭐⭐⭐⭐⭐ 4.9/5 (200+ Reviews)</span></a>
@@ -351,7 +337,6 @@
         Request a Free Quote<br>
         for Mobile Detailing, Ceramic Coatings, PPF, or Window Tint in East Valley AZ
       </h2>
-      <!-- Accessible placeholder for Fieldd lead form -->
       <div id="lead-form-anchor" data-fieldd-code="I-HCZQ" aria-label="Lead form"></div>
     </div>
 
@@ -360,54 +345,79 @@
         <h2>Popular Services</h2>
         <p class="lead" style="color:var(--muted);margin:0 0 16px;">Professional results for daily drivers, exotics, fleets, RVs & boats. Choose a service to learn more.</p>
         <div class="cards">
+
           <article class="card">
-            <img loading="lazy" decoding="async" src="/assets/images/services/ceramic-coating.webp" alt="Ceramic coating application on a vehicle in Gilbert, AZ">
+            <picture>
+              <source type="image/webp" srcset="/assets/images/services/ceramic-coating-400.webp 400w, /assets/images/services/ceramic-coating-800.webp 800w" sizes="(max-width:720px) 100vw, (max-width:1024px) 50vw, 33vw">
+              <img loading="lazy" decoding="async" src="/assets/images/services/ceramic-coating-800.jpg" srcset="/assets/images/services/ceramic-coating-400.jpg 400w, /assets/images/services/ceramic-coating-800.jpg 800w" sizes="(max-width:720px) 100vw, (max-width:1024px) 50vw, 33vw" alt="Ceramic coating application on a vehicle in Gilbert, AZ">
+            </picture>
             <div class="pad">
               <h3>Ceramic Coating</h3>
               <p>UV protection, extreme gloss, and effortless washing. 1–7 year options.</p>
               <span class="pill" aria-label="Most Popular">Most Popular</span> <a href="/services/ceramic-coating.html">Learn more →</a>
             </div>
           </article>
+
           <article class="card">
-            <img loading="lazy" decoding="async" src="/assets/images/services/paint-protection-film.webp" alt="PPF clear bra installation in Mesa, AZ">
+            <picture>
+              <source type="image/webp" srcset="/assets/images/services/paint-protection-film-400.webp 400w, /assets/images/services/paint-protection-film-800.webp 800w" sizes="(max-width:720px) 100vw, (max-width:1024px) 50vw, 33vw">
+              <img loading="lazy" decoding="async" src="/assets/images/services/paint-protection-film-800.jpg" srcset="/assets/images/services/paint-protection-film-400.jpg 400w, /assets/images/services/paint-protection-film-800.jpg 800w" sizes="(max-width:720px) 100vw, (max-width:1024px) 50vw, 33vw" alt="PPF clear bra installation in Mesa, AZ">
+            </picture>
             <div class="pad">
               <h3>Paint Protection Film (PPF)</h3>
               <p>Rock-chip & scratch defense with self-healing film. Front-end & full-body.</p>
               <a href="/services/paint-protection-film.html">Learn more →</a>
             </div>
           </article>
+
           <article class="card">
-            <img loading="lazy" decoding="async" src="/assets/images/services/interior-detail.webp" alt="Interior detailing and steam cleaning in Chandler, AZ">
+            <picture>
+              <source type="image/webp" srcset="/assets/images/services/interior-detail-400.webp 400w, /assets/images/services/interior-detail-800.webp 800w" sizes="(max-width:720px) 100vw, (max-width:1024px) 50vw, 33vw">
+              <img loading="lazy" decoding="async" src="/assets/images/services/interior-detail-800.jpg" srcset="/assets/images/services/interior-detail-400.jpg 400w, /assets/images/services/interior-detail-800.jpg 800w" sizes="(max-width:720px) 100vw, (max-width:1024px) 50vw, 33vw" alt="Interior detailing and steam cleaning in Chandler, AZ">
+            </picture>
             <div class="pad">
               <h3>Interior Detailing</h3>
               <p>Deep clean seats, carpets & plastics. Pet hair & stain removal options.</p>
               <a href="/services/interior-detailing.html">Learn more →</a>
             </div>
           </article>
+
           <article class="card">
-            <img loading="lazy" decoding="async" src="/assets/images/services/exterior-detail.webp" alt="Exterior wash, decon and wax in Queen Creek, AZ">
+            <picture>
+              <source type="image/webp" srcset="/assets/images/services/exterior-detail-400.webp 400w, /assets/images/services/exterior-detail-800.webp 800w" sizes="(max-width:720px) 100vw, (max-width:1024px) 50vw, 33vw">
+              <img loading="lazy" decoding="async" src="/assets/images/services/exterior-detail-800.jpg" srcset="/assets/images/services/exterior-detail-400.jpg 400w, /assets/images/services/exterior-detail-800.jpg 800w" sizes="(max-width:720px) 100vw, (max-width:1024px) 50vw, 33vw" alt="Exterior wash, decon and wax in Queen Creek, AZ">
+            </picture>
             <div class="pad">
               <h3>Exterior Detailing</h3>
               <p>Decon wash, clay, iron removal, and sealant for slick, protected paint.</p>
               <a href="/services/exterior-detailing.html">Learn more →</a>
             </div>
           </article>
+
           <article class="card">
-            <img loading="lazy" decoding="async" src="/assets/images/services/paint-correction.webp" alt="Paint correction polishing & swirl removal in San Tan Valley, AZ">
+            <picture>
+              <source type="image/webp" srcset="/assets/images/services/paint-correction-400.webp 400w, /assets/images/services/paint-correction-800.webp 800w" sizes="(max-width:720px) 100vw, (max-width:1024px) 50vw, 33vw">
+              <img loading="lazy" decoding="async" src="/assets/images/services/paint-correction-800.jpg" srcset="/assets/images/services/paint-correction-400.jpg 400w, /assets/images/services/paint-correction-800.jpg 800w" sizes="(max-width:720px) 100vw, (max-width:1024px) 50vw, 33vw" alt="Paint correction polishing & swirl removal in San Tan Valley, AZ">
+            </picture>
             <div class="pad">
               <h3>Paint Correction</h3>
               <p>1–3 step machine polishing to remove swirls & restore mirror-like finish.</p>
               <a href="/services/paint-correction.html">Learn more →</a>
             </div>
           </article>
+
           <article class="card">
-            <img loading="lazy" decoding="async" src="/assets/images/services/window-tinting.webp" alt="Window tint installation in Scottsdale, AZ">
+            <picture>
+              <source type="image/webp" srcset="/assets/images/services/window-tinting-400.webp 400w, /assets/images/services/window-tinting-800.webp 800w" sizes="(max-width:720px) 100vw, (max-width:1024px) 50vw, 33vw">
+              <img loading="lazy" decoding="async" src="/assets/images/services/window-tinting-800.jpg" srcset="/assets/images/services/window-tinting-400.jpg 400w, /assets/images/services/window-tinting-800.jpg 800w" sizes="(max-width:720px) 100vw, (max-width:1024px) 50vw, 33vw" alt="Window tint installation in Scottsdale, AZ">
+            </picture>
             <div class="pad">
               <h3>Window Tint</h3>
               <p>Heat-rejection films for a cooler cabin & UV protection. Ceramic & IR.</p>
               <a href="/services/window-tinting.html">Learn more →</a>
             </div>
           </article>
+
         </div>
       </div>
     </section>
@@ -508,7 +518,7 @@
   <!-- Footer year token -->
   <script>document.querySelectorAll('footer .small').forEach(function(el){el.innerHTML = el.innerHTML.replace('{year}', new Date().getFullYear());});</script>
 
-  <!-- Lazy-load Fieldd on view (keeps images untouched) -->
+  <!-- Lazy-load Fieldd on view -->
   <script>
   (function(){
     var el = document.getElementById('lead-form-anchor');
@@ -533,115 +543,5 @@
 
   <!-- Your site scripts -->
   <script defer src="/action-buttons.js"></script>
-
-  <!-- =================== navigation.js (fixed) =================== -->
-  <script type="text/plain" data-filename="/navigation.js">
-(() => {
-  const VERSION = '3';
-  const key = (p) => `chrome:${VERSION}:${p}`;
-
-  // Load header-styles.css once
-  (function injectHeaderCSS() {
-    const href = '/header-styles.css';
-    const has = Array.from(document.styleSheets || []).some(s => s.href && s.href.includes(href));
-    if (!has) {
-      const link = document.createElement('link');
-      link.rel = 'stylesheet';
-      link.href = href;
-      document.head.appendChild(link);
-    }
-  })();
-
-  // Remove any legacy header/footer
-  function removeLegacyChrome() {
-    document.querySelectorAll('header.main-header, .micro-footer, footer').forEach(el => el.remove());
-  }
-
-  // Ensure placeholders exist inside <body>
-  function ensurePlaceholders() {
-    if (!document.querySelector('.sr-only[href="#main"]')) {
-      const skip = document.createElement('a');
-      skip.className = 'sr-only';
-      skip.href = '#main';
-      skip.textContent = 'Skip to content';
-      document.body.insertBefore(skip, document.body.firstChild);
-    }
-    if (!document.getElementById('site-header')) {
-      const top = document.createElement('div');
-      top.id = 'site-header';
-      top.setAttribute('data-chrome-path', '/partials/header.html');
-      document.body.insertBefore(top, document.body.firstChild.nextSibling);
-    }
-    if (!document.getElementById('site-footer')) {
-      const bottom = document.createElement('div');
-      bottom.id = 'site-footer';
-      bottom.setAttribute('data-chrome-path', '/partials/footer.html');
-      document.body.appendChild(bottom);
-    }
-  }
-
-  async function mount(id, path, after) {
-    const slot = document.getElementById(id);
-    if (!slot) return;
-
-    const cached = localStorage.getItem(key(path));
-    if (cached) slot.outerHTML = cached;
-
-    try {
-      const res = await fetch(path, { cache: 'no-cache' });
-      if (!res.ok) return;
-      const html = await res.text();
-      localStorage.setItem(key(path), html);
-      const target = document.getElementById(id) || document.querySelector(`[data-chrome-path="${path}"]`);
-      if (target) target.outerHTML = html;
-      if (typeof after === 'function') after();
-    } catch (e) {
-      console.error('[navigation.js] fetch error', e);
-    }
-  }
-
-  function wireHeader() {
-    const btn = document.querySelector('.menu-btn');
-    const menu = document.getElementById('mobile-nav');
-    if (!btn || !menu) return;
-
-    function open(){ menu.removeAttribute('hidden'); btn.setAttribute('aria-expanded','true'); btn.textContent = '✕'; }
-    function close(){ menu.setAttribute('hidden',''); btn.setAttribute('aria-expanded','false'); btn.textContent = '☰'; }
-
-    btn.addEventListener('click', function(){
-      if (menu.hasAttribute('hidden')) { open(); } else { close(); }
-    });
-
-    document.addEventListener('click', function(e){
-      if (!menu.hasAttribute('hidden') && !btn.contains(e.target) && !menu.contains(e.target)) close();
-    }, { passive: true });
-
-    document.querySelectorAll('.mobile-dropdown > button').forEach(function(b){
-      b.addEventListener('click', function(e){
-        e.stopPropagation();
-        const parent = b.parentElement;
-        const on = parent.classList.contains('open');
-        document.querySelectorAll('.mobile-dropdown').forEach(function(d){
-          d.classList.remove('open');
-          const db = d.querySelector('button');
-          if (db) db.setAttribute('aria-expanded','false');
-        });
-        if (!on) { parent.classList.add('open'); b.setAttribute('aria-expanded','true'); }
-      }, { passive: true });
-    });
-  }
-
-  function fixYear() {
-    document.querySelectorAll('footer .small').forEach(function(el){
-      el.innerHTML = el.innerHTML.replace('{year}', new Date().getFullYear());
-    });
-  }
-
-  console.log('[navigation.js] loaded');
-  removeLegacyChrome();
-  ensurePlaceholders();
-  mount('site-header', '/partials/header.html', wireHeader);
-  mount('site-footer', '/partials/footer.html', fixYear);
-})();
-  </script>
 </body>
+</html>
