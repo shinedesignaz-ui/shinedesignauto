@@ -9,6 +9,7 @@
   <link rel="canonical" href="https://shinedesignaz.com/services/boat-detailing.html">
   <link rel="icon" href="/assets/images/favicon.ico">
   <meta name="theme-color" content="#0ea5e9">
+
   <!-- OG/Twitter -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Boat Detailing & Marine Ceramic | Shine Design (East Valley AZ)">
@@ -98,38 +99,191 @@
     .micro-footer a{color:#93e4ff;font-weight:600}
     .micro-footer a:hover{color:#fff;text-decoration:underline}
   </style>
-<link rel="stylesheet" href="/header-styles.css">
+  <link rel="stylesheet" href="/header-styles.css">
 
-  <!-- JSON-LD: Service + FAQ + Breadcrumb -->
+  <!-- JSON-LD: WebSite + Brand + LocalBusiness + WebPage + Service (OfferCatalog) + FAQ + Breadcrumb -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@type": "WebSite",
+        "@id": "https://shinedesignaz.com/#website",
+        "url": "https://shinedesignaz.com/",
+        "name": "Shine Design Mobile Detailing",
+        "publisher": { "@id": "https://shinedesignaz.com/#brand" },
+        "inLanguage": "en"
+      },
+      {
+        "@type": "Brand",
+        "@id": "https://shinedesignaz.com/#brand",
+        "name": "Shine Design",
+        "url": "https://shinedesignaz.com/"
+      },
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://shinedesignaz.com/#local",
+        "name": "Shine Design Mobile Detailing",
+        "url": "https://shinedesignaz.com/",
+        "telephone": "+14805288227"
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://shinedesignaz.com/services/boat-detailing.html#webpage",
+        "url": "https://shinedesignaz.com/services/boat-detailing.html",
+        "name": "Boat Detailing & Marine Ceramic Coating",
+        "isPartOf": { "@id": "https://shinedesignaz.com/#website" },
+        "breadcrumb": { "@id": "https://shinedesignaz.com/services/boat-detailing.html#breadcrumb" },
+        "about": { "@id": "https://shinedesignaz.com/services/boat-detailing.html#service" },
+        "inLanguage": "en"
+      },
+      {
         "@type": "Service",
         "@id": "https://shinedesignaz.com/services/boat-detailing.html#service",
         "name": "Boat Detailing & Marine Ceramic Coating",
-        "provider": {"@type":"LocalBusiness","name":"Shine Design Mobile Detailing","@id":"https://shinedesignaz.com/#local"},
-        "areaServed": ["Gilbert AZ","Mesa AZ","Chandler AZ","Queen Creek AZ","San Tan Valley AZ","Scottsdale AZ","Tempe AZ"],
-        "serviceType": "Boat detailing and marine ceramic coating",
         "description": "Professional boat detailing including wash & wax, full detail, gelcoat restoration, and marine ceramic coating.",
-        "offers": {"@type":"AggregateOffer","priceCurrency":"USD","lowPrice":"20","highPrice":"70","offerCount":"4"}
+        "serviceType": "Boat detailing and marine ceramic coating",
+        "provider": { "@type": "LocalBusiness", "@id": "https://shinedesignaz.com/#local" },
+        "brand": { "@type": "Brand", "@id": "https://shinedesignaz.com/#brand" },
+        "url": "https://shinedesignaz.com/services/boat-detailing.html",
+        "areaServed": [
+          "Gilbert AZ","Mesa AZ","Chandler AZ","Queen Creek AZ","San Tan Valley AZ","Scottsdale AZ","Tempe AZ",
+          "Phoenix AZ","Apache Junction AZ","Gold Canyon AZ","Fountain Hills AZ"
+        ],
+        "serviceArea": [
+          { "@type": "Place", "name": "Saguaro Lake" },
+          { "@type": "Place", "name": "Canyon Lake" },
+          { "@type": "Place", "name": "Apache Lake" },
+          { "@type": "Place", "name": "Roosevelt Lake" }
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Boat Detailing Packages",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "name": "Basic Wash & Wax",
+              "url": "https://shinedesignaz.com/services/boat-detailing.html#basic",
+              "priceSpecification": {
+                "@type": "UnitPriceSpecification",
+                "price": "20",
+                "priceCurrency": "USD",
+                "unitText": "per foot"
+              },
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Basic Wash & Wax",
+                "description": "Foam wash, waterline cleaning, non-skid cleaning, spray wax, windows."
+              },
+              "availability": "https://schema.org/InStock"
+            },
+            {
+              "@type": "Offer",
+              "name": "Full Detail",
+              "url": "https://shinedesignaz.com/services/boat-detailing.html#full",
+              "priceSpecification": {
+                "@type": "UnitPriceSpecification",
+                "price": "30",
+                "priceCurrency": "USD",
+                "unitText": "per foot"
+              },
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Full Detail",
+                "description": "Everything in Basic plus machine wax, interior vacuum & wipe-down, vinyl care, metal polishing, compartments."
+              },
+              "availability": "https://schema.org/InStock"
+            },
+            {
+              "@type": "Offer",
+              "name": "Gelcoat Restoration",
+              "url": "https://shinedesignaz.com/services/boat-detailing.html#gelcoat",
+              "priceSpecification": {
+                "@type": "UnitPriceSpecification",
+                "price": "50",
+                "priceCurrency": "USD",
+                "unitText": "per foot (from)"
+              },
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Gelcoat Restoration",
+                "description": "Heavy oxidation removal, multi-stage compounding, machine polish, gloss restoration, marine sealant."
+              },
+              "availability": "https://schema.org/InStock"
+            },
+            {
+              "@type": "Offer",
+              "name": "Marine Ceramic Coating",
+              "url": "https://shinedesignaz.com/services/boat-detailing.html#ceramic",
+              "priceSpecification": {
+                "@type": "UnitPriceSpecification",
+                "price": "70",
+                "priceCurrency": "USD",
+                "unitText": "per foot (from)"
+              },
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Marine Ceramic Coating",
+                "description": "Full decon, correction as needed, marine ceramic application, 1–3+ year protection, hydrophobic & UV defense."
+              },
+              "availability": "https://schema.org/InStock"
+            }
+          ]
+        }
       },
       {
-        "@type":"FAQPage",
-        "@id":"https://shinedesignaz.com/services/boat-detailing.html#faq",
-        "mainEntity":[
-          {"@type":"Question","name":"Where do you service boats?","acceptedAnswer":{"@type":"Answer","text":"At your home, storage lot, or approved marina/boat ramp where allowed. We are fully mobile and self-contained."}},
-          {"@type":"Question","name":"Do you work on heavy oxidation?","acceptedAnswer":{"@type":"Answer","text":"Yes—single or multi-step compounding and polishing restores gloss on gelcoat and painted surfaces."}},
-          {"@type":"Question","name":"How long does marine ceramic last?","acceptedAnswer":{"@type":"Answer","text":"Typically 1-3+ years depending on product, environment, and maintenance. We offer maintenance plans."}}
+        "@type": "FAQPage",
+        "@id": "https://shinedesignaz.com/services/boat-detailing.html#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Do you need water or power?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We are self-contained for most boat jobs. If marina rules require hookups, we'll confirm those details at booking."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can you work on boats in the water?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We primarily work on boats on trailers or in dry storage. For boats in slips, we can perform limited topside services where marina rules allow."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How often should I detail my boat?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We recommend a full detail at the beginning and end of each season, with wash & wax services every 1–2 months during heavy use."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do you work on jet skis and PWCs?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes! We detail all personal watercraft. Jet ski detailing starts at $150 for basic wash & wax."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What's the difference between automotive and marine products?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Marine products are formulated for water exposure, UV, and minerals. They're essential for proper boat care and longevity."
+            }
+          }
         ]
       },
       {
-        "@type":"BreadcrumbList",
-        "itemListElement":[
-          {"@type":"ListItem","position":1,"name":"Home","item":"https://shinedesignaz.com/"},
-          {"@type":"ListItem","position":2,"name":"Services","item":"https://shinedesignaz.com/services/"},
-          {"@type":"ListItem","position":3,"name":"Boat Detailing & Marine Ceramic","item":"https://shinedesignaz.com/services/boat-detailing.html"}
+        "@type": "BreadcrumbList",
+        "@id": "https://shinedesignaz.com/services/boat-detailing.html#breadcrumb",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://shinedesignaz.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://shinedesignaz.com/services/" },
+          { "@type": "ListItem", "position": 3, "name": "Boat Detailing & Marine Ceramic", "item": "https://shinedesignaz.com/services/boat-detailing.html" }
         ]
       }
     ]
@@ -221,7 +375,7 @@
         <p class="lead" style="color:var(--muted)">Per-foot pricing based on boat length. Final price varies by condition and access. All prices are estimates.</p>
         <div class="cards">
           <!-- Basic Wash & Wax -->
-          <article class="card">
+          <article class="card" id="basic">
             <img loading="lazy" src="/assets/images/services/boat-wash.webp" alt="Boat wash and wax service">
             <div class="pad">
               <h3>Basic Wash & Wax</h3>
@@ -239,7 +393,7 @@
           </article>
 
           <!-- Full Detail -->
-          <article class="card">
+          <article class="card" id="full">
             <img loading="lazy" src="/assets/images/services/boat-full.webp" alt="Full boat detailing service">
             <div class="pad">
               <h3>Full Detail</h3>
@@ -258,7 +412,7 @@
           </article>
 
           <!-- Gelcoat Restoration -->
-          <article class="card">
+          <article class="card" id="gelcoat">
             <img loading="lazy" src="/assets/images/services/boat-gelcoat.webp" alt="Gelcoat restoration service">
             <div class="pad">
               <h3>Gelcoat Restoration</h3>
@@ -277,7 +431,7 @@
           </article>
 
           <!-- Marine Ceramic -->
-          <article class="card">
+          <article class="card" id="ceramic">
             <img loading="lazy" src="/assets/images/services/boat-ceramic.webp" alt="Marine ceramic coating">
             <div class="pad">
               <h3>Marine Ceramic Coating</h3>
@@ -380,40 +534,53 @@
         <details><summary>Can you work on boats in the water?</summary><p>We primarily work on boats on trailers or in dry storage. For boats in slips, we can perform limited topside services where marina rules allow.</p></details>
         <details><summary>How often should I detail my boat?</summary><p>We recommend a full detail at the beginning and end of each season, with wash & wax services every 1-2 months during heavy use.</p></details>
         <details><summary>Do you work on jet skis and PWCs?</summary><p>Yes! We detail all personal watercraft. Jet ski detailing starts at $150 for basic wash & wax.</p></details>
-        <details><summary>What's the difference between automotive and marine products?</summary><p>Marine products are specifically formulated to handle water exposure, salt, and UV rays. They're essential for proper boat care.</p></details>
+        <details><summary>What's the difference between automotive and marine products?</summary><p>Marine products are specifically formulated to handle water exposure, UV, and minerals. They're essential for proper boat care.</p></details>
       </div>
     </section>
-      <!-- Service Areas -->
-      <section class="section" style="background:#f8fafc">
-        <div class="container" style="text-align:center">
-          <h2>Mobile Service Throughout East Valley & Phoenix Metro</h2>
-          <p style="font-size:18px;color:var(--muted);margin:16px 0 32px">We come to you! Professional detailing at your home or office.</p>
-          <div style="display:flex;flex-wrap:wrap;gap:24px;justify-content:center;font-size:18px">
-            <a href="/locations/gilbert.html"><span>📍 Gilbert</span></a>
-            <a href="/locations/mesa.html"><span>📍 Mesa</span></a>
-            <a href="/locations/chandler.html"><span>📍 Chandler</span></a>
-            <a href="/locations/queen-creek.html"><span>📍 Queen Creek</span></a>
-            <a href="/locations/san-tan-valley.html"><span>📍 San Tan Valley</span></a>
-            <a href="/locations/tempe.html"><span>📍 Tempe</span></a>
-            <a href="/locations/scottsdale.html"><span>📍 Scottsdale</span></a>
-            <a href="/locations/phoenix.html"><span>📍 Phoenix</span></a>
-            <a href="/locations/apache-junction.html"><span>📍 Apache Junction</span></a>
-            <a href="/locations/gold-canyon.html"><span>📍 Gold Canyon</span></a>
-            <a href="/locations/fountain-hills.html"><span>📍 Fountain Hills</span></a>
-          </div>
-          <p style="margin-top:24px;color:var(--muted)">Serving all of East Valley, Arizona with mobile auto detailing services</p>
+
+    <!-- Service Areas -->
+    <section class="section" style="background:#f8fafc">
+      <div class="container" style="text-align:center">
+        <h2>Mobile Service Throughout East Valley & Phoenix Metro</h2>
+        <p style="font-size:18px;color:var(--muted);margin:16px 0 32px">We come to you! Professional detailing at your home or office.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:24px;justify-content:center;font-size:18px">
+          <a href="/locations/gilbert.html"><span>📍 Gilbert</span></a>
+          <a href="/locations/mesa.html"><span>📍 Mesa</span></a>
+          <a href="/locations/chandler.html"><span>📍 Chandler</span></a>
+          <a href="/locations/queen-creek.html"><span>📍 Queen Creek</span></a>
+          <a href="/locations/san-tan-valley.html"><span>📍 San Tan Valley</span></a>
+          <a href="/locations/tempe.html"><span>📍 Tempe</span></a>
+          <a href="/locations/scottsdale.html"><span>📍 Scottsdale</span></a>
+          <a href="/locations/phoenix.html"><span>📍 Phoenix</span></a>
+          <a href="/locations/apache-junction.html"><span>📍 Apache Junction</span></a>
+          <a href="/locations/gold-canyon.html"><span>📍 Gold Canyon</span></a>
+          <a href="/locations/fountain-hills.html"><span>📍 Fountain Hills</span></a>
         </div>
-      </section>
+        <p style="margin-top:24px;color:var(--muted)">Serving all of East Valley, Arizona with mobile auto detailing services</p>
+      </div>
+    </section>
   </main>
+
   <div id="site-footer" data-chrome-path="/partials/footer.html" data-chrome-version="2025-09-13"></div>
 
-
-  
   </div>
 
-  
-  <script>document.querySelector('.menu-btn').addEventListener('click',function(){const nav=document.getElementById('mobile-nav');const isOpen=!nav.hidden;nav.hidden=isOpen;this.setAttribute('aria-expanded',!isOpen);this.textContent=isOpen?'☰':'✕';});</script>
-  
+  <script>
+    // Guard in case the header hasn't injected yet
+    document.addEventListener('DOMContentLoaded', function(){
+      var btn = document.querySelector('.menu-btn');
+      if (!btn) return;
+      btn.addEventListener('click', function(){
+        const nav = document.getElementById('mobile-nav');
+        if (!nav) return;
+        const isOpen = !nav.hidden;
+        nav.hidden = isOpen;
+        this.setAttribute('aria-expanded', !isOpen);
+        this.textContent = isOpen ? '☰' : '✕';
+      });
+    });
+  </script>
+
   <script defer src="/site-chrome.js" data-chrome-version="2025-09-13"></script>
   <script defer src="/navigation.js"></script>
   <script defer src="/action-buttons.js"></script>

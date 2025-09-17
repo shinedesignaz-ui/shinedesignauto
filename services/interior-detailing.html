@@ -99,47 +99,156 @@
     @media(min-width:920px){.foot-grid{grid-template-columns:repeat(4,1fr)}}
     .small{font-size:12px;color:#9ca3af}
     .micro-footer{background:#0a4259;color:#fff;text-align:center;padding:12px 0;font-size:14px;border-top:1px solid #134e69}
-    .micro-footer a{color:#93e4ff;font-weight:600}
+    .micro-footer a{color:#93c5fd;font-weight:600}
     .micro-footer a:hover{color:#fff;text-decoration:underline}
   </style>
 <link rel="stylesheet" href="/header-styles.css">
 
-  <!-- JSON-LD: Service + FAQ + Breadcrumb -->
+  <!-- JSON-LD: WebSite + Brand + LocalBusiness + WebPage + Service (OfferCatalog) + FAQ + Breadcrumb -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@type": "WebSite",
+        "@id": "https://shinedesignaz.com/#website",
+        "url": "https://shinedesignaz.com/",
+        "name": "Shine Design Mobile Detailing",
+        "publisher": { "@id": "https://shinedesignaz.com/#brand" },
+        "inLanguage": "en"
+      },
+      {
+        "@type": "Brand",
+        "@id": "https://shinedesignaz.com/#brand",
+        "name": "Shine Design",
+        "url": "https://shinedesignaz.com/"
+      },
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://shinedesignaz.com/#local",
+        "name": "Shine Design Mobile Detailing",
+        "url": "https://shinedesignaz.com/",
+        "telephone": "+14805288227"
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://shinedesignaz.com/services/interior-detailing.html#webpage",
+        "url": "https://shinedesignaz.com/services/interior-detailing.html",
+        "name": "Interior Detailing",
+        "isPartOf": { "@id": "https://shinedesignaz.com/#website" },
+        "breadcrumb": { "@id": "https://shinedesignaz.com/services/interior-detailing.html#breadcrumb" },
+        "about": { "@id": "https://shinedesignaz.com/services/interior-detailing.html#service" },
+        "inLanguage": "en"
+      },
+      {
         "@type": "Service",
         "@id": "https://shinedesignaz.com/services/interior-detailing.html#service",
         "name": "Interior Detailing",
-        "provider": {"@type":"LocalBusiness","name":"Shine Design Mobile Detailing","@id":"https://shinedesignaz.com/#local"},
-        "areaServed": ["Gilbert AZ","Mesa AZ","Chandler AZ","Queen Creek AZ","San Tan Valley AZ","Scottsdale AZ","Tempe AZ"],
+        "description": "Vacuum, wipe-down, steam cleaning, shampoo & hot-water extraction, leather care, and odor/pet hair add-ons.",
         "serviceType": "Automotive interior detailing",
-        "description": "Vacuum, wipe‑down, steam cleaning, shampoo & hot‑water extraction, leather care, and odor/pet hair add‑ons.",
-        "offers": {
-          "@type": "AggregateOffer",
-          "priceCurrency": "USD",
-          "lowPrice": "149",
-          "highPrice": "659",
-          "offerCount": "3"
+        "provider": { "@type": "LocalBusiness", "@id": "https://shinedesignaz.com/#local" },
+        "brand": { "@type": "Brand", "@id": "https://shinedesignaz.com/#brand" },
+        "url": "https://shinedesignaz.com/services/interior-detailing.html",
+        "areaServed": [
+          "Gilbert AZ","Mesa AZ","Chandler AZ","Queen Creek AZ","San Tan Valley AZ","Scottsdale AZ","Tempe AZ",
+          "Phoenix AZ","Apache Junction AZ","Gold Canyon AZ","Fountain Hills AZ"
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Interior Detailing Packages",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "name": "Level 1 — Refresh & Clean",
+              "url": "https://shinedesignaz.com/services/interior-detailing.html#level1",
+              "itemOffered": { "@type": "Service", "name": "Level 1 — Refresh & Clean" },
+              "priceSpecification": [
+                { "@type": "UnitPriceSpecification", "name": "Small",  "price": "149", "priceCurrency": "USD" },
+                { "@type": "UnitPriceSpecification", "name": "Medium", "price": "169", "priceCurrency": "USD" },
+                { "@type": "UnitPriceSpecification", "name": "Large",  "price": "199", "priceCurrency": "USD" },
+                { "@type": "UnitPriceSpecification", "name": "XL",     "price": "229", "priceCurrency": "USD" }
+              ],
+              "availability": "https://schema.org/InStock"
+            },
+            {
+              "@type": "Offer",
+              "name": "Level 2 — Deep Clean & Restore",
+              "url": "https://shinedesignaz.com/services/interior-detailing.html#level2",
+              "itemOffered": { "@type": "Service", "name": "Level 2 — Deep Clean & Restore" },
+              "priceSpecification": [
+                { "@type": "UnitPriceSpecification", "name": "Small",  "price": "229", "priceCurrency": "USD" },
+                { "@type": "UnitPriceSpecification", "name": "Medium", "price": "259", "priceCurrency": "USD" },
+                { "@type": "UnitPriceSpecification", "name": "Large",  "price": "289", "priceCurrency": "USD" },
+                { "@type": "UnitPriceSpecification", "name": "XL",     "price": "329", "priceCurrency": "USD" }
+              ],
+              "availability": "https://schema.org/InStock"
+            },
+            {
+              "@type": "Offer",
+              "name": "Level 3 — Elite Interior Transformation",
+              "url": "https://shinedesignaz.com/services/interior-detailing.html#level3",
+              "itemOffered": { "@type": "Service", "name": "Level 3 — Elite Interior Transformation" },
+              "priceSpecification": [
+                { "@type": "UnitPriceSpecification", "name": "Small",  "price": "399", "priceCurrency": "USD" },
+                { "@type": "UnitPriceSpecification", "name": "Medium", "price": "449", "priceCurrency": "USD" },
+                { "@type": "UnitPriceSpecification", "name": "Large",  "price": "509", "priceCurrency": "USD" },
+                { "@type": "UnitPriceSpecification", "name": "XL",     "price": "579", "priceCurrency": "USD" },
+                { "@type": "UnitPriceSpecification", "name": "XXL",    "price": "659", "priceCurrency": "USD" }
+              ],
+              "availability": "https://schema.org/InStock"
+            }
+          ]
+        },
+        "potentialAction": {
+          "@type": "ReserveAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://booknow.shinedesignaz.com/",
+            "inLanguage": "en",
+            "actionPlatform": [
+              "http://schema.org/DesktopWebPlatform",
+              "http://schema.org/MobileWebPlatform"
+            ]
+          }
         }
       },
       {
-        "@type":"FAQPage",
-        "@id":"https://shinedesignaz.com/services/interior-detailing.html#faq",
-        "mainEntity":[
-          {"@type":"Question","name":"How long does an interior take?","acceptedAnswer":{"@type":"Answer","text":"1.5–2.5 hrs for Level 1; 2.5–4 hrs for Level 2; up to 5 hrs for Level 3 depending on size & condition."}},
-          {"@type":"Question","name":"Do you remove odors (smoke/spills)?","acceptedAnswer":{"@type":"Answer","text":"We address the source first with steam/extraction and can add ozone when needed. Severe cases may require multiple steps."}},
-          {"@type":"Question","name":"Is heavy pet hair extra?","acceptedAnswer":{"@type":"Answer","text":"Yes—heavy pet hair is an add‑on due to time and tool wear. We’ll confirm after inspection."}}
+        "@type": "FAQPage",
+        "@id": "https://shinedesignaz.com/services/interior-detailing.html#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How long does it take?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "1.5–2.5 hrs for Level 1; 2.5–4 hrs for Level 2; up to 5 hrs for Level 3 depending on size & condition."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can you remove smoke or spill odors?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We tackle source contamination first, then can add ozone treatment. Severe cases may require multiple steps/visits."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is there an extra charge for heavy pet hair?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes—Level 3 pet hair removal is an add-on due to time and tool wear. We’ll confirm after inspection."
+            }
+          }
         ]
       },
       {
-        "@type":"BreadcrumbList",
-        "itemListElement":[
-          {"@type":"ListItem","position":1,"name":"Home","item":"https://shinedesignaz.com/"},
-          {"@type":"ListItem","position":2,"name":"Services","item":"https://shinedesignaz.com/services/"},
-          {"@type":"ListItem","position":3,"name":"Interior Detailing","item":"https://shinedesignaz.com/services/interior-detailing.html"}
+        "@type": "BreadcrumbList",
+        "@id": "https://shinedesignaz.com/services/interior-detailing.html#breadcrumb",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://shinedesignaz.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://shinedesignaz.com/services/" },
+          { "@type": "ListItem", "position": 3, "name": "Interior Detailing", "item": "https://shinedesignaz.com/services/interior-detailing.html" }
         ]
       }
     ]
@@ -176,9 +285,9 @@
     <div class="container">
       <div class="row">
         <div class="item">✅ Insured & Certified</div>
-        <div class="item">🧽 Steam & Hot‑Water Extraction</div>
+        <div class="item">🧽 Steam & Hot-Water Extraction</div>
         <div class="item">🐾 Pet Hair Specialists</div>
-        <div class="item">🏆 200+ 5‑Star Reviews</div>
+        <div class="item">🏆 200+ 5-Star Reviews</div>
       </div>
     </div>
   </section>
@@ -191,9 +300,9 @@
           <h2 style="margin-top:0">Free Interior Detail Quote</h2>
           <p class="lead" style="color:var(--muted)">Tell us about your interior—kids, pets, spills, or just maintenance—and we’ll recommend the right level of cleaning.</p>
           <ul class="list">
-            <li>Mobile or drop‑off (Gilbert/San Tan Valley)</li>
+            <li>Mobile or drop-off (Gilbert/San Tan Valley)</li>
             <li>Steam, shampoo/extraction, leather care, stain & odor options</li>
-            <li>Pet hair specialists and fabric protection add‑ons</li>
+            <li>Pet hair specialists and fabric protection add-ons</li>
           </ul>
         </div>
         <div>
@@ -247,27 +356,27 @@
     <section class="section" id="packages">
       <div class="container">
         <h2>Interior Detailing Packages</h2>
-        <p class="lead" style="color:var(--muted)">Transparent, size‑based pricing. Pick the level that matches your vehicle’s condition.</p>
+        <p class="lead" style="color:var(--muted)">Transparent, size-based pricing. Pick the level that matches your vehicle’s condition.</p>
         <div class="cards">
-          <article class="card">
+          <article class="card" id="level1">
             <img loading="lazy" src="/assets/images/services/interior-refresh.webp" alt="Interior Refresh & Clean package">
             <div class="pad">
               <h3>Level 1 – Refresh & Clean</h3>
-              <p>Vacuum, wipe‑down, interior windows & light crevice work.</p>
+              <p>Vacuum, wipe-down, interior windows & light crevice work.</p>
               <p><span class="pill">Small $149</span><span class="pill">Medium $169</span><span class="pill">Large $199</span><span class="pill">XL $229</span></p>
               <p style="margin-top:10px"><a href="https://booknow.shinedesignaz.com/" class="cta">Book</a></p>
             </div>
           </article>
-          <article class="card">
+          <article class="card" id="level2">
             <img loading="lazy" src="/assets/images/services/interior-deep.webp" alt="Interior Deep Clean & Restore with steam and extraction">
             <div class="pad">
               <h3>Level 2 – Deep Clean & Restore</h3>
-              <p>Steam + targeted shampoo/extraction; plastics deep‑clean; glass.</p>
+              <p>Steam + targeted shampoo/extraction; plastics deep-clean; glass.</p>
               <p><span class="pill">Small $229</span><span class="pill">Medium $259</span><span class="pill">Large $289</span><span class="pill">XL $329</span></p>
               <p style="margin-top:10px"><a href="https://booknow.shinedesignaz.com/" class="cta">Book</a></p>
             </div>
           </article>
-          <article class="card">
+          <article class="card" id="level3">
             <img loading="lazy" src="/assets/images/services/interior-full.webp" alt="Elite Interior Transformation full steam and extraction">
             <div class="pad">
               <h3>Level 3 – Elite Interior Transformation</h3>
@@ -278,12 +387,12 @@
           </article>
         </div>
         <div style="margin-top:16px">
-          <h3>Interior Add‑Ons</h3>
+          <h3>Interior Add-Ons</h3>
           <ul class="list">
             <li>Pet Hair <strong>$39+</strong></li>
             <li>Spot/Stain <strong>$29+</strong></li>
             <li>Shampoo (per area) <strong>$99+</strong></li>
-            <li>Leather Clean & Condition <strong>$79</strong></li>
+            <li>Leather Conditioning <strong>$79</strong></li>
             <li>Protectant (fabric/trim) <strong>$79</strong></li>
             <li>Ozone Odor Treatment <strong>$89</strong></li>
             <li>Car Seat Sanitation <strong>$29</strong></li>
@@ -298,7 +407,7 @@
     <section class="section reviews">
       <div class="container">
         <h2>What Clients Say</h2>
-        <p class="lead" style="color:var(--muted);margin:0 0 16px">Hundreds of local 5‑star reviews.</p>
+        <p class="lead" style="color:var(--muted);margin:0 0 16px">Hundreds of local 5-star reviews.</p>
         <div class="review-grid">
           <blockquote class="quote">“My SUV interior looks brand new. Stains and dog hair completely gone.”</blockquote>
           <blockquote class="quote">“Smells fresh again and leather feels soft. Excellent work.”</blockquote>
@@ -336,7 +445,7 @@
         <h2>FAQ</h2>
         <details><summary>How long does it take?</summary><p>1.5–2.5 hrs for Level 1; 2.5–4 hrs for Level 2; up to 5 hrs for Level 3 depending on size & condition.</p></details>
         <details><summary>Can you remove smoke or spill odors?</summary><p>We tackle source contamination first, then can add ozone treatment. Severe cases may require multiple steps/visits.</p></details>
-        <details><summary>Is there an extra charge for heavy pet hair?</summary><p>Yes—level‑3 pet hair removal is an add‑on due to time and tool wear. We’ll confirm after inspection.</p></details>
+        <details><summary>Is there an extra charge for heavy pet hair?</summary><p>Yes—pet hair removal is an add-on due to extra time and skill required. We’ll confirm after inspection.</p></details>
       </div>
     </section>
   </main>

@@ -1,29 +1,30 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>RV &amp; Motorhome Detailing + Ceramic Coating | Shine Design — East Valley AZ</title>
-<meta content="RV &amp; motorhome detailing: wash &amp; wax, paint correction, ceramic coating, and roof resealing. Mobile service to home, storage or RV parks. Serving Gilbert, Mesa, Chandler, Queen Creek &amp; San Tan Valley." name="description"/>
-<link href="https://shinedesignaz.com/services/rv-detailing.html" rel="canonical"/>
-<link href="/assets/images/favicon.ico" rel="icon"/>
-<meta content="#0ea5e9" name="theme-color"/>
-<!-- OG/Twitter -->
-<meta content="website" property="og:type"/>
-<meta content="RV &amp; Motorhome Detailing | Shine Design (East Valley AZ)" property="og:title"/>
-<meta content="Professional RV detailing from basic wash to ceramic coating and roof resealing. Per-foot pricing." property="og:description"/>
-<meta content="https://shinedesignaz.com/services/rv-detailing.html" property="og:url"/>
-<meta content="/assets/images/services/rv-hero.webp" property="og:image"/>
-<meta content="summary_large_image" name="twitter:card"/>
-<meta content="RV &amp; Motorhome Detailing | Shine Design (East Valley AZ)" name="twitter:title"/>
-<meta content="Expert RV detailing, oxidation removal, ceramic coating and roof resealing services." name="twitter:description"/>
-<meta content="/assets/images/services/rv-hero.webp" name="twitter:image"/>
-<link as="image" href="/assets/images/hero-bg.webp" rel="preload"/>
-<!-- Fieldd Lead + Booking -->
-<script src="https://fieldd-scripts.s3.amazonaws.com/leadForm/fieldd-lead-form.js" type="text/javascript"></script>
-<style>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interior Detailing | Shine Design Mobile Detailing (East Valley AZ)</title>
+  <meta name="description" content="Interior detailing with vacuum, steam, shampoo & extraction, leather care, and odor/pet hair options. Serving Gilbert, Mesa, Chandler, Queen Creek & San Tan Valley.">
+  <link rel="canonical" href="https://shinedesignaz.com/services/interior-detailing.html">
+  <link rel="icon" href="/assets/images/favicon.ico">
+  <meta name="theme-color" content="#0ea5e9">
+  <!-- OG/Twitter -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Interior Detailing | Shine Design (East Valley AZ)">
+  <meta property="og:description" content="Deep interior cleaning with steam & extraction. Stain, odor & pet hair removal options. Book online in 60s.">
+  <meta property="og:url" content="https://shinedesignaz.com/services/interior-detailing.html">
+  <meta property="og:image" content="/assets/images/og-image.webp">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Interior Detailing | Shine Design (East Valley AZ)">
+  <meta name="twitter:description" content="Pro interior detailing with steam, extraction, leather care, and odor removal.">
+  <meta name="twitter:image" content="/assets/images/og-image.webp">
+  <link rel="preload" href="/assets/images/hero-bg.webp" as="image">
+
+  <!-- Fieldd Lead + Booking -->
+  <script type="text/javascript" src="https://fieldd-scripts.s3.amazonaws.com/leadForm/fieldd-lead-form.js"></script>
+
+  <style>
     :root{--brand:#0ea5e9;--brand-dark:#0284c7;--text:#0f172a;--muted:#475569;--bg:#fff}
     *{box-sizing:border-box}
     body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,Noto Sans,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";color:var(--text);background:var(--bg);line-height:1.6}
@@ -63,21 +64,25 @@
 
     /* Grids */
     .cards{display:grid;grid-template-columns:1fr;gap:16px}
-    @media(min-width:780px){.cards{grid-template-columns:repeat(2,1fr)}}
-    @media(min-width:1120px){.cards{grid-template-columns:repeat(4,1fr)}}
+    @media(min-width:720px){.cards{grid-template-columns:repeat(2,1fr)}}
+    @media(min-width:1024px){.cards{grid-template-columns:repeat(3,1fr)}}
     .card{border:1px solid #e2e8f0;border-radius:16px;overflow:hidden;background:#fff;display:flex;flex-direction:column}
     .card img{width:100%;height:180px;object-fit:cover}
     .card .pad{padding:16px}
     .card h3{margin:0 0 6px;font-size:20px}
     .card p{margin:0 0 12px;color:var(--muted)}
-    .pill{display:inline-block;font-size:12px;font-weight:700;padding:6px 10px;border-radius:999px;background:#e0f2fe;color:var(--brand-dark);margin-right:6px;margin-bottom:4px}
+    .pill{display:inline-block;font-size:12px;font-weight:700;padding:6px 10px;border-radius:999px;background:#e0f2fe;color:var(--brand-dark);margin-right:6px}
 
     .list{display:grid;gap:10px}
     .list li{list-style:none;padding-left:28px;position:relative}
-    .list li:before{content:"✔";position:absolute;left:0;top:0;color:#16a34a;font-weight:700}
+    .list li:before{content:"✓";position:absolute;left:0;top:0;color:#16a34a;font-weight:700}
 
     .split{display:grid;gap:18px}
     @media(min-width:980px){.split{grid-template-columns:1fr 1fr;align-items:center}}
+
+    .steps{counter-reset: step}
+    .steps li{list-style:none;border:1px solid #e2e8f0;border-radius:12px;padding:12px 14px;margin:0 0 10px}
+    .steps li:before{counter-increment: step;content:counters(step,"") ".";font-weight:800;margin-right:8px;color:var(--brand)}
 
     .cta-banner{background:linear-gradient(90deg,var(--brand),var(--brand-dark));color:#fff;border-radius:16px;padding:18px;display:grid;gap:10px;align-items:center}
     @media(min-width:780px){.cta-banner{grid-template-columns:1fr auto}}
@@ -94,101 +99,223 @@
     @media(min-width:920px){.foot-grid{grid-template-columns:repeat(4,1fr)}}
     .small{font-size:12px;color:#9ca3af}
     .micro-footer{background:#0a4259;color:#fff;text-align:center;padding:12px 0;font-size:14px;border-top:1px solid #134e69}
-    .micro-footer a{color:#93e4ff;font-weight:600}
+    .micro-footer a{color:#93c5fd;font-weight:600}
     .micro-footer a:hover{color:#fff;text-decoration:underline}
   </style>
-<link href="/header-styles.css" rel="stylesheet"/>
-<!-- JSON-LD: Service + FAQ + Breadcrumb -->
-<script type="application/ld+json">
+<link rel="stylesheet" href="/header-styles.css">
+
+  <!-- JSON-LD: WebSite + Brand + LocalBusiness + WebPage + Service (OfferCatalog) + FAQ + Breadcrumb -->
+  <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "Service",
-        "@id": "https://shinedesignaz.com/services/rv-detailing.html#service",
-        "name": "RV & Motorhome Detailing",
-        "provider": {"@type":"LocalBusiness","name":"Shine Design Mobile Detailing","@id":"https://shinedesignaz.com/#local"},
-        "areaServed": ["Gilbert AZ","Mesa AZ","Chandler AZ","Queen Creek AZ","San Tan Valley AZ","Scottsdale AZ","Tempe AZ"],
-        "serviceType": "RV and motorhome detailing",
-        "description": "Professional RV detailing including wash & wax, paint correction, ceramic coating, and roof resealing.",
-        "offers": {"@type":"AggregateOffer","priceCurrency":"USD","lowPrice":"15","highPrice":"175","offerCount":"5"}
+        "@type": "WebSite",
+        "@id": "https://shinedesignaz.com/#website",
+        "url": "https://shinedesignaz.com/",
+        "name": "Shine Design Mobile Detailing",
+        "publisher": { "@id": "https://shinedesignaz.com/#brand" },
+        "inLanguage": "en"
       },
       {
-        "@type":"FAQPage",
-        "@id":"https://shinedesignaz.com/services/rv-detailing.html#faq",
-        "mainEntity":[
-          {"@type":"Question","name":"Where do you service RVs?","acceptedAnswer":{"@type":"Answer","text":"At your home, storage lot, or RV park where allowed. We are fully mobile and self-contained."}},
-          {"@type":"Question","name":"Do you need hookups?","acceptedAnswer":{"@type":"Answer","text":"No! We bring our own water and power generator. We just need access to your RV."}},
-          {"@type":"Question","name":"How long does RV detailing take?","acceptedAnswer":{"@type":"Answer","text":"Basic wash: 2-3 hours. Machine wax: 4-5 hours. Paint correction: 6-8 hours. Ceramic coating: 1-2 days depending on size and condition."}}
+        "@type": "Brand",
+        "@id": "https://shinedesignaz.com/#brand",
+        "name": "Shine Design",
+        "url": "https://shinedesignaz.com/"
+      },
+      {
+        "@type": "LocalBusiness",
+        "@id": "https://shinedesignaz.com/#local",
+        "name": "Shine Design Mobile Detailing",
+        "url": "https://shinedesignaz.com/",
+        "telephone": "+14805288227"
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://shinedesignaz.com/services/interior-detailing.html#webpage",
+        "url": "https://shinedesignaz.com/services/interior-detailing.html",
+        "name": "Interior Detailing",
+        "isPartOf": { "@id": "https://shinedesignaz.com/#website" },
+        "breadcrumb": { "@id": "https://shinedesignaz.com/services/interior-detailing.html#breadcrumb" },
+        "about": { "@id": "https://shinedesignaz.com/services/interior-detailing.html#service" },
+        "inLanguage": "en"
+      },
+      {
+        "@type": "Service",
+        "@id": "https://shinedesignaz.com/services/interior-detailing.html#service",
+        "name": "Interior Detailing",
+        "description": "Vacuum, wipe-down, steam cleaning, shampoo & hot-water extraction, leather care, and odor/pet hair add-ons.",
+        "serviceType": "Automotive interior detailing",
+        "provider": { "@type": "LocalBusiness", "@id": "https://shinedesignaz.com/#local" },
+        "brand": { "@type": "Brand", "@id": "https://shinedesignaz.com/#brand" },
+        "url": "https://shinedesignaz.com/services/interior-detailing.html",
+        "areaServed": [
+          "Gilbert AZ","Mesa AZ","Chandler AZ","Queen Creek AZ","San Tan Valley AZ","Scottsdale AZ","Tempe AZ",
+          "Phoenix AZ","Apache Junction AZ","Gold Canyon AZ","Fountain Hills AZ"
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Interior Detailing Packages",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "name": "Level 1 — Refresh & Clean",
+              "url": "https://shinedesignaz.com/services/interior-detailing.html#level1",
+              "itemOffered": { "@type": "Service", "name": "Level 1 — Refresh & Clean" },
+              "priceSpecification": [
+                { "@type": "UnitPriceSpecification", "name": "Small",  "price": "149", "priceCurrency": "USD" },
+                { "@type": "UnitPriceSpecification", "name": "Medium", "price": "169", "priceCurrency": "USD" },
+                { "@type": "UnitPriceSpecification", "name": "Large",  "price": "199", "priceCurrency": "USD" },
+                { "@type": "UnitPriceSpecification", "name": "XL",     "price": "229", "priceCurrency": "USD" }
+              ],
+              "availability": "https://schema.org/InStock"
+            },
+            {
+              "@type": "Offer",
+              "name": "Level 2 — Deep Clean & Restore",
+              "url": "https://shinedesignaz.com/services/interior-detailing.html#level2",
+              "itemOffered": { "@type": "Service", "name": "Level 2 — Deep Clean & Restore" },
+              "priceSpecification": [
+                { "@type": "UnitPriceSpecification", "name": "Small",  "price": "229", "priceCurrency": "USD" },
+                { "@type": "UnitPriceSpecification", "name": "Medium", "price": "259", "priceCurrency": "USD" },
+                { "@type": "UnitPriceSpecification", "name": "Large",  "price": "289", "priceCurrency": "USD" },
+                { "@type": "UnitPriceSpecification", "name": "XL",     "price": "329", "priceCurrency": "USD" }
+              ],
+              "availability": "https://schema.org/InStock"
+            },
+            {
+              "@type": "Offer",
+              "name": "Level 3 — Elite Interior Transformation",
+              "url": "https://shinedesignaz.com/services/interior-detailing.html#level3",
+              "itemOffered": { "@type": "Service", "name": "Level 3 — Elite Interior Transformation" },
+              "priceSpecification": [
+                { "@type": "UnitPriceSpecification", "name": "Small",  "price": "399", "priceCurrency": "USD" },
+                { "@type": "UnitPriceSpecification", "name": "Medium", "price": "449", "priceCurrency": "USD" },
+                { "@type": "UnitPriceSpecification", "name": "Large",  "price": "509", "priceCurrency": "USD" },
+                { "@type": "UnitPriceSpecification", "name": "XL",     "price": "579", "priceCurrency": "USD" },
+                { "@type": "UnitPriceSpecification", "name": "XXL",    "price": "659", "priceCurrency": "USD" }
+              ],
+              "availability": "https://schema.org/InStock"
+            }
+          ]
+        },
+        "potentialAction": {
+          "@type": "ReserveAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://booknow.shinedesignaz.com/",
+            "inLanguage": "en",
+            "actionPlatform": [
+              "http://schema.org/DesktopWebPlatform",
+              "http://schema.org/MobileWebPlatform"
+            ]
+          }
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://shinedesignaz.com/services/interior-detailing.html#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How long does it take?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "1.5–2.5 hrs for Level 1; 2.5–4 hrs for Level 2; up to 5 hrs for Level 3 depending on size & condition."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can you remove smoke or spill odors?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We tackle source contamination first, then can add ozone treatment. Severe cases may require multiple steps/visits."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is there an extra charge for heavy pet hair?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes—Level 3 pet hair removal is an add-on due to time and tool wear. We’ll confirm after inspection."
+            }
+          }
         ]
       },
       {
-        "@type":"BreadcrumbList",
-        "itemListElement":[
-          {"@type":"ListItem","position":1,"name":"Home","item":"https://shinedesignaz.com/"},
-          {"@type":"ListItem","position":2,"name":"Services","item":"https://shinedesignaz.com/services/"},
-          {"@type":"ListItem","position":3,"name":"RV Detailing","item":"https://shinedesignaz.com/services/rv-detailing.html"}
+        "@type": "BreadcrumbList",
+        "@id": "https://shinedesignaz.com/services/interior-detailing.html#breadcrumb",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://shinedesignaz.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://shinedesignaz.com/services/" },
+          { "@type": "ListItem", "position": 3, "name": "Interior Detailing", "item": "https://shinedesignaz.com/services/interior-detailing.html" }
         ]
       }
     ]
   }
   </script>
 </head>
-<body><div data-chrome-path="/partials/header.html" data-chrome-version="2025-09-13" id="site-header"></div>
-<a class="sr-only" href="#main">Skip to content</a>
+<body>
+  <a class="sr-only" href="#main">Skip to content</a>
+  
+  <div id="site-header" data-chrome-path="/partials/header.html" data-chrome-version="2025-09-13"></div>
 
-<!-- HERO -->
-<section class="hero">
-<div class="container">
-<div class="kickers">
-<span>🚐 RV &amp; Motorhome</span>
-<span>🧼 Wash &amp; Wax</span>
-<span>✨ Paint Correction</span>
-<span>🛡️ Ceramic Coating</span>
-</div>
-<h1>RV &amp; Motorhome Detailing in the East Valley</h1>
-<p>Professional RV detailing from basic wash to complete paint correction and ceramic coating. We restore and protect RVs with proper products, oxidation removal, and long-lasting protection.</p>
-<div class="cta-wrap">
-<a class="cta" href="/rv-calculator.html">Calculate Price</a>
-<a class="cta-alt" href="#packages">See Packages</a>
-</div>
-<p class="small" style="margin-top:8px;color:#fff">Call/Text <a href="tel:+14805288227" style="color:#fff">(480) 528-8227</a></p>
-</div>
-</section>
-<!-- TRUST -->
-<section class="trust">
-<div class="container">
-<div class="row">
-<div class="item">✅ Insured • Fully Mobile</div>
-<div class="item">💧 Self-contained service</div>
-<div class="item">🚐 All RV types</div>
-<div class="item">🏆 200+ 5-Star Reviews</div>
-</div>
-</div>
-</section>
-<main id="main">
-<!-- Lead Form -->
-<section class="section" id="quote">
-<div class="container split">
-<div>
-<h2 style="margin-top:0">Free RV Detailing Quote</h2>
-<p class="lead" style="color:var(--muted)">Tell us your RV's length, type (Class A/B/C, travel trailer, fifth wheel), and condition. We'll provide custom per-foot pricing.</p>
-<ul class="list">
-<li>Service at home, storage lot, or RV park (where allowed)</li>
-<li>No hookups needed - we bring water and power</li>
-<li>Professional-grade products and equipment</li>
-<li>All RV types: motorhomes, travel trailers, fifth wheels, toy haulers</li>
-</ul>
-</div>
-<div>
-<fieldd-lead-form code="I-HCZQ"></fieldd-lead-form>
-<div id="fieldd-fallback" style="display:none;margin-top:12px">
-<iframe loading="lazy" src="https://shinedesignaz.fieldd.co" style="width:100%;max-width:480px;height:760px;border:1px solid #e2e8f0;border-radius:12px" title="Shine Design Booking"></iframe>
-<p class="small" style="color:#64748b;margin-top:8px">
-              If the embedded form doesn't load, <a href="https://shinedesignaz.fieldd.co" rel="noopener" target="_blank">open the booking page</a>.
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="kickers">
+        <span>🫧 Steam & Extraction</span>
+        <span>🐶 Pet Hair & Odor Options</span>
+        <span>🧴 Leather Clean & Condition</span>
+        <span>🚐 Mobile & Shop</span>
+      </div>
+      <h1>Interior Detailing in the East Valley</h1>
+      <p>Make your cabin feel new again with careful steam work, shampoo & extraction, and premium dressings. We tailor the level of cleaning to your vehicle and goals.</p>
+      <div class="cta-wrap">
+        <a class="cta" href="https://booknow.shinedesignaz.com/" rel="nofollow">Book Now</a>
+        <a class="cta-alt" href="#packages">See Packages</a>
+      </div>
+      <p class="small" style="margin-top:8px;color:#fff">Call/Text <a href="tel:+14805288227" style="color:#fff">(480) 528-8227</a></p>
+    </div>
+  </section>
+
+  <!-- TRUST -->
+  <section class="trust">
+    <div class="container">
+      <div class="row">
+        <div class="item">✅ Insured & Certified</div>
+        <div class="item">🧽 Steam & Hot-Water Extraction</div>
+        <div class="item">🐾 Pet Hair Specialists</div>
+        <div class="item">🏆 200+ 5-Star Reviews</div>
+      </div>
+    </div>
+  </section>
+
+  <main id="main">
+    <!-- Lead Form (with fallback) -->
+    <section class="section" id="quote">
+      <div class="container split">
+        <div>
+          <h2 style="margin-top:0">Free Interior Detail Quote</h2>
+          <p class="lead" style="color:var(--muted)">Tell us about your interior—kids, pets, spills, or just maintenance—and we’ll recommend the right level of cleaning.</p>
+          <ul class="list">
+            <li>Mobile or drop-off (Gilbert/San Tan Valley)</li>
+            <li>Steam, shampoo/extraction, leather care, stain & odor options</li>
+            <li>Pet hair specialists and fabric protection add-ons</li>
+          </ul>
+        </div>
+        <div>
+          <fieldd-lead-form code="I-HCZQ"></fieldd-lead-form>
+          <div id="fieldd-fallback" style="display:none;margin-top:12px">
+            <iframe src="https://shinedesignaz.fieldd.co" title="Shine Design Booking"
+                    style="width:100%;max-width:480px;height:760px;border:1px solid #e2e8f0;border-radius:12px"
+                    loading="lazy"></iframe>
+            <p class="small" style="color:#64748b;margin-top:8px">
+              If the embedded form doesn’t load, <a href="https://shinedesignaz.fieldd.co" target="_blank" rel="noopener">open the booking page</a>.
             </p>
-</div>
-<script>
+          </div>
+          <script>
             (function(){
               function boot(){
                 var el=document.querySelector('fieldd-lead-form');
@@ -203,191 +330,136 @@
               else{ document.addEventListener('DOMContentLoaded', boot); }
             })();
           </script>
-</div>
-</div>
-</section>
-<!-- Packages -->
-<section class="section" id="packages">
-<div class="container">
-<h2>RV Detailing Packages</h2>
-<p class="lead" style="color:var(--muted)">Per-foot pricing based on RV length. Final price varies by condition and access. All prices are estimates.</p>
-<div class="cards">
-<!-- Basic Wash & Spray Wax -->
-<article class="card">
-<img alt="RV wash and spray wax service" loading="lazy" src="/assets/images/services/rv-wash.webp"/>
-<div class="pad">
-<h3>Basic Wash &amp; Spray Wax</h3>
-<p>Complete RV wash, bug removal, and protective spray wax application.</p>
-<p><span class="pill">$15/ft</span></p>
-<ul class="list" style="font-size:14px;margin-top:12px">
-<li>Thorough hand wash</li>
-<li>Bug &amp; tar removal</li>
-<li>Tire &amp; wheel cleaning</li>
-<li>Spray wax protection</li>
-<li>Window cleaning</li>
-</ul>
-<p style="margin-top:10px"><a class="cta" href="/rv-calculator.html">Calculate</a></p>
-</div>
-</article>
-<!-- Wash & Machine Wax -->
-<article class="card">
-<img alt="RV machine wax service" loading="lazy" src="/assets/images/services/rv-machine-wax.webp"/>
-<div class="pad">
-<h3>Wash &amp; Machine Wax</h3>
-<p>Deep clean with professional machine-applied wax for lasting protection.</p>
-<p><span class="pill">$25/ft</span></p>
-<ul class="list" style="font-size:14px;margin-top:12px">
-<li>Everything in basic wash</li>
-<li>Clay bar treatment</li>
-<li>Machine-applied wax</li>
-<li>6-month protection</li>
-<li>UV protection</li>
-</ul>
-<p style="margin-top:10px"><a class="cta" href="/rv-calculator.html">Calculate</a></p>
-</div>
-</article>
-<!-- Paint Correction -->
-<article class="card">
-<img alt="RV paint correction service" loading="lazy" src="/assets/images/services/rv-correction.webp"/>
-<div class="pad">
-<h3>Paint Correction</h3>
-<p>Remove oxidation and restore original paint clarity.</p>
-<p><span class="pill">$40+/ft</span></p>
-<ul class="list" style="font-size:14px;margin-top:12px">
-<li>Full wash &amp; decontamination</li>
-<li>Multi-stage polishing</li>
-<li>Oxidation removal</li>
-<li>Swirl mark elimination</li>
-<li>High-gloss finish</li>
-</ul>
-<p class="small" style="color:var(--muted)">Price varies by oxidation severity</p>
-<p style="margin-top:10px"><a class="cta" href="/rv-calculator.html">Calculate</a></p>
-</div>
-</article>
-<!-- Ceramic Coating -->
-<article class="card">
-<img alt="RV ceramic coating" loading="lazy" src="/assets/images/services/rv-ceramic.webp"/>
-<div class="pad">
-<h3>Ceramic Coating</h3>
-<p>Ultimate protection with professional-grade ceramic coating.</p>
-<p><span class="pill">$60+/ft</span></p>
-<ul class="list" style="font-size:14px;margin-top:12px">
-<li>Paint correction included</li>
-<li>2-5 year protection</li>
-<li>Hydrophobic surface</li>
-<li>UV &amp; chemical resistance</li>
-<li>Easy maintenance</li>
-</ul>
-<p class="small" style="color:var(--muted)">Multiple coating options available</p>
-<p style="margin-top:10px"><a class="cta" href="/rv-calculator.html">Calculate</a></p>
-</div>
-</article>
-</div>
-<div style="margin-top:32px;padding:16px;background:#f8fafc;border-radius:12px">
-<h3 style="margin-top:0">Specialty Service: Roof Resealing</h3>
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:center">
-<div>
-<p style="font-size:18px;font-weight:700;color:var(--brand);margin:0">$175/ft</p>
-<p style="margin:8px 0">Professional roof resealing to prevent leaks and water damage</p>
-<ul class="list" style="font-size:14px">
-<li>Complete roof inspection</li>
-<li>Remove old sealant</li>
-<li>Clean and prep surfaces</li>
-<li>Apply premium sealant</li>
-<li>Warranty included</li>
-</ul>
-</div>
-<div style="text-align:center">
-<p style="font-weight:600;margin-bottom:12px">Essential maintenance for RV longevity</p>
-<a class="cta" href="/rv-calculator.html">Get Quote</a>
-</div>
-</div>
-</div>
-<div style="margin-top:32px;padding:16px;background:#f8fafc;border-radius:12px">
-<h3 style="margin-top:0">Popular Add-Ons</h3>
-<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
-<ul class="list">
-<li>Water-spot removal</li>
-<li>Awning clean &amp; treat</li>
-<li>Slide-out seals clean &amp; lube</li>
-<li>Black streak removal</li>
-<li>Wheel polishing</li>
-</ul>
-<ul class="list">
-<li>Engine bay detail (motorhomes)</li>
-<li>Rubber roof treatment</li>
-<li>Compartment cleaning</li>
-<li>Generator service area cleaning</li>
-<li>Tank flush &amp; sanitize</li>
-</ul>
-</div>
-</div>
-</div>
-</section>
-<!-- Process -->
-<section class="section">
-<div class="container split">
-<div>
-<h2>Why Professional RV Detailing?</h2>
-<p>Arizona's sun and dust are brutal on RVs. Professional detailing protects your investment and keeps your home-on-wheels looking and performing its best.</p>
-<ul class="list">
-<li>Remove stubborn black streaks and oxidation</li>
-<li>Restore faded paint and graphics</li>
-<li>Protect against UV damage and clear coat failure</li>
-<li>Prevent costly roof leaks with proper resealing</li>
-<li>Maintain resale value with regular professional care</li>
-</ul>
-</div>
-<img alt="Professional RV detailing process" src="/assets/images/services/rv-process.webp" style="width:100%;border-radius:16px;border:1px solid #e2e8f0"/>
-</div>
-</section>
-<!-- Reviews -->
-<section class="section reviews">
-<div class="container">
-<h2>What RV Owners Say</h2>
-<div class="review-grid">
-<blockquote class="quote">"They removed years of oxidation from our Class A. Looks like new again!"</blockquote>
-<blockquote class="quote">"Ceramic coating was a game-changer. So much easier to keep clean now."</blockquote>
-<blockquote class="quote">"Professional roof reseal saved us from water damage. Worth every penny."</blockquote>
-</div>
-</div>
-</section>
-<!-- Service Area -->
-<section class="section">
-<div class="container">
-<h2>Serving East Valley RV Owners</h2>
-<div class="cards">
-<article class="card"><div class="pad"><h3>Gilbert</h3><p><a href="/locations/gilbert.html">RV Detailing in Gilbert →</a></p></div></article>
-<article class="card"><div class="pad"><h3>Mesa</h3><p><a href="/locations/mesa.html">RV Detailing in Mesa →</a></p></div></article>
-<article class="card"><div class="pad"><h3>Chandler</h3><p><a href="/locations/chandler.html">RV Detailing in Chandler →</a></p></div></article>
-<article class="card"><div class="pad"><h3>Queen Creek</h3><p><a href="/locations/queen-creek.html">RV Detailing in Queen Creek →</a></p></div></article>
-</div>
-<p style="text-align:center;margin-top:24px;color:var(--muted)">We also service RVs at storage facilities, RV parks, and dealerships throughout Gilbert, Mesa, Chandler, Queen Creek, and San Tan Valley.</p>
-</div>
-</section>
-<!-- CTA Banner -->
-<section class="container cta-banner">
-<div>
-<h2 style="margin:0">Ready to get your RV detailed?</h2>
-<p style="margin:4px 0 0">Professional RV detailing with per-foot pricing. Use our calculator for an instant quote.</p>
-</div>
-<a class="cta" href="/rv-calculator.html" style="background:#fff;color:var(--brand)">Calculate Price</a>
-</section>
-<!-- FAQ -->
-<section class="section" id="faq">
-<div class="container">
-<h2>FAQ</h2>
-<details><summary>Do you need hookups?</summary><p>No! We bring our own water and power generator. We just need access to your RV.</p></details>
-<details><summary>Can you detail at storage facilities?</summary><p>Yes! We service RVs at homes, storage facilities, RV parks, and dealerships throughout the East Valley.</p></details>
-<details><summary>How often should I detail my RV?</summary><p>We recommend a thorough wash every 3-4 months, waxing twice yearly, and ceramic coating every 2-5 years for maximum protection.</p></details>
-<details><summary>Do you detail RV roofs?</summary><p>Yes! We clean and treat rubber, fiberglass, and aluminum roofs. We also offer professional roof resealing services.</p></details>
-<details><summary>What's the difference between spray wax and machine wax?</summary><p>Spray wax provides 1-2 months of protection and is great for maintenance. Machine wax lasts 6+ months with deeper protection and superior shine.</p></details>
-</div>
-</section>
-</main><div data-chrome-path="/partials/footer.html" data-chrome-version="2025-09-13" id="site-footer"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- What’s Included -->
+    <section class="section">
+      <div class="container split">
+        <div>
+          <h2>What’s Included</h2>
+          <ul class="list">
+            <li>Vacuum carpets, seats, mats & trunk</li>
+            <li>Wipe down interior surfaces (dash, console, cupholders)</li>
+            <li>Shampoo & extract carpets and upholstery; dog hair removal</li>
+            <li>Leather clean & condition</li>
+            <li>Odor, stain & pet hair removal options</li>
+          </ul>
+          <p style="margin-top:12px">Pair interior with <a href="/services/exterior-detailing.html">exterior detailing</a> for a full detail at the best value.</p>
+        </div>
+        <img src="/assets/images/services/interior-closeup.webp" alt="Steam cleaning vents and crevices" style="width:100%;border-radius:16px;border:1px solid #e2e8f0">
+      </div>
+    </section>
+
+    <!-- Packages (exact prices) -->
+    <section class="section" id="packages">
+      <div class="container">
+        <h2>Interior Detailing Packages</h2>
+        <p class="lead" style="color:var(--muted)">Transparent, size-based pricing. Pick the level that matches your vehicle’s condition.</p>
+        <div class="cards">
+          <article class="card" id="level1">
+            <img loading="lazy" src="/assets/images/services/interior-refresh.webp" alt="Interior Refresh & Clean package">
+            <div class="pad">
+              <h3>Level 1 – Refresh & Clean</h3>
+              <p>Vacuum, wipe-down, interior windows & light crevice work.</p>
+              <p><span class="pill">Small $149</span><span class="pill">Medium $169</span><span class="pill">Large $199</span><span class="pill">XL $229</span></p>
+              <p style="margin-top:10px"><a href="https://booknow.shinedesignaz.com/" class="cta">Book</a></p>
+            </div>
+          </article>
+          <article class="card" id="level2">
+            <img loading="lazy" src="/assets/images/services/interior-deep.webp" alt="Interior Deep Clean & Restore with steam and extraction">
+            <div class="pad">
+              <h3>Level 2 – Deep Clean & Restore</h3>
+              <p>Steam + targeted shampoo/extraction; plastics deep-clean; glass.</p>
+              <p><span class="pill">Small $229</span><span class="pill">Medium $259</span><span class="pill">Large $289</span><span class="pill">XL $329</span></p>
+              <p style="margin-top:10px"><a href="https://booknow.shinedesignaz.com/" class="cta">Book</a></p>
+            </div>
+          </article>
+          <article class="card" id="level3">
+            <img loading="lazy" src="/assets/images/services/interior-full.webp" alt="Elite Interior Transformation full steam and extraction">
+            <div class="pad">
+              <h3>Level 3 – Elite Interior Transformation</h3>
+              <p>Full steam & extraction, leather care, switches/vents detailed.</p>
+              <p><span class="pill">Small $399</span><span class="pill">Medium $449</span><span class="pill">Large $509</span><span class="pill">XL $579</span><span class="pill">XXL $659</span></p>
+              <p style="margin-top:10px"><a href="https://booknow.shinedesignaz.com/" class="cta">Book</a></p>
+            </div>
+          </article>
+        </div>
+        <div style="margin-top:16px">
+          <h3>Interior Add-Ons</h3>
+          <ul class="list">
+            <li>Pet Hair <strong>$39+</strong></li>
+            <li>Spot/Stain <strong>$29+</strong></li>
+            <li>Shampoo (per area) <strong>$99+</strong></li>
+            <li>Leather Clean & Condition <strong>$79</strong></li>
+            <li>Protectant (fabric/trim) <strong>$79</strong></li>
+            <li>Ozone Odor Treatment <strong>$89</strong></li>
+            <li>Car Seat Sanitation <strong>$29</strong></li>
+            <li>Headliner Spot <strong>$59</strong></li>
+            <li>Trunk/Cargo Detail <strong>$49</strong></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews -->
+    <section class="section reviews">
+      <div class="container">
+        <h2>What Clients Say</h2>
+        <p class="lead" style="color:var(--muted);margin:0 0 16px">Hundreds of local 5-star reviews.</p>
+        <div class="review-grid">
+          <blockquote class="quote">“My SUV interior looks brand new. Stains and dog hair completely gone.”</blockquote>
+          <blockquote class="quote">“Smells fresh again and leather feels soft. Excellent work.”</blockquote>
+          <blockquote class="quote">“They removed a coffee spill I thought was permanent. Highly recommend!”</blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service Area -->
+    <section class="section">
+      <div class="container">
+        <h2>Serving the East Valley & Greater Phoenix</h2>
+        <div class="cards">
+          <article class="card"><div class="pad"><h3>Gilbert</h3><p><a href="/locations/gilbert.html">Interior Detailing in Gilbert →</a></p></div></article>
+          <article class="card"><div class="pad"><h3>Mesa</h3><p><a href="/locations/mesa.html">Interior Detailing in Mesa →</a></p></div></article>
+          <article class="card"><div class="pad"><h3>Chandler</h3><p><a href="/locations/chandler.html">Interior Detailing in Chandler →</a></p></div></article>
+          <article class="card"><div class="pad"><h3>Queen Creek</h3><p><a href="/locations/queen-creek.html">Interior Detailing in Queen Creek →</a></p></div></article>
+          <article class="card"><div class="pad"><h3>San Tan Valley</h3><p><a href="/locations/san-tan-valley.html">Interior Detailing in San Tan Valley →</a></p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="container cta-banner">
+      <div>
+        <h2 style="margin:0">Ready for a fresh cabin?</h2>
+        <p style="margin:4px 0 0">Book online in 60 seconds. We bring water & power. 100% satisfaction guarantee.</p>
+      </div>
+      <a class="cta" href="https://booknow.shinedesignaz.com/" rel="nofollow">Book Now</a>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="container">
+        <h2>FAQ</h2>
+        <details><summary>How long does it take?</summary><p>1.5–2.5 hrs for Level 1; 2.5–4 hrs for Level 2; up to 5 hrs for Level 3 depending on size & condition.</p></details>
+        <details><summary>Can you remove smoke or spill odors?</summary><p>We tackle source contamination first, then can add ozone treatment. Severe cases may require multiple steps/visits.</p></details>
+        <details><summary>Is there an extra charge for heavy pet hair?</summary><p>Yes—level-3 pet hair removal is an add-on due to time and tool wear. We’ll confirm after inspection.</p></details>
+      </div>
+    </section>
+  </main>
+  <div id="site-footer" data-chrome-path="/partials/footer.html" data-chrome-version="2025-09-13"></div>
 
 
+  
+  </div>
 
-<script defer="" src="/navigation.js"></script>
-<script data-chrome-version="2025-09-13" defer="" src="/site-chrome.js"></script><script defer="" src="/action-buttons.js"></script></body>
+  
+  <script>document.querySelectorAll('footer .small').forEach(el=>el.innerHTML=el.innerHTML.replace('{year}', new Date().getFullYear()));</script>
+  
+  <script defer src="/site-chrome.js" data-chrome-version="2025-09-13"></script>
+  <script defer src="/navigation.js"></script>
+  <script defer src="/action-buttons.js"></script>
+</body>
 </html>
