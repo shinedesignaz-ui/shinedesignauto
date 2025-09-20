@@ -41,11 +41,21 @@
       menuBtn.focus({ preventScroll: true });
     }
 
-    // Open/close main drawer
-    menuBtn.addEventListener('click', openNav);
+    // Toggle menu on button click - THIS IS THE FIX
+    menuBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (drawer.hasAttribute('hidden')) {
+        openNav(e);
+      } else {
+        closeNav(e);
+      }
+    });
+    
+    // Close on Escape key
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && !drawer.hasAttribute('hidden')) closeNav(e);
     });
+    
     // Close when tapping any link or an element with data-nav-close inside the drawer
     drawer.addEventListener('click', (e) => {
       if (e.target.closest('[data-nav-close]') || e.target.closest('a')) closeNav(e);
