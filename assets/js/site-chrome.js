@@ -268,3 +268,5 @@
   mount('site-header', '/partials/header.html', wireHeader);
   mount('site-footer', '/partials/footer.html', fixYear);
 })();
+document.getElementById('site-header').innerHTML = fetchedHeaderHtml;
+window.dispatchEvent(new CustomEvent('site-chrome:header-mounted'));
