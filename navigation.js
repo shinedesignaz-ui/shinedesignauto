@@ -1,4 +1,5 @@
 // /navigation.js
+// ShineDesign Navigation Handler
 (() => {
   let wired = false;
   const qs  = (sel, root = document) => root.querySelector(sel);
@@ -26,15 +27,15 @@
 
     function openNav(e){
       if (e) e.preventDefault();
-      drawer.removeAttribute('hidden');      // ⟵ matches your CSS
-      html.classList.add('nav-open');        // (optional: lock scroll via CSS)
+      drawer.removeAttribute('hidden');
+      html.classList.add('nav-open');
       setExpanded(true);
       const first = drawer.querySelector('a,button,[tabindex]:not([tabindex="-1"])');
       if (first) first.focus({ preventScroll: true });
     }
     function closeNav(e){
       if (e) e.preventDefault();
-      drawer.setAttribute('hidden', '');     // ⟵ matches your CSS
+      drawer.setAttribute('hidden', '');
       html.classList.remove('nav-open');
       setExpanded(false);
       menuBtn.focus({ preventScroll: true });

@@ -1,4 +1,5 @@
 // /site-chrome.js
+// ShineDesign Header/Footer Injection
 (() => {
   const getVersion = () => {
     // Prefer the script tag's data attribute; fall back to placeholders
