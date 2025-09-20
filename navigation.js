@@ -1,94 +1,89 @@
-// /navigation.js — wires the header AFTER it's injected (works on every page)
-(function () {
+// /navigation.js
+(() => {
   let wired = false;
+  const qs  = (sel, root = document) => root.querySelector(sel);
+  const qsa = (sel, root = document) => Array.from(root.querySelectorAll(sel));
 
-  function wireNav() {
-    if (wired) return;
-    const header = document.querySelector('header.main-header, header#main-header, header.site-header');
-    if (!header) return;
+  function initNav() {
+    if (wired) return true;
 
-    const btn  = header.querySelector('.menu-btn');
-    const menu = document.getElementById('mobile-nav');
-    if (!btn || !menu) return; // header mounted but expected hooks missing
+    // Work inside injected header if present
+    const mount  = document.getElementById('site-header') || document;
+    const header = qs('#main-header', mount) || qs('.main-header', mount) || mount;
+    const drawer = qs('#mobile-nav', header) || qs('#mobile-nav', document);
+    const menuBtn = qs('.menu-btn', header);
 
-    // Ensure initial state
-    if (!menu.hasAttribute('hidden')) menu.setAttribute('hidden','');
-    btn.setAttribute('aria-controls', 'mobile-nav');
-    btn.setAttribute('aria-expanded', 'false');
+    if (!drawer || !menuBtn) return false; // header not injected yet
 
-    function openMenu(){
-      menu.removeAttribute('hidden');
-      btn.setAttribute('aria-expanded','true');
-      if (!btn.dataset._origLabel) btn.dataset._origLabel = btn.textContent;
-      btn.textContent = '✕';
-      document.documentElement.style.overflow = 'hidden';
+    // Ensure ARIA wiring
+    menuBtn.setAttribute('aria-controls', 'mobile-nav');
+    menuBtn.setAttribute('aria-expanded', 'false');
+    drawer.setAttribute('role', 'dialog');
+    drawer.setAttribute('aria-modal', 'true');
+
+    const html = document.documentElement;
+    const setExpanded = (val) => menuBtn.setAttribute('aria-expanded', String(val));
+
+    function openNav(e){
+      if (e) e.preventDefault();
+      drawer.removeAttribute('hidden');      // ⟵ matches your CSS
+      html.classList.add('nav-open');        // (optional: lock scroll via CSS)
+      setExpanded(true);
+      const first = drawer.querySelector('a,button,[tabindex]:not([tabindex="-1"])');
+      if (first) first.focus({ preventScroll: true });
     }
-    function closeMenu(){
-      menu.setAttribute('hidden','');
-      btn.setAttribute('aria-expanded','false');
-      if (btn.dataset._origLabel) btn.textContent = btn.dataset._origLabel;
-      document.documentElement.style.overflow = '';
-      // collapse any open mobile submenus
-      document.querySelectorAll('.mobile-dropdown').forEach((d)=>{
-        d.classList.remove('open');
-        const sub = d.querySelector('.mobile-submenu');
-        const b   = d.querySelector('button[aria-expanded]');
-        if (sub) sub.setAttribute('hidden','');
-        if (b)   b.setAttribute('aria-expanded','false');
-      });
+    function closeNav(e){
+      if (e) e.preventDefault();
+      drawer.setAttribute('hidden', '');     // ⟵ matches your CSS
+      html.classList.remove('nav-open');
+      setExpanded(false);
+      menuBtn.focus({ preventScroll: true });
     }
 
-    // Drawer toggle
-    btn.addEventListener('click', () => menu.hasAttribute('hidden') ? openMenu() : closeMenu());
+    // Open/close main drawer
+    menuBtn.addEventListener('click', openNav);
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !drawer.hasAttribute('hidden')) closeNav(e);
+    });
+    // Close when tapping any link or an element with data-nav-close inside the drawer
+    drawer.addEventListener('click', (e) => {
+      if (e.target.closest('[data-nav-close]') || e.target.closest('a')) closeNav(e);
+    });
 
-    // Click-away & ESC to close
-    document.addEventListener('click', (e) => {
-      if (!menu.hasAttribute('hidden') && !btn.contains(e.target) && !menu.contains(e.target)) closeMenu();
-    }, { passive: true });
-    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !menu.hasAttribute('hidden')) closeMenu(); });
-
-    // Mobile accordion (one open at a time)
-    document.querySelectorAll('.mobile-dropdown').forEach((block) => {
-      const toggle  = block.querySelector('button');
-      const submenu = block.querySelector('.mobile-submenu');
-      if (!toggle || !submenu) return;
-
-      toggle.setAttribute('aria-expanded', 'false');
-      submenu.setAttribute('hidden','');
-
-      toggle.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const willOpen = toggle.getAttribute('aria-expanded') !== 'true';
-
-        document.querySelectorAll('.mobile-dropdown').forEach((d) => {
-          const b = d.querySelector('button');
-          const s = d.querySelector('.mobile-submenu');
-          d.classList.remove('open');
-          if (b) b.setAttribute('aria-expanded','false');
-          if (s) s.setAttribute('hidden','');
-        });
-
-        if (willOpen) {
-          block.classList.add('open');
-          toggle.setAttribute('aria-expanded','true');
-          submenu.removeAttribute('hidden');
-        }
+    // Wire MOBILE submenus (each .mobile-dropdown button toggles its .mobile-submenu)
+    qsa('#mobile-nav .mobile-dropdown', header).forEach(group => {
+      const btn   = qs('button', group);
+      const panel = qs('.mobile-submenu', group);
+      if (!btn || !panel) return;
+      btn.addEventListener('click', () => {
+        const isOpen = group.classList.toggle('open');
+        btn.setAttribute('aria-expanded', String(isOpen));
+        if (isOpen) panel.removeAttribute('hidden'); else panel.setAttribute('hidden', '');
       });
     });
 
+    // Improve DESKTOP dropdowns for keyboard users
+    qsa('.nav-dropdown', header).forEach(dd => {
+      const trigger = qs('a', dd);
+      const menu = qs('.dropdown-menu', dd);
+      if (!trigger || !menu) return;
+      trigger.addEventListener('focus', () => dd.classList.add('open'));
+      trigger.addEventListener('blur',  () => dd.classList.remove('open'));
+      menu.addEventListener('mouseenter', () => dd.classList.add('open'));
+      menu.addEventListener('mouseleave', () => dd.classList.remove('open'));
+    });
+
     wired = true;
+    return true;
   }
 
-  // Try now (covers pages with inlined header)
-  wireNav();
-
-  // Wire as soon as the injector signals the header is mounted
-  window.addEventListener('site-chrome:header-mounted', wireNav);
-
-  // Fallback: if no event fired, watch the mount point for injected content
-  const mount = document.getElementById('site-header');
-  if (mount) {
-    const mo = new MutationObserver(() => { wireNav(); if (wired) mo.disconnect(); });
-    mo.observe(mount, { childList: true, subtree: true });
+  // Try now; otherwise wait for header injection
+  if (!initNav()) {
+    window.addEventListener('chrome:ready', () => initNav(), { once: true });
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', () => initNav(), { once: true });
+    }
+    const mo = new MutationObserver(() => { if (initNav()) mo.disconnect(); });
+    mo.observe(document.body, { childList: true, subtree: true });
   }
 })();
