@@ -401,12 +401,26 @@
 <!-- Fallback: ensure hamburger works even if chrome didn’t wire yet -->
 <script>
   window.addEventListener('DOMContentLoaded', function () {
-    function ensureMenuWired() {
+    let attempts = 0;
+
+    function ensureMenuWired(forceFallback) {
       if (typeof window._wireNavOnce === 'function') window._wireNavOnce();
 
       const btn = document.querySelector('.menu-btn');
       let menu = document.getElementById('mobile-nav');
+
       if (!btn) return false;
+
+      const sharedWired =
+        btn.dataset.navWired === 'shared' ||
+        (menu && menu.dataset.navWired === 'shared') ||
+        window.__SHARED_NAV_WIRED__;
+      if (sharedWired) return true;
+
+      const sharedLoaded = window.__SHARED_NAV_LOADED__;
+      if (!forceFallback && sharedLoaded) {
+        return false;
+      }
 
       // Create a simple drawer if the partial didn’t provide one
       if (!menu) {
@@ -429,6 +443,8 @@
 
       if (btn.dataset._wired === '1') return true;
       btn.dataset._wired = '1';
+      btn.dataset.navWired = 'fallback';
+      if (menu) menu.dataset.navWired = 'fallback';
       btn.setAttribute('aria-controls','mobile-nav');
       btn.setAttribute('aria-expanded','false');
 
@@ -446,8 +462,11 @@
       return true;
     }
 
-    // Try immediately; if header inject is slightly late, try again shortly
-    if (!ensureMenuWired()) setTimeout(ensureMenuWired, 150);
+    (function retry() {
+      attempts += 1;
+      const forceFallback = window.__SHARED_NAV_LOADED__ && attempts > 5;
+      if (!ensureMenuWired(forceFallback) && attempts < 20) setTimeout(retry, 150);
+    })();
   });
   </script>
 <!-- Analytics & page interactions -->

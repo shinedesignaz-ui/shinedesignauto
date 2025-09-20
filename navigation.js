@@ -1,5 +1,6 @@
 // /navigation.js — wires the header AFTER it's injected (works on every page)
 (function () {
+  window.__SHARED_NAV_LOADED__ = true;
   let wired = false;
 
   function wireNav() {
@@ -40,6 +41,11 @@
 
     // Drawer toggle
     btn.addEventListener('click', () => menu.hasAttribute('hidden') ? openMenu() : closeMenu());
+
+    // Mark as wired so fallbacks can short-circuit
+    btn.dataset.navWired = 'shared';
+    menu.dataset.navWired = 'shared';
+    window.__SHARED_NAV_WIRED__ = true;
 
     // Click-away & ESC to close
     document.addEventListener('click', (e) => {

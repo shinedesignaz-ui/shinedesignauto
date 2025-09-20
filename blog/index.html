@@ -701,14 +701,6 @@
       });
     });
     
-    // Mobile menu toggle
-    document.querySelector('.menu-btn')?.addEventListener('click', function() {
-      const mobileNav = document.getElementById('mobile-nav');
-      const isExpanded = this.getAttribute('aria-expanded') === 'true';
-      this.setAttribute('aria-expanded', !isExpanded);
-      mobileNav.hidden = isExpanded;
-    });
-    
     // Newsletter form
     document.querySelector('.newsletter-form')?.addEventListener('submit', function(e) {
       e.preventDefault();
