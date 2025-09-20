@@ -30,13 +30,13 @@
     if (!document.getElementById('site-header')) {
       const top = document.createElement('div');
       top.id = 'site-header';
-      top.dataset.chromePath = '/partials/header.html';
+      top.dataset.chromePath = '/partials/header';
       document.body.insertBefore(top, document.body.firstChild);
     }
     if (!document.getElementById('site-footer')) {
       const bottom = document.createElement('div');
       bottom.id = 'site-footer';
-      bottom.dataset.chromePath = '/partials/footer.html';
+      bottom.dataset.chromePath = '/partials/footer';
       document.body.appendChild(bottom);
     }
 
