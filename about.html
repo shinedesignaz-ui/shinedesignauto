@@ -64,7 +64,6 @@
     @media(min-width:780px){.cta-banner{grid-template-columns:1fr auto}}
   </style>
 <!-- Shared header/footer styles (one include) -->
-<link href="/header-styles.css" rel="stylesheet"/>
 <!-- JSON-LD: AboutPage + Organization + Breadcrumb -->
 <script type="application/ld+json">
   {
@@ -79,6 +78,11 @@
     ]
   }
   </script>
+
+
+  <link rel="preload" href="/header-styles.css?v=2025-09-19-06" as="style">
+<link rel="stylesheet" href="/header-styles.css?v=2025-09-19-06" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="/header-styles.css?v=2025-09-19-06"></noscript>
 </head>
 <body><div data-chrome-path="/partials/header.html" data-chrome-version="2025-09-13" id="site-header"></div>
 <!-- PLACEHOLDERS MUST BE IN <body>, not <head> -->
@@ -205,5 +209,10 @@
 
 <!-- Your site scripts -->
 
-<script data-chrome-version="2025-09-13" defer="" src="/site-chrome.js"></script><script defer="" src="/navigation.js"></script><script defer="" src="/action-buttons.js"></script></body>
+
+
+  <script defer src="/site-chrome.js?v=2025-09-19-06" data-chrome-version="2025-09-19-06"></script>
+<script defer src="/navigation.js?v=2025-09-19-06"></script>
+<script defer src="/action-buttons.js?v=2025-09-19-06"></script>
+</body>
 </html>

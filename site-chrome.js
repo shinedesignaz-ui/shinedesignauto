@@ -1,8 +1,8 @@
 // /site-chrome.js — minimal, reliable injector for header/footer partials
 (function () {
-  // Read a cache-busting version from the script tag (e.g., data-chrome-version="2025-09-19")
+  // Read a cache-busting version from the script tag (e.g., data-chrome-version="2025-09-19-03")
   const self = document.currentScript;
-  const VERSION = (self && (self.dataset.chromeVersion || self.getAttribute('data-chrome-version'))) || '1';
+  const VERSION = (self && (self.dataset.chromeVersion || self.getAttribute('data-chrome-version'))) || '2025-09-19-03';
 
   // Helper: add ?v=VERSION to a URL
   const withVer = (url) => url + (url.includes('?') ? '&' : '?') + 'v=' + encodeURIComponent(VERSION);

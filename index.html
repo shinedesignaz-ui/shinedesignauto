@@ -27,10 +27,8 @@
   <link rel="preconnect" href="https://fieldd-scripts.s3.amazonaws.com" crossorigin>
   <link rel="preconnect" href="https://shinedesignaz.fieldd.co" crossorigin>
 
-  <!-- Header styles: non-blocking load -->
-  <link rel="preload" href="/header-styles.css" as="style">
-  <link rel="stylesheet" href="/header-styles.css" media="print" onload="this.media='all'">
-  <noscript><link rel="stylesheet" href="/header-styles.css"></noscript>
+  <!-- Header styles: non-blocking load (cache-busted) -->
+  <noscript></noscript>
 
   <!-- Page CSS (critical + accessibility) -->
   <style>
@@ -127,45 +125,18 @@
   </style>
 
   <!-- JSON-LD (unchanged) -->
-  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"WebSite","@id":"https://shinedesignaz.com/#website","url":"https://shinedesignaz.com/","name":"Shine Design Mobile Detailing","publisher":{"@id":"https://shinedesignaz.com/#brand"},"potentialAction":{"@type":"SearchAction","target":"https://shinedesignaz.com/?q={search_term_string}","query-input":"required name=search_term_string"}},{"@type":"Organization","@id":"https://shinedesignaz.com/#brand","name":"Shine Design Mobile Detailing","url":"https://shinedesignaz.com/","logo":{"@type":"ImageObject","url":"https://shinedesignaz.com/assets/images/logo.webp"},"sameAs":["https://twitter.com/shinedesignaz","https://www.facebook.com/shinedesigndetail/","https://www.youtube.com/@shinedesignaz","https://www.instagram.com/shinedesigndetail/","https://www.linkedin.com/company/shinedesignaz/","https://www.pinterest.com/shinedesignaz/","https://www.crunchbase.com/organization/shine-design-mobile-detailing","https://www.yelp.com/biz/shine-design-mobile-detailing-gilbert-2?rr=5","https://www.bbb.org/us/az/san-tan-valley/profile/auto-detailing/shine-design-mobile-detailing-1126-1000147089","https://www.tiktok.com/@shinedesigndetailing"]},{"@type":"LocalBusiness","@id":"https://shinedesignaz.com/#local","name":"Shine Design Mobile Detailing","url":"https://shinedesignaz.com/","image":"https://shinedesignaz.com/assets/images/og-image.jpg","logo":{"@type":"ImageObject","url":"https://shinedesignaz.com/assets/images/logo.webp"},"telephone":"+14805288227","priceRange":"$$","additionalType":"https://schema.org/AutoWash","serviceArea":[{"@type":"Place","name":"Gilbert, AZ"},{"@type":"Place","name":"Mesa, AZ"},{"@type":"Place","name":"Chandler, AZ"},{"@type":"Place","name":"Queen Creek, AZ"},{"@type":"Place","name":"San Tan Valley, AZ"},{"@type":"Place","name":"Scottsdale, AZ"},{"@type":"Place","name":"Tempe, AZ"},{"@type":"Place","name":"Phoenix, AZ"}],"knowsAbout":["mobile auto detailing","interior detailing","exterior detailing","ceramic coating","paint protection film","PPF","paint correction","window tint","fleet detailing","boat detailing"],"sameAs":["https://twitter.com/shinedesignaz","https://www.facebook.com/shinedesigndetail/","https://www.youtube.com/@shinedesignaz","https://www.instagram.com/shinedesigndetail/","https://www.linkedin.com/company/shinedesignaz/","https://www.pinterest.com/shinedesignaz/","https://www.crunchbase.com/organization/shine-design-mobile-detailing","https://www.yelp.com/biz/shine-design-mobile-detailing-gilbert-2?rr=5","https://www.bbb.org/us/az/san-tan-valley/profile/auto-detailing/shine-design-mobile-detailing-1126-1000147089","https://www.tiktok.com/@shinedesigndetailing","https://g.page/r/CU3j316NmdMlEBM/review"],"hasMap":"https://g.page/r/CU3j316NmdMlEBM/review","aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":200},"potentialAction":[{"@type":"ReserveAction","target":"https://booknow.shinedesignaz.com/","name":"Book Online"},{"@type":"ReviewAction","target":"https://search.google.com/local/writereview?placeid=2725691031950451533"}]},{"@type":"WebPage","@id":"https://shinedesignaz.com/#homepage","url":"https://shinedesignaz.com/","name":"Shine Design: Mobile Detailing in Gilbert & East Valley AZ","isPartOf":{"@id":"https://shinedesignaz.com/#website"},"primaryImageOfPage":{"@type":"ImageObject","url":"https://shinedesignaz.com/assets/images/og-image.jpg"}},{"@type":"ItemList","@id":"https://shinedesignaz.com/#top-services","name":"Top Services","itemListElement":[{"@type":"ListItem","position":1,"name":"Mobile Detailing","url":"https://shinedesignaz.com/services/mobile-detailing.html"},{"@type":"ListItem","position":2,"name":"Interior Detailing","url":"https://shinedesignaz.com/services/interior-detailing.html"},{"@type":"ListItem","position":3,"name":"Exterior Detailing","url":"https://shinedesignaz.com/services/exterior-detailing.html"},{"@type":"ListItem","position":4,"name":"Paint Correction","url":"https://shinedesignaz.com/services/paint-correction.html"},{"@type":"ListItem","position":5,"name":"Ceramic Coating","url":"https://shinedesignaz.com/services/ceramic-coating.html"},{"@type":"ListItem","position":6,"name":"Paint Protection Film (PPF)","url":"https://shinedesignaz.com/services/paint-protection-film.html"},{"@type":"ListItem","position":7,"name":"Window Tinting","url":"https://shinedesignaz.com/services/window-tinting.html"}]},{"@type":"Service","@id":"https://shinedesignaz.com/#service-mobile","serviceType":"Mobile auto detailing","alternateName":["car detailing","auto detailing"],"provider":{"@id":"https://shinedesignaz.com/#local"},"areaServed":"East Valley, AZ","offers":{"@type":"Offer","priceCurrency":"USD","url":"https://shinedesignaz.com/pricing/mobile-detailing.html","priceSpecification":{"@type":"PriceSpecification","minPrice":99,"priceCurrency":"USD"}}},{"@type":"Service","@id":"https://shinedesignaz.com/#service-interior","serviceType":"Interior detailing","alternateName":["car interior cleaning","steam cleaning","shampoo & extraction"],"provider":{"@id":"https://shinedesignaz.com/#local"},"areaServed":"East Valley, AZ","offers":{"@type":"Offer","priceCurrency":"USD","url":"https://shinedesignaz.com/pricing/interior-detailing.html","priceSpecification":{"@type":"PriceSpecification","minPrice":149,"priceCurrency":"USD"}}},{"@type":"Service","@id":"https://shinedesignaz.com/#service-exterior","serviceType":"Exterior detailing","alternateName":["wash & wax","decon & seal"],"provider":{"@id":"https://shinedesignaz.com/#local"},"areaServed":"East Valley, AZ","offers":{"@type":"Offer","priceCurrency":"USD","url":"https://shinedesignaz.com/pricing/exterior-detailing.html","priceSpecification":{"@type":"PriceSpecification","minPrice":99,"priceCurrency":"USD"}}},{"@type":"Service","@id":"https://shinedesignaz.com/#service-correction","serviceType":"Paint correction","alternateName":["polishing","swirl removal","cut & polish"],"provider":{"@id":"https://shinedesignaz.com/#local"},"areaServed":"East Valley, AZ","offers":{"@type":"Offer","priceCurrency":"USD","url":"https://shinedesignaz.com/services/paint-correction.html","priceSpecification":{"@type":"PriceSpecification","minPrice":499,"priceCurrency":"USD"}}},{"@type":"Service","@id":"https://shinedesignaz.com/#service-ceramic","serviceType":"Ceramic coating","alternateName":["nano ceramic coating","graphene coating"],"provider":{"@id":"https://shinedesignaz.com/#local"},"areaServed":"East Valley, AZ","offers":{"@type":"Offer","priceCurrency":"USD","url":"https://shinedesignaz.com/pricing/ceramic-coating.html","priceSpecification":{"@type":"PriceSpecification","minPrice":899,"priceCurrency":"USD"}}},{"@type":"Service","@id":"https://shinedesignaz.com/#service-ppf","serviceType":"Paint protection film","alternateName":["PPF","clear bra"],"provider":{"@id":"https://shinedesignaz.com/#local"},"areaServed":"East Valley, AZ","offers":{"@type":"Offer","priceCurrency":"USD","url":"https://shinedesignaz.com/services/paint-protection-film.html"}},{"@type":"Service","@id":"https://shinedesignaz.com/#service-tint","serviceType":"Window tinting","alternateName":["ceramic tint","automotive tint"],"provider":{"@id":"https://shinedesignaz.com/#local"},"areaServed":"East Valley, AZ","offers":{"@type":"Offer","priceCurrency":"USD","url":"https://shinedesignaz.com/pricing/window-tint.html","priceSpecification":{"@type":"PriceSpecification","minPrice":349,"priceCurrency":"USD"}}},{"@type":"FAQPage","@id":"https://shinedesignaz.com/#faq","mainEntity":[{"@type":"Question","name":"Do you come to my home or office?","acceptedAnswer":{"@type":"Answer","text":"Yes—we're mobile across Gilbert, Mesa, Chandler, Queen Creek and the East Valley."}},{"@type":"Question","name":"How long does a full detail take?","acceptedAnswer":{"@type":"Answer","text":"Most full details take 3–5 hours depending on size and condition."}},{"@type":"Question","name":"Is ceramic coating worth it in Arizona heat?","acceptedAnswer":{"@type":"Answer","text":"Yes—ceramic adds UV resistance and makes washing faster while protecting clear coat."}}]},{"@type":"BreadcrumbList","@id":"https://shinedesignaz.com/#breadcrumbs","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://shinedesignaz.com/"}]}]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{ "@type":"WebSite","@id":"https://shinedesignaz.com/#website","url":"https://shinedesignaz.com/","name":"Shine Design Mobile Detailing","publisher":{"@id":"https://shinedesignaz.com/#brand"},"potentialAction":{"@type":"SearchAction","target":"https://shinedesignaz.com/?q={search_term_string}","query-input":"required name=search_term_string"}},{ "@type":"Organization","@id":"https://shinedesignaz.com/#brand","name":"Shine Design Mobile Detailing","url":"https://shinedesignaz.com/","logo":{"@type":"ImageObject","url":"https://shinedesignaz.com/assets/images/logo.webp"},"sameAs":["https://twitter.com/shinedesignaz","https://www.facebook.com/shinedesigndetail/","https://www.youtube.com/@shinedesignaz","https://www.instagram.com/shinedesigndetail/","https://www.linkedin.com/company/shinedesignaz/","https://www.pinterest.com/shinedesignaz/","https://www.crunchbase.com/organization/shine-design-mobile-detailing","https://www.yelp.com/biz/shine-design-mobile-detailing-gilbert-2?rr=5","https://www.bbb.org/us/az/san-tan-valley/profile/auto-detailing/shine-design-mobile-detailing-1126-1000147089","https://www.tiktok.com/@shinedesigndetailing"]},{ "@type":"LocalBusiness","@id":"https://shinedesignaz.com/#local","name":"Shine Design Mobile Detailing","url":"https://shinedesignaz.com/","image":"https://shinedesignaz.com/assets/images/og-image.jpg","logo":{"@type":"ImageObject","url":"https://shinedesignaz.com/assets/images/logo.webp"},"telephone":"+14805288227","priceRange":"$$","additionalType":"https://schema.org/AutoWash","serviceArea":[{"@type":"Place","name":"Gilbert, AZ"},{"@type":"Place","name":"Mesa, AZ"},{"@type":"Place","name":"Chandler, AZ"},{"@type":"Place","name":"Queen Creek, AZ"},{"@type":"Place","name":"San Tan Valley, AZ"},{"@type":"Place","name":"Scottsdale, AZ"},{"@type":"Place","name":"Tempe, AZ"},{"@type":"Place","name":"Phoenix, AZ"}],"knowsAbout":["mobile auto detailing","interior detailing","exterior detailing","ceramic coating","paint protection film","PPF","paint correction","window tint","fleet detailing","boat detailing"],"sameAs":["https://twitter.com/shinedesignaz","https://www.facebook.com/shinedesigndetail/","https://www.youtube.com/@shinedesignaz","https://www.instagram.com/shinedesigndetail/","https://www.linkedin.com/company/shinedesignaz/","https://www.pinterest.com/shinedesignaz/","https://www.crunchbase.com/organization/shine-design-mobile-detailing","https://www.yelp.com/biz/shine-design-mobile-detailing-gilbert-2?rr=5","https://www.bbb.org/us/az/san-tan-valley/profile/auto-detailing/shine-design-mobile-detailing-1126-1000147089","https://www.tiktok.com/@shinedesigndetailing","https://g.page/r/CU3j316NmdMlEBM/review"],"hasMap":"https://g.page/r/CU3j316NmdMlEBM/review","aggregateRating":{"@type":"AggregateRating","ratingValue":"4.9","reviewCount":200},"potentialAction":[{"@type":"ReserveAction","target":"https://booknow.shinedesignaz.com/","name":"Book Online"},{"@type":"ReviewAction","target":"https://search.google.com/local/writereview?placeid=2725691031950451533"}]},{ "@type":"WebPage","@id":"https://shinedesignaz.com/#homepage","url":"https://shinedesignaz.com/","name":"Shine Design: Mobile Detailing in Gilbert & East Valley AZ","isPartOf":{"@id":"https://shinedesignaz.com/#website"},"primaryImageOfPage":{"@type":"ImageObject","url":"https://shinedesignaz.com/assets/images/og-image.jpg"}},{ "@type":"ItemList","@id":"https://shinedesignaz.com/#top-services","name":"Top Services","itemListElement":[{"@type":"ListItem","position":1,"name":"Mobile Detailing","url":"https://shinedesignaz.com/services/mobile-detailing.html"},{"@type":"ListItem","position":2,"name":"Interior Detailing","url":"https://shinedesignaz.com/services/interior-detailing.html"},{"@type":"ListItem","position":3,"name":"Exterior Detailing","url":"https://shinedesignaz.com/services/exterior-detailing.html"},{"@type":"ListItem","position":4,"name":"Paint Correction","url":"https://shinedesignaz.com/services/paint-correction.html"},{"@type":"ListItem","position":5,"name":"Ceramic Coating","url":"https://shinedesignaz.com/services/ceramic-coating.html"},{"@type":"ListItem","position":6,"name":"Paint Protection Film (PPF)","url":"https://shinedesignaz.com/services/paint-protection-film.html"},{"@type":"ListItem","position":7,"name":"Window Tinting","url":"https://shinedesignaz.com/services/window-tinting.html"}]},{ "@type":"Service","@id":"https://shinedesignaz.com/#service-mobile","serviceType":"Mobile auto detailing","alternateName":["car detailing","auto detailing"],"provider":{"@id":"https://shinedesignaz.com/#local"},"areaServed":"East Valley, AZ","offers":{"@type":"Offer","priceCurrency":"USD","url":"https://shinedesignaz.com/pricing/mobile-detailing.html","priceSpecification":{"@type":"PriceSpecification","minPrice":99,"priceCurrency":"USD"}}},{ "@type":"Service","@id":"https://shinedesignaz.com/#service-interior","serviceType":"Interior detailing","alternateName":["car interior cleaning","steam cleaning","shampoo & extraction"],"provider":{"@id":"https://shinedesignaz.com/#local"},"areaServed":"East Valley, AZ","offers":{"@type":"Offer","priceCurrency":"USD","url":"https://shinedesignaz.com/pricing/interior-detailing.html","priceSpecification":{"@type":"PriceSpecification","minPrice":149,"priceCurrency":"USD"}}},{ "@type":"Service","@id":"https://shinedesignaz.com/#service-exterior","serviceType":"Exterior detailing","alternateName":["wash & wax","decon & seal"],"provider":{"@id":"https://shinedesignaz.com/#local"},"areaServed":"East Valley, AZ","offers":{"@type":"Offer","priceCurrency":"USD","url":"https://shinedesignaz.com/pricing/exterior-detailing.html","priceSpecification":{"@type":"PriceSpecification","minPrice":99,"priceCurrency":"USD"}}},{ "@type":"Service","@id":"https://shinedesignaz.com/#service-correction","serviceType":"Paint correction","alternateName":["polishing","swirl removal","cut & polish"],"provider":{"@id":"https://shinedesignaz.com/#local"},"areaServed":"East Valley, AZ","offers":{"@type":"Offer","priceCurrency":"USD","url":"https://shinedesignaz.com/services/paint-correction.html","priceSpecification":{"@type":"PriceSpecification","minPrice":499,"priceCurrency":"USD"}}},{ "@type":"Service","@id":"https://shinedesignaz.com/#service-ceramic","serviceType":"Ceramic coating","alternateName":["nano ceramic coating","graphene coating"],"provider":{"@id":"https://shinedesignaz.com/#local"},"areaServed":"East Valley, AZ","offers":{"@type":"Offer","priceCurrency":"USD","url":"https://shinedesignaz.com/pricing/ceramic-coating.html","priceSpecification":{"@type":"PriceSpecification","minPrice":899,"priceCurrency":"USD"}}},{ "@type":"Service","@id":"https://shinedesignaz.com/#service-ppf","serviceType":"Paint protection film","alternateName":["PPF","clear bra"],"provider":{"@id":"https://shinedesignaz.com/#local"},"areaServed":"East Valley, AZ","offers":{"@type":"Offer","priceCurrency":"USD","url":"https://shinedesignaz.com/services/paint-protection-film.html"}},{ "@type":"Service","@id":"https://shinedesignaz.com/#service-tint","serviceType":"Window tinting","alternateName":["ceramic tint","automotive tint"],"provider":{"@id":"https://shinedesignaz.com/#local"},"areaServed":"East Valley, AZ","offers":{"@type":"Offer","priceCurrency":"USD","url":"https://shinedesignaz.com/pricing/window-tint.html","priceSpecification":{"@type":"PriceSpecification","minPrice":349,"priceCurrency":"USD"}}},{ "@type":"FAQPage","@id":"https://shinedesignaz.com/#faq","mainEntity":[{"@type":"Question","name":"Do you come to my home or office?","acceptedAnswer":{"@type":"Answer","text":"Yes—we're mobile across Gilbert, Mesa, Chandler, Queen Creek and the East Valley."}},{"@type":"Question","name":"How long does a full detail take?","acceptedAnswer":{"@type":"Answer","text":"Most full details take 3–5 hours depending on size and condition."}},{"@type":"Question","name":"Is ceramic coating worth it in Arizona heat?","acceptedAnswer":{"@type":"Answer","text":"Yes—ceramic adds UV resistance and makes washing faster while protecting clear coat."}}]},{ "@type":"BreadcrumbList","@id":"https://shinedesignaz.com/#breadcrumbs","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://shinedesignaz.com/"}]}]}</script>
 
-  
+
+  <link rel="preload" href="/header-styles.css?v=2025-09-19-06" as="style">
+<link rel="stylesheet" href="/header-styles.css?v=2025-09-19-06" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="/header-styles.css?v=2025-09-19-06"></noscript>
 </head>
 <body>
   <a class="sr-only" href="#main">Skip to content</a>
 
-  <div id="site-header" data-chrome-path="/partials/header.html" data-chrome-version="2025-09-14"></div>
-
-  <!-- Single, conflict-free toggle script -->
-  <script>
-  (function() {
-    const btn = document.querySelector('.menu-btn');
-    const menu = document.getElementById('mobile-nav');
-    if (!btn || !menu) return;
-
-    function openMenu(){ menu.removeAttribute('hidden'); btn.setAttribute('aria-expanded','true'); btn.textContent = '✕'; }
-    function closeMenu(){ menu.setAttribute('hidden',''); btn.setAttribute('aria-expanded','false'); btn.textContent = '☰'; }
-
-    btn.addEventListener('click', function(){
-      if (menu.hasAttribute('hidden')) { openMenu(); } else { closeMenu(); }
-    });
-
-    document.addEventListener('click', function(e){
-      if (!menu.hasAttribute('hidden') && !btn.contains(e.target) && !menu.contains(e.target)) closeMenu();
-    }, { passive: true });
-
-    var mobileButtons = document.querySelectorAll('.mobile-dropdown > button');
-    mobileButtons.forEach(function(button){
-      button.addEventListener('click', function(e){
-        e.stopPropagation();
-        var parent = button.parentElement;
-        var isOpen = parent.classList.contains('open');
-        mobileButtons.forEach(function(b){ b.parentElement.classList.remove('open'); b.setAttribute('aria-expanded','false'); });
-        if (!isOpen) { parent.classList.add('open'); button.setAttribute('aria-expanded','true'); }
-      }, { passive: true });
-    });
-  })();
-  </script>
+  <!-- Header placeholder (cache-busted) -->
+  <div id="site-header" data-chrome-path="/partials/header.html" data-chrome-version="2025-09-19-06"></div>
 
   <!-- HERO -->
   <section class="hero">
@@ -199,10 +170,10 @@
         <div class="item">🚐 Mobile – We Come to You</div>
         <div class="item">🏆 Locally Owned in AZ</div>
       </div>
-    
-        <p class="center-cta" style="text-align:center;margin-top:16px">
-          <a class="cta" href="/services/all-services" aria-label="View all services">View All Services</a>
-        </p></div>
+      <p class="center-cta" style="text-align:center;margin-top:16px">
+        <a class="cta" href="/services/all-services" aria-label="View all services">View All Services</a>
+      </p>
+    </div>
   </section>
 
   <main id="main">
@@ -347,8 +318,10 @@
     </section>
   </main>
 
-  </div>
+  <!-- Footer placeholder -->
+  <div id="site-footer" data-chrome-path="/partials/footer.html" data-chrome-version="2025-09-19-06"></div>
 
+  <!-- Scripts: order matters; cache-busted -->
   <!-- Lazy-load Fieldd on view -->
   <script>
   (function(){
@@ -360,7 +333,7 @@
         return;
       }
       var s = document.createElement('script');
-      s.src = 'https://fieldd-scripts.s3.amazonaws.com/leadForm/fieldd-lead-form.js';
+      s.src = 'https://fieldd-scripts.s3.amazonaws.com/leadForm/lead-form.js';
       s.defer = true;
       s.onload = function(){ el.outerHTML = '<fieldd-lead-form code="'+ el.dataset.fielddCode +'"></fieldd-lead-form>'; };
       document.head.appendChild(s);
@@ -372,13 +345,10 @@
   })();
   </script>
 
-  <!-- Your site scripts -->
-  <script defer src="/action-buttons.js"></script>
 
-<div id="site-footer" data-chrome-path="/partials/footer.html" data-chrome-version="2025-09-14"></div>
-
-<script defer src="/site-chrome.js" data-chrome-version="2025-09-14"></script>
-<script defer src="/navigation.js"></script>
-<script defer src="/action-buttons.js"></script>
+  <script defer src="/site-chrome.js?v=2025-09-19-06" data-chrome-version="2025-09-19-06"></script>
+<script defer src="/navigation.js?v=2025-09-19-06"></script>
+<script defer src="/action-buttons.js?v=2025-09-19-06"></script>
 </body>
 </html>
+

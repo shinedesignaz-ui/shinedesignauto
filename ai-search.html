@@ -137,7 +137,6 @@
   }
   </script>
 <!-- Site-wide styles for header/footer -->
-<link data-chrome-version="12" href="/assets/css/header-styles.css" rel="stylesheet"/>
 <!-- Fallback to ensure hidden works even if CSS is cached weirdly -->
 <style>#mobile-nav[hidden]{display:none}</style>
 <!-- Page-specific styles (header/nav/footer rules removed to avoid conflicts) -->
@@ -211,7 +210,12 @@
     .voice-prompt-text{font-size:18px;margin-bottom:5px}
     .voice-prompt-example{font-style:italic;opacity:.9}
   </style>
-<link href="/header-styles.css" rel="stylesheet"/></head>
+
+
+  <link rel="preload" href="/header-styles.css?v=2025-09-19-06" as="style">
+<link rel="stylesheet" href="/header-styles.css?v=2025-09-19-06" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="/header-styles.css?v=2025-09-19-06"></noscript>
+</head>
 <body><div data-chrome-path="/partials/header.html" data-chrome-version="2025-09-13" id="site-header"></div>
 <!-- Injected header partial -->
 <div data-chrome-path="/partials/header.html" id="site-header"></div>
@@ -493,5 +497,10 @@
     }
   });
   </script>
-<script data-chrome-version="2025-09-13" defer="" src="/site-chrome.js"></script><script defer="" src="/navigation.js"></script><script defer="" src="/action-buttons.js"></script></body>
+
+
+  <script defer src="/site-chrome.js?v=2025-09-19-06" data-chrome-version="2025-09-19-06"></script>
+<script defer src="/navigation.js?v=2025-09-19-06"></script>
+<script defer src="/action-buttons.js?v=2025-09-19-06"></script>
+</body>
 </html>

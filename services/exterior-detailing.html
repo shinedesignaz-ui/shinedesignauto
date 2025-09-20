@@ -102,9 +102,7 @@
     .micro-footer a{color:#93e4ff;font-weight:600}
     .micro-footer a:hover{color:#fff;text-decoration:underline}
   </style>
-<link rel="stylesheet" href="/header-styles.css">
-
-  <!-- JSON-LD: Service + FAQ + Breadcrumb -->
+<!-- JSON-LD: Service + FAQ + Breadcrumb -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -145,11 +143,16 @@
     ]
   }
   </script>
+
+
+  <link rel="preload" href="/header-styles.css?v=2025-09-19-06" as="style">
+<link rel="stylesheet" href="/header-styles.css?v=2025-09-19-06" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="/header-styles.css?v=2025-09-19-06"></noscript>
 </head>
 <body>
   <a class="sr-only" href="#main">Skip to content</a>
   
-  <div id="site-header" data-chrome-path="/partials/header.html" data-chrome-version="2025-09-13"></div>
+  <div id="site-header" data-chrome-path="/partials/header.html" data-chrome-version="2025-09-19-06"></div>
 
 
   <!-- HERO -->
@@ -351,7 +354,7 @@
       </div>
     </section>
   </main>
-  <div id="site-footer" data-chrome-path="/partials/footer.html" data-chrome-version="2025-09-13"></div>
+  <div id="site-footer" data-chrome-path="/partials/footer.html" data-chrome-version="2025-09-19-06"></div>
 
 
   
@@ -360,8 +363,10 @@
   
   <script>document.querySelectorAll('footer .small').forEach(el=>el.innerHTML=el.innerHTML.replace('{year}', new Date().getFullYear()));</script>
   
-  <script defer src="/site-chrome.js" data-chrome-version="2025-09-13"></script>
-  <script defer src="/navigation.js"></script>
-  <script defer src="/action-buttons.js"></script>
+  
+
+  <script defer src="/site-chrome.js?v=2025-09-19-06" data-chrome-version="2025-09-19-06"></script>
+<script defer src="/navigation.js?v=2025-09-19-06"></script>
+<script defer src="/action-buttons.js?v=2025-09-19-06"></script>
 </body>
 </html>
