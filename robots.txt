@@ -1,0 +1,7 @@
+# Shine Design robots.txt
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://shinedesignauto.com/sitemap.xml
+Sitemap: https://shinedesignaz.com/sitemap.xml
