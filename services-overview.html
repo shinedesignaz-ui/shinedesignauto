@@ -1,0 +1,1425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>All Services | Auto Detailing, Ceramic Coating, PPF, Tint | ShineDesign</title>
+  <meta name="description" content="Complete auto detailing services in Gilbert, Mesa, Chandler. Mobile detailing, ceramic coating, PPF, window tinting, paint correction. We service cars, trucks, RVs, boats, aircraft.">
+  <link rel="canonical" href="https://shinedesignaz.com/services">
+  <link rel="icon" href="/assets/images/favicon.ico">
+  <meta name="theme-color" content="#0ea5e9">
+
+  <!-- Social Meta Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="All Auto Detailing Services | ShineDesign East Valley">
+  <meta property="og:description" content="Professional mobile detailing services. From basic wash to ceramic coating, PPF, and specialty vehicles. Serving Gilbert, Mesa, Chandler, and all East Valley.">
+  <meta property="og:url" content="https://shinedesignaz.com/services">
+
+  <!-- Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "ShineDesign Mobile Detailing",
+    "description": "Professional auto detailing services",
+    "telephone": "+14805288227",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Gilbert",
+      "addressRegion": "AZ"
+    },
+    "areaServed": [
+      "Gilbert", "Mesa", "Chandler", "Queen Creek", "San Tan Valley",
+      "Scottsdale", "Tempe", "Phoenix", "Apache Junction", "Coolidge",
+      "Florence", "Gold Canyon"
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Auto Detailing Services",
+      "itemListElement": [
+        {"@type": "Service", "name": "Ceramic Coating"},
+        {"@type": "Service", "name": "Paint Protection Film"},
+        {"@type": "Service", "name": "Window Tinting"},
+        {"@type": "Service", "name": "Auto Detailing"},
+        {"@type": "Service", "name": "Paint Correction"},
+        {"@type": "Service", "name": "RV Detailing"},
+        {"@type": "Service", "name": "Boat Detailing"},
+        {"@type": "Service", "name": "Aircraft Detailing"}
+      ]
+    }
+  }
+  </script>
+
+  <style>
+    /* ===== Design tokens ===== */
+    :root {
+      --brand: #0ea5e9;
+      --brand-dark: #0284c7;
+      --text: #0f172a;
+      --muted: #475569;
+      --bg: #fff;
+      --header-h: 72px;
+    }
+
+    /* ===== Base Reset ===== */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+
+    /* Focus styles */
+    a:focus-visible, button:focus-visible {
+      outline: 3px solid rgba(14, 165, 233, .35);
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
+
+    /* ===== Header Styles (Same as Homepage) ===== */
+    .main-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      width: 100%;
+      background: rgba(255, 255, 255, .98);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(0, 0, 0, .08);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, .04);
+    }
+
+    .header-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: var(--header-h);
+      gap: 32px;
+    }
+
+    /* Logo/Brand */
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      transition: transform .2s;
+    }
+    
+    .brand:hover {
+      transform: translateY(-1px);
+    }
+    
+    .brand img {
+      height: 42px;
+      width: auto;
+      display: block;
+    }
+    
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.2;
+    }
+    
+    .brand-name {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.5px;
+    }
+    
+    .brand-tagline {
+      font-size: 11px;
+      color: var(--muted);
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
+
+    /* Desktop Navigation */
+    .nav-links {
+      display: none;
+      gap: 24px;
+      align-items: center;
+      flex: 1;
+      justify-content: flex-end;
+    }
+
+    .nav-links > a,
+    .nav-dropdown > a {
+      font-weight: 600;
+      font-size: 15px;
+      color: var(--text);
+      text-decoration: none;
+      transition: color .2s;
+      padding: 8px 12px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .nav-links > a:hover,
+    .nav-dropdown > a:hover,
+    .nav-links > a.active {
+      color: var(--brand);
+      background: rgba(14, 165, 233, .08);
+    }
+
+    /* Service Pills */
+    .service-pills {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      padding: 0 16px;
+      border-left: 1px solid rgba(0, 0, 0, .1);
+      border-right: 1px solid rgba(0, 0, 0, .1);
+    }
+    
+    .service-pill {
+      padding: 6px 12px;
+      background: rgba(14, 165, 233, .08);
+      color: var(--brand);
+      font-size: 13px;
+      font-weight: 600;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: all .2s;
+      white-space: nowrap;
+    }
+    
+    .service-pill:hover {
+      background: var(--brand);
+      color: white;
+      transform: translateY(-1px);
+    }
+
+    /* Dropdown Styles */
+    .nav-dropdown {
+      position: relative;
+    }
+
+    .nav-dropdown .arrow {
+      font-size: 10px;
+      transition: transform .3s;
+    }
+
+    .nav-dropdown:hover .arrow {
+      transform: rotate(180deg);
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      top: calc(100% + 8px);
+      left: 50%;
+      transform: translateX(-50%);
+      background: white;
+      border: 1px solid rgba(0, 0, 0, .08);
+      border-radius: 12px;
+      box-shadow: 0 12px 48px rgba(0, 0, 0, .12);
+      padding: 12px;
+      min-width: 280px;
+      opacity: 0;
+      visibility: hidden;
+      transition: all .25s cubic-bezier(0.4, 0, 0.2, 1);
+      pointer-events: none;
+    }
+
+    .nav-dropdown:hover .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+
+    /* CTA Buttons */
+    .cta-group {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .cta-primary {
+      background: var(--brand);
+      color: white !important;
+      padding: 12px 24px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 15px;
+      text-decoration: none;
+      transition: all .2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .cta-primary:hover {
+      background: var(--brand-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 8px 24px rgba(14, 165, 233, .25);
+    }
+
+    .cta-phone {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 16px;
+      border: 2px solid rgba(14, 165, 233, .2);
+      border-radius: 999px;
+      color: var(--brand);
+      font-weight: 600;
+      text-decoration: none;
+      transition: all .2s;
+    }
+
+    .cta-phone:hover {
+      background: rgba(14, 165, 233, .08);
+      border-color: var(--brand);
+    }
+
+    /* Mobile Menu Button */
+    .menu-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border: 2px solid rgba(0, 0, 0, .1);
+      border-radius: 12px;
+      background: white;
+      color: var(--text);
+      cursor: pointer;
+      transition: all .2s;
+    }
+
+    /* Responsive */
+    @media (min-width: 960px) {
+      .nav-links {
+        display: flex;
+      }
+      .menu-btn {
+        display: none;
+      }
+    }
+
+    @media (max-width: 959px) {
+      .service-pills {
+        display: none;
+      }
+      .cta-phone {
+        display: none;
+      }
+    }
+
+    /* ===== Page Styles ===== */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .section {
+      padding: 60px 0;
+    }
+
+    @media (max-width: 768px) {
+      .section {
+        padding: 40px 0;
+      }
+    }
+
+    /* Page Hero */
+    .page-hero {
+      background: linear-gradient(135deg, var(--brand), var(--brand-dark));
+      color: white;
+      padding: 80px 0;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -10%;
+      width: 600px;
+      height: 600px;
+      background: rgba(255, 255, 255, .1);
+      border-radius: 50%;
+    }
+
+    .page-hero h1 {
+      font-size: 48px;
+      margin-bottom: 16px;
+      font-weight: 800;
+      position: relative;
+      z-index: 1;
+    }
+
+    @media (max-width: 768px) {
+      .page-hero h1 {
+        font-size: 32px;
+      }
+    }
+
+    .page-hero p {
+      font-size: 20px;
+      opacity: 0.95;
+      max-width: 700px;
+      margin: 0 auto 30px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Quick Links */
+    .quick-links {
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 1;
+    }
+
+    .quick-link {
+      background: rgba(255, 255, 255, .2);
+      color: white;
+      padding: 8px 20px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      transition: all .3s;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, .2);
+    }
+
+    .quick-link:hover {
+      background: white;
+      color: var(--brand);
+      transform: translateY(-2px);
+    }
+
+    /* Service Categories */
+    .service-category {
+      margin-bottom: 60px;
+    }
+
+    .category-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 30px;
+      padding-bottom: 16px;
+      border-bottom: 2px solid #e2e8f0;
+    }
+
+    .category-icon {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, var(--brand), var(--brand-dark));
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      color: white;
+    }
+
+    .category-info {
+      flex: 1;
+    }
+
+    .category-title {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .category-subtitle {
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    /* Service Cards Grid */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .service-card {
+      background: white;
+      border: 2px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 24px;
+      text-decoration: none;
+      transition: all .3s;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, .1);
+      border-color: var(--brand);
+    }
+
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--brand), var(--brand-dark));
+      transform: scaleX(0);
+      transition: transform .3s;
+    }
+
+    .service-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .service-name {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .service-description {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.6;
+      margin-bottom: 16px;
+      flex: 1;
+    }
+
+    .service-features {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 16px;
+    }
+
+    .service-features li {
+      padding: 4px 0;
+      font-size: 13px;
+      color: #059669;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .service-features li::before {
+      content: '✓';
+      font-weight: 700;
+    }
+
+    .service-price {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      padding-top: 16px;
+      border-top: 1px solid #f1f5f9;
+    }
+
+    .price-label {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .price-value {
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--brand);
+    }
+
+    .service-badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: #fbbf24;
+      color: #92400e;
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    /* Popular Services Highlight */
+    .popular-services {
+      background: linear-gradient(135deg, #f0f9ff, #e0f2fe);
+      border-radius: 20px;
+      padding: 40px;
+      margin-bottom: 60px;
+    }
+
+    .popular-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .popular-header h2 {
+      font-size: 32px;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    .popular-header p {
+      color: var(--muted);
+    }
+
+    .popular-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+
+    .popular-card {
+      background: white;
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      text-decoration: none;
+      transition: all .3s;
+      border: 2px solid transparent;
+    }
+
+    .popular-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--brand);
+      box-shadow: 0 10px 30px rgba(14, 165, 233, .15);
+    }
+
+    .popular-icon {
+      width: 60px;
+      height: 60px;
+      background: var(--brand);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 12px;
+      font-size: 28px;
+    }
+
+    .popular-name {
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .popular-price {
+      color: var(--brand);
+      font-weight: 600;
+    }
+
+    /* Service Areas */
+    .service-areas {
+      background: #f8fafc;
+      border-radius: 20px;
+      padding: 40px;
+      margin-top: 60px;
+    }
+
+    .areas-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .areas-header h2 {
+      font-size: 28px;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    .areas-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 12px;
+    }
+
+    .area-link {
+      background: white;
+      padding: 12px;
+      border-radius: 8px;
+      text-align: center;
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 600;
+      transition: all .3s;
+      border: 1px solid #e2e8f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .area-link:hover {
+      background: var(--brand);
+      color: white;
+      border-color: var(--brand);
+      transform: translateX(4px);
+    }
+
+    /* CTA Section */
+    .cta-section {
+      background: linear-gradient(135deg, var(--brand), var(--brand-dark));
+      color: white;
+      border-radius: 20px;
+      padding: 60px;
+      text-align: center;
+      margin: 60px 0;
+    }
+
+    .cta-section h2 {
+      font-size: 36px;
+      margin-bottom: 12px;
+    }
+
+    .cta-section p {
+      font-size: 18px;
+      margin-bottom: 30px;
+      opacity: 0.95;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .hero-cta {
+      background: white;
+      color: var(--brand);
+      padding: 16px 32px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 16px;
+      text-decoration: none;
+      transition: all .3s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .hero-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, .2);
+    }
+
+    .hero-cta.secondary {
+      background: transparent;
+      color: white;
+      border: 2px solid white;
+    }
+
+    .hero-cta.secondary:hover {
+      background: white;
+      color: var(--brand);
+    }
+
+    @media (max-width: 768px) {
+      .cta-section {
+        padding: 40px 20px;
+      }
+      
+      .cta-section h2 {
+        font-size: 28px;
+      }
+    }
+
+    /* Footer */
+    footer {
+      background: #0b1220;
+      color: #d1d5db;
+      padding: 60px 0 30px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .footer-column h3 {
+      color: white;
+      margin-bottom: 20px;
+      font-size: 18px;
+    }
+
+    .footer-column a {
+      display: block;
+      color: #94a3b8;
+      text-decoration: none;
+      padding: 6px 0;
+      transition: color .3s;
+    }
+
+    .footer-column a:hover {
+      color: var(--brand);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 30px;
+      border-top: 1px solid rgba(255, 255, 255, .1);
+      font-size: 14px;
+      color: #64748b;
+    }
+  </style>
+
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="main-header">
+    <div class="header-container">
+      <div class="header-content">
+        
+        <!-- Logo/Brand -->
+        <a href="/" class="brand" aria-label="ShineDesign Home">
+          <img src="/logo.svg" alt="ShineDesign" width="140" height="42">
+          <div class="brand-text">
+            <span class="brand-name">ShineDesign</span>
+            <span class="brand-tagline">DETAILING • TINT • PPF • CERAMIC</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="nav-links" aria-label="Primary Navigation">
+          
+          <!-- Services Dropdown -->
+          <div class="nav-dropdown">
+            <a href="/services/" class="active">Services <span class="arrow">▼</span></a>
+            <div class="dropdown-menu">
+              <!-- Dropdown would go here -->
+            </div>
+          </div>
+
+          <!-- Quick Service Pills -->
+          <div class="service-pills">
+            <a href="/ceramic-coating.html" class="service-pill">Ceramic</a>
+            <a href="/paint-protection-film.html" class="service-pill">PPF</a>
+            <a href="/window-tinting.html" class="service-pill">Tint</a>
+            <a href="/auto-detailing.html" class="service-pill">Detail</a>
+          </div>
+
+          <!-- Other Nav Items -->
+          <a href="/gallery">Gallery</a>
+          <a href="/pricing">Pricing</a>
+          <a href="/about">About</a>
+          <a href="/contact">Contact</a>
+
+          <!-- CTAs -->
+          <div class="cta-group">
+            <a href="tel:4805288227" class="cta-phone">
+              <span>📞</span>
+              <span>(480) 528-8227</span>
+            </a>
+            <a href="https://booknow.shinedesignaz.com/" class="cta-primary">
+              Book Online
+              <span>→</span>
+            </a>
+          </div>
+        </nav>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="menu-btn" aria-label="Menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 12h18M3 6h18M3 18h18"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Page Hero -->
+    <section class="page-hero">
+      <div class="container">
+        <h1>All Auto Detailing Services</h1>
+        <p>Professional mobile detailing, ceramic coating, PPF, and more. We service cars, trucks, RVs, boats, and aircraft throughout the East Valley.</p>
+        
+        <div class="quick-links">
+          <a href="#protection" class="quick-link">Paint Protection</a>
+          <a href="#detailing" class="quick-link">Detailing Services</a>
+          <a href="#specialty" class="quick-link">Specialty Vehicles</a>
+          <a href="#addons" class="quick-link">Add-On Services</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Popular Services -->
+    <section class="section">
+      <div class="container">
+        <div class="popular-services">
+          <div class="popular-header">
+            <h2>Most Popular Services</h2>
+            <p>Our top-requested services with transparent pricing</p>
+          </div>
+          
+          <div class="popular-grid">
+            <a href="/ceramic-coating.html" class="popular-card">
+              <div class="popular-icon">🛡️</div>
+              <div class="popular-name">Ceramic Coating</div>
+              <div class="popular-price">From $899</div>
+            </a>
+            
+            <a href="/paint-protection-film.html" class="popular-card">
+              <div class="popular-icon">💎</div>
+              <div class="popular-name">Paint Protection Film</div>
+              <div class="popular-price">Custom Quote</div>
+            </a>
+            
+            <a href="/window-tinting.html" class="popular-card">
+              <div class="popular-icon">🔲</div>
+              <div class="popular-name">Window Tinting</div>
+              <div class="popular-price">From $399</div>
+            </a>
+            
+            <a href="/mobile-detailing.html" class="popular-card">
+              <div class="popular-icon">🚗</div>
+              <div class="popular-name">Mobile Detailing</div>
+              <div class="popular-price">From $179</div>
+            </a>
+            
+            <a href="/paint-correction.html" class="popular-card">
+              <div class="popular-icon">✨</div>
+              <div class="popular-name">Paint Correction</div>
+              <div class="popular-price">From $299</div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Paint Protection Services -->
+    <section class="section" id="protection">
+      <div class="container">
+        <div class="service-category">
+          <div class="category-header">
+            <div class="category-icon">🛡️</div>
+            <div class="category-info">
+              <h2 class="category-title">Paint Protection & Enhancement</h2>
+              <p class="category-subtitle">Long-term protection and restoration for your vehicle's finish</p>
+            </div>
+          </div>
+          
+          <div class="services-grid">
+            <a href="/ceramic-coating.html" class="service-card">
+              <span class="service-badge">POPULAR</span>
+              <h3 class="service-name">Ceramic Coating</h3>
+              <p class="service-description">9H hardness protection with hydrophobic properties. UV protection and chemical resistance for 3-7 years.</p>
+              <ul class="service-features">
+                <li>3-7 year warranty options</li>
+                <li>Self-cleaning properties</li>
+                <li>Enhanced gloss & depth</li>
+              </ul>
+              <div class="service-price">
+                <span class="price-label">Starting at</span>
+                <span class="price-value">$899</span>
+              </div>
+            </a>
+
+            <a href="/paint-protection-film.html" class="service-card">
+              <h3 class="service-name">Paint Protection Film (PPF)</h3>
+              <p class="service-description">Self-healing clear film that prevents rock chips and scratches. Invisible protection with 10-year warranty.</p>
+              <ul class="service-features">
+                <li>Self-healing technology</li>
+                <li>10-year manufacturer warranty</li>
+                <li>Custom coverage options</li>
+              </ul>
+              <div class="service-price">
+                <span class="price-label">Call for</span>
+                <span class="price-value">Quote</span>
+              </div>
+            </a>
+
+            <a href="/paint-correction.html" class="service-card">
+              <h3 class="service-name">Paint Correction</h3>
+              <p class="service-description">Remove swirls, scratches, and oxidation. Multi-stage machine polishing to restore factory finish.</p>
+              <ul class="service-features">
+                <li>Remove 70-90% of defects</li>
+                <li>Restore original clarity</li>
+                <li>Prep for coating</li>
+              </ul>
+              <div class="service-price">
+                <span class="price-label">Starting at</span>
+                <span class="price-value">$299</span>
+              </div>
+            </a>
+
+            <a href="/glass-ceramic-coating.html" class="service-card">
+              <h3 class="service-name">Glass Ceramic Coating</h3>
+              <p class="service-description">Hydrophobic coating for all glass surfaces. Improved visibility and easier cleaning.</p>
+              <ul class="service-features">
+                <li>Rain repellent</li>
+                <li>Easier ice removal</li>
+                <li>2-year durability</li>
+              </ul>
+              <div class="service-price">
+                <span class="price-label">Starting at</span>
+                <span class="price-value">$149</span>
+              </div>
+            </a>
+
+            <a href="/trim-ceramic-coating.html" class="service-card">
+              <h3 class="service-name">Trim & Plastic Coating</h3>
+              <p class="service-description">Restore and protect faded trim. Long-lasting UV protection for plastic and rubber.</p>
+              <ul class="service-features">
+                <li>Restore deep black finish</li>
+                <li>2-year protection</li>
+                <li>UV resistance</li>
+              </ul>
+              <div class="service-price">
+                <span class="price-label">Starting at</span>
+                <span class="price-value">$199</span>
+              </div>
+            </a>
+
+            <a href="/wheel-coating.html" class="service-card">
+              <h3 class="service-name">Wheel Ceramic Coating</h3>
+              <p class="service-description">Protect wheels from brake dust and road grime. Makes cleaning 90% easier.</p>
+              <ul class="service-features">
+                <li>Heat resistant</li>
+                <li>Brake dust protection</li>
+                <li>Easy maintenance</li>
+              </ul>
+              <div class="service-price">
+                <span class="price-label">Starting at</span>
+                <span class="price-value">$299</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Detailing Services -->
+    <section class="section" style="background: #f8fafc;" id="detailing">
+      <div class="container">
+        <div class="service-category">
+          <div class="category-header">
+            <div class="category-icon">✨</div>
+            <div class="category-info">
+              <h2 class="category-title">Auto Detailing Services</h2>
+              <p class="category-subtitle">Complete interior and exterior cleaning and restoration</p>
+            </div>
+          </div>
+          
+          <div class="services-grid">
+            <a href="/mobile-detailing.html" class="service-card">
+              <span class="service-badge">MOBILE</span>
+              <h3 class="service-name">Mobile Detailing</h3>
+              <p class="service-description">We come to you! Complete detailing service at your home or office.</p>
+              <ul class="service-features">
+                <li>Self-sufficient unit</li>
+                <li>Same-day service</li>
+                <li>All East Valley</li>
+              </ul>
+              <div class="service-price">
+                <span class="price-label">Starting at</span>
+                <span class="price-value">$179</span>
+              </div>
+            </a>
+
+            <a href="/interior-detailing.html" class="service-card">
+              <h3 class="service-name">Interior Detailing</h3>
+              <p class="service-description">Deep clean and protect your interior. From basic vacuum to full extraction.</p>
+              <ul class="service-features">
+                <li>3 service levels</li>
+                <li>Stain removal</li>
+                <li>Odor elimination</li>
+              </ul>
+              <div class="service-price">
+                <span class="price-label">Starting at</span>
+                <span class="price-value">$89</span>
+              </div>
+            </a>
+
+            <a href="/exterior-detailing.html" class="service-card">
+              <h3 class="service-name">Exterior Detailing</h3>
+              <p class="service-description">Hand wash, decontamination, and protection. Multiple packages available.</p>
+              <ul class="service-features">
+                <li>Clay bar treatment</li>
+                <li>Paint sealant</li>
+                <li>Tire dressing</li>
+              </ul>
+              <div class="service-price">
+                <span class="price-label">Starting at</span>
+                <span class="price-value">$89</span>
+              </div>
+            </a>
+
+            <a href="/window-tinting.html" class="service-card">
+              <h3 class="service-name">Window Tinting</h3>
+              <p class="service-description">Beat the Arizona heat with ceramic tint. Up to 98% heat rejection.</p>
+              <ul class="service-features">
+                <li>Lifetime warranty</li>
+                <li>Legal tint levels</li>
+                <li>UV protection</li>
+              </ul>
+              <div class="service-price">
+                <span class="price-label">Starting at</span>
+                <span class="price-value">$399</span>
+              </div>
+            </a>
+
+            <a href="/engine-bay-detail.html" class="service-card">
+              <h3 class="service-name">Engine Bay Detail</h3>
+              <p class="service-description">Safe cleaning and dressing of engine compartment. Great for shows or sale.</p>
+              <ul class="service-features">
+                <li>Safe degreasing</li>
+                <li>Component protection</li>
+                <li>Like-new appearance</li>
+              </ul>
+              <div class="service-price">
+                <span class="price-label">Starting at</span>
+                <span class="price-value">$49</span>
+              </div>
+            </a>
+
+            <a href="/headlight-restoration.html" class="service-card">
+              <h3 class="service-name">Headlight Restoration</h3>
+              <p class="service-description">Remove yellowing and haze. Restore clarity and improve night visibility.</p>
+              <ul class="service-features">
+                <li>Multi-step sanding</li>
+                <li>UV sealant applied</li>
+                <li>1-year warranty</li>
+              </ul>
+              <div class="service-price">
+                <span class="price-label">Starting at</span>
+                <span class="price-value">$89</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Specialty Vehicles -->
+    <section class="section" id="specialty">
+      <div class="container">
+        <div class="service-category">
+          <div class="category-header">
+            <div class="category-icon">🚁</div>
+            <div class="category-info">
+              <h2 class="category-title">Specialty Vehicle Detailing</h2>
+              <p class="category-subtitle">Expert care for RVs, boats, aircraft, and more</p>
+            </div>
+          </div>
+          
+          <div class="services-grid">
+            <a href="/rv-detailing.html" class="service-card">
+              <h3 class="service-name">🚐 RV & Motorhome</h3>
+              <p class="service-description">Complete detailing for all RV types. Roof treatment, oxidation removal, interior deep clean.</p>
+              <ul class="service-features">
+                <li>Roof cleaning & seal</li>
+                <li>Oxidation removal</li>
+                <li>Black streak removal</li>
+              </ul>
+              <div class="service-price">
+                <span class="price-label">Starting at</span>
+                <span class="price-value">$599</span>
+              </div>
+            </a>
+
+            <a href="/boat-detailing.html" class="service-card">
+              <h3 class="service-name">⛵ Boat & Marine</h3>
+              <p class="service-description">Hull cleaning, gel coat restoration, teak cleaning. We come to your marina or storage.</p>
+              <ul class="service-features">
+                <li>Gel coat restoration</li>
+                <li>Teak cleaning</li>
+                <li>Canvas protection</li>
+              </ul>
+              <div class="service-price">
+                <span class="price-label">Starting at</span>
+                <span class="price-value">$399</span>
+              </div>
+            </a>
+
+            <a href="/aircraft-detailing.html" class="service-card">
+              <h3 class="service-name">✈️ Aircraft Detailing</h3>
+              <p class="service-description">Specialized aircraft cleaning and protection. Brightwork polishing, interior detail.</p>
+              <ul class="service-features">
+                <li>Approved products only</li>
+                <li>Brightwork polishing</li>
+                <li>Leather conditioning</li>
+              </ul>
+              <div class="service-price">
+                <span class="price-label">Call for</span>
+                <span class="price-value">Quote</span>
+              </div>
+            </a>
+
+            <a href="/motorcycle-detailing.html" class="service-card">
+              <h3 class="service-name">🏍️ Motorcycle</h3>
+              <p class="service-description">Complete motorcycle detailing. Chrome polishing, leather care, engine detail.</p>
+              <ul class="service-features">
+                <li>Chrome polishing</li>
+                <li>Chain cleaning</li>
+                <li>Leather treatment</li>
+              </ul>
+              <div class="service-price">
+                <span class="price-label">Starting at</span>
+                <span class="price-value">$149</span>
+              </div>
+            </a>
+
+            <a href="/atv-detailing.html" class="service-card">
+              <h3 class="service-name">🏜️ ATV & UTV</h3>
+              <p class="service-description">Remove mud, dust, and grime. Protect plastics and prevent fading.</p>
+              <ul class="service-features">
+                <li>Mud removal</li>
+                <li>Plastic restoration</li>
+                <li>Undercarriage clean</li>
+              </ul>
+              <div class="service-price">
+                <span class="price-label">Starting at</span>
+                <span class="price-value">$129</span>
+              </div>
+            </a>
+
+            <a href="/fleet-services.html" class="service-card">
+              <h3 class="service-name">🚚 Fleet Services</h3>
+              <p class="service-description">Commercial fleet maintenance programs. Volume discounts available.</p>
+              <ul class="service-features">
+                <li>Regular maintenance</li>
+                <li>Volume discounts</li>
+                <li>Flexible scheduling</li>
+              </ul>
+              <div class="service-price">
+                <span class="price-label">Call for</span>
+                <span class="price-value">Quote</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Add-On Services -->
+    <section class="section" style="background: #f8fafc;" id="addons">
+      <div class="container">
+        <div class="service-category">
+          <div class="category-header">
+            <div class="category-icon">➕</div>
+            <div class="category-info">
+              <h2 class="category-title">Add-On & Specialty Services</h2>
+              <p class="category-subtitle">Extra services to complete your detail</p>
+            </div>
+          </div>
+          
+          <div class="services-grid">
+            <a href="/odor-removal-ozone.html" class="service-card">
+              <h3 class="service-name">Odor Removal (Ozone)</h3>
+              <p class="service-description">Eliminate smoke, pet, and other odors at the molecular level.</p>
+              <div class="service-price">
+                <span class="price-label">Starting at</span>
+                <span class="price-value">$75</span>
+              </div>
+            </a>
+
+            <a href="/interior-ceramic-protection.html" class="service-card">
+              <h3 class="service-name">Interior Ceramic Protection</h3>
+              <p class="service-description">Protect leather, fabric, and surfaces from stains and UV damage.</p>
+              <div class="service-price">
+                <span class="price-label">Starting at</span>
+                <span class="price-value">$299</span>
+              </div>
+            </a>
+
+            <a href="/paint-touchup.html" class="service-card">
+              <h3 class="service-name">Paint Touch-Up</h3>
+              <p class="service-description">Professional touch-up for chips and scratches. Color matched.</p>
+              <div class="service-price">
+                <span class="price-label">Starting at</span>
+                <span class="price-value">$149</span>
+              </div>
+            </a>
+
+            <a href="/paintless-dent-repair.html" class="service-card">
+              <h3 class="service-name">Paintless Dent Repair</h3>
+              <p class="service-description">Remove dents without repainting. Perfect for hail damage.</p>
+              <div class="service-price">
+                <span class="price-label">Call for</span>
+                <span class="price-value">Quote</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service Areas -->
+    <section class="section">
+      <div class="container">
+        <div class="service-areas">
+          <div class="areas-header">
+            <h2>Service Areas</h2>
+            <p>Mobile service throughout the East Valley and Phoenix Metro</p>
+          </div>
+          
+          <div class="areas-grid">
+            <a href="/gilbert.html" class="area-link">
+              <span>📍</span> Gilbert
+            </a>
+            <a href="/mesa.html" class="area-link">
+              <span>📍</span> Mesa
+            </a>
+            <a href="/chandler.html" class="area-link">
+              <span>📍</span> Chandler
+            </a>
+            <a href="/queen-creek.html" class="area-link">
+              <span>📍</span> Queen Creek
+            </a>
+            <a href="/san-tan-valley.html" class="area-link">
+              <span>📍</span> San Tan Valley
+            </a>
+            <a href="/scottsdale.html" class="area-link">
+              <span>📍</span> Scottsdale
+            </a>
+            <a href="/tempe.html" class="area-link">
+              <span>📍</span> Tempe
+            </a>
+            <a href="/phoenix.html" class="area-link">
+              <span>📍</span> Phoenix
+            </a>
+            <a href="/apache-junction.html" class="area-link">
+              <span>📍</span> Apache Junction
+            </a>
+            <a href="/coolidge.html" class="area-link">
+              <span>📍</span> Coolidge
+            </a>
+            <a href="/florence.html" class="area-link">
+              <span>📍</span> Florence
+            </a>
+            <a href="/gold-canyon.html" class="area-link">
+              <span>📍</span> Gold Canyon
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="container">
+      <div class="cta-section">
+        <h2>Ready to Schedule Your Service?</h2>
+        <p>Book online for instant confirmation or call for a custom quote</p>
+        
+        <div class="cta-buttons">
+          <a href="https://booknow.shinedesignaz.com/" class="hero-cta">
+            Book Online Now
+            <span>→</span>
+          </a>
+          <a href="tel:4805288227" class="hero-cta secondary">
+            <span>📞</span>
+            Call (480) 528-8227
+          </a>
+        </div>
+
+        <p style="margin-top: 20px; font-size: 14px; opacity: 0.9;">
+          ⏰ Same-day service often available • 🚗 100% mobile service • ✅ Satisfaction guaranteed
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-column">
+          <h3>Popular Services</h3>
+          <a href="/ceramic-coating.html">Ceramic Coating</a>
+          <a href="/paint-protection-film.html">Paint Protection Film</a>
+          <a href="/window-tinting.html">Window Tinting</a>
+          <a href="/mobile-detailing.html">Mobile Detailing</a>
+          <a href="/paint-correction.html">Paint Correction</a>
+        </div>
+        <div class="footer-column">
+          <h3>Service Areas</h3>
+          <a href="/gilbert.html">Gilbert</a>
+          <a href="/mesa.html">Mesa</a>
+          <a href="/chandler.html">Chandler</a>
+          <a href="/queen-creek.html">Queen Creek</a>
+          <a href="/scottsdale.html">Scottsdale</a>
+          <a href="/phoenix.html">Phoenix</a>
+        </div>
+        <div class="footer-column">
+          <h3>Specialty Services</h3>
+          <a href="/rv-detailing.html">RV Detailing</a>
+          <a href="/boat-detailing.html">Boat Detailing</a>
+          <a href="/aircraft-detailing.html">Aircraft Detailing</a>
+          <a href="/fleet-services.html">Fleet Services</a>
+          <a href="/motorcycle-detailing.html">Motorcycle Detailing</a>
+        </div>
+        <div class="footer-column">
+          <h3>Contact</h3>
+          <p style="color: #94a3b8; margin-bottom: 12px;">📞 <a href="tel:4805288227">(480) 528-8227</a></p>
+          <p style="color: #94a3b8; margin-bottom: 12px;">📧 <a href="mailto:info@shinedesignaz.com">info@shinedesignaz.com</a></p>
+          <p style="color: #94a3b8; margin-bottom: 12px;">⏰ Mon-Sun 7AM-7PM</p>
+          <div style="display: flex; gap: 12px; margin-top: 20px;">
+            <a href="https://facebook.com/shinedesigndetail">FB</a>
+            <a href="https://instagram.com/shinedesigndetail">IG</a>
+            <a href="https://youtube.com/@shinedesignaz">YT</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Shine Design Mobile Detailing. All rights reserved. | <a href="/privacy" style="color: #64748b;">Privacy Policy</a> | <a href="/terms" style="color: #64748b;">Terms of Service</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          const headerOffset = 80;
+          const elementPosition = target.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+          
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  </script>
+
+  <!-- Load your action buttons script -->
+  <script src="/action-buttons.js" defer></script>
+
+</body>
+</html>

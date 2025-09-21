@@ -1,0 +1,1927 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Window Tinting Gilbert AZ | Ceramic Tint, Heat Rejection | ShineDesign</title>
+  <meta name="description" content="Professional window tinting in Gilbert, Mesa, Chandler. Ceramic tint with 98% heat rejection, UV protection, lifetime warranty. Mobile service. Starting $399.">
+  <link rel="canonical" href="https://shinedesignaz.com/window-tinting">
+  <link rel="icon" href="/assets/images/favicon.ico">
+  <meta name="theme-color" content="#0ea5e9">
+
+  <!-- Social Meta Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Window Tinting Gilbert AZ | Beat the Arizona Heat">
+  <meta property="og:description" content="Ceramic window tint with up to 98% infrared heat rejection. UV protection, glare reduction, lifetime warranty. Mobile installation available.">
+  <meta property="og:url" content="https://shinedesignaz.com/window-tinting">
+  <meta property="og:image" content="/assets/images/window-tint-og.jpg">
+
+  <!-- Schema Markup for Service -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": "Window Tinting",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "ShineDesign Mobile Detailing",
+      "telephone": "+14805288227",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Gilbert",
+        "addressRegion": "AZ"
+      }
+    },
+    "areaServed": ["Gilbert", "Mesa", "Chandler", "Queen Creek", "Scottsdale", "Phoenix"],
+    "offers": [{
+      "@type": "Offer",
+      "name": "Sedan Window Tinting",
+      "price": "399",
+      "priceCurrency": "USD"
+    },{
+      "@type": "Offer",
+      "name": "SUV Window Tinting",
+      "price": "599",
+      "priceCurrency": "USD"
+    }]
+  }
+  </script>
+
+  <style>
+    /* ===== Design tokens ===== */
+    :root {
+      --brand: #0ea5e9;
+      --brand-dark: #0284c7;
+      --text: #0f172a;
+      --muted: #475569;
+      --bg: #fff;
+      --header-h: 72px;
+      --tint-accent: #10b981;
+      --tint-dark: #059669;
+    }
+
+    /* ===== Base Reset ===== */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+
+    /* Focus styles */
+    a:focus-visible, button:focus-visible {
+      outline: 3px solid rgba(14, 165, 233, .35);
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
+
+    /* ===== Header Styles (Same as Homepage) ===== */
+    .main-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      width: 100%;
+      background: rgba(255, 255, 255, .98);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(0, 0, 0, .08);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, .04);
+    }
+
+    .header-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: var(--header-h);
+      gap: 32px;
+    }
+
+    /* Logo/Brand */
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      transition: transform .2s;
+    }
+    
+    .brand:hover {
+      transform: translateY(-1px);
+    }
+    
+    .brand img {
+      height: 42px;
+      width: auto;
+      display: block;
+    }
+    
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.2;
+    }
+    
+    .brand-name {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.5px;
+    }
+    
+    .brand-tagline {
+      font-size: 11px;
+      color: var(--muted);
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
+
+    /* Desktop Navigation */
+    .nav-links {
+      display: none;
+      gap: 24px;
+      align-items: center;
+      flex: 1;
+      justify-content: flex-end;
+    }
+
+    .nav-links > a,
+    .nav-dropdown > a {
+      font-weight: 600;
+      font-size: 15px;
+      color: var(--text);
+      text-decoration: none;
+      transition: color .2s;
+      padding: 8px 12px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .nav-links > a:hover,
+    .nav-dropdown > a:hover {
+      color: var(--brand);
+      background: rgba(14, 165, 233, .08);
+    }
+
+    /* Service Pills (Core Services) */
+    .service-pills {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      padding: 0 16px;
+      border-left: 1px solid rgba(0, 0, 0, .1);
+      border-right: 1px solid rgba(0, 0, 0, .1);
+    }
+    
+    .service-pill {
+      padding: 6px 12px;
+      background: rgba(14, 165, 233, .08);
+      color: var(--brand);
+      font-size: 13px;
+      font-weight: 600;
+      border-radius: 999px;
+      text-decoration: none;
+      transition: all .2s;
+      white-space: nowrap;
+    }
+    
+    .service-pill:hover {
+      background: var(--brand);
+      color: white;
+      transform: translateY(-1px);
+    }
+
+    .service-pill.active {
+      background: var(--brand);
+      color: white;
+    }
+
+    /* Dropdown Styles */
+    .nav-dropdown {
+      position: relative;
+    }
+
+    .nav-dropdown .arrow {
+      font-size: 10px;
+      transition: transform .3s;
+    }
+
+    .nav-dropdown:hover .arrow {
+      transform: rotate(180deg);
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      top: calc(100% + 8px);
+      left: 50%;
+      transform: translateX(-50%);
+      background: white;
+      border: 1px solid rgba(0, 0, 0, .08);
+      border-radius: 12px;
+      box-shadow: 0 12px 48px rgba(0, 0, 0, .12);
+      padding: 12px;
+      min-width: 280px;
+      opacity: 0;
+      visibility: hidden;
+      transition: all .25s cubic-bezier(0.4, 0, 0.2, 1);
+      pointer-events: none;
+    }
+
+    .nav-dropdown:hover .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+
+    /* CTA Buttons */
+    .cta-group {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .cta-primary {
+      background: var(--brand);
+      color: white !important;
+      padding: 12px 24px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 15px;
+      text-decoration: none;
+      transition: all .2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .cta-primary:hover {
+      background: var(--brand-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 8px 24px rgba(14, 165, 233, .25);
+    }
+
+    .cta-phone {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 16px;
+      border: 2px solid rgba(14, 165, 233, .2);
+      border-radius: 999px;
+      color: var(--brand);
+      font-weight: 600;
+      text-decoration: none;
+      transition: all .2s;
+    }
+
+    .cta-phone:hover {
+      background: rgba(14, 165, 233, .08);
+      border-color: var(--brand);
+    }
+
+    /* Mobile Menu Button */
+    .menu-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border: 2px solid rgba(0, 0, 0, .1);
+      border-radius: 12px;
+      background: white;
+      color: var(--text);
+      cursor: pointer;
+      transition: all .2s;
+    }
+
+    .menu-btn:hover {
+      background: rgba(14, 165, 233, .08);
+      border-color: var(--brand);
+      color: var(--brand);
+    }
+
+    .menu-btn svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    /* Mobile Navigation */
+    #mobile-nav {
+      position: fixed;
+      top: var(--header-h);
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: white;
+      z-index: 999;
+      overflow-y: auto;
+      padding: 20px;
+      transform: translateX(100%);
+      transition: transform .3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: -4px 0 24px rgba(0, 0, 0, .1);
+    }
+
+    #mobile-nav.active {
+      transform: translateX(0);
+    }
+
+    /* Responsive */
+    @media (min-width: 960px) {
+      .nav-links {
+        display: flex;
+      }
+      .menu-btn {
+        display: none;
+      }
+      #mobile-nav {
+        display: none;
+      }
+    }
+
+    @media (max-width: 959px) {
+      .service-pills {
+        display: none;
+      }
+      .cta-phone {
+        display: none;
+      }
+    }
+
+    /* ===== Page Styles ===== */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .section {
+      padding: 60px 0;
+    }
+
+    @media (max-width: 768px) {
+      .section {
+        padding: 40px 0;
+      }
+    }
+
+    /* Breadcrumb */
+    .breadcrumb {
+      padding: 20px 0;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .breadcrumb a {
+      color: var(--brand);
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
+      text-decoration: underline;
+    }
+
+    /* Service Hero */
+    .service-hero {
+      background: linear-gradient(135deg, #10b981, #059669);
+      color: white;
+      padding: 80px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -10%;
+      width: 600px;
+      height: 600px;
+      background: rgba(255, 255, 255, .1);
+      border-radius: 50%;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    @media (max-width: 768px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+    }
+
+    .hero-content h1 {
+      font-size: 48px;
+      line-height: 1.1;
+      margin-bottom: 20px;
+      font-weight: 800;
+    }
+
+    @media (max-width: 768px) {
+      .hero-content h1 {
+        font-size: 32px;
+      }
+    }
+
+    .hero-subtitle {
+      font-size: 20px;
+      opacity: 0.95;
+      margin-bottom: 30px;
+    }
+
+    .hero-bullets {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 30px;
+    }
+
+    .hero-bullets li {
+      padding: 8px 0;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 16px;
+    }
+
+    .hero-bullets li::before {
+      content: '✓';
+      width: 24px;
+      height: 24px;
+      background: rgba(255, 255, 255, .2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .hero-cta {
+      background: white;
+      color: var(--tint-accent);
+      padding: 16px 32px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 16px;
+      text-decoration: none;
+      transition: all .3s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .hero-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, .2);
+    }
+
+    .hero-cta.secondary {
+      background: transparent;
+      color: white;
+      border: 2px solid white;
+    }
+
+    .hero-cta.secondary:hover {
+      background: white;
+      color: var(--tint-accent);
+    }
+
+    .hero-image {
+      position: relative;
+    }
+
+    .hero-image img {
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, .2);
+    }
+
+    .badge-float {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: white;
+      color: var(--tint-accent);
+      padding: 12px 20px;
+      border-radius: 999px;
+      font-weight: 700;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, .2);
+    }
+
+    /* Heat Stats Bar */
+    .heat-stats {
+      background: #fef3c7;
+      padding: 30px 0;
+      border-bottom: 2px solid #fbbf24;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+      text-align: center;
+    }
+
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .stat-number {
+      font-size: 36px;
+      font-weight: 800;
+      color: #d97706;
+    }
+
+    .stat-label {
+      font-weight: 600;
+      color: #92400e;
+      font-size: 14px;
+    }
+
+    .stat-subtext {
+      font-size: 12px;
+      color: #b45309;
+    }
+
+    /* Benefits Grid */
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 40px;
+      margin-top: 50px;
+    }
+
+    .benefit-card {
+      text-align: center;
+    }
+
+    .benefit-icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, var(--tint-accent), var(--tint-dark));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 36px;
+    }
+
+    .benefit-card h3 {
+      font-size: 20px;
+      margin-bottom: 12px;
+      color: var(--text);
+    }
+
+    .benefit-card p {
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* Tint Options */
+    .tint-options {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+      margin-top: 50px;
+    }
+
+    .tint-card {
+      border: 2px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 30px;
+      text-align: center;
+      transition: all .3s;
+      background: white;
+      position: relative;
+    }
+
+    .tint-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, .1);
+      border-color: var(--tint-accent);
+    }
+
+    .tint-card.featured {
+      border-color: var(--tint-accent);
+      background: linear-gradient(to bottom, rgba(16, 185, 129, 0.05), white);
+    }
+
+    .featured-badge {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--tint-accent);
+      color: white;
+      padding: 4px 16px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .tint-visual {
+      width: 120px;
+      height: 120px;
+      margin: 0 auto 20px;
+      border-radius: 12px;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(to right, #f3f4f6, #1f2937);
+    }
+
+    .tint-overlay {
+      position: absolute;
+      inset: 0;
+      opacity: 0.5;
+    }
+
+    .tint-light { background: rgba(0, 0, 0, 0.35); }
+    .tint-medium { background: rgba(0, 0, 0, 0.50); }
+    .tint-dark { background: rgba(0, 0, 0, 0.80); }
+
+    .tint-name {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+
+    .tint-specs {
+      list-style: none;
+      padding: 20px 0;
+      margin: 20px 0;
+      border-top: 1px solid #e2e8f0;
+      border-bottom: 1px solid #e2e8f0;
+      text-align: left;
+    }
+
+    .tint-specs li {
+      padding: 8px 0;
+      display: flex;
+      justify-content: space-between;
+      font-size: 14px;
+    }
+
+    .spec-label {
+      color: var(--muted);
+    }
+
+    .spec-value {
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .tint-price {
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--tint-accent);
+      margin-bottom: 20px;
+    }
+
+    .tint-price span {
+      font-size: 16px;
+      color: var(--muted);
+      font-weight: 400;
+    }
+
+    /* Pricing Table */
+    .pricing-table {
+      overflow-x: auto;
+      margin-top: 50px;
+    }
+
+    .pricing-table table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, .05);
+    }
+
+    .pricing-table th {
+      background: linear-gradient(135deg, var(--tint-accent), var(--tint-dark));
+      color: white;
+      padding: 16px;
+      text-align: left;
+      font-weight: 600;
+    }
+
+    .pricing-table td {
+      padding: 16px;
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    .pricing-table tr:hover {
+      background: #f8fafc;
+    }
+
+    .price-cell {
+      font-weight: 700;
+      color: var(--tint-accent);
+    }
+
+    /* VLT Comparison */
+    .vlt-comparison {
+      background: #f8fafc;
+      border-radius: 20px;
+      padding: 40px;
+      margin: 50px 0;
+    }
+
+    .vlt-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .vlt-item {
+      text-align: center;
+    }
+
+    .vlt-window {
+      width: 100px;
+      height: 100px;
+      margin: 0 auto 12px;
+      border: 3px solid #e2e8f0;
+      border-radius: 8px;
+      position: relative;
+      background: white;
+    }
+
+    .vlt-shade {
+      position: absolute;
+      inset: 0;
+      border-radius: 5px;
+    }
+
+    .vlt-70 { background: rgba(0, 0, 0, 0.30); }
+    .vlt-50 { background: rgba(0, 0, 0, 0.50); }
+    .vlt-35 { background: rgba(0, 0, 0, 0.65); }
+    .vlt-20 { background: rgba(0, 0, 0, 0.80); }
+    .vlt-5 { background: rgba(0, 0, 0, 0.95); }
+
+    .vlt-percentage {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .vlt-description {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    /* Law Compliance */
+    .law-notice {
+      background: #dbeafe;
+      border-left: 4px solid #2563eb;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 30px 0;
+    }
+
+    .law-notice h4 {
+      color: #1e40af;
+      margin-bottom: 8px;
+    }
+
+    .law-notice p {
+      color: #1e3a8a;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    /* Process */
+    .process-timeline {
+      position: relative;
+      max-width: 800px;
+      margin: 50px auto;
+    }
+
+    .timeline-item {
+      display: flex;
+      gap: 30px;
+      margin-bottom: 40px;
+      position: relative;
+    }
+
+    .timeline-number {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, var(--tint-accent), var(--tint-dark));
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      font-weight: 700;
+      flex-shrink: 0;
+      position: relative;
+    }
+
+    .timeline-item:not(:last-child) .timeline-number::after {
+      content: '';
+      position: absolute;
+      top: 60px;
+      left: 50%;
+      width: 2px;
+      height: 40px;
+      background: var(--tint-accent);
+      opacity: 0.3;
+      transform: translateX(-50%);
+    }
+
+    .timeline-content {
+      flex: 1;
+      padding-bottom: 20px;
+    }
+
+    .timeline-content h3 {
+      font-size: 20px;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+
+    .timeline-content p {
+      color: var(--muted);
+    }
+
+    /* Gallery */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 30px;
+      margin-top: 50px;
+    }
+
+    .gallery-item {
+      position: relative;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, .1);
+    }
+
+    .before-after-container {
+      position: relative;
+      height: 300px;
+    }
+
+    .before-img, .after-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .after-img {
+      clip-path: inset(0 0 0 50%);
+    }
+
+    .slider-bar {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 4px;
+      height: 100%;
+      background: white;
+      cursor: ew-resize;
+      transform: translateX(-50%);
+    }
+
+    .slider-button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 40px;
+      height: 40px;
+      background: white;
+      border-radius: 50%;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, .2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      color: var(--tint-accent);
+    }
+
+    .ba-label {
+      position: absolute;
+      top: 20px;
+      background: rgba(0, 0, 0, .7);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 12px;
+    }
+
+    .before-label {
+      left: 20px;
+    }
+
+    .after-label {
+      right: 20px;
+    }
+
+    .gallery-caption {
+      padding: 20px;
+      background: white;
+    }
+
+    .gallery-caption h4 {
+      font-size: 16px;
+      margin-bottom: 4px;
+      color: var(--text);
+    }
+
+    .gallery-caption p {
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    /* Reviews */
+    .review-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 30px;
+      margin-top: 50px;
+    }
+
+    .review-card {
+      background: white;
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, .05);
+      transition: all .3s;
+    }
+
+    .review-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, .1);
+    }
+
+    .review-stars {
+      color: #fbbf24;
+      font-size: 20px;
+      margin-bottom: 16px;
+    }
+
+    .review-text {
+      color: var(--text);
+      line-height: 1.8;
+      margin-bottom: 20px;
+      font-size: 15px;
+    }
+
+    .review-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding-top: 20px;
+      border-top: 1px solid #f1f5f9;
+    }
+
+    .author-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--tint-accent), var(--tint-dark));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 700;
+      font-size: 18px;
+    }
+
+    .author-info {
+      flex: 1;
+    }
+
+    .author-name {
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .author-details {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    /* FAQ */
+    .faq-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-top: 50px;
+    }
+
+    @media (max-width: 768px) {
+      .faq-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .faq-item {
+      background: white;
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, .05);
+    }
+
+    .faq-question {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 12px;
+    }
+
+    .faq-answer {
+      color: var(--muted);
+      line-height: 1.8;
+      font-size: 15px;
+    }
+
+    /* CTA Section */
+    .cta-section {
+      background: linear-gradient(135deg, var(--tint-accent), var(--tint-dark));
+      color: white;
+      border-radius: 20px;
+      padding: 60px;
+      text-align: center;
+      margin: 60px 0;
+    }
+
+    .cta-section h2 {
+      font-size: 36px;
+      margin-bottom: 12px;
+    }
+
+    .cta-section p {
+      font-size: 18px;
+      margin-bottom: 30px;
+      opacity: 0.95;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 768px) {
+      .cta-section {
+        padding: 40px 20px;
+      }
+      
+      .cta-section h2 {
+        font-size: 28px;
+      }
+    }
+
+    /* Section Headers */
+    .section-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-header h2 {
+      font-size: 36px;
+      margin-bottom: 12px;
+      color: var(--text);
+    }
+
+    .section-header p {
+      font-size: 18px;
+      color: var(--muted);
+    }
+
+    /* Footer */
+    footer {
+      background: #0b1220;
+      color: #d1d5db;
+      padding: 60px 0 30px;
+      margin-top: 0;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .footer-column h3 {
+      color: white;
+      margin-bottom: 20px;
+      font-size: 18px;
+    }
+
+    .footer-column a {
+      display: block;
+      color: #94a3b8;
+      text-decoration: none;
+      padding: 6px 0;
+      transition: color .3s;
+    }
+
+    .footer-column a:hover {
+      color: var(--tint-accent);
+    }
+  </style>
+
+</head>
+<body>
+
+  <!-- HEADER (Same structure, Window Tinting active) -->
+  <header class="main-header">
+    <div class="header-container">
+      <div class="header-content">
+        
+        <!-- Logo/Brand -->
+        <a href="/" class="brand" aria-label="ShineDesign Home">
+          <img src="/logo.svg" alt="ShineDesign" width="140" height="42">
+          <div class="brand-text">
+            <span class="brand-name">ShineDesign</span>
+            <span class="brand-tagline">DETAILING • TINT • PPF • CERAMIC</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="nav-links" aria-label="Primary Navigation">
+          
+          <!-- Services Dropdown -->
+          <div class="nav-dropdown">
+            <a href="/services/">Services <span class="arrow">▼</span></a>
+          </div>
+
+          <!-- Quick Service Pills -->
+          <div class="service-pills">
+            <a href="/ceramic-coating" class="service-pill">Ceramic</a>
+            <a href="/paint-protection-film" class="service-pill">PPF</a>
+            <a href="/window-tinting" class="service-pill active">Tint</a>
+            <a href="/auto-detailing" class="service-pill">Detail</a>
+          </div>
+
+          <!-- Other Nav Items -->
+          <a href="/gallery">Gallery</a>
+          <a href="#pricing">Pricing</a>
+          
+          <!-- Locations Dropdown -->
+          <div class="nav-dropdown">
+            <a href="/locations/">Locations <span class="arrow">▼</span></a>
+          </div>
+
+          <a href="/about">About</a>
+
+          <!-- CTAs -->
+          <div class="cta-group">
+            <a href="tel:4805288227" class="cta-phone">
+              <span>📞</span>
+              <span>(480) 528-8227</span>
+            </a>
+            <a href="https://booknow.shinedesignaz.com/" class="cta-primary">
+              Book Online
+              <span>→</span>
+            </a>
+          </div>
+        </nav>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="menu-btn" aria-label="Menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 12h18M3 6h18M3 18h18"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Breadcrumb -->
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="/">Home</a> → <a href="/services">Services</a> → Window Tinting
+      </div>
+    </div>
+
+    <!-- Service Hero -->
+    <section class="service-hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-content">
+            <h1>Window Tinting to Beat the Arizona Heat</h1>
+            <p class="hero-subtitle">Keep your car cool with ceramic tint that blocks up to 98% of infrared heat. UV protection, glare reduction, and lifetime warranty.</p>
+            
+            <ul class="hero-bullets">
+              <li>Up to 98% infrared heat rejection</li>
+              <li>99% UV protection for you and interior</li>
+              <li>Lifetime warranty against fading/bubbling</li>
+              <li>Legal tints - we know AZ laws</li>
+            </ul>
+
+            <div class="hero-cta-group">
+              <a href="#pricing" class="hero-cta">
+                View Pricing & Options
+                <span>↓</span>
+              </a>
+              <button class="hero-cta secondary" onclick="window.openCalculator()">
+                Calculate Your Price
+              </button>
+            </div>
+          </div>
+
+          <div class="hero-image">
+            <img src="/assets/images/window-tint-hero.jpg" alt="Window tinting installation on vehicle">
+            <div class="badge-float">Stay 43°F Cooler!</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Arizona Heat Stats -->
+    <section class="heat-stats">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-item">
+            <div class="stat-number">118°F</div>
+            <div class="stat-label">Phoenix Record High</div>
+            <div class="stat-subtext">Average 110°F+ days: 21</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">180°F</div>
+            <div class="stat-label">Dashboard Temperature</div>
+            <div class="stat-subtext">In direct sunlight</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">43°F</div>
+            <div class="stat-label">Cooler with Ceramic Tint</div>
+            <div class="stat-subtext">Interior temperature drop</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">25%</div>
+            <div class="stat-label">Fuel Savings</div>
+            <div class="stat-subtext">Less A/C usage</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Why Window Tinting is Essential in Arizona</h2>
+          <p>More than just privacy - it's protection for you and your vehicle</p>
+        </div>
+
+        <div class="benefits-grid">
+          <div class="benefit-card">
+            <div class="benefit-icon">🌡️</div>
+            <h3>Heat Rejection</h3>
+            <p>Block up to 98% of infrared heat, keeping your interior up to 60% cooler. Essential for Arizona summers.</p>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon">☀️</div>
+            <h3>UV Protection</h3>
+            <p>99% UV ray blockage protects your skin and prevents interior fading, cracking, and deterioration.</p>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon">👁️</div>
+            <h3>Glare Reduction</h3>
+            <p>Reduce eye strain and improve driving safety by cutting harsh sunlight and headlight glare.</p>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon">🔒</div>
+            <h3>Privacy & Security</h3>
+            <p>Keep valuables hidden and add privacy. Film also holds glass together if broken.</p>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon">⚡</div>
+            <h3>Energy Efficiency</h3>
+            <p>Reduce AC usage by up to 30%, saving fuel and reducing wear on your cooling system.</p>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon">💎</div>
+            <h3>Interior Preservation</h3>
+            <p>Prevent leather cracking, dashboard warping, and upholstery fading from sun damage.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tint Options -->
+    <section class="section" style="background: #f8fafc;">
+      <div class="container">
+        <div class="section-header">
+          <h2>Window Tint Options</h2>
+          <p>Choose the right tint for your needs and budget</p>
+        </div>
+
+        <div class="tint-options">
+          <!-- Dyed Tint -->
+          <div class="tint-card">
+            <div class="tint-visual">
+              <div class="tint-overlay tint-light"></div>
+            </div>
+            <h3 class="tint-name">Dyed Window Film</h3>
+            <p style="color: var(--muted); margin-bottom: 20px;">Good privacy and glare reduction at an affordable price</p>
+            
+            <ul class="tint-specs">
+              <li>
+                <span class="spec-label">Heat Rejection:</span>
+                <span class="spec-value">35-40%</span>
+              </li>
+              <li>
+                <span class="spec-label">UV Protection:</span>
+                <span class="spec-value">99%</span>
+              </li>
+              <li>
+                <span class="spec-label">Glare Reduction:</span>
+                <span class="spec-value">Good</span>
+              </li>
+              <li>
+                <span class="spec-label">Warranty:</span>
+                <span class="spec-value">Lifetime</span>
+              </li>
+              <li>
+                <span class="spec-label">Signal Friendly:</span>
+                <span class="spec-value">Yes</span>
+              </li>
+            </ul>
+            
+            <div class="tint-price">
+              $399
+              <span>starting (sedan)</span>
+            </div>
+          </div>
+
+          <!-- Ceramic Tint -->
+          <div class="tint-card featured">
+            <span class="featured-badge">BEST FOR ARIZONA</span>
+            <div class="tint-visual">
+              <div class="tint-overlay tint-medium"></div>
+            </div>
+            <h3 class="tint-name">Ceramic Window Film</h3>
+            <p style="color: var(--muted); margin-bottom: 20px;">Maximum heat rejection without metallic interference</p>
+            
+            <ul class="tint-specs">
+              <li>
+                <span class="spec-label">Heat Rejection:</span>
+                <span class="spec-value">85-98%</span>
+              </li>
+              <li>
+                <span class="spec-label">UV Protection:</span>
+                <span class="spec-value">99%</span>
+              </li>
+              <li>
+                <span class="spec-label">Glare Reduction:</span>
+                <span class="spec-value">Excellent</span>
+              </li>
+              <li>
+                <span class="spec-label">Warranty:</span>
+                <span class="spec-value">Lifetime</span>
+              </li>
+              <li>
+                <span class="spec-label">Signal Friendly:</span>
+                <span class="spec-value">Yes</span>
+              </li>
+            </ul>
+            
+            <div class="tint-price">
+              $489
+              <span>starting (sedan)</span>
+            </div>
+          </div>
+
+          <!-- Carbon Tint -->
+          <div class="tint-card">
+            <div class="tint-visual">
+              <div class="tint-overlay tint-dark"></div>
+            </div>
+            <h3 class="tint-name">Carbon Window Film</h3>
+            <p style="color: var(--muted); margin-bottom: 20px;">Matte finish with strong heat rejection</p>
+            
+            <ul class="tint-specs">
+              <li>
+                <span class="spec-label">Heat Rejection:</span>
+                <span class="spec-value">50-60%</span>
+              </li>
+              <li>
+                <span class="spec-label">UV Protection:</span>
+                <span class="spec-value">99%</span>
+              </li>
+              <li>
+                <span class="spec-label">Glare Reduction:</span>
+                <span class="spec-value">Very Good</span>
+              </li>
+              <li>
+                <span class="spec-label">Warranty:</span>
+                <span class="spec-value">Lifetime</span>
+              </li>
+              <li>
+                <span class="spec-label">Signal Friendly:</span>
+                <span class="spec-value">Yes</span>
+              </li>
+            </ul>
+            
+            <div class="tint-price">
+              $449
+              <span>starting (sedan)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VLT Comparison -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Choose Your Shade (VLT%)</h2>
+          <p>VLT = Visible Light Transmission - the percentage of light that passes through</p>
+        </div>
+
+        <div class="vlt-comparison">
+          <div class="vlt-grid">
+            <div class="vlt-item">
+              <div class="vlt-window">
+                <div class="vlt-shade vlt-70"></div>
+              </div>
+              <div class="vlt-percentage">70%</div>
+              <div class="vlt-description">Very Light<br>Windshield Legal</div>
+            </div>
+            <div class="vlt-item">
+              <div class="vlt-window">
+                <div class="vlt-shade vlt-50"></div>
+              </div>
+              <div class="vlt-percentage">50%</div>
+              <div class="vlt-description">Light<br>Subtle Tint</div>
+            </div>
+            <div class="vlt-item">
+              <div class="vlt-window">
+                <div class="vlt-shade vlt-35"></div>
+              </div>
+              <div class="vlt-percentage">35%</div>
+              <div class="vlt-description">Medium<br>Popular Choice</div>
+            </div>
+            <div class="vlt-item">
+              <div class="vlt-window">
+                <div class="vlt-shade vlt-20"></div>
+              </div>
+              <div class="vlt-percentage">20%</div>
+              <div class="vlt-description">Dark<br>Good Privacy</div>
+            </div>
+            <div class="vlt-item">
+              <div class="vlt-window">
+                <div class="vlt-shade vlt-5"></div>
+              </div>
+              <div class="vlt-percentage">5%</div>
+              <div class="vlt-description">Limo<br>Maximum Privacy</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="law-notice">
+          <h4>⚖️ Arizona Tint Laws</h4>
+          <p>
+            <strong>Front Windows:</strong> Must allow 33% or more light (no darker than 33% VLT)<br>
+            <strong>Back Windows:</strong> Any darkness allowed<br>
+            <strong>Windshield:</strong> Tint allowed on top 5 inches (AS-1 line) or top 5 inches, whichever is less<br>
+            We ensure your tint is 100% legal and provide documentation for law enforcement if needed.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Table -->
+    <section class="section" style="background: #f8fafc;" id="pricing">
+      <div class="container">
+        <div class="section-header">
+          <h2>Window Tinting Pricing</h2>
+          <p>Transparent pricing for all vehicle types</p>
+        </div>
+
+        <div class="pricing-table">
+          <table>
+            <thead>
+              <tr>
+                <th>Vehicle Type</th>
+                <th>Dyed Film</th>
+                <th>Carbon Film</th>
+                <th>Ceramic Film</th>
+                <th>Full Windshield Add-On</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>2-Door Car/Truck</strong></td>
+                <td class="price-cell">$349</td>
+                <td class="price-cell">$399</td>
+                <td class="price-cell">$439</td>
+                <td class="price-cell">+$200</td>
+              </tr>
+              <tr>
+                <td><strong>4-Door Sedan</strong></td>
+                <td class="price-cell">$399</td>
+                <td class="price-cell">$449</td>
+                <td class="price-cell">$489</td>
+                <td class="price-cell">+$200</td>
+              </tr>
+              <tr>
+                <td><strong>Truck (Extended/Crew Cab)</strong></td>
+                <td class="price-cell">$499</td>
+                <td class="price-cell">$549</td>
+                <td class="price-cell">$589</td>
+                <td class="price-cell">+$200</td>
+              </tr>
+              <tr>
+                <td><strong>SUV/Minivan</strong></td>
+                <td class="price-cell">$599</td>
+                <td class="price-cell">$649</td>
+                <td class="price-cell">$689</td>
+                <td class="price-cell">+$200</td>
+              </tr>
+              <tr>
+                <td><strong>Tesla (All Glass Roof)</strong></td>
+                <td colspan="3" style="text-align: center;">Custom Quote Required</td>
+                <td class="price-cell">+$200</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p style="text-align: center; margin-top: 20px; color: var(--muted); font-size: 14px;">
+          💰 Save $50 when bundled with any detailing service • All tints include lifetime warranty
+        </p>
+      </div>
+    </section>
+
+    <!-- Installation Process -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Professional Installation Process</h2>
+          <p>Precision application for bubble-free, long-lasting results</p>
+        </div>
+
+        <div class="process-timeline">
+          <div class="timeline-item">
+            <div class="timeline-number">1</div>
+            <div class="timeline-content">
+              <h3>Window Preparation</h3>
+              <p>Deep cleaning of all glass surfaces inside and out. Remove any adhesive residue from old tint if applicable.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-number">2</div>
+            <div class="timeline-content">
+              <h3>Precision Cutting</h3>
+              <p>Computer-cut patterns ensure perfect fit for your specific vehicle make and model. No gaps or overlaps.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-number">3</div>
+            <div class="timeline-content">
+              <h3>Film Application</h3>
+              <p>Professional heat-shrinking and application techniques ensure zero bubbles and perfect adhesion.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-number">4</div>
+            <div class="timeline-content">
+              <h3>Edge Sealing</h3>
+              <p>All edges are carefully sealed to prevent peeling. Special attention to curved windows and complex shapes.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-number">5</div>
+            <div class="timeline-content">
+              <h3>Quality Check</h3>
+              <p>Thorough inspection for any imperfections. We ensure clarity, no distortion, and perfect installation.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-number">6</div>
+            <div class="timeline-content">
+              <h3>Care Instructions</h3>
+              <p>Detailed aftercare guidance and warranty registration. 3-day cure time instructions provided.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="section" style="background: #f8fafc;">
+      <div class="container">
+        <div class="section-header">
+          <h2>Window Tinting Gallery</h2>
+          <p>See the difference quality tint makes</p>
+        </div>
+
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <div class="before-after-container">
+              <img src="/assets/images/tint-before-1.jpg" alt="Before window tinting" class="before-img">
+              <img src="/assets/images/tint-after-1.jpg" alt="After window tinting" class="after-img">
+              <div class="slider-bar">
+                <div class="slider-button">⟷</div>
+              </div>
+              <span class="ba-label before-label">BEFORE</span>
+              <span class="ba-label after-label">AFTER</span>
+            </div>
+            <div class="gallery-caption">
+              <h4>2024 Toyota Camry</h4>
+              <p>35% Ceramic tint all around</p>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <div class="before-after-container">
+              <img src="/assets/images/tint-before-2.jpg" alt="Before window tinting" class="before-img">
+              <img src="/assets/images/tint-after-2.jpg" alt="After window tinting" class="after-img">
+              <div class="slider-bar">
+                <div class="slider-button">⟷</div>
+              </div>
+              <span class="ba-label before-label">BEFORE</span>
+              <span class="ba-label after-label">AFTER</span>
+            </div>
+            <div class="gallery-caption">
+              <h4>2023 Ford F-150</h4>
+              <p>20% Ceramic with windshield strip</p>
+            </div>
+          </div>
+
+          <div class="gallery-item">
+            <div class="before-after-container">
+              <img src="/assets/images/tint-before-3.jpg" alt="Before window tinting" class="before-img">
+              <img src="/assets/images/tint-after-3.jpg" alt="After window tinting" class="after-img">
+              <div class="slider-bar">
+                <div class="slider-button">⟷</div>
+              </div>
+              <span class="ba-label before-label">BEFORE</span>
+              <span class="ba-label after-label">AFTER</span>
+            </div>
+            <div class="gallery-caption">
+              <h4>2024 Tesla Model Y</h4>
+              <p>15% Ceramic all glass including roof</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Window Tinting Reviews</h2>
+          <p>What our customers say about staying cool</p>
+        </div>
+
+        <div class="review-grid">
+          <div class="review-card">
+            <div class="review-stars">⭐⭐⭐⭐⭐</div>
+            <p class="review-text">"The ceramic tint is a game changer in Phoenix heat! My car stays so much cooler now. The installation was perfect - no bubbles, no issues after 6 months."</p>
+            <div class="review-author">
+              <div class="author-avatar">JH</div>
+              <div class="author-info">
+                <div class="author-name">Jennifer Harris</div>
+                <div class="author-details">2023 Honda CR-V • Ceramic 35%</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-stars">⭐⭐⭐⭐⭐</div>
+            <p class="review-text">"Best investment for Arizona driving! The temperature difference is incredible. They came to my office and had it done during lunch. Professional and fast!"</p>
+            <div class="review-author">
+              <div class="author-avatar">TC</div>
+              <div class="author-info">
+                <div class="author-name">Tom Chen</div>
+                <div class="author-details">2024 Model 3 • Ceramic 20%</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="review-stars">⭐⭐⭐⭐⭐</div>
+            <p class="review-text">"My leather seats were getting destroyed by the sun. After getting ceramic tint, the interior stays cool and I'm saving gas from less AC use. Worth every penny!"</p>
+            <div class="review-author">
+              <div class="author-avatar">MP</div>
+              <div class="author-info">
+                <div class="author-name">Maria Perez</div>
+                <div class="author-details">2022 BMW X5 • Ceramic 15%</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQs -->
+    <section class="section" style="background: #f8fafc;">
+      <div class="container">
+        <div class="section-header">
+          <h2>Window Tinting FAQs</h2>
+          <p>Common questions about automotive window tint</p>
+        </div>
+
+        <div class="faq-grid">
+          <div class="faq-item">
+            <h3 class="faq-question">How long does window tinting take?</h3>
+            <p class="faq-answer">Most vehicles take 2-3 hours for complete tinting. We can do it while you wait or at your location if you have other things to do.</p>
+          </div>
+
+          <div class="faq-item">
+            <h3 class="faq-question">Will tint interfere with electronics?</h3>
+            <p class="faq-answer">No! Ceramic and carbon tints contain no metal, so they won't interfere with cell phones, GPS, radio, or toll passes.</p>
+          </div>
+
+          <div class="faq-item">
+            <h3 class="faq-question">Can I roll windows down after installation?</h3>
+            <p class="faq-answer">We recommend waiting 3 days for the adhesive to fully cure. After that, your windows will function normally.</p>
+          </div>
+
+          <div class="faq-item">
+            <h3 class="faq-question">Is ceramic tint worth the extra cost?</h3>
+            <p class="faq-answer">In Arizona, absolutely! Ceramic rejects up to 98% of heat vs 40% for dyed film. The comfort and energy savings pay for the difference quickly.</p>
+          </div>
+
+          <div class="faq-item">
+            <h3 class="faq-question">What if I get pulled over for tint?</h3>
+            <p class="faq-answer">We only install legal tints and provide documentation showing VLT%. Front windows will meet Arizona's 33% requirement.</p>
+          </div>
+
+          <div class="faq-item">
+            <h3 class="faq-question">Can you remove old tint?</h3>
+            <p class="faq-answer">Yes! We professionally remove old, bubbling, or purple tint. Removal is $25 per window when getting new tint installed.</p>
+          </div>
+
+          <div class="faq-item">
+            <h3 class="faq-question">Do you tint sunroofs and windshields?</h3>
+            <p class="faq-answer">Yes! We can tint sunroofs and offer full windshield tinting with clear ceramic that blocks heat without reducing visibility.</p>
+          </div>
+
+          <div class="faq-item">
+            <h3 class="faq-question">What's covered by the lifetime warranty?</h3>
+            <p class="faq-answer">The warranty covers peeling, bubbling, cracking, color change, and adhesive failure. It's transferable if you sell the vehicle.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="container">
+      <div class="cta-section">
+        <h2>Stop Suffering in the Arizona Heat</h2>
+        <p>Stay cool, protect your interior, and save on fuel costs with professional window tinting</p>
+        
+        <div class="cta-buttons">
+          <a href="https://booknow.shinedesignaz.com/" class="hero-cta">
+            Book Online Now
+            <span>→</span>
+          </a>
+          <button class="hero-cta secondary" onclick="window.openCalculator()">
+            <span>💰</span>
+            Calculate Your Price
+          </button>
+        </div>
+
+        <p style="margin-top: 20px; font-size: 14px; opacity: 0.9;">
+          🌡️ Same-day service available • 🚐 We come to you • ✅ Lifetime warranty
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-column">
+          <h3>Services</h3>
+          <a href="/ceramic-coating">Ceramic Coating</a>
+          <a href="/paint-protection-film">Paint Protection Film</a>
+          <a href="/window-tinting">Window Tinting</a>
+          <a href="/auto-detailing">Auto Detailing</a>
+          <a href="/paint-correction">Paint Correction</a>
+        </div>
+        <div class="footer-column">
+          <h3>Service Areas</h3>
+          <a href="/locations/gilbert">Gilbert</a>
+          <a href="/locations/mesa">Mesa</a>
+          <a href="/locations/chandler">Chandler</a>
+          <a href="/locations/queen-creek">Queen Creek</a>
+          <a href="/locations/scottsdale">Scottsdale</a>
+        </div>
+        <div class="footer-column">
+          <h3>Company</h3>
+          <a href="/about">About Us</a>
+          <a href="/gallery">Gallery</a>
+          <a href="#pricing">Pricing</a>
+          <a href="/contact">Contact</a>
+          <a href="https://g.page/r/CU3j316NmdMlEBM/review">Leave a Review</a>
+        </div>
+        <div class="footer-column">
+          <h3>Contact</h3>
+          <p style="color: #94a3b8; margin-bottom: 12px;">📞 <a href="tel:4805288227">(480) 528-8227</a></p>
+          <p style="color: #94a3b8; margin-bottom: 12px;">📧 <a href="mailto:info@shinedesignaz.com">info@shinedesignaz.com</a></p>
+          <p style="color: #94a3b8; margin-bottom: 12px;">⏰ Mon-Sun 7AM-7PM</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Before/After Sliders
+    document.querySelectorAll('.slider-bar').forEach(slider => {
+      let isSliding = false;
+      const container = slider.parentElement;
+      const afterImg = container.querySelector('.after-img');
+
+      slider.addEventListener('mousedown', () => isSliding = true);
+      document.addEventListener('mouseup', () => isSliding = false);
+      document.addEventListener('mousemove', (e) => {
+        if (!isSliding) return;
+        
+        const rect = container.getBoundingClientRect();
+        const x = Math.max(0, Math.min(e.clientX - rect.left, rect.width));
+        const percentage = (x / rect.width) * 100;
+        
+        slider.style.left = percentage + '%';
+        afterImg.style.clipPath = `inset(0 0 0 ${percentage}%)`;
+      });
+
+      // Touch support
+      slider.addEventListener('touchstart', () => isSliding = true);
+      document.addEventListener('touchend', () => isSliding = false);
+      document.addEventListener('touchmove', (e) => {
+        if (!isSliding) return;
+        
+        const rect = container.getBoundingClientRect();
+        const x = Math.max(0, Math.min(e.touches[0].clientX - rect.left, rect.width));
+        const percentage = (x / rect.width) * 100;
+        
+        slider.style.left = percentage + '%';
+        afterImg.style.clipPath = `inset(0 0 0 ${percentage}%)`;
+      });
+    });
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+
+  <!-- Load your action buttons script -->
+  <script src="/action-buttons.js" defer></script>
+
+</body>
+</html>
