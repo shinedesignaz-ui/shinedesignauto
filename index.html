@@ -35,7 +35,7 @@
       margin: 0;
       padding: 0;
     }
-    
+
     html, body { overflow-x: hidden; } /* stop side-to-side jiggle */
     img, video { max-width: 100%; height: auto; display: block; } /* prevent media overflow */
     body {
@@ -43,6 +43,7 @@
       color: var(--text);
       background: var(--bg);
       line-height: 1.6;
+      overscroll-behavior-x: none;
     }
     /* Hide sticky footer when the mobile menu is open (prevents layout shifts) */
     .menu-open .mobile-sticky-footer { display: none !important; }
@@ -65,7 +66,7 @@
       position: relative;
       z-index: 1001;
     }
-    
+
     .announcement-bar a {
       color: white;
       text-decoration: underline;
@@ -106,30 +107,30 @@
       text-decoration: none;
       transition: transform .2s;
     }
-    
+
     .brand:hover {
       transform: translateY(-1px);
     }
-    
+
     .brand img {
       height: 42px;
       width: auto;
       display: block;
     }
-    
+
     .brand-text {
       display: flex;
       flex-direction: column;
       line-height: 1.2;
     }
-    
+
     .brand-name {
       font-size: 20px;
       font-weight: 700;
       color: var(--text);
       letter-spacing: -0.5px;
     }
-    
+
     .brand-tagline {
       font-size: 11px;
       color: var(--muted);
@@ -175,7 +176,7 @@
       border-left: 1px solid rgba(0, 0, 0, .1);
       border-right: 1px solid rgba(0, 0, 0, .1);
     }
-    
+
     .service-pill {
       padding: 6px 12px;
       background: rgba(14, 165, 233, .08);
@@ -187,7 +188,7 @@
       transition: all .2s;
       white-space: nowrap;
     }
-    
+
     .service-pill:hover {
       background: var(--brand);
       color: white;
@@ -240,7 +241,7 @@
       padding-bottom: 12px;
       border-bottom: 1px solid rgba(0, 0, 0, .06);
     }
-    
+
     .service-card {
       display: flex;
       align-items: center;
@@ -251,12 +252,12 @@
       transition: all .2s;
       background: rgba(14, 165, 233, .04);
     }
-    
+
     .service-card:hover {
       background: rgba(14, 165, 233, .12);
       transform: translateX(4px);
     }
-    
+
     .service-icon {
       width: 32px;
       height: 32px;
@@ -269,11 +270,11 @@
       font-size: 18px;
       flex-shrink: 0;
     }
-    
+
     .service-info {
       flex: 1;
     }
-    
+
     .service-title {
       font-weight: 600;
       color: var(--text);
@@ -281,7 +282,7 @@
       line-height: 1.2;
       display: block;
     }
-    
+
     .service-desc {
       font-size: 11px;
       color: var(--muted);
@@ -492,7 +493,7 @@
         padding: 40px 0;
       }
     }
-    
+
     /* Skip link for accessibility */
     .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
 
@@ -1042,7 +1043,9 @@
 
     .reviews-track {
       display: flex;
-      transition: transform 0.5s ease;
+      /* Removed transition to prevent bounce during resets */
+      will-change: transform;
+      transform: translateZ(0);
     }
 
     .review-card {
@@ -1301,15 +1304,27 @@
     }
 
     /* Fieldd form styles */
-    fieldd-lead-form, #lead-form-anchor { 
-      display: block; 
-      max-width: 100%; 
-      margin: 0 auto; 
+    fieldd-lead-form, #lead-form-anchor {
+      display: block;
+      max-width: 100%;
+      margin: 0 auto;
     }
 
     /* === Mobile anti-jiggle override for scaled cards === */
     @media (max-width: 640px){
       .pricing-card.featured { transform: none; } /* prevent horizontal overflow on small screens */
+    }
+
+    /* ===== Action Buttons (call/text) hardening to prevent iOS jump ===== */
+    .mobile-sticky-footer{
+      z-index:1100 !important;
+      padding-bottom: env(safe-area-inset-bottom, 0px) !important;
+      bottom: max(0px, env(safe-area-inset-bottom, 0px)) !important;
+      will-change: transform;
+      transform: translateZ(0);
+    }
+    @media (min-width:769px){
+      .desktop-floating-buttons{ z-index:1100 !important; }
     }
   </style>
 
@@ -1329,7 +1344,7 @@
   <header class="main-header">
     <div class="header-container">
       <div class="header-content">
-        
+
         <!-- Logo/Brand -->
         <a href="/" class="brand" aria-label="ShineDesign Home">
           <img src="/logo.svg" alt="ShineDesign" width="140" height="42">
@@ -1341,7 +1356,7 @@
 
         <!-- Desktop Navigation -->
         <nav class="nav-links" aria-label="Primary Navigation">
-          
+
           <!-- Services Dropdown with Featured Grid -->
           <div class="nav-dropdown">
             <a href="/services/">Services <span class="arrow">▼</span></a>
@@ -1377,7 +1392,7 @@
                   </div>
                 </a>
               </div>
-              
+
               <!-- Additional Services -->
               <div class="dropdown-label">Specialty Services</div>
               <a href="/paint-correction">Paint Correction</a>
@@ -1399,7 +1414,7 @@
           <!-- Other Nav Items -->
           <a href="/gallery">Gallery</a>
           <a href="#pricing">Pricing</a>
-          
+
           <!-- Locations Dropdown -->
           <div class="nav-dropdown">
             <a href="/locations/">Locations <span class="arrow">▼</span></a>
@@ -1463,7 +1478,7 @@
           <span>→</span>
         </a>
       </div>
-      
+
       <!-- Other Links -->
       <a href="/services">All Services</a>
       <a href="/gallery">Gallery</a>
@@ -1471,7 +1486,7 @@
       <a href="/locations">Locations</a>
       <a href="/about">About Us</a>
       <a href="/contact">Contact</a>
-      
+
       <!-- Mobile CTAs -->
       <div style="margin-top: 24px; display: grid; gap: 12px;">
         <a href="tel:4805288227" class="cta-primary" style="justify-content: center;">
@@ -1497,7 +1512,7 @@
         <div class="container">
           <h1>Your Car Deserves Better Than a Drive-Through Wash</h1>
           <p class="hero-subtitle">Professional mobile detailing, ceramic coating, PPF, and window tinting. We come to you in Gilbert, Mesa, Chandler, and across the East Valley.</p>
-          
+
           <div class="hero-cta-group">
             <a href="https://booknow.shinedesignaz.com/" class="hero-cta">
               Book Now - Same Day Available
@@ -1944,7 +1959,7 @@
     function toggleMobileMenu() {
       const mobileNav = document.getElementById('mobile-nav');
       const menuBtn = document.querySelector('.menu-btn');
-      
+
       if (mobileNav.classList.contains('active')) {
         mobileNav.classList.remove('active');
         menuBtn.setAttribute('aria-expanded', 'false');
@@ -1974,7 +1989,7 @@
         large: { silver: '$249', gold: '$399', platinum: '$599' },
         xl: { silver: '$299', gold: '$469', platinum: '$699' }
       };
-      
+
       const servicePrices = prices[vehicleType];
       document.querySelectorAll('.service-option-price').forEach((el, idx) => {
         if (idx === 0) el.textContent = servicePrices.silver + '+';
@@ -2001,60 +2016,89 @@
       document.addEventListener('mouseup', () => isSliding = false);
       document.addEventListener('mousemove', (e) => {
         if (!isSliding) return;
-        
+
         const container = slider.parentElement;
         const rect = container.getBoundingClientRect();
         const x = Math.max(0, Math.min(e.clientX - rect.left, rect.width));
         const percentage = (x / rect.width) * 100;
-        
+
         slider.style.left = percentage + '%';
         afterImage.style.clipPath = `inset(0 0 0 ${percentage}%)`;
       });
 
       // Touch support
-      slider.addEventListener('touchstart', () => isSliding = true);
-      document.addEventListener('touchend', () => isSliding = false);
+      slider.addEventListener('touchstart', () => isSliding = true, {passive:true});
+      document.addEventListener('touchend', () => isSliding = false, {passive:true});
       document.addEventListener('touchmove', (e) => {
         if (!isSliding) return;
-        
+
         const container = slider.parentElement;
         const rect = container.getBoundingClientRect();
         const x = Math.max(0, Math.min(e.touches[0].clientX - rect.left, rect.width));
         const percentage = (x / rect.width) * 100;
-        
+
         slider.style.left = percentage + '%';
         afterImage.style.clipPath = `inset(0 0 0 ${percentage}%)`;
-      });
+      }, {passive:true});
     }
 
-    // Reviews Auto-Scroll
-    const reviewsTrack = document.getElementById('reviewsTrack');
-    if (reviewsTrack) {
-      let scrollPosition = 0;
-      setInterval(() => {
-        scrollPosition += 1;
-        if (scrollPosition >= reviewsTrack.scrollWidth / 3) {
-          scrollPosition = 0;
+    /* ===== Reviews Auto-Scroll (seamless, no bounce) ===== */
+    (function(){
+      const track = document.getElementById('reviewsTrack');
+      if (!track) return;
+
+      const prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      // Duplicate slides for continuous loop
+      const originals = Array.from(track.children);
+      if (originals.length === 0) return;
+      originals.forEach(n => track.appendChild(n.cloneNode(true)));
+
+      let firstSetWidth = 0;
+      function measure(){
+        firstSetWidth = 0;
+        const half = track.children.length / 2;
+        for (let i = 0; i < half; i++) {
+          firstSetWidth += track.children[i].getBoundingClientRect().width;
         }
-        reviewsTrack.style.transform = `translateX(-${scrollPosition}px)`;
-      }, 50);
-    }
+      }
+      measure();
+      window.addEventListener('resize', measure);
+
+      let x = 0;
+      const SPEED = 0.6; // px per frame
+      let rafId;
+
+      function step(){
+        x += SPEED;
+        if (x >= firstSetWidth) x -= firstSetWidth;
+        track.style.transform = `translateX(${-x}px)`;
+        rafId = requestAnimationFrame(step);
+      }
+
+      if (!prefersReduced) rafId = requestAnimationFrame(step);
+
+      // Pause on hover (desktop)
+      const viewport = track.parentElement;
+      viewport.addEventListener('mouseenter', () => { if (rafId) cancelAnimationFrame(rafId); });
+      viewport.addEventListener('mouseleave', () => { if (!prefersReduced) rafId = requestAnimationFrame(step); });
+    })();
 
     // FAQ Accordion
     document.querySelectorAll('.faq-question').forEach(button => {
       button.addEventListener('click', function() {
         const item = this.parentElement;
         const isActive = item.classList.contains('active');
-        
+
         document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
-        
+
         if (!isActive) {
           item.classList.add('active');
         }
       });
     });
 
-    // Lazy-load Fieldd form
+    // Lazy-load Fieldd form (kept; no-op if anchor not present)
     (function(){
       var el = document.getElementById('lead-form-anchor');
       if(!el) return;
@@ -2079,5 +2123,22 @@
   <!-- Load your action buttons script -->
   <script src="/action-buttons.js" defer></script>
 
+  <!-- iOS visualViewport nudge so the mobile footer doesn't jump when URL bar shows/hides -->
+  <script>
+    window.addEventListener('load', function(){
+      const footer = document.querySelector('.mobile-sticky-footer');
+      if (!footer || !window.visualViewport) return;
+      const sync = () => {
+        const vv = window.visualViewport;
+        const offset = Math.max(0, window.innerHeight - vv.height - vv.offsetTop);
+        footer.style.transform = `translateY(${offset}px)`;
+      };
+      visualViewport.addEventListener('resize', sync);
+      visualViewport.addEventListener('scroll', sync);
+      sync();
+    });
+  </script>
+
 </body>
 </html>
+<!DOCTYPE html>
