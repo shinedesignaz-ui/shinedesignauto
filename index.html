@@ -191,17 +191,16 @@
       overflow: hidden;
       background: #000;
     }
-    /* FIX 1: safer sizing to avoid overflow/jiggle + object-fit */
     .hero-video {
       position: absolute;
       inset: 0;
       width: 100%;
       height: 100%;
-      object-fit: cover;   /* cover the hero area cleanly */
+      object-fit: cover;
       z-index: 0;
-      opacity: 0.4;
+      opacity: 0.99;
     }
-    .hero-overlay { position:absolute; inset:0; background: linear-gradient(135deg, rgba(14,165,233,.95), rgba(2,132,199,.85)); z-index:1; }
+    .hero-overlay { position:absolute; inset:0; background: linear-gradient(135deg, rgba(14,165,233,.75), rgba(2,132,199,.65)); z-index:1; }
     .hero-content { position: relative; z-index: 2; color: white; padding: 80px 0; }
     .hero h1 { font-size: 48px; line-height: 1.1; margin-bottom: 20px; font-weight: 800; }
     @media (max-width: 768px) { .hero h1 { font-size: 32px; } }
@@ -216,11 +215,7 @@
     .hero-cta.secondary:hover { background: white; color: var(--brand); }
     .trust-badges { display:flex; gap:24px; margin-top:40px; flex-wrap:wrap; }
     .trust-badge { display:flex; align-items:center; gap:8px; color:white; font-size:14px; opacity:.9; }
-
-    /* Respect reduced motion */
-    @media (prefers-reduced-motion: reduce){
-      .hero-video { display:none; }
-    }
+    @media (prefers-reduced-motion: reduce){ .hero-video { display:none; } }
 
     /* ===== How It Works Section ===== */
     .how-it-works { background: #f8fafc; }
@@ -232,9 +227,7 @@
     .step-number { width:60px; height:60px; background:var(--brand); color:white; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:24px; font-weight:700; margin:0 auto 20px; }
     .process-step h3 { font-size:20px; margin-bottom:12px; color:var(--text); }
     .process-step p { color:var(--muted); }
-    @media (min-width: 768px) {
-      .process-step:not(:last-child)::after { content:''; position:absolute; top:30px; right:-20px; width:40px; height:2px; background:var(--brand); opacity:.3; }
-    }
+    @media (min-width: 768px) { .process-step:not(:last-child)::after { content:''; position:absolute; top:30px; right:-20px; width:40px; height:2px; background:var(--brand); opacity:.3; } }
 
     /* ===== Service Selector ===== */
     .service-selector { background:white; }
@@ -255,10 +248,7 @@
     .service-option-desc { color:var(--muted); margin-bottom:12px; }
     .service-includes { font-size:14px; color:#059669; display:flex; align-items:center; gap:8px; }
     .calculator-cta { text-align:center; margin-top:40px; }
-    .calculator-btn {
-      background: var(--brand); color:white; padding:16px 40px; border-radius:999px; font-weight:700; font-size:18px; border:none; cursor:pointer;
-      transition: all .3s; display:inline-flex; align-items:center; gap:12px;
-    }
+    .calculator-btn { background: var(--brand); color:white; padding:16px 40px; border-radius:999px; font-weight:700; font-size:18px; border:none; cursor:pointer; transition: all .3s; display:inline-flex; align-items:center; gap:12px; }
     .calculator-btn:hover { background:var(--brand-dark); transform: translateY(-2px); box-shadow:0 10px 30px rgba(14,165,233,.3); }
 
     /* ===== Pricing Packages ===== */
@@ -279,11 +269,12 @@
 
     /* ===== Before/After Gallery ===== */
     .gallery { background:#f8fafc; }
-    .gallery-slider { max-width:900px; margin:0 auto; position:relative; }
+    .gallery-slider { max-width:1200px; margin:0 auto; position:relative; } /* bigger width */
     .before-after-container { position:relative; overflow:hidden; border-radius:20px; box-shadow:0 20px 60px rgba(0,0,0,.15); }
-    .before-after-slider { position:relative; width:100%; height:500px; }
-    .before-image, .after-image { position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; }
-    .after-image { clip-path: inset(0 0 0 50%); }
+    .before-after-slider { position:relative; width:100%; height:1000px; }
+    /* Apply to BOTH .before/.after and .before-image/.after-image */
+    .before-image, .after-image, .before, .after { position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; }
+    .after-image, .after { clip-path: inset(0 0 0 50%); }
     .slider-handle { position:absolute; top:0; left:50%; width:4px; height:100%; background:white; cursor:ew-resize; transform: translateX(-50%); }
     .slider-handle::before { content:''; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:40px; height:40px; background:white; border-radius:50%; box-shadow:0 4px 12px rgba(0,0,0,.2); }
     .slider-handle::after { content:'⟷'; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); font-size:20px; color:var(--brand); }
@@ -292,6 +283,25 @@
     .gallery-navigation { display:flex; justify-content:center; gap:12px; margin-top:30px; }
     .gallery-dot { width:12px; height:12px; border-radius:50%; background:#cbd5e1; border:none; cursor:pointer; transition: all .3s; }
     .gallery-dot.active { background:var(--brand); transform: scale(1.2); }
+
+    /* Responsive slider + mobile dragging improvements */
+    .before-after-slider{
+      position:relative; width:100%;
+      aspect-ratio: 4 / 4;   /* responsive height */
+      max-height: 900px;      /* bigger cap */
+      height:auto;
+      user-select:none; -webkit-user-select:none;
+      touch-action: none;     /* enable dragging on mobile */
+    }
+    .after-image, .after { clip-path: inset(0 0 0 50%); will-change: clip-path; }
+    .before-image, .after-image, .before, .after { pointer-events:none; } /* don't eat pointer events */
+    .slider-handle{
+      position:absolute; top:0; left:50%;
+      width:4px; height:100%; background:#fff; cursor:ew-resize;
+      transform:translateX(-50%);
+      z-index:3;              /* keep on top of images/labels */
+      touch-action:none;      /* smooth pointer events on mobile */
+    }
 
     /* ===== Reviews Carousel ===== */
     .reviews { background:white; }
@@ -364,7 +374,7 @@
 
   <!-- Announcement Bar -->
   <div class="announcement-bar">
-    🎉 LIMITED TIME: Save $50 on Ceramic Coating packages - <a href="#pricing">See Pricing</a>
+    🎉 LIMITED TIME: Save 10% on Ceramic Coating packages - <a href="#pricing">See Pricing</a>
   </div>
 
   <!-- HEADER -->
@@ -462,7 +472,6 @@
 
     <!-- HERO with Video Background -->
     <section class="hero">
-      <!-- FIX 2: lazy + mobile portrait source -->
       <video
         id="hero-video"
         class="hero-video"
@@ -472,10 +481,8 @@
         autoplay
         preload="none"
         poster="/assets/videos/dh-poster-1080w.jpg">
-        <!-- Portrait for phones -->
         <source data-src="/assets/videos/dh-portrait-720x1280.mp4" type="video/mp4"
                 media="(max-width: 640px) and (orientation: portrait)">
-        <!-- Fallback landscape for everything else -->
         <source data-src="/assets/videos/dh-mobile-480.mp4" type="video/mp4">
       </video>
 
@@ -608,22 +615,13 @@
         <div class="gallery-slider">
           <div class="before-after-container">
             <div class="before-after-slider" id="slider1">
-              <img src="/assets/images/before-1.jpg" alt="Before detailing" class="before-image">
-              <img src="/assets/images/after-1.jpg" alt="After detailing" class="after-image">
-              <div class="slider-handle"></div>
+              <img src="/assets/images/before-1.webp" alt="Before detailing" class="before">
+              <img src="/assets/images/after-1.webp"  alt="After detailing"  class="after">
+              <div class="slider-handle" role="slider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50"></div>
               <span class="before-label">BEFORE</span>
               <span class="after-label">AFTER</span>
             </div>
           </div>
-          <div class="gallery-navigation">
-            <button class="gallery-dot active" data-slide="0"></button>
-            <button class="gallery-dot" data-slide="1"></button>
-            <button class="gallery-dot" data-slide="2"></button>
-            <button class="gallery-dot" data-slide="3"></button>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <!-- Reviews Carousel -->
     <section class="section reviews">
@@ -798,37 +796,33 @@
       });
     });
 
-    // Before/After Slider
-    const slider = document.querySelector('.slider-handle');
-    const afterImage = document.querySelector('.after-image');
-    let isSliding = false;
+    // ===== Before/After Slider (fixed; supports .after-image OR .after) =====
+    document.querySelectorAll('.before-after-slider').forEach(slider => {
+      const after  = slider.querySelector('.after-image, .after');
+      const handle = slider.querySelector('.slider-handle');
+      if (!after || !handle) return;
 
-    if (slider) {
-      slider.addEventListener('mousedown', () => isSliding = true);
-      document.addEventListener('mouseup', () => isSliding = false);
-      document.addEventListener('mousemove', (e) => {
-        if (!isSliding) return;
-        const container = slider.parentElement;
-        const rect = container.getBoundingClientRect();
-        const x = Math.max(0, Math.min(e.clientX - rect.left, rect.width));
-        const percentage = (x / rect.width) * 100;
-        slider.style.left = percentage + '%';
-        afterImage.style.clipPath = `inset(0 0 0 ${percentage}%)`;
-      });
+      let dragging = false;
 
-      // Touch support
-      slider.addEventListener('touchstart', () => isSliding = true, {passive:true});
-      document.addEventListener('touchend', () => isSliding = false, {passive:true});
-      document.addEventListener('touchmove', (e) => {
-        if (!isSliding) return;
-        const container = slider.parentElement;
-        const rect = container.getBoundingClientRect();
-        const x = Math.max(0, Math.min(e.touches[0].clientX - rect.left, rect.width));
-        const percentage = (x / rect.width) * 100;
-        slider.style.left = percentage + '%';
-        afterImage.style.clipPath = `inset(0 0 0 ${percentage}%)`;
-      }, {passive:true});
-    }
+      const setSplit = (clientX) => {
+        const rect = slider.getBoundingClientRect();
+        const x = Math.max(0, Math.min(clientX - rect.left, rect.width));
+        const pct = (x / rect.width) * 100;
+        handle.style.left = pct + '%';
+        after.style.clipPath = `inset(0 0 0 ${pct}%)`;
+        handle.setAttribute('aria-valuenow', Math.round(pct));
+      };
+
+      const onPointerDown = (e) => { dragging = true; slider.setPointerCapture?.(e.pointerId); setSplit(e.clientX); };
+      const onPointerMove = (e) => { if (dragging) setSplit(e.clientX); };
+      const onPointerUp   = ()  => { dragging = false; };
+
+      handle.addEventListener('pointerdown', onPointerDown);
+      slider.addEventListener('pointerdown', (e) => { if (e.target !== handle) onPointerDown(e); });
+      slider.addEventListener('pointermove', onPointerMove);
+      slider.addEventListener('pointerup', onPointerUp);
+      slider.addEventListener('pointercancel', onPointerUp);
+    });
 
     /* Reviews Auto-Scroll */
     (function(){
@@ -897,11 +891,10 @@
       io.observe(el);
     })();
 
-    // FIX 2 (continued): Lazy-load the hero video sources when near viewport
+    // Lazy-load the hero video sources when near viewport
     (function(){
       const v = document.getElementById('hero-video');
       if(!v) return;
-      // Respect reduced motion
       if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
       const loadVideo = () => {
