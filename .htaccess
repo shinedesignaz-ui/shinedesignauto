@@ -305,7 +305,7 @@ Redirect 301 /ppf.html /services/paint-protection-film.html
 
 # Content Security Policy (adjust as needed)
 <IfModule mod_headers.c>
-    Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://fieldd-scripts.s3.amazonaws.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://www.google-analytics.com; frame-src https://booknow.shinedesignaz.com"
+    Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://fieldd-scripts.s3.amazonaws.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self' https://www.google-analytics.com; frame-src https://booknow.shinedesignauto.com"
 </IfModule>
 
 # ===================================================================
