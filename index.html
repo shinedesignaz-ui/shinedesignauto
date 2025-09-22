@@ -1692,7 +1692,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       const sync = () => {
         const vv = window.visualViewport;
         const offset = Math.max(0, window.innerHeight - vv.height - vv.offsetTop);
-        footer.style.transform = `translateY(${offset}px)`;
+        footer.style.transform = `translateY(-14px)`;
       };
       visualViewport.addEventListener('resize', sync);
       visualViewport.addEventListener('scroll', sync);
