@@ -7,22 +7,22 @@
   if (window.shineActionButtonsLoaded) return;
   window.shineActionButtonsLoaded = true;
 
-  // Inject minified CSS (only the iOS positioning updated to sit LOWER)
+  // Inject minified CSS (MOBILE TWEAK ONLY: use translateY to drop the bar lower)
   const styles = `
     @media(max-width:768px){
-      /* Reduce reserved space so content sits closer to the bottom bar */
-      body{padding-bottom:calc(80px + max(0px, calc(env(safe-area-inset-bottom, 0px) - 16px)))!important}
+      /* Reserve a bit less space so content doesn't float above */
+      body{padding-bottom:calc(72px + env(safe-area-inset-bottom, 0px))!important}
 
       .mobile-sticky-footer{
-        position:fixed;left:0;right:0;
-        /* Put the footer INTO the white safe-area space (lower) */
-        bottom:max(0px, calc(env(safe-area-inset-bottom, 0px) - 16px));
-        background:#fff;box-shadow:0 -4px 20px rgba(0,0,0,.1);
-        z-index:1000;display:block;animation:slideUp .3s ease-out;
-        /* Small inner pad for comfortable taps */
-        padding-bottom:8px;
+        position:fixed; left:0; right:0; bottom:0;
+        /* VISUALLY DROP THE BAR LOWER INTO THE WHITE AREA */
+        transform: translateY(calc(env(safe-area-inset-bottom, 0px) - 10px));
+        background:#fff; box-shadow:0 -4px 20px rgba(0,0,0,.1);
+        z-index:1000; display:block; animation:slideUp .3s ease-out;
+        padding-bottom:8px; /* keep taps comfy */
+        will-change: transform;
       }
-      @keyframes slideUp{from{transform:translateY(100%)}to{transform:translateY(0)}}
+      @keyframes slideUp{from{transform:translateY(100%)}to{transform:translateY(calc(env(safe-area-inset-bottom, 0px) - 10px))}}
       .footer-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#e2e8f0;max-width:100%}
       .footer-item{background:#fff;padding:10px 5px;text-align:center;cursor:pointer;transition:all .3s;text-decoration:none;color:#0f172a;border:none;font-family:inherit;font-size:11px}
       .footer-item:active{transform:scale(.95);background:#f1f5f9}
@@ -30,39 +30,9 @@
       .footer-item span{display:block;font-size:11px;font-weight:600;color:#475569;line-height:1.2}
       .desktop-floating-buttons{display:none!important}
     }
-    @media(min-width:769px){
-      .mobile-sticky-footer{display:none!important}
-      .desktop-floating-buttons{position:fixed;bottom:30px;right:30px;z-index:1000;display:flex;flex-direction:column-reverse;gap:12px;animation:fadeInUp .5s ease-out}
-      @keyframes fadeInUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
-      .floating-btn{width:60px;height:60px;border-radius:50%;background:#fff;box-shadow:0 4px 20px rgba(0,0,0,.15);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .3s;text-decoration:none;border:2px solid transparent}
-      .floating-btn:hover{transform:scale(1.1);box-shadow:0 6px 30px rgba(0,0,0,.2);border-color:#0ea5e9}
-      .floating-btn svg{width:28px;height:28px;color:#0ea5e9}
-      .floating-btn.primary{width:70px;height:70px;background:linear-gradient(135deg,#0ea5e9,#0284c7);animation:pulse 2s infinite}
-      @keyframes pulse{0%,100%{box-shadow:0 4px 20px rgba(14,165,233,.4)}50%{box-shadow:0 4px 30px rgba(14,165,233,.6)}}
-      .floating-btn.primary svg{color:#fff;width:32px;height:32px}
-    }
-    .calculator-modal{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.5);z-index:2000}
-    .calculator-modal.active{display:flex;align-items:center;justify-content:center;padding:20px}
-    .calculator-content{background:#fff;border-radius:20px;padding:24px;width:100%;max-width:400px;max-height:90vh;overflow-y:auto}
-    .calculator-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
-    .calculator-header h3{color:#0f172a;font-size:20px;margin:0}
-    .close-btn{background:none;border:none;font-size:28px;color:#64748b;cursor:pointer;padding:0;width:32px;height:32px;border-radius:50%;transition:background .2s}
-    .close-btn:hover{background:#f1f5f9}
-    .service-option{padding:12px;margin-bottom:10px;border:2px solid #e2e8f0;border-radius:12px;cursor:pointer;transition:all .2s}
-    .service-option:hover{border-color:#0ea5e9;background:#f0f9ff}
-    .service-option.selected{border-color:#0ea5e9;background:#f0f9ff}
-    .service-option label{display:flex;align-items:center;cursor:pointer;font-size:14px;color:#0f172a;margin:0}
-    .service-option input[type="checkbox"]{margin-right:10px}
-    .service-price{margin-left:auto;color:#0ea5e9;font-weight:600}
-    .vehicle-select{width:100%;padding:12px;border:2px solid #e2e8f0;border-radius:12px;margin-bottom:20px;font-size:14px;background:#fff}
-    .calculator-content h4{margin:16px 0 8px;color:#475569;font-size:13px;text-transform:uppercase;letter-spacing:.5px;font-weight:600}
-    .total-section{margin-top:20px;padding-top:20px;border-top:2px solid #e2e8f0;display:flex;justify-content:space-between;align-items:center;font-size:18px;font-weight:700;color:#0f172a}
-    .total-price{color:#0ea5e9;font-size:24px}
-    .cta-button{width:100%;padding:14px;background:linear-gradient(135deg,#0ea5e9,#0284c7);color:#fff;border:none;border-radius:999px;font-size:16px;font-weight:700;cursor:pointer;margin-top:20px;transition:all .2s}
-    .cta-button:hover{background:linear-gradient(135deg,#0284c7,#0369a1);transform:translateY(-2px);box-shadow:0 4px 20px rgba(14,165,233,.3)}
-    .cta-button:active{transform:scale(.98)}
-    .sms-notice{font-size:12px;color:#64748b;text-align:center;margin-top:10px;display:flex;align-items:center;justify-content:center;gap:6px}
-    .sms-notice svg{width:16px;height:16px}
+    @media(min-width:769px){.mobile-sticky-footer{display:none!important}.desktop-floating-buttons{position:fixed;bottom:30px;right:30px;z-index:1000;display:flex;flex-direction:column-reverse;gap:12px;animation:fadeInUp .5s ease-out}@keyframes fadeInUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}.floating-btn{width:60px;height:60px;border-radius:50%;background:#fff;box-shadow:0 4px 20px rgba(0,0,0,.15);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .3s;text-decoration:none;border:2px solid transparent}.floating-btn:hover{transform:scale(1.1);box-shadow:0 6px 30px rgba(0,0,0,.2);border-color:#0ea5e9}.floating-btn svg{width:28px;height:28px;color:#0ea5e9}.floating-btn.primary{width:70px;height:70px;background:linear-gradient(135deg,#0ea5e9,#0284c7);animation:pulse 2s infinite}@keyframes pulse{0%,100%{box-shadow:0 4px 20px rgba(14,165,233,.4)}50%{box-shadow:0 4px 30px rgba(14,165,233,.6)}}.floating-btn.primary svg{color:#fff;width:32px;height:32px}}
+    .calculator-modal{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.5);z-index:2000}.calculator-modal.active{display:flex;align-items:center;justify-content:center;padding:20px}.calculator-content{background:#fff;border-radius:20px;padding:24px;width:100%;max-width:400px;max-height:90vh;overflow-y:auto}.calculator-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}.calculator-header h3{color:#0f172a;font-size:20px;margin:0}.close-btn{background:none;border:none;font-size:28px;color:#64748b;cursor:pointer;padding:0;width:32px;height:32px;border-radius:50%;transition:background .2s}.close-btn:hover{background:#f1f5f9}.service-option{padding:12px;margin-bottom:10px;border:2px solid #e2e8f0;border-radius:12px;cursor:pointer;transition:all .2s}.service-option:hover{border-color:#0ea5e9;background:#f0f9ff}.service-option.selected{border-color:#0ea5e9;background:#f0f9ff}.service-option label{display:flex;align-items:center;cursor:pointer;font-size:14px;color:#0f172a;margin:0}.service-option input[type="checkbox"]{margin-right:10px}.service-price{margin-left:auto;color:#0ea5e9;font-weight:600}.vehicle-select{width:100%;padding:12px;border:2px solid #e2e8f0;border-radius:12px;margin-bottom:20px;font-size:14px;background:#fff}.calculator-content h4{margin:16px 0 8px;color:#475569;font-size:13px;text-transform:uppercase;letter-spacing:.5px;font-weight:600}.total-section{margin-top:20px;padding-top:20px;border-top:2px solid #e2e8f0;display:flex;justify-content:space-between;align-items:center;font-size:18px;font-weight:700;color:#0f172a}.total-price{color:#0ea5e9;font-size:24px}.cta-button{width:100%;padding:14px;background:linear-gradient(135deg,#0ea5e9,#0284c7);color:#fff;border:none;border-radius:999px;font-size:16px;font-weight:700;cursor:pointer;margin-top:20px;transition:all .2s}.cta-button:hover{background:linear-gradient(135deg,#0284c7,#0369a1);transform:translateY(-2px);box-shadow:0 4px 20px rgba(14,165,233,.3)}.cta-button:active{transform:scale(.98)}
+    .sms-notice{font-size:12px;color:#64748b;text-align:center;margin-top:10px;display:flex;align-items:center;justify-content:center;gap:6px}.sms-notice svg{width:16px;height:16px}
   `;
 
   // Add styles to page
@@ -136,7 +106,6 @@
           <h3>Service Calculator</h3>
           <button class="close-btn" onclick="window.closeCalculator()">&times;</button>
         </div>
-
         <label style="display:block;margin-bottom:6px;color:#475569;font-size:14px;font-weight:600;">Vehicle Size:</label>
         <select class="vehicle-select" id="vehicleType" onchange="window.updatePrices()">
           <option value="small">Small (Sedan/Coupe/Hatchback)</option>
@@ -186,7 +155,7 @@
         </div>
         <div class="service-option">
           <label>
-            <input type="checkbox" data-price-small="399" data-price-medium="449" data-price-large="509" data-price-xl="579" data-price-xxl="659" data-service="interior" onchange="window.calculateTotal()">
+            <input type="checkbox" data-price-small="399" data-price-medium="449" data-price-large="509" data-price-xl="579" data-service="interior" onchange="window.calculateTotal()">
             <span>Level 3: Elite Transformation</span>
             <span class="service-price">$399+</span>
           </label>
@@ -202,7 +171,7 @@
         </div>
         <div class="service-option">
           <label>
-            <input type="checkbox" data-price-small="249" data-price-medium="279" data-price-large="319" data-price-xl="369" data-price-xxl="429" data-service="exterior" onchange="window.calculateTotal()">
+            <input type="checkbox" data-price-small="249" data-price-medium="279" data-price-large="319" data-price-xl="369" data-service="exterior" onchange="window.calculateTotal()">
             <span>Level 2: Deep Clean & Seal</span>
             <span class="service-price">$249+</span>
           </label>
@@ -318,20 +287,13 @@
           <span>Estimated Total:</span>
           <span class="total-price" id="totalPrice">$0</span>
         </div>
-        
         <p style="font-size:12px;color:#64748b;margin:12px 0;text-align:center;line-height:1.4;">
           *Prices shown for Small vehicles. Updates based on your selection.<br>
           PPF & specialty services available - call for quote.
         </p>
-
-        <button class="cta-button" onclick="window.bookWithTotal()">
-          📱 Text Me for Exact Quote
-        </button>
-        
+        <button class="cta-button" onclick="window.bookWithTotal()">📱 Text Me for Exact Quote</button>
         <div class="sms-notice">
-          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-          </svg>
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
           <span>Opens your text app with your selections</span>
         </div>
       </div>
@@ -353,72 +315,56 @@
   window.closeCalculator = function() {
     document.getElementById('calculatorModal').classList.remove('active');
     document.body.style.overflow = '';
-    // Clear selections
-    document.querySelectorAll('.service-option input[type="checkbox"]').forEach(checkbox => {
-      checkbox.checked = false;
-      checkbox.closest('.service-option').classList.remove('selected');
+    document.querySelectorAll('.service-option input[type="checkbox"]').forEach(cb => {
+      cb.checked = false; cb.closest('.service-option').classList.remove('selected');
     });
     document.getElementById('totalPrice').textContent = '$0';
   };
 
   window.updatePrices = function() {
     const vehicleSize = document.getElementById('vehicleType').value;
-    
     document.querySelectorAll('.service-option input[type="checkbox"]').forEach(checkbox => {
       const priceAttr = `data-price-${vehicleSize}`;
       const basePrice = checkbox.getAttribute(priceAttr) || checkbox.getAttribute('data-price');
-      
       if (basePrice) {
         const priceSpan = checkbox.parentElement.querySelector('.service-price');
         if (priceSpan) {
-          if (checkbox.hasAttribute(priceAttr)) {
-            priceSpan.textContent = '$' + basePrice + '+';
-          } else {
+          if (checkbox.hasAttribute(priceAttr)) { priceSpan.textContent = '$' + basePrice + '+'; }
+          else {
             const originalText = checkbox.parentElement.textContent;
-            if (originalText.includes('/pair')) {
-              priceSpan.textContent = '$' + basePrice + '/pair';
-            } else if (originalText.includes('+')) {
-              priceSpan.textContent = '$' + basePrice + '+';
-            } else {
-              priceSpan.textContent = '$' + basePrice;
-            }
+            if (originalText.includes('/pair')) priceSpan.textContent = '$' + basePrice + '/pair';
+            else if (originalText.includes('+')) priceSpan.textContent = '$' + basePrice + '+';
+            else priceSpan.textContent = '$' + basePrice;
           }
         }
       }
     });
-    
     window.calculateTotal();
   };
 
   window.calculateTotal = function() {
     const checkboxes = document.querySelectorAll('.service-option input[type="checkbox"]:checked');
     const vehicleSize = document.getElementById('vehicleType').value;
-    
-    let total = 0;
-    let hasBundle = false;
-    let hasInterior = false;
-    let hasExterior = false;
-    
+    let total = 0, hasBundle = false, hasInterior = false, hasExterior = false;
+
     checkboxes.forEach(checkbox => {
       const serviceType = checkbox.getAttribute('data-service');
       if (serviceType === 'bundle') hasBundle = true;
       else if (serviceType === 'interior') hasInterior = true;
       else if (serviceType === 'exterior') hasExterior = true;
     });
-    
+
     if (hasBundle && (hasInterior || hasExterior)) {
       document.querySelectorAll('.service-option input[data-service="interior"], .service-option input[data-service="exterior"]').forEach(cb => {
-        cb.checked = false;
-        cb.closest('.service-option').classList.remove('selected');
+        cb.checked = false; cb.closest('.service-option').classList.remove('selected');
       });
     }
-    
-    document.querySelectorAll('.service-option input[type="checkbox"]:checked').forEach(checkbox => {
+    document.querySelectorAll('.service-option input[type="checkbox"]:checked').forEach(cb => {
       const priceAttr = `data-price-${vehicleSize}`;
-      const price = checkbox.getAttribute(priceAttr) || checkbox.getAttribute('data-price');
+      const price = cb.getAttribute(priceAttr) || cb.getAttribute('data-price');
       if (price) total += parseFloat(price);
     });
-    
+
     let discountMessage = total > 1000 ? ' (Ask about 15% multi-vehicle discount!)' : '';
     total = Math.round(total);
     document.getElementById('totalPrice').textContent = '$' + total.toLocaleString() + discountMessage;
@@ -429,76 +375,47 @@
     const services = [];
     const vehicleTypeSelect = document.getElementById('vehicleType');
     const vehicleType = vehicleTypeSelect.options[vehicleTypeSelect.selectedIndex].text;
-    
-    // Collect all selected services
-    document.querySelectorAll('.service-option input[type="checkbox"]:checked').forEach(checkbox => {
-      const serviceName = checkbox.parentElement.querySelector('span').textContent;
+
+    document.querySelectorAll('.service-option input[type="checkbox"]:checked').forEach(cb => {
+      const serviceName = cb.parentElement.querySelector('span').textContent;
       services.push(serviceName);
     });
-    
-    if (services.length === 0) {
-      alert('Please select at least one service');
-      return;
-    }
-    
-    // Create the SMS message
+
+    if (services.length === 0) { alert('Please select at least one service'); return; }
+
     let smsBody = '🚗 Quote Request from Website Calculator\n\n';
-    smsBody += `Vehicle: ${vehicleType}\n\n`;
-    smsBody += 'Services Selected:\n';
-    services.forEach(service => {
-      smsBody += `• ${service}\n`;
-    });
-    smsBody += `\nEstimated Total: ${total}\n\n`;
-    smsBody += 'Please send me an exact quote for these services. Thanks!';
-    
-    // Encode the message for SMS URL (using encodeURIComponent to handle special characters)
+    smsBody += `Vehicle: ${vehicleType}\n\nServices Selected:\n`;
+    services.forEach(s => { smsBody += `• ${s}\n`; });
+    smsBody += `\nEstimated Total: ${total}\n\nPlease send me an exact quote for these services. Thanks!`;
+
     const encodedBody = encodeURIComponent(smsBody);
-    
-    // Create the SMS URL - format varies by device
-    // For iOS: sms:+14805288227&body=...
-    // For Android: sms:+14805288227?body=...
-    // Using the iOS format with fallback handling
     const phoneNumber = '+14805288227';
-    
-    // Detect if mobile device
     const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-    
+
     if (isMobile) {
-      // For mobile devices, use the sms: protocol
       window.location.href = `sms:${phoneNumber}&body=${encodedBody}`;
     } else {
-      const message = `To: ${phoneNumber}\n\n${smsBody}`;
       if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(smsBody).then(() => {
-          alert(`Your quote request has been copied to clipboard!\n\nPlease text it to: (480) 528-8227\n\nOr call us directly for immediate assistance.`);
-        }).catch(() => {
-          prompt('Copy this message and text it to (480) 528-8227:', smsBody);
-        });
+          alert('Your quote request has been copied to clipboard!\\n\\nPlease text it to: (480) 528-8227\\n\\nOr call us directly for immediate assistance.');
+        }).catch(() => { prompt('Copy this message and text it to (480) 528-8227:', smsBody); });
       } else {
         prompt('Copy this message and text it to (480) 528-8227:', smsBody);
       }
     }
   };
 
-  // Handle checkbox selection highlighting
-  document.querySelectorAll('.service-option input[type="checkbox"]').forEach(checkbox => {
-    checkbox.addEventListener('change', function() {
-      if (this.checked) {
-        this.closest('.service-option').classList.add('selected');
-      } else {
-        this.closest('.service-option').classList.remove('selected');
-      }
+  // selection highlight
+  document.querySelectorAll('.service-option input[type="checkbox"]').forEach(cb => {
+    cb.addEventListener('change', function() {
+      this.closest('.service-option').classList.toggle('selected', this.checked);
     });
   });
 
-  // Close modal on outside click
+  // close modal helpers
   document.getElementById('calculatorModal').addEventListener('click', function(e) {
-    if (e.target === this) {
-      window.closeCalculator();
-    }
+    if (e.target === this) window.closeCalculator();
   });
-
-  // ESC key to close calculator
   document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape' && document.getElementById('calculatorModal').classList.contains('active')) {
       window.closeCalculator();
@@ -506,4 +423,3 @@
   });
 
 })();
-// action-buttons.js - Shine Design Mobile Detailing
