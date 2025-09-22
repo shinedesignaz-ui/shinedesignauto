@@ -7,27 +7,62 @@
   if (window.shineActionButtonsLoaded) return;
   window.shineActionButtonsLoaded = true;
 
-  // Inject minified CSS (original, with ONLY the safe-area additions)
+  // Inject minified CSS (only the iOS positioning updated to sit LOWER)
   const styles = `
     @media(max-width:768px){
-      body{padding-bottom:calc(80px + env(safe-area-inset-bottom, 0px))!important}
+      /* Reduce reserved space so content sits closer to the bottom bar */
+      body{padding-bottom:calc(80px + max(0px, calc(env(safe-area-inset-bottom, 0px) - 8px)))!important}
+
       .mobile-sticky-footer{
-        position:fixed;bottom:0;left:0;right:0;background:#fff;box-shadow:0 -4px 20px rgba(0,0,0,.1);z-index:1000;display:block;animation:slideUp .3s ease-out;
-        padding-bottom:env(safe-area-inset-bottom, 8px);
+        position:fixed;left:0;right:0;
+        /* Put the footer INTO the white safe-area space (lower) */
+        bottom:max(0px, calc(env(safe-area-inset-bottom, 0px) - 8px));
+        background:#fff;box-shadow:0 -4px 20px rgba(0,0,0,.1);
+        z-index:1000;display:block;animation:slideUp .3s ease-out;
+        /* Small inner pad for comfortable taps */
+        padding-bottom:8px;
       }
-    }
-    @media(max-width:768px){
       @keyframes slideUp{from{transform:translateY(100%)}to{transform:translateY(0)}}
-      .footer-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#e2e8f0}
+      .footer-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#e2e8f0;max-width:100%}
       .footer-item{background:#fff;padding:10px 5px;text-align:center;cursor:pointer;transition:all .3s;text-decoration:none;color:#0f172a;border:none;font-family:inherit;font-size:11px}
       .footer-item:active{transform:scale(.95);background:#f1f5f9}
       .footer-item svg{width:24px;height:24px;margin-bottom:4px;color:#0ea5e9}
       .footer-item span{display:block;font-size:11px;font-weight:600;color:#475569;line-height:1.2}
       .desktop-floating-buttons{display:none!important}
     }
-    @media(min-width:769px){.mobile-sticky-footer{display:none!important}.desktop-floating-buttons{position:fixed;bottom:30px;right:30px;z-index:1000;display:flex;flex-direction:column-reverse;gap:12px;animation:fadeInUp .5s ease-out}@keyframes fadeInUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}.floating-btn{width:60px;height:60px;border-radius:50%;background:#fff;box-shadow:0 4px 20px rgba(0,0,0,.15);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .3s;text-decoration:none;border:2px solid transparent}.floating-btn:hover{transform:scale(1.1);box-shadow:0 6px 30px rgba(0,0,0,.2);border-color:#0ea5e9}.floating-btn svg{width:28px;height:28px;color:#0ea5e9}.floating-btn.primary{width:70px;height:70px;background:linear-gradient(135deg,#0ea5e9,#0284c7);animation:pulse 2s infinite}@keyframes pulse{0%,100%{box-shadow:0 4px 20px rgba(14,165,233,.4)}50%{box-shadow:0 4px 30px rgba(14,165,233,.6)}}.floating-btn.primary svg{color:#fff;width:32px;height:32px}}
-    .calculator-modal{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.5);z-index:2000}.calculator-modal.active{display:flex;align-items:center;justify-content:center;padding:20px}.calculator-content{background:#fff;border-radius:20px;padding:24px;width:100%;max-width:400px;max-height:90vh;overflow-y:auto}.calculator-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}.calculator-header h3{color:#0f172a;font-size:20px;margin:0}.close-btn{background:none;border:none;font-size:28px;color:#64748b;cursor:pointer;padding:0;width:32px;height:32px;border-radius:50%;transition:background .2s}.close-btn:hover{background:#f1f5f9}.service-option{padding:12px;margin-bottom:10px;border:2px solid #e2e8f0;border-radius:12px;cursor:pointer;transition:all .2s}.service-option:hover{border-color:#0ea5e9;background:#f0f9ff}.service-option.selected{border-color:#0ea5e9;background:#f0f9ff}.service-option label{display:flex;align-items:center;cursor:pointer;font-size:14px;color:#0f172a;margin:0}.service-option input[type="checkbox"]{margin-right:10px}.service-price{margin-left:auto;color:#0ea5e9;font-weight:600}.vehicle-select{width:100%;padding:12px;border:2px solid #e2e8f0;border-radius:12px;margin-bottom:20px;font-size:14px;background:#fff}.calculator-content h4{margin:16px 0 8px;color:#475569;font-size:13px;text-transform:uppercase;letter-spacing:.5px;font-weight:600}.total-section{margin-top:20px;padding-top:20px;border-top:2px solid #e2e8f0;display:flex;justify-content:space-between;align-items:center;font-size:18px;font-weight:700;color:#0f172a}.total-price{color:#0ea5e9;font-size:24px}.cta-button{width:100%;padding:14px;background:linear-gradient(135deg,#0ea5e9,#0284c7);color:#fff;border:none;border-radius:999px;font-size:16px;font-weight:700;cursor:pointer;margin-top:20px;transition:all .2s}.cta-button:hover{background:linear-gradient(135deg,#0284c7,#0369a1);transform:translateY(-2px);box-shadow:0 4px 20px rgba(14,165,233,.3)}.cta-button:active{transform:scale(.98)}
-    .sms-notice{font-size:12px;color:#64748b;text-align:center;margin-top:10px;display:flex;align-items:center;justify-content:center;gap:6px}.sms-notice svg{width:16px;height:16px}
+    @media(min-width:769px){
+      .mobile-sticky-footer{display:none!important}
+      .desktop-floating-buttons{position:fixed;bottom:30px;right:30px;z-index:1000;display:flex;flex-direction:column-reverse;gap:12px;animation:fadeInUp .5s ease-out}
+      @keyframes fadeInUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+      .floating-btn{width:60px;height:60px;border-radius:50%;background:#fff;box-shadow:0 4px 20px rgba(0,0,0,.15);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .3s;text-decoration:none;border:2px solid transparent}
+      .floating-btn:hover{transform:scale(1.1);box-shadow:0 6px 30px rgba(0,0,0,.2);border-color:#0ea5e9}
+      .floating-btn svg{width:28px;height:28px;color:#0ea5e9}
+      .floating-btn.primary{width:70px;height:70px;background:linear-gradient(135deg,#0ea5e9,#0284c7);animation:pulse 2s infinite}
+      @keyframes pulse{0%,100%{box-shadow:0 4px 20px rgba(14,165,233,.4)}50%{box-shadow:0 4px 30px rgba(14,165,233,.6)}}
+      .floating-btn.primary svg{color:#fff;width:32px;height:32px}
+    }
+    .calculator-modal{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.5);z-index:2000}
+    .calculator-modal.active{display:flex;align-items:center;justify-content:center;padding:20px}
+    .calculator-content{background:#fff;border-radius:20px;padding:24px;width:100%;max-width:400px;max-height:90vh;overflow-y:auto}
+    .calculator-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
+    .calculator-header h3{color:#0f172a;font-size:20px;margin:0}
+    .close-btn{background:none;border:none;font-size:28px;color:#64748b;cursor:pointer;padding:0;width:32px;height:32px;border-radius:50%;transition:background .2s}
+    .close-btn:hover{background:#f1f5f9}
+    .service-option{padding:12px;margin-bottom:10px;border:2px solid #e2e8f0;border-radius:12px;cursor:pointer;transition:all .2s}
+    .service-option:hover{border-color:#0ea5e9;background:#f0f9ff}
+    .service-option.selected{border-color:#0ea5e9;background:#f0f9ff}
+    .service-option label{display:flex;align-items:center;cursor:pointer;font-size:14px;color:#0f172a;margin:0}
+    .service-option input[type="checkbox"]{margin-right:10px}
+    .service-price{margin-left:auto;color:#0ea5e9;font-weight:600}
+    .vehicle-select{width:100%;padding:12px;border:2px solid #e2e8f0;border-radius:12px;margin-bottom:20px;font-size:14px;background:#fff}
+    .calculator-content h4{margin:16px 0 8px;color:#475569;font-size:13px;text-transform:uppercase;letter-spacing:.5px;font-weight:600}
+    .total-section{margin-top:20px;padding-top:20px;border-top:2px solid #e2e8f0;display:flex;justify-content:space-between;align-items:center;font-size:18px;font-weight:700;color:#0f172a}
+    .total-price{color:#0ea5e9;font-size:24px}
+    .cta-button{width:100%;padding:14px;background:linear-gradient(135deg,#0ea5e9,#0284c7);color:#fff;border:none;border-radius:999px;font-size:16px;font-weight:700;cursor:pointer;margin-top:20px;transition:all .2s}
+    .cta-button:hover{background:linear-gradient(135deg,#0284c7,#0369a1);transform:translateY(-2px);box-shadow:0 4px 20px rgba(14,165,233,.3)}
+    .cta-button:active{transform:scale(.98)}
+    .sms-notice{font-size:12px;color:#64748b;text-align:center;margin-top:10px;display:flex;align-items:center;justify-content:center;gap:6px}
+    .sms-notice svg{width:16px;height:16px}
   `;
 
   // Add styles to page
@@ -295,7 +330,7 @@
         
         <div class="sms-notice">
           <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 0 0118 0z"></path>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
           </svg>
           <span>Opens your text app with your selections</span>
         </div>
@@ -430,22 +465,16 @@
     
     if (isMobile) {
       // For mobile devices, use the sms: protocol
-      // Try iOS format first, Android will handle it correctly too
       window.location.href = `sms:${phoneNumber}&body=${encodedBody}`;
     } else {
-      // For desktop, we'll create a copyable text message
       const message = `To: ${phoneNumber}\n\n${smsBody}`;
-      
-      // Try to copy to clipboard
       if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(smsBody).then(() => {
           alert(`Your quote request has been copied to clipboard!\n\nPlease text it to: (480) 528-8227\n\nOr call us directly for immediate assistance.`);
         }).catch(() => {
-          // Fallback if clipboard fails
           prompt('Copy this message and text it to (480) 528-8227:', smsBody);
         });
       } else {
-        // Fallback for older browsers
         prompt('Copy this message and text it to (480) 528-8227:', smsBody);
       }
     }
@@ -477,3 +506,4 @@
   });
 
 })();
+// action-buttons.js - Shine Design Mobile Detailing
