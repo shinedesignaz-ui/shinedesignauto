@@ -11,12 +11,12 @@
   const styles = `
     @media(max-width:768px){
       /* Reduce reserved space so content sits closer to the bottom bar */
-      body{padding-bottom:calc(80px + max(0px, calc(env(safe-area-inset-bottom, 0px) - 8px)))!important}
+      body{padding-bottom:calc(80px + max(0px, calc(env(safe-area-inset-bottom, 0px) - 16px)))!important}
 
       .mobile-sticky-footer{
         position:fixed;left:0;right:0;
         /* Put the footer INTO the white safe-area space (lower) */
-        bottom:max(0px, calc(env(safe-area-inset-bottom, 0px) - 8px));
+        bottom:max(0px, calc(env(safe-area-inset-bottom, 0px) - 16px));
         background:#fff;box-shadow:0 -4px 20px rgba(0,0,0,.1);
         z-index:1000;display:block;animation:slideUp .3s ease-out;
         /* Small inner pad for comfortable taps */
