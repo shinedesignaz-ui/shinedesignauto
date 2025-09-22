@@ -1,3 +1,4 @@
+
 // action-buttons.js - Shine Design Mobile Detailing
 // Floating buttons for desktop, sticky footer for mobile, with service calculator
 (function() {
@@ -7,45 +8,42 @@
   if (window.shineActionButtonsLoaded) return;
   window.shineActionButtonsLoaded = true;
 
-  // Inject minified CSS (MOBILE POSITIONING FIXED)
+  // Inject CSS (sits flush at the bottom on mobile; safe-area aware)
   const styles = `
     @media(max-width:768px){
-      /* Reserve proper space for the footer bar */
-      body{padding-bottom:60px!important}
+      /* Reserve space for footer; include safe-area so content never hides */
+      body{padding-bottom:calc(72px + env(safe-area-inset-bottom, 0px))!important}
 
       .mobile-sticky-footer{
         position:fixed; 
         left:0; 
         right:0; 
         bottom:0;
-        /* Remove the translateY - keep it flush with bottom */
         background:#fff; 
-        box-shadow:0 -2px 10px rgba(0,0,0,.08);
-        z-index:1000; 
+        box-shadow:0 -2px 14px rgba(0,0,0,.12);
+        z-index:1100; 
         display:block; 
-        animation:slideUp .3s ease-out;
-        /* Add safe area padding for devices with home indicators (iPhone X+) */
+        animation:slideUp .25s ease-out;
         padding-bottom:env(safe-area-inset-bottom, 0px);
       }
-      
+
       @keyframes slideUp{
         from{transform:translateY(100%)}
         to{transform:translateY(0)}
       }
-      
+
       .footer-grid{
         display:grid;
         grid-template-columns:repeat(4,1fr);
         gap:0;
         background:#fff;
         max-width:100%;
-        /* Add subtle border top for definition */
         border-top:1px solid #e2e8f0;
       }
       
       .footer-item{
         background:#fff;
-        padding:8px 4px;
+        padding:10px 6px;
         text-align:center;
         cursor:pointer;
         transition:all .2s ease;
@@ -53,57 +51,62 @@
         color:#0f172a;
         border:none;
         font-family:inherit;
-        font-size:10px;
+        font-size:11px;
         position:relative;
-        /* Add subtle separators between items */
         border-right:1px solid #f1f5f9;
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
       }
-      
-      .footer-item:last-child{
-        border-right:none;
-      }
-      
-      .footer-item:active{
-        transform:scale(.95);
-        background:#f8fafc;
-      }
-      
-      .footer-item::before{
-        content:'';
-        position:absolute;
-        top:0;
-        left:0;
-        right:0;
-        height:2px;
-        background:#0ea5e9;
-        transform:scaleX(0);
-        transition:transform .2s ease;
-      }
-      
-      .footer-item:active::before{
-        transform:scaleX(1);
-      }
-      
-      .footer-item svg{
-        width:22px;
-        height:22px;
-        margin-bottom:3px;
-        color:#0ea5e9;
-      }
-      
-      .footer-item span{
-        display:block;
-        font-size:10px;
-        font-weight:600;
-        color:#475569;
-        line-height:1.2;
-      }
-      
+      .footer-item:last-child{ border-right:none; }
+      .footer-item:active{ transform:scale(.97); background:#f8fafc; }
+      .footer-item svg{ width:22px; height:22px; margin-bottom:4px; color:#0ea5e9; }
+      .footer-item span{ display:block; font-size:11px; font-weight:700; color:#475569; line-height:1.2; }
+
       .desktop-floating-buttons{display:none!important}
     }
-    @media(min-width:769px){.mobile-sticky-footer{display:none!important}.desktop-floating-buttons{position:fixed;bottom:30px;right:30px;z-index:1000;display:flex;flex-direction:column-reverse;gap:12px;animation:fadeInUp .5s ease-out}@keyframes fadeInUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}.floating-btn{width:60px;height:60px;border-radius:50%;background:#fff;box-shadow:0 4px 20px rgba(0,0,0,.15);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .3s;text-decoration:none;border:2px solid transparent}.floating-btn:hover{transform:scale(1.1);box-shadow:0 6px 30px rgba(0,0,0,.2);border-color:#0ea5e9}.floating-btn svg{width:28px;height:28px;color:#0ea5e9}.floating-btn.primary{width:70px;height:70px;background:linear-gradient(135deg,#0ea5e9,#0284c7);animation:pulse 2s infinite}@keyframes pulse{0%,100%{box-shadow:0 4px 20px rgba(14,165,233,.4)}50%{box-shadow:0 4px 30px rgba(14,165,233,.6)}}.floating-btn.primary svg{color:#fff;width:32px;height:32px}}
-    .calculator-modal{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.5);z-index:2000}.calculator-modal.active{display:flex;align-items:center;justify-content:center;padding:20px}.calculator-content{background:#fff;border-radius:20px;padding:24px;width:100%;max-width:400px;max-height:90vh;overflow-y:auto}.calculator-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}.calculator-header h3{color:#0f172a;font-size:20px;margin:0}.close-btn{background:none;border:none;font-size:28px;color:#64748b;cursor:pointer;padding:0;width:32px;height:32px;border-radius:50%;transition:background .2s}.close-btn:hover{background:#f1f5f9}.service-option{padding:12px;margin-bottom:10px;border:2px solid #e2e8f0;border-radius:12px;cursor:pointer;transition:all .2s}.service-option:hover{border-color:#0ea5e9;background:#f0f9ff}.service-option.selected{border-color:#0ea5e9;background:#f0f9ff}.service-option label{display:flex;align-items:center;cursor:pointer;font-size:14px;color:#0f172a;margin:0}.service-option input[type="checkbox"]{margin-right:10px}.service-price{margin-left:auto;color:#0ea5e9;font-weight:600}.vehicle-select{width:100%;padding:12px;border:2px solid #e2e8f0;border-radius:12px;margin-bottom:20px;font-size:14px;background:#fff}.calculator-content h4{margin:16px 0 8px;color:#475569;font-size:13px;text-transform:uppercase;letter-spacing:.5px;font-weight:600}.total-section{margin-top:20px;padding-top:20px;border-top:2px solid #e2e8f0;display:flex;justify-content:space-between;align-items:center;font-size:18px;font-weight:700;color:#0f172a}.total-price{color:#0ea5e9;font-size:24px}.cta-button{width:100%;padding:14px;background:linear-gradient(135deg,#0ea5e9,#0284c7);color:#fff;border:none;border-radius:999px;font-size:16px;font-weight:700;cursor:pointer;margin-top:20px;transition:all .2s}.cta-button:hover{background:linear-gradient(135deg,#0284c7,#0369a1);transform:translateY(-2px);box-shadow:0 4px 20px rgba(14,165,233,.3)}.cta-button:active{transform:scale(.98)}
-    .sms-notice{font-size:12px;color:#64748b;text-align:center;margin-top:10px;display:flex;align-items:center;justify-content:center;gap:6px}.sms-notice svg{width:16px;height:16px}
+
+    @media(min-width:769px){
+      .mobile-sticky-footer{display:none!important}
+      .desktop-floating-buttons{
+        position:fixed;bottom:24px;right:16px;z-index:1100;
+        display:flex;flex-direction:column-reverse;gap:12px;animation:fadeInUp .4s ease-out
+      }
+      @keyframes fadeInUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+      .floating-btn{
+        width:60px;height:60px;border-radius:50%;background:#fff;
+        box-shadow:0 6px 22px rgba(0,0,0,.16);
+        display:flex;align-items:center;justify-content:center;cursor:pointer;
+        transition:all .25s;text-decoration:none;border:2px solid transparent
+      }
+      .floating-btn:hover{transform:scale(1.08);box-shadow:0 10px 30px rgba(0,0,0,.22);border-color:#0ea5e9}
+      .floating-btn svg{width:28px;height:28px;color:#0ea5e9}
+      .floating-btn.primary{width:70px;height:70px;background:linear-gradient(135deg,#0ea5e9,#0284c7);animation:pulse 2s infinite}
+      @keyframes pulse{0%,100%{box-shadow:0 6px 24px rgba(14,165,233,.45)}50%{box-shadow:0 6px 34px rgba(14,165,233,.65)}}
+      .floating-btn.primary svg{color:#fff;width:32px;height:32px}
+    }
+
+    /* Calculator modal styles (unchanged) */
+    .calculator-modal{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.5);z-index:2000}
+    .calculator-modal.active{display:flex;align-items:center;justify-content:center;padding:20px}
+    .calculator-content{background:#fff;border-radius:20px;padding:24px;width:100%;max-width:400px;max-height:90vh;overflow-y:auto}
+    .calculator-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}
+    .calculator-header h3{color:#0f172a;font-size:20px;margin:0}
+    .close-btn{background:none;border:none;font-size:28px;color:#64748b;cursor:pointer;padding:0;width:32px;height:32px;border-radius:50%;transition:background .2s}
+    .close-btn:hover{background:#f1f5f9}
+    .service-option{padding:12px;margin-bottom:10px;border:2px solid #e2e8f0;border-radius:12px;cursor:pointer;transition:all .2s}
+    .service-option:hover{border-color:#0ea5e9;background:#f0f9ff}
+    .service-option.selected{border-color:#0ea5e9;background:#f0f9ff}
+    .service-option label{display:flex;align-items:center;cursor:pointer;font-size:14px;color:#0f172a;margin:0}
+    .service-option input[type="checkbox"]{margin-right:10px}
+    .service-price{margin-left:auto;color:#0ea5e9;font-weight:600}
+    .vehicle-select{width:100%;padding:12px;border:2px solid #e2e8f0;border-radius:12px;margin-bottom:20px;font-size:14px;background:#fff}
+    .calculator-content h4{margin:16px 0 8px;color:#475569;font-size:13px;text-transform:uppercase;letter-spacing:.5px;font-weight:600}
+    .total-section{margin-top:20px;padding-top:20px;border-top:2px solid #e2e8f0;display:flex;justify-content:space-between;align-items:center;font-size:18px;font-weight:700;color:#0f172a}
+    .total-price{color:#0ea5e9;font-size:24px}
+    .cta-button{width:100%;padding:14px;background:linear-gradient(135deg,#0ea5e9,#0284c7);color:#fff;border:none;border-radius:999px;font-size:16px;font-weight:700;cursor:pointer;margin-top:20px;transition:all .2s}
+    .cta-button:hover{background:linear-gradient(135deg,#0284c7,#0369a1);transform:translateY(-2px);box-shadow:0 4px 20px rgba(14,165,233,.3)}
+    .cta-button:active{transform:scale(.98)}
+    .sms-notice{font-size:12px;color:#64748b;text-align:center;margin-top:10px;display:flex;align-items:center;justify-content:center;gap:6px}
+    .sms-notice svg{width:16px;height:16px}
   `;
 
   // Add styles to page
@@ -111,7 +114,7 @@
   styleSheet.textContent = styles;
   document.head.appendChild(styleSheet);
 
-  // Mobile Footer HTML
+  // Mobile Footer (booking points to shinedesignauto.com)
   const mobileFooter = `
     <div class="mobile-sticky-footer">
       <div class="footer-grid">
@@ -121,19 +124,19 @@
           </svg>
           <span>Calculator</span>
         </button>
-        <a href="https://booknow.shinedesignaz.com/" class="footer-item">
+        <a href="https://booknow.shinedesignauto.com/" class="footer-item" aria-label="Book Online">
           <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
           </svg>
           <span>Book</span>
         </a>
-        <a href="tel:+14805288227" class="footer-item">
+        <a href="tel:+14805288227" class="footer-item" aria-label="Call">
           <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
           </svg>
           <span>Call</span>
         </a>
-        <a href="sms:+14805288227" class="footer-item">
+        <a href="sms:+14805288227" class="footer-item" aria-label="Text Us">
           <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
           </svg>
@@ -143,25 +146,25 @@
     </div>
   `;
 
-  // Desktop Floating Buttons HTML
+  // Desktop Floating Buttons (unchanged behavior; book uses shinedesignauto)
   const desktopButtons = `
     <div class="desktop-floating-buttons">
-      <a href="sms:+14805288227" class="floating-btn">
+      <a href="sms:+14805288227" class="floating-btn" aria-label="Text Us">
         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
         </svg>
       </a>
-      <a href="tel:+14805288227" class="floating-btn">
+      <a href="tel:+14805288227" class="floating-btn" aria-label="Call">
         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
         </svg>
       </a>
-      <button class="floating-btn" onclick="window.openCalculator()">
+      <button class="floating-btn" onclick="window.openCalculator()" aria-label="Open Calculator">
         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
         </svg>
       </button>
-      <a href="https://booknow.shinedesignaz.com/" class="floating-btn primary">
+      <a href="https://booknow.shinedesignauto.com/" class="floating-btn primary" aria-label="Book Online">
         <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
         </svg>
@@ -169,7 +172,10 @@
     </div>
   `;
 
-  // Calculator Modal HTML with your exact pricing
+  // Add elements to page
+  document.body.insertAdjacentHTML('beforeend', mobileFooter);
+  document.body.insertAdjacentHTML('beforeend', desktopButtons);
+// Calculator Modal HTML with your exact pricing
   const calculatorModal = `
     <div class="calculator-modal" id="calculatorModal">
       <div class="calculator-content">

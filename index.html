@@ -195,8 +195,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       "name": "Top Services",
       "itemListElement": [
         { "@type":"ListItem","position":1,"item":"https://shinedesignauto.com/auto-detailing" },
-        { "@type":"ListItem","position":2,"item":"https://shinedesignauto.com/services/interior-detailing.html" },
-        { "@type":"ListItem","position":3,"item":"https://shinedesignauto.com/services/exterior-detailing.html" },
+        { "@type":"ListItem","position":2,"item":"https://shinedesignauto.com/services/interior-detailing" },
+        { "@type":"ListItem","position":3,"item":"https://shinedesignauto.com/services/exterior-detailing" },
         { "@type":"ListItem","position":4,"item":"https://shinedesignauto.com/paint-correction" },
         { "@type":"ListItem","position":5,"item":"https://shinedesignauto.com/ceramic-coating" },
         { "@type":"ListItem","position":6,"item":"https://shinedesignauto.com/paint-protection-film" },
@@ -228,7 +228,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       "areaServed": "East Valley, AZ",
       "offers": {
         "@type": "Offer",
-        "url": "https://shinedesignauto.com/services/interior-detailing.html",
+        "url": "https://shinedesignauto.com/services/interior-detailing",
         "priceCurrency": "USD",
         "priceSpecification": { "@type":"PriceSpecification","minPrice": 149, "priceCurrency":"USD" }
       }
@@ -242,7 +242,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       "areaServed": "East Valley, AZ",
       "offers": {
         "@type": "Offer",
-        "url": "https://shinedesignauto.com/services/exterior-detailing.html",
+        "url": "https://shinedesignauto.com/services/exterior-detailing",
         "priceCurrency": "USD",
         "priceSpecification": { "@type":"PriceSpecification","minPrice": 99, "priceCurrency":"USD" }
       }
@@ -674,7 +674,12 @@ footer a:hover { color: var(--brand); }
 footer a[x-apple-data-detectors], footer *[x-apple-data-detectors]{
   color: inherit !important; text-decoration: none !important; font-weight: inherit !important;
 }
-  </style>
+  
+    @media (max-width: 640px){
+      .before-after-slider{ aspect-ratio: 3 / 2; max-height: 520px; }
+    }
+
+</style>
 
   <!-- Fieldd Lead Form Script -->
   <script type="text/javascript" src="https://fieldd-scripts.s3.amazonaws.com/leadForm/fieldd-lead-form.js"></script>
@@ -697,7 +702,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="header-content">
         <!-- Logo/Brand -->
         <a href="/" class="brand" aria-label="ShineDesign Home">
-          <img src="/logo.ico" alt="ShineDesign" width="140" height="42">
+          <img src="/logo.ico" alt="ShineDesign" width="140" height="42" loading="lazy" decoding="async">
           <div class="brand-text">
             <span class="brand-name">ShineDesign</span>
             <span class="brand-tagline">DETAILING • TINT • PPF • CERAMIC</span>
@@ -707,7 +712,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <!-- Desktop Navigation -->
         <nav class="nav-links" aria-label="Primary Navigation">
           <div class="nav-dropdown">
-            <a href="/services/">Services <span class="arrow">▼</span></a>
+            <a href="/services">Services <span class="arrow">▼</span></a>
             <div class="dropdown-menu">
               <div class="services-grid">
                 <a href="/ceramic-coating" class="service-card"><div class="service-icon">🛡️</div><div class="service-info"><span class="service-title">Ceramic Coating</span><span class="service-desc">9H Protection • 5 Year Warranty</span></div></a>
@@ -920,7 +925,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <li>Includes paint correction (per package)</li>
           <li>CarFax value added</li>
         </ul>
-        <button class="package-cta" onclick="window.location.href='/ceramic-coating.html'">Learn More</button>
+        <button class="package-cta" onclick="window.location.href='/ceramic-coating'">Learn More</button>
       </div>
 
       <div class="pricing-card featured">
@@ -935,7 +940,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <li>Full front or complete coverage</li>
           <li>Invisible protection</li>
         </ul>
-        <button class="package-cta" onclick="window.location.href='/paint-protection-film.html'">Explore PPF</button>
+        <button class="package-cta" onclick="window.location.href='/paint-protection-film'">Explore PPF</button>
       </div>
 
       <div class="pricing-card">
@@ -949,7 +954,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <li>Legal tint levels</li>
           <li>Glare reduction</li>
         </ul>
-        <button class="package-cta" onclick="window.location.href='/window-tinting.html'">Learn More</button>
+        <button class="package-cta" onclick="window.location.href='/window-tinting'">Learn More</button>
       </div>
     </div>
 
@@ -1160,11 +1165,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <li>Glass Ceramic Coating: <b>$149</b></li>
           <li>Trim Ceramic Coating: <b>$99</b></li>
           <li>Interior Ceramic Protection: <b>$299</b></li>
-          <li>Paint Protection Film (PPF): <a href="/paint-protection-film.html">Call for quote</a></li>
+          <li>Paint Protection Film (PPF): <a href="/paint-protection-film">Call for quote</a></li>
         </ul>
 
         <div class="cta-row">
-          <a class="btn" href="/ceramic-coating.html">Compare Coating Packages</a>
+          <a class="btn" href="/ceramic-coating">Compare Coating Packages</a>
           <a class="btn alt" href="tel:+14805288227">Call/Text (480) 528-8227</a>
         </div>
       </div>
@@ -1199,7 +1204,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </table>
         </div>
         <div class="cta-row">
-          <a class="btn" href="/window-tinting.html">See Tint Options</a>
+          <a class="btn" href="/window-tinting">See Tint Options</a>
           <a class="btn alt" href="tel:+14805288227">Book Tint</a>
         </div>
       </div>
@@ -1246,7 +1251,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <p><b>Call for quote</b></p>
 
             <h4>PPF</h4>
-            <p><a href="/paint-protection-film.html"><b>Call for quote</b></a></p>
+            <p><a href="/paint-protection-film"><b>Call for quote</b></a></p>
 
             <p class="note">Multi-vehicle discount: <b>15% off</b> for 2+ vehicles (same visit).</p>
           </div>
@@ -1276,7 +1281,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           Prices are for recurring Maintenance Detail(s). First visit may require a deep clean at standard one-time rates if needed. Autopay required for membership pricing.
         </p>
         <div class="cta-row">
-          <a class="btn" href="/services-overview.html">All Services</a>
+          <a class="btn" href="/services">All Services</a>
           <a class="btn alt" href="sms:+14805288227">Text for Membership</a>
         </div>
       </div>
@@ -1376,8 +1381,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="gallery-slider">
           <div class="before-after-container">
             <div class="before-after-slider" id="slider1">
-              <img src="/assets/images/optimized/before-1_744.webp" alt="Before detailing" class="before">
-              <img src="/assets/images/optimized/after-1_744.webp"  alt="After detailing"  class="after">
+              <img src="/assets/images/optimized/before-1_744.webp" alt="Before detailing" class="before" loading="lazy" decoding="async">
+              <img src="/assets/images/optimized/after-1_744.webp"  alt="After detailing"  class="after" loading="lazy" decoding="async">
               <div class="slider-handle" role="slider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50"></div>
               <span class="before-label">BEFORE</span>
               <span class="after-label">AFTER</span>
@@ -1427,27 +1432,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="section-header"><h2>Frequently Asked Questions</h2><p>Get answers to common questions</p></div>
         <div class="faq-list">
           <div class="faq-item">
-            <button class="faq-question">How long does a full detail take?</button>
+            <button class="faq-question" aria-expanded="false">How long does a full detail take?</button>
             <div class="faq-answer"><p>Most full details take 3-5 hours depending on vehicle size and condition. Interior-only or exterior-only services typically take 2-3 hours. We'll give you an accurate time estimate when booking.</p></div>
           </div>
           <div class="faq-item">
-            <button class="faq-question">Do you need access to water and electricity?</button>
+            <button class="faq-question" aria-expanded="false">Do you need access to water and electricity?</button>
             <div class="faq-answer"><p>No! Our mobile units are completely self-sufficient. We bring our own water, power generator, and all equipment needed. You just need to provide access to the vehicle.</p></div>
           </div>
           <div class="faq-item">
-            <button class="faq-question">What areas do you serve?</button>
+            <button class="faq-question" aria-expanded="false">What areas do you serve?</button>
             <div class="faq-answer"><p>We serve the entire East Valley including Gilbert, Mesa, Chandler, Queen Creek, San Tan Valley, Scottsdale, Tempe, and Phoenix. For locations outside our normal service area, please call for availability.</p></div>
           </div>
           <div class="faq-item">
-            <button class="faq-question">Is ceramic coating worth it in Arizona?</button>
+            <button class="faq-question" aria-expanded="false">Is ceramic coating worth it in Arizona?</button>
             <div class="faq-answer"><p>Absolutely! Arizona's intense UV rays and heat are brutal on paint. Ceramic coating provides essential UV protection, prevents oxidation, and makes washing much easier. It's one of the best investments for maintaining your vehicle's value in our climate.</p></div>
           </div>
           <div class="faq-item">
-            <button class="faq-question">Can you remove pet hair and odors?</button>
+            <button class="faq-question" aria-expanded="false">Can you remove pet hair and odors?</button>
             <div class="faq-answer"><p>Yes! We specialize in pet hair removal and use special tools and techniques to remove even stubborn embedded hair. For odors, we offer ozone treatment that eliminates smells at the molecular level rather than just masking them.</p></div>
           </div>
           <div class="faq-item">
-            <button class="faq-question">Do you offer any warranties or guarantees?</button>
+            <button class="faq-question" aria-expanded="false">Do you offer any warranties or guarantees?</button>
             <div class="faq-answer"><p>Yes! We offer a 100% satisfaction guarantee on all services. Ceramic coatings come with 3-7 year warranties depending on the package. Paint protection film includes a 10-year manufacturer warranty. Window tint has a lifetime warranty against bubbling, peeling, and fading.</p></div>
           </div>
         </div>
@@ -1629,13 +1634,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       viewport.addEventListener('mouseleave', () => { if (!prefersReduced) rafId = requestAnimationFrame(step); });
     })();
 
-    // FAQ Accordion
+
+    // Enhance FAQ ARIA state
     document.querySelectorAll('.faq-question').forEach(button => {
       button.addEventListener('click', function() {
         const item = this.parentElement;
         const isActive = item.classList.contains('active');
-        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
-        if (!isActive) item.classList.add('active');
+        document.querySelectorAll('.faq-item').forEach(i => {
+          const btn = i.querySelector('.faq-question');
+          if (btn) btn.setAttribute('aria-expanded', 'false');
+          i.classList.remove('active');
+        });
+        if (!isActive) {
+          item.classList.add('active');
+          this.setAttribute('aria-expanded', 'true');
+        } else {
+          this.setAttribute('aria-expanded', 'false');
+        }
       });
     });
 
