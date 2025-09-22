@@ -22,11 +22,11 @@
         .mobile-sticky-footer{
           position:fixed;left:0;right:0;
           /* Slide the bar DOWN into the safe-area for a lower visual position */
-          bottom:max(0px, calc(env(safe-area-inset-bottom, 0px) - 8px));
+          bottom:max(0px, calc(env(safe-area-inset-bottom, 0px) - 12px));
           background:#fff;box-shadow:0 -2px 14px rgba(0,0,0,.12);
           z-index:1100;display:block;animation:slideUp .25s ease-out;
           /* keep tappable area comfy while still tucked low */
-          padding-bottom:max(0px, calc(env(safe-area-inset-bottom, 0px) - 8px));
+          padding-bottom:max(0px, calc(env(safe-area-inset-bottom, 0px) - 12px));
         }
 
         @keyframes slideUp{from{transform:translateY(100%)}to{transform:translateY(0)}}
