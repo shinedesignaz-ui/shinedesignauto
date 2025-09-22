@@ -106,6 +106,7 @@
           <h3>Service Calculator</h3>
           <button class="close-btn" onclick="window.closeCalculator()">&times;</button>
         </div>
+
         <label style="display:block;margin-bottom:6px;color:#475569;font-size:14px;font-weight:600;">Vehicle Size:</label>
         <select class="vehicle-select" id="vehicleType" onchange="window.updatePrices()">
           <option value="small">Small (Sedan/Coupe/Hatchback)</option>
@@ -155,7 +156,7 @@
         </div>
         <div class="service-option">
           <label>
-            <input type="checkbox" data-price-small="399" data-price-medium="449" data-price-large="509" data-price-xl="579" data-service="interior" onchange="window.calculateTotal()">
+            <input type="checkbox" data-price-small="399" data-price-medium="449" data-price-large="509" data-price-xl="579" data-price-xxl="659" data-service="interior" onchange="window.calculateTotal()">
             <span>Level 3: Elite Transformation</span>
             <span class="service-price">$399+</span>
           </label>
@@ -171,7 +172,7 @@
         </div>
         <div class="service-option">
           <label>
-            <input type="checkbox" data-price-small="249" data-price-medium="279" data-price-large="319" data-price-xl="369" data-service="exterior" onchange="window.calculateTotal()">
+            <input type="checkbox" data-price-small="249" data-price-medium="279" data-price-large="319" data-price-xl="369" data-price-xxl="429" data-service="exterior" onchange="window.calculateTotal()">
             <span>Level 2: Deep Clean & Seal</span>
             <span class="service-price">$249+</span>
           </label>
@@ -287,13 +288,20 @@
           <span>Estimated Total:</span>
           <span class="total-price" id="totalPrice">$0</span>
         </div>
+        
         <p style="font-size:12px;color:#64748b;margin:12px 0;text-align:center;line-height:1.4;">
           *Prices shown for Small vehicles. Updates based on your selection.<br>
           PPF & specialty services available - call for quote.
         </p>
-        <button class="cta-button" onclick="window.bookWithTotal()">📱 Text Me for Exact Quote</button>
+
+        <button class="cta-button" onclick="window.bookWithTotal()">
+          📱 Text Me for Exact Quote
+        </button>
+        
         <div class="sms-notice">
-          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
           <span>Opens your text app with your selections</span>
         </div>
       </div>
@@ -315,56 +323,72 @@
   window.closeCalculator = function() {
     document.getElementById('calculatorModal').classList.remove('active');
     document.body.style.overflow = '';
-    document.querySelectorAll('.service-option input[type="checkbox"]').forEach(cb => {
-      cb.checked = false; cb.closest('.service-option').classList.remove('selected');
+    // Clear selections
+    document.querySelectorAll('.service-option input[type="checkbox"]').forEach(checkbox => {
+      checkbox.checked = false;
+      checkbox.closest('.service-option').classList.remove('selected');
     });
     document.getElementById('totalPrice').textContent = '$0';
   };
 
   window.updatePrices = function() {
     const vehicleSize = document.getElementById('vehicleType').value;
+    
     document.querySelectorAll('.service-option input[type="checkbox"]').forEach(checkbox => {
       const priceAttr = `data-price-${vehicleSize}`;
       const basePrice = checkbox.getAttribute(priceAttr) || checkbox.getAttribute('data-price');
+      
       if (basePrice) {
         const priceSpan = checkbox.parentElement.querySelector('.service-price');
         if (priceSpan) {
-          if (checkbox.hasAttribute(priceAttr)) { priceSpan.textContent = '$' + basePrice + '+'; }
-          else {
+          if (checkbox.hasAttribute(priceAttr)) {
+            priceSpan.textContent = '$' + basePrice + '+';
+          } else {
             const originalText = checkbox.parentElement.textContent;
-            if (originalText.includes('/pair')) priceSpan.textContent = '$' + basePrice + '/pair';
-            else if (originalText.includes('+')) priceSpan.textContent = '$' + basePrice + '+';
-            else priceSpan.textContent = '$' + basePrice;
+            if (originalText.includes('/pair')) {
+              priceSpan.textContent = '$' + basePrice + '/pair';
+            } else if (originalText.includes('+')) {
+              priceSpan.textContent = '$' + basePrice + '+';
+            } else {
+              priceSpan.textContent = '$' + basePrice;
+            }
           }
         }
       }
     });
+    
     window.calculateTotal();
   };
 
   window.calculateTotal = function() {
     const checkboxes = document.querySelectorAll('.service-option input[type="checkbox"]:checked');
     const vehicleSize = document.getElementById('vehicleType').value;
-    let total = 0, hasBundle = false, hasInterior = false, hasExterior = false;
-
+    
+    let total = 0;
+    let hasBundle = false;
+    let hasInterior = false;
+    let hasExterior = false;
+    
     checkboxes.forEach(checkbox => {
       const serviceType = checkbox.getAttribute('data-service');
       if (serviceType === 'bundle') hasBundle = true;
       else if (serviceType === 'interior') hasInterior = true;
       else if (serviceType === 'exterior') hasExterior = true;
     });
-
+    
     if (hasBundle && (hasInterior || hasExterior)) {
       document.querySelectorAll('.service-option input[data-service="interior"], .service-option input[data-service="exterior"]').forEach(cb => {
-        cb.checked = false; cb.closest('.service-option').classList.remove('selected');
+        cb.checked = false;
+        cb.closest('.service-option').classList.remove('selected');
       });
     }
-    document.querySelectorAll('.service-option input[type="checkbox"]:checked').forEach(cb => {
+    
+    document.querySelectorAll('.service-option input[type="checkbox"]:checked').forEach(checkbox => {
       const priceAttr = `data-price-${vehicleSize}`;
-      const price = cb.getAttribute(priceAttr) || cb.getAttribute('data-price');
+      const price = checkbox.getAttribute(priceAttr) || checkbox.getAttribute('data-price');
       if (price) total += parseFloat(price);
     });
-
+    
     let discountMessage = total > 1000 ? ' (Ask about 15% multi-vehicle discount!)' : '';
     total = Math.round(total);
     document.getElementById('totalPrice').textContent = '$' + total.toLocaleString() + discountMessage;
@@ -375,47 +399,76 @@
     const services = [];
     const vehicleTypeSelect = document.getElementById('vehicleType');
     const vehicleType = vehicleTypeSelect.options[vehicleTypeSelect.selectedIndex].text;
-
-    document.querySelectorAll('.service-option input[type="checkbox"]:checked').forEach(cb => {
-      const serviceName = cb.parentElement.querySelector('span').textContent;
+    
+    // Collect all selected services
+    document.querySelectorAll('.service-option input[type="checkbox"]:checked').forEach(checkbox => {
+      const serviceName = checkbox.parentElement.querySelector('span').textContent;
       services.push(serviceName);
     });
-
-    if (services.length === 0) { alert('Please select at least one service'); return; }
-
+    
+    if (services.length === 0) {
+      alert('Please select at least one service');
+      return;
+    }
+    
+    // Create the SMS message
     let smsBody = '🚗 Quote Request from Website Calculator\n\n';
-    smsBody += `Vehicle: ${vehicleType}\n\nServices Selected:\n`;
-    services.forEach(s => { smsBody += `• ${s}\n`; });
-    smsBody += `\nEstimated Total: ${total}\n\nPlease send me an exact quote for these services. Thanks!`;
-
+    smsBody += `Vehicle: ${vehicleType}\n\n`;
+    smsBody += 'Services Selected:\n';
+    services.forEach(service => {
+      smsBody += `• ${service}\n`;
+    });
+    smsBody += `\nEstimated Total: ${total}\n\n`;
+    smsBody += 'Please send me an exact quote for these services. Thanks!';
+    
+    // Encode the message for SMS URL (using encodeURIComponent to handle special characters)
     const encodedBody = encodeURIComponent(smsBody);
+    
+    // Create the SMS URL - format varies by device
+    // For iOS: sms:+14805288227&body=...
+    // For Android: sms:+14805288227?body=...
+    // Using the iOS format with fallback handling
     const phoneNumber = '+14805288227';
+    
+    // Detect if mobile device
     const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-
+    
     if (isMobile) {
+      // For mobile devices, use the sms: protocol
       window.location.href = `sms:${phoneNumber}&body=${encodedBody}`;
     } else {
+      const message = `To: ${phoneNumber}\n\n${smsBody}`;
       if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(smsBody).then(() => {
-          alert('Your quote request has been copied to clipboard!\\n\\nPlease text it to: (480) 528-8227\\n\\nOr call us directly for immediate assistance.');
-        }).catch(() => { prompt('Copy this message and text it to (480) 528-8227:', smsBody); });
+          alert('Your quote request has been copied to clipboard!\n\nPlease text it to: (480) 528-8227\n\nOr call us directly for immediate assistance.');
+        }).catch(() => {
+          prompt('Copy this message and text it to (480) 528-8227:', smsBody);
+        });
       } else {
         prompt('Copy this message and text it to (480) 528-8227:', smsBody);
       }
     }
   };
 
-  // selection highlight
-  document.querySelectorAll('.service-option input[type="checkbox"]').forEach(cb => {
-    cb.addEventListener('change', function() {
-      this.closest('.service-option').classList.toggle('selected', this.checked);
+  // Handle checkbox selection highlighting
+  document.querySelectorAll('.service-option input[type="checkbox"]').forEach(checkbox => {
+    checkbox.addEventListener('change', function() {
+      if (this.checked) {
+        this.closest('.service-option').classList.add('selected');
+      } else {
+        this.closest('.service-option').classList.remove('selected');
+      }
     });
   });
 
-  // close modal helpers
+  // Close modal on outside click
   document.getElementById('calculatorModal').addEventListener('click', function(e) {
-    if (e.target === this) window.closeCalculator();
+    if (e.target === this) {
+      window.closeCalculator();
+    }
   });
+
+  // ESC key to close calculator
   document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape' && document.getElementById('calculatorModal').classList.contains('active')) {
       window.closeCalculator();
