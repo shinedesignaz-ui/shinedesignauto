@@ -7,27 +7,98 @@
   if (window.shineActionButtonsLoaded) return;
   window.shineActionButtonsLoaded = true;
 
-  // Inject minified CSS (MOBILE TWEAK ONLY: use translateY to drop the bar lower)
+  // Inject minified CSS (MOBILE POSITIONING FIXED)
   const styles = `
     @media(max-width:768px){
-      /* Reserve a bit less space so content doesn't float above */
-      body{padding-bottom:calc(72px + env(safe-area-inset-bottom, 0px))!important}
+      /* Reserve proper space for the footer bar */
+      body{padding-bottom:60px!important}
 
       .mobile-sticky-footer{
-        position:fixed; left:0; right:0; bottom:0;
-        /* VISUALLY DROP THE BAR LOWER INTO THE WHITE AREA */
-        transform: translateY(calc(env(safe-area-inset-bottom, 0px) - 10px));
-        background:#fff; box-shadow:0 -4px 20px rgba(0,0,0,.1);
-        z-index:1000; display:block; animation:slideUp .3s ease-out;
-        padding-bottom:8px; /* keep taps comfy */
-        will-change: transform;
+        position:fixed; 
+        left:0; 
+        right:0; 
+        bottom:0;
+        /* Remove the translateY - keep it flush with bottom */
+        background:#fff; 
+        box-shadow:0 -2px 10px rgba(0,0,0,.08);
+        z-index:1000; 
+        display:block; 
+        animation:slideUp .3s ease-out;
+        /* Add safe area padding for devices with home indicators (iPhone X+) */
+        padding-bottom:env(safe-area-inset-bottom, 0px);
       }
-      @keyframes slideUp{from{transform:translateY(100%)}to{transform:translateY(calc(env(safe-area-inset-bottom, 0px) - 10px))}}
-      .footer-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#e2e8f0;max-width:100%}
-      .footer-item{background:#fff;padding:10px 5px;text-align:center;cursor:pointer;transition:all .3s;text-decoration:none;color:#0f172a;border:none;font-family:inherit;font-size:11px}
-      .footer-item:active{transform:scale(.95);background:#f1f5f9}
-      .footer-item svg{width:24px;height:24px;margin-bottom:4px;color:#0ea5e9}
-      .footer-item span{display:block;font-size:11px;font-weight:600;color:#475569;line-height:1.2}
+      
+      @keyframes slideUp{
+        from{transform:translateY(100%)}
+        to{transform:translateY(0)}
+      }
+      
+      .footer-grid{
+        display:grid;
+        grid-template-columns:repeat(4,1fr);
+        gap:0;
+        background:#fff;
+        max-width:100%;
+        /* Add subtle border top for definition */
+        border-top:1px solid #e2e8f0;
+      }
+      
+      .footer-item{
+        background:#fff;
+        padding:8px 4px;
+        text-align:center;
+        cursor:pointer;
+        transition:all .2s ease;
+        text-decoration:none;
+        color:#0f172a;
+        border:none;
+        font-family:inherit;
+        font-size:10px;
+        position:relative;
+        /* Add subtle separators between items */
+        border-right:1px solid #f1f5f9;
+      }
+      
+      .footer-item:last-child{
+        border-right:none;
+      }
+      
+      .footer-item:active{
+        transform:scale(.95);
+        background:#f8fafc;
+      }
+      
+      .footer-item::before{
+        content:'';
+        position:absolute;
+        top:0;
+        left:0;
+        right:0;
+        height:2px;
+        background:#0ea5e9;
+        transform:scaleX(0);
+        transition:transform .2s ease;
+      }
+      
+      .footer-item:active::before{
+        transform:scaleX(1);
+      }
+      
+      .footer-item svg{
+        width:22px;
+        height:22px;
+        margin-bottom:3px;
+        color:#0ea5e9;
+      }
+      
+      .footer-item span{
+        display:block;
+        font-size:10px;
+        font-weight:600;
+        color:#475569;
+        line-height:1.2;
+      }
+      
       .desktop-floating-buttons{display:none!important}
     }
     @media(min-width:769px){.mobile-sticky-footer{display:none!important}.desktop-floating-buttons{position:fixed;bottom:30px;right:30px;z-index:1000;display:flex;flex-direction:column-reverse;gap:12px;animation:fadeInUp .5s ease-out}@keyframes fadeInUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}.floating-btn{width:60px;height:60px;border-radius:50%;background:#fff;box-shadow:0 4px 20px rgba(0,0,0,.15);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .3s;text-decoration:none;border:2px solid transparent}.floating-btn:hover{transform:scale(1.1);box-shadow:0 6px 30px rgba(0,0,0,.2);border-color:#0ea5e9}.floating-btn svg{width:28px;height:28px;color:#0ea5e9}.floating-btn.primary{width:70px;height:70px;background:linear-gradient(135deg,#0ea5e9,#0284c7);animation:pulse 2s infinite}@keyframes pulse{0%,100%{box-shadow:0 4px 20px rgba(14,165,233,.4)}50%{box-shadow:0 4px 30px rgba(14,165,233,.6)}}.floating-btn.primary svg{color:#fff;width:32px;height:32px}}
