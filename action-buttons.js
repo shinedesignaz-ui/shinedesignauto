@@ -513,36 +513,19 @@
         accent-color: #0ea5e9;
       }
 
-      .service-price {
-        margin-left: auto;
-        color: #0ea5e9;
-        font-weight: 700;
-        font-size: 15px;
-        padding-left: 12px;
-      }
-
-      .total-section {
+      .request-section {
         margin-top: 24px;
         padding: 20px;
         background: linear-gradient(135deg, #0ea5e9, #0284c7);
         border-radius: 16px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        text-align: center;
         box-shadow: 0 8px 24px rgba(14, 165, 233, 0.25);
       }
 
-      .total-section span:first-child {
+      .request-section span {
         font-size: 16px;
         font-weight: 600;
-        color: rgba(255, 255, 255, 0.9);
-      }
-
-      .total-price {
         color: white;
-        font-size: 32px;
-        font-weight: 700;
-        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
       }
 
       .cta-button {
@@ -648,11 +631,11 @@
     const mobileFooter = `
       <div class="mobile-sticky-footer">
         <div class="footer-grid">
-          <button class="footer-item" onclick="window.openCalculator()" aria-label="Service Calculator">
+          <button class="footer-item" onclick="window.openCalculator()" aria-label="Service Selector">
             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path>
             </svg>
-            <span>Quote</span>
+            <span>Services</span>
           </button>
           <a href="https://booknow.shinedesignauto.com/" class="footer-item primary pulse" aria-label="Book Online">
             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -691,10 +674,10 @@
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
           </svg>
         </a>
-        <button class="floating-btn" onclick="window.openCalculator()" aria-label="Open Calculator">
-          <span class="tooltip">Price Calculator</span>
+        <button class="floating-btn" onclick="window.openCalculator()" aria-label="Service Selector">
+          <span class="tooltip">Select Services</span>
           <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path>
           </svg>
         </button>
         <a href="https://booknow.shinedesignauto.com/" class="floating-btn primary" aria-label="Book Online">
@@ -706,17 +689,17 @@
       </div>
     `;
 
-    // Enhanced Calculator Modal with all services
+    // Service Selection Modal (no prices shown)
     const calculatorModal = `
       <div class="calculator-modal" id="calculatorModal">
         <div class="calculator-content">
           <div class="calculator-header">
-            <h3>✨ Service Calculator</h3>
+            <h3>✨ Service Selection</h3>
             <button class="close-btn" onclick="window.closeCalculator()">✕</button>
           </div>
 
-          <label style="display:block;margin-bottom:8px;color:#475569;font-size:14px;font-weight:600;">Vehicle Size:</label>
-          <select class="vehicle-select" id="vehicleType" onchange="window.updatePrices()">
+          <label style="display:block;margin-bottom:8px;color:#475569;font-size:14px;font-weight:600;">Vehicle Type:</label>
+          <select class="vehicle-select" id="vehicleType">
             <option value="small">🚗 Small (Sedan/Coupe/Hatchback)</option>
             <option value="medium">🚙 Medium (Small SUV/Crossover)</option>
             <option value="large">🚚 Large (Full-Size Truck/Large Sedan)</option>
@@ -724,193 +707,165 @@
             <option value="xxl">🚌 XXL (Extended Van/RV)</option>
           </select>
 
-          <h4 class="bundle-header">💰 Bundle Packages (Save up to 40%)</h4>
+          <h4 class="bundle-header">💰 Bundle Packages (Best Value)</h4>
           <div class="service-option">
             <label>
-              <input type="checkbox" data-price-small="179" data-price-medium="209" data-price-large="249" data-price-xl="299" data-price-xxl="369" data-service="bundle" onchange="window.calculateTotal()">
+              <input type="checkbox" data-service="bundle" onchange="window.handleSelection()">
               <span>Silver Package (Interior L1 + Exterior L1)</span>
-              <span class="service-price">$179</span>
             </label>
           </div>
           <div class="service-option">
             <label>
-              <input type="checkbox" data-price-small="299" data-price-medium="349" data-price-large="399" data-price-xl="469" data-price-xxl="569" data-service="bundle" onchange="window.calculateTotal()">
+              <input type="checkbox" data-service="bundle" onchange="window.handleSelection()">
               <span>Gold Package (Interior L2 + Exterior L2)</span>
-              <span class="service-price">$299</span>
             </label>
           </div>
           <div class="service-option">
             <label>
-              <input type="checkbox" data-price-small="449" data-price-medium="519" data-price-large="599" data-price-xl="699" data-price-xxl="829" data-service="bundle" onchange="window.calculateTotal()">
+              <input type="checkbox" data-service="bundle" onchange="window.handleSelection()">
               <span>Platinum Package (Interior L3 + Exterior L2)</span>
-              <span class="service-price">$449</span>
             </label>
           </div>
 
           <h4>🧹 Interior Services</h4>
           <div class="service-option">
             <label>
-              <input type="checkbox" data-price-small="149" data-price-medium="169" data-price-large="199" data-price-xl="229" data-price-xxl="279" data-service="interior" onchange="window.calculateTotal()">
+              <input type="checkbox" data-service="interior" onchange="window.handleSelection()">
               <span>Level 1: Refresh & Clean</span>
-              <span class="service-price">$149</span>
             </label>
           </div>
           <div class="service-option">
             <label>
-              <input type="checkbox" data-price-small="249" data-price-medium="279" data-price-large="319" data-price-xl="369" data-price-xxl="429" data-service="interior" onchange="window.calculateTotal()">
+              <input type="checkbox" data-service="interior" onchange="window.handleSelection()">
               <span>Level 2: Deep Clean & Restore</span>
-              <span class="service-price">$249</span>
             </label>
           </div>
           <div class="service-option">
             <label>
-              <input type="checkbox" data-price-small="399" data-price-medium="449" data-price-large="509" data-price-xl="579" data-price-xxl="659" data-service="interior" onchange="window.calculateTotal()">
+              <input type="checkbox" data-service="interior" onchange="window.handleSelection()">
               <span>Level 3: Elite Transformation</span>
-              <span class="service-price">$399</span>
             </label>
           </div>
 
           <h4>✨ Exterior Services</h4>
           <div class="service-option">
             <label>
-              <input type="checkbox" data-price-small="99" data-price-medium="119" data-price-large="139" data-price-xl="159" data-price-xxl="189" data-service="exterior" onchange="window.calculateTotal()">
+              <input type="checkbox" data-service="exterior" onchange="window.handleSelection()">
               <span>Level 1: Maintenance Wash</span>
-              <span class="service-price">$99</span>
             </label>
           </div>
           <div class="service-option">
             <label>
-              <input type="checkbox" data-price-small="249" data-price-medium="279" data-price-large="319" data-price-xl="369" data-price-xxl="429" data-service="exterior" onchange="window.calculateTotal()">
+              <input type="checkbox" data-service="exterior" onchange="window.handleSelection()">
               <span>Level 2: Deep Clean & Seal</span>
-              <span class="service-price">$249</span>
             </label>
           </div>
 
           <h4>🛠 Paint Correction</h4>
           <div class="service-option">
             <label>
-              <input type="checkbox" data-price-small="499" data-price-medium="599" data-price-large="699" data-price-xl="849" data-price-xxl="999" onchange="window.calculateTotal()">
+              <input type="checkbox" onchange="window.handleSelection()">
               <span>Enhancement Polish (70% correction)</span>
-              <span class="service-price">$499</span>
             </label>
           </div>
           <div class="service-option">
             <label>
-              <input type="checkbox" data-price-small="799" data-price-medium="999" data-price-large="1199" data-price-xl="1399" data-price-xxl="1649" onchange="window.calculateTotal()">
+              <input type="checkbox" onchange="window.handleSelection()">
               <span>Paint Correction (85% correction)</span>
-              <span class="service-price">$799</span>
             </label>
           </div>
           <div class="service-option">
             <label>
-              <input type="checkbox" data-price-small="1199" data-price-medium="1499" data-price-large="1799" data-price-xl="2099" data-price-xxl="2499" onchange="window.calculateTotal()">
+              <input type="checkbox" onchange="window.handleSelection()">
               <span>Show Car Finish (95% perfection)</span>
-              <span class="service-price">$1199</span>
             </label>
           </div>
 
           <h4>🛡️ Ceramic Coating</h4>
           <div class="service-option">
             <label>
-              <input type="checkbox" data-price-small="899" data-price-medium="1099" data-price-large="1299" data-price-xl="1499" data-price-xxl="1799" onchange="window.calculateTotal()">
+              <input type="checkbox" onchange="window.handleSelection()">
               <span>Essential - 3 Year Protection</span>
-              <span class="service-price">$899</span>
             </label>
           </div>
           <div class="service-option">
             <label>
-              <input type="checkbox" data-price-small="1399" data-price-medium="1599" data-price-large="1899" data-price-xl="2199" data-price-xxl="2599" onchange="window.calculateTotal()">
+              <input type="checkbox" onchange="window.handleSelection()">
               <span>Premium - 5+ Year Protection</span>
-              <span class="service-price">$1399</span>
             </label>
           </div>
           <div class="service-option">
             <label>
-              <input type="checkbox" data-price-small="1999" data-price-medium="2299" data-price-large="2599" data-price-xl="2999" data-price-xxl="3499" onchange="window.calculateTotal()">
-              <span>Elite - 7+ Year/Lifetime</span>
-              <span class="service-price">$1999</span>
+              <input type="checkbox" onchange="window.handleSelection()">
+              <span>Elite - 7+ Year / Lifetime</span>
             </label>
           </div>
 
           <h4>🎨 Window Tint</h4>
           <div class="service-option">
             <label>
-              <input type="checkbox" data-price="489" onchange="window.calculateTotal()">
+              <input type="checkbox" onchange="window.handleSelection()">
               <span>4 Door Sedan - Ceramic Tint</span>
-              <span class="service-price">$489</span>
             </label>
           </div>
           <div class="service-option">
             <label>
-              <input type="checkbox" data-price="589" onchange="window.calculateTotal()">
+              <input type="checkbox" onchange="window.handleSelection()">
               <span>Truck - Ceramic Tint</span>
-              <span class="service-price">$589</span>
             </label>
           </div>
           <div class="service-option">
             <label>
-              <input type="checkbox" data-price="689" onchange="window.calculateTotal()">
+              <input type="checkbox" onchange="window.handleSelection()">
               <span>SUV - Ceramic Tint</span>
-              <span class="service-price">$689</span>
             </label>
           </div>
 
           <h4>➕ Add-Ons</h4>
           <div class="service-option">
             <label>
-              <input type="checkbox" data-price="59" onchange="window.calculateTotal()">
+              <input type="checkbox" onchange="window.handleSelection()">
               <span>Engine Bay Detail</span>
-              <span class="service-price">$59</span>
             </label>
           </div>
           <div class="service-option">
             <label>
-              <input type="checkbox" data-price="69" onchange="window.calculateTotal()">
+              <input type="checkbox" onchange="window.handleSelection()">
               <span>Headlight Restoration</span>
-              <span class="service-price">$69/pair</span>
             </label>
           </div>
           <div class="service-option">
             <label>
-              <input type="checkbox" data-price="39" onchange="window.calculateTotal()">
+              <input type="checkbox" onchange="window.handleSelection()">
               <span>Pet Hair Removal</span>
-              <span class="service-price">$39+</span>
             </label>
           </div>
           <div class="service-option">
             <label>
-              <input type="checkbox" data-price="99" onchange="window.calculateTotal()">
+              <input type="checkbox" onchange="window.handleSelection()">
               <span>Carpet & Seat Shampoo</span>
-              <span class="service-price">$99+</span>
             </label>
           </div>
           <div class="service-option">
             <label>
-              <input type="checkbox" data-price="89" onchange="window.calculateTotal()">
+              <input type="checkbox" onchange="window.handleSelection()">
               <span>Ozone Odor Elimination</span>
-              <span class="service-price">$89</span>
             </label>
           </div>
 
-          <div class="total-section">
-            <span>Estimated Total:</span>
-            <span class="total-price" id="totalPrice">$0</span>
+          <div class="request-section">
+            <span id="selectedCount">Select services to request a quote</span>
           </div>
 
-          <p style="font-size:12px;color:#64748b;margin:12px 0;text-align:center;line-height:1.4;">
-            *Prices shown for Small vehicles. Updates based on your selection.<br>
-            PPF & specialty services available - call for quote.
-          </p>
-
-          <button class="cta-button" onclick="window.bookWithTotal()">
-            📱 Get Exact Quote via Text
+          <button class="cta-button" onclick="window.sendServiceRequest()">
+            📱 Text Me for Quote
           </button>
 
           <div class="sms-notice">
             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
             </svg>
-            <span>Opens your messages with selections</span>
+            <span>Sends your selections for personalized pricing</span>
           </div>
         </div>
       </div>
@@ -921,12 +876,12 @@
     document.body.insertAdjacentHTML('beforeend', desktopButtons);
     document.body.insertAdjacentHTML('beforeend', calculatorModal);
 
-    // Enhanced Calculator Functions
+    // Service Selection Functions
     window.openCalculator = function () {
       const modal = document.getElementById('calculatorModal');
       modal.classList.add('active');
       document.body.style.overflow = 'hidden';
-      window.updatePrices();
+      window.handleSelection();
     };
 
     window.closeCalculator = function () {
@@ -943,51 +898,15 @@
           }
         }, index * 30);
       });
-      setTimeout(() => {
-        document.getElementById('totalPrice').textContent = '$0';
-      }, 300);
     };
 
-    window.updatePrices = function () {
-      const vehicleSize = document.getElementById('vehicleType').value;
-
-      document.querySelectorAll('.service-option input[type="checkbox"]').forEach(checkbox => {
-        const priceAttr = `data-price-${vehicleSize}`;
-        const basePrice = checkbox.getAttribute(priceAttr) || checkbox.getAttribute('data-price');
-        if (!basePrice) return;
-
-        const priceSpan = checkbox.parentElement.querySelector('.service-price');
-        if (!priceSpan) return;
-
-        // Animate price change
-        priceSpan.style.transition = 'all .3s ease';
-        priceSpan.style.transform = 'scale(0.95)';
-        
-        setTimeout(() => {
-          const labelText = checkbox.parentElement.textContent;
-          if (checkbox.hasAttribute(priceAttr)) {
-            priceSpan.textContent = '$' + basePrice;
-          } else if (labelText.includes('/pair')) {
-            priceSpan.textContent = '$' + basePrice + '/pair';
-          } else if (labelText.includes('+')) {
-            priceSpan.textContent = '$' + basePrice + '+';
-          } else {
-            priceSpan.textContent = '$' + basePrice;
-          }
-          priceSpan.style.transform = 'scale(1)';
-        }, 150);
-      });
-
-      window.calculateTotal();
-    };
-
-    window.calculateTotal = function () {
+    window.handleSelection = function () {
       const checked = document.querySelectorAll('.service-option input[type="checkbox"]:checked');
-      const vehicleSize = document.getElementById('vehicleType').value;
-
-      let total = 0;
+      const countElement = document.getElementById('selectedCount');
+      
+      // Handle bundle vs individual service logic
       let hasBundle = false, hasInterior = false, hasExterior = false;
-
+      
       checked.forEach(cb => {
         const type = cb.getAttribute('data-service');
         if (type === 'bundle') hasBundle = true;
@@ -995,7 +914,7 @@
         else if (type === 'exterior') hasExterior = true;
       });
 
-      // Auto-uncheck conflicting options with animation
+      // Auto-uncheck conflicting options
       if (hasBundle && (hasInterior || hasExterior)) {
         document.querySelectorAll('.service-option input[data-service="interior"], .service-option input[data-service="exterior"]').forEach(cb => {
           if (cb.checked) {
@@ -1005,28 +924,19 @@
         });
       }
 
-      document.querySelectorAll('.service-option input[type="checkbox"]:checked').forEach(cb => {
-        const priceAttr = `data-price-${vehicleSize}`;
-        const price = cb.getAttribute(priceAttr) || cb.getAttribute('data-price');
-        if (price) total += parseFloat(price);
-      });
-
-      // Animate total update
-      const totalElement = document.getElementById('totalPrice');
-      totalElement.style.transition = 'all .3s ease';
-      totalElement.style.transform = 'scale(1.1)';
-      
-      const discountMessage = total > 1000 ? ' ✨' : '';
-      totalElement.textContent = '$' + total.toLocaleString() + discountMessage;
-      
-      setTimeout(() => {
-        totalElement.style.transform = 'scale(1)';
-      }, 200);
+      // Update count display
+      const finalChecked = document.querySelectorAll('.service-option input[type="checkbox"]:checked');
+      if (finalChecked.length === 0) {
+        countElement.textContent = 'Select services to request a quote';
+      } else if (finalChecked.length === 1) {
+        countElement.textContent = '1 service selected';
+      } else {
+        countElement.textContent = `${finalChecked.length} services selected`;
+      }
     };
 
-    window.bookWithTotal = function () {
+    window.sendServiceRequest = function () {
       const vehicleTypeEl = document.getElementById('vehicleType');
-      const vehicleKey = vehicleTypeEl.value;
       const vehicleLabel = vehicleTypeEl.options[vehicleTypeEl.selectedIndex].text;
 
       const checked = Array.from(document.querySelectorAll('.service-option input[type="checkbox"]:checked'));
@@ -1035,33 +945,25 @@
         return;
       }
 
-      let subtotal = 0;
-      const lines = checked.map(cb => {
-        const priceAttr = `data-price-${vehicleKey}`;
-        const raw = cb.getAttribute(priceAttr) || cb.getAttribute('data-price') || '0';
-        const priceNum = parseFloat(raw);
-        subtotal += isNaN(priceNum) ? 0 : priceNum;
-
+      // Get service names
+      const services = checked.map(cb => {
         const lbl = cb.parentElement.querySelector('span');
         const name = lbl ? lbl.textContent.trim() : 'Service';
-
-        return `• ${name} — $${priceNum.toLocaleString()}`;
+        return `• ${name}`;
       });
 
-      const discountHint = subtotal > 1000 ? ' (Ask about 15% multi-vehicle discount!)' : '';
-      const totalStr = `$${Math.round(subtotal).toLocaleString()}${discountHint}`;
-
+      // Compose SMS body (no prices)
       let smsBody = [
         '🚗 Shine Design — Quote Request',
         '',
         `Vehicle: ${vehicleLabel}`,
         '',
-        'Services Selected:',
-        ...lines,
+        'Services Requested:',
+        ...services,
         '',
-        `Estimated Total: ${totalStr}`,
+        'Please send me pricing for these services.',
         '',
-        'Please text me an exact quote for these selections. Thanks!'
+        'Thank you!'
       ].join('\n');
 
       const encoded = encodeURIComponent(smsBody);
