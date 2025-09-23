@@ -178,21 +178,21 @@
             <label>
               <input type="checkbox" data-price-small="179" data-price-medium="209" data-price-large="249" data-price-xl="299" data-price-xxl="369" data-service="bundle" onchange="window.calculateTotal()">
               <span>Silver Package (Interior L1 + Exterior L1)</span>
-              <span class="service-price">$179+</span>
+              <span class="service-price">$179</span>
             </label>
           </div>
           <div class="service-option">
             <label>
               <input type="checkbox" data-price-small="299" data-price-medium="349" data-price-large="399" data-price-xl="469" data-price-xxl="569" data-service="bundle" onchange="window.calculateTotal()">
               <span>Gold Package (Interior L2 + Exterior L2)</span>
-              <span class="service-price">$299+</span>
+              <span class="service-price">$299</span>
             </label>
           </div>
           <div class="service-option">
             <label>
               <input type="checkbox" data-price-small="449" data-price-medium="519" data-price-large="599" data-price-xl="699" data-price-xxl="829" data-service="bundle" onchange="window.calculateTotal()">
               <span>Platinum Package (Interior L3 + Exterior L2)</span>
-              <span class="service-price">$449+</span>
+              <span class="service-price">$449</span>
             </label>
           </div>
 
@@ -201,21 +201,21 @@
             <label>
               <input type="checkbox" data-price-small="149" data-price-medium="169" data-price-large="199" data-price-xl="229" data-price-xxl="279" data-service="interior" onchange="window.calculateTotal()">
               <span>Level 1: Refresh & Clean</span>
-              <span class="service-price">$149+</span>
+              <span class="service-price">$149</span>
             </label>
           </div>
           <div class="service-option">
             <label>
               <input type="checkbox" data-price-small="249" data-price-medium="279" data-price-large="319" data-price-xl="369" data-price-xxl="429" data-service="interior" onchange="window.calculateTotal()">
               <span>Level 2: Deep Clean & Restore</span>
-              <span class="service-price">$249+</span>
+              <span class="service-price">$249</span>
             </label>
           </div>
           <div class="service-option">
             <label>
               <input type="checkbox" data-price-small="399" data-price-medium="449" data-price-large="509" data-price-xl="579" data-price-xxl="659" data-service="interior" onchange="window.calculateTotal()">
               <span>Level 3: Elite Transformation</span>
-              <span class="service-price">$399+</span>
+              <span class="service-price">$399</span>
             </label>
           </div>
 
@@ -224,14 +224,14 @@
             <label>
               <input type="checkbox" data-price-small="99" data-price-medium="119" data-price-large="139" data-price-xl="159" data-price-xxl="189" data-service="exterior" onchange="window.calculateTotal()">
               <span>Level 1: Maintenance Wash</span>
-              <span class="service-price">$99+</span>
+              <span class="service-price">$99</span>
             </label>
           </div>
           <div class="service-option">
             <label>
               <input type="checkbox" data-price-small="249" data-price-medium="279" data-price-large="319" data-price-xl="369" data-price-xxl="429" data-service="exterior" onchange="window.calculateTotal()">
               <span>Level 2: Deep Clean & Seal</span>
-              <span class="service-price">$249+</span>
+              <span class="service-price">$249</span>
             </label>
           </div>
 
@@ -240,21 +240,21 @@
             <label>
               <input type="checkbox" data-price-small="499" data-price-medium="599" data-price-large="699" data-price-xl="849" data-price-xxl="999" onchange="window.calculateTotal()">
               <span>Enhancement Polish (70% correction)</span>
-              <span class="service-price">$499+</span>
+              <span class="service-price">$499</span>
             </label>
           </div>
           <div class="service-option">
             <label>
               <input type="checkbox" data-price-small="799" data-price-medium="999" data-price-large="1199" data-price-xl="1399" data-price-xxl="1649" onchange="window.calculateTotal()">
               <span>Paint Correction (85% correction)</span>
-              <span class="service-price">$799+</span>
+              <span class="service-price">$799</span>
             </label>
           </div>
           <div class="service-option">
             <label>
               <input type="checkbox" data-price-small="1199" data-price-medium="1499" data-price-large="1799" data-price-xl="2099" data-price-xxl="2499" onchange="window.calculateTotal()">
               <span>Show Car Finish (95% perfection)</span>
-              <span class="service-price">$1199+</span>
+              <span class="service-price">$1199</span>
             </label>
           </div>
 
@@ -263,21 +263,21 @@
             <label>
               <input type="checkbox" data-price-small="899" data-price-medium="1099" data-price-large="1299" data-price-xl="1499" data-price-xxl="1799" onchange="window.calculateTotal()">
               <span>Essential - 3 Year Protection</span>
-              <span class="service-price">$899+</span>
+              <span class="service-price">$899</span>
             </label>
           </div>
           <div class="service-option">
             <label>
               <input type="checkbox" data-price-small="1399" data-price-medium="1599" data-price-large="1899" data-price-xl="2199" data-price-xxl="2599" onchange="window.calculateTotal()">
               <span>Premium - 5+ Year Protection</span>
-              <span class="service-price">$1399+</span>
+              <span class="service-price">$1399</span>
             </label>
           </div>
           <div class="service-option">
             <label>
               <input type="checkbox" data-price-small="1999" data-price-medium="2299" data-price-large="2599" data-price-xl="2999" data-price-xxl="3499" onchange="window.calculateTotal()">
               <span>Elite - 7+ Year/Lifetime</span>
-              <span class="service-price">$1999+</span>
+              <span class="service-price">$1999</span>
             </label>
           </div>
 
@@ -445,51 +445,84 @@
       document.getElementById('totalPrice').textContent = '$' + total.toLocaleString() + discountMessage;
     };
 
-    window.bookWithTotal = function () {
-      const total = document.getElementById('totalPrice').textContent;
-      const services = [];
-      const vehicleTypeSelect = document.getElementById('vehicleType');
-      const vehicleType = vehicleTypeSelect.options[vehicleTypeSelect.selectedIndex].text;
+window.bookWithTotal = function () {
+  const vehicleTypeEl = document.getElementById('vehicleType');
+  const vehicleKey = vehicleTypeEl.value; // small | medium | large | xl | xxl
+  const vehicleLabel = vehicleTypeEl.options[vehicleTypeEl.selectedIndex].text;
 
-      document.querySelectorAll('.service-option input[type="checkbox"]:checked').forEach(cb => {
-        const serviceName = cb.parentElement.querySelector('span').textContent;
-        services.push(serviceName);
-      });
+  const checked = Array.from(document.querySelectorAll('.service-option input[type="checkbox"]:checked'));
+  if (checked.length === 0) {
+    alert('Please select at least one service');
+    return;
+  }
 
-      if (services.length === 0) {
-        alert('Please select at least one service');
-        return;
-      }
+  // Build line items with price per selected vehicle size
+  let subtotal = 0;
+  const lines = checked.map(cb => {
+    const priceAttr = `data-price-${vehicleKey}`;
+    const raw = cb.getAttribute(priceAttr) || cb.getAttribute('data-price') || '0';
+    const priceNum = parseFloat(raw);
+    subtotal += isNaN(priceNum) ? 0 : priceNum;
 
-      let smsBody = '🚗 Quote Request from Website Calculator\n\n';
-      smsBody += `Vehicle: ${vehicleType}\n\n`;
-      smsBody += 'Services Selected:\n';
-      services.forEach(s => { smsBody += `• ${s}\n`; });
-      smsBody += `\nEstimated Total: ${total}\n\n`;
-      smsBody += 'Please send me an exact quote for these services. Thanks!';
+    // Service label (first <span> inside the label)
+    const lbl = cb.parentElement.querySelector('span');
+    const name = lbl ? lbl.textContent.trim() : 'Service';
 
-      const encodedBody = encodeURIComponent(smsBody);
-      const phoneNumber = '+14805288227';
-      const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    return `• ${name} — $${priceNum.toLocaleString()}`;
+  });
 
-      if (isMobile) {
-        // iOS accepts ;body=, many Androids accept ?body=
-        const isiOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
-        window.location.href = isiOS
-          ? `sms:${phoneNumber};body=${encodedBody}`
-          : `sms:${phoneNumber}?body=${encodedBody}`;
-      } else {
-        if (navigator.clipboard && navigator.clipboard.writeText) {
+  // Mirror the “discount hint” you show in the UI (optional)
+  const discountHint = subtotal > 1000 ? ' (Ask about 15% multi-vehicle discount!)' : '';
+  const totalStr = `$${Math.round(subtotal).toLocaleString()}${discountHint}`;
+
+  // Compose SMS body
+  let smsBody = [
+    '🚗 Shine Design — Quote Request',
+    '',
+    `Vehicle: ${vehicleLabel}`,
+    '',
+    'Services Selected:',
+    ...lines,
+    '',
+    `Estimated Total: ${totalStr}`,
+    '',
+    'Please text me an exact quote for these selections. Thanks!'
+  ].join('\n');
+
+  const encoded = encodeURIComponent(smsBody);
+
+  // Your requested number (local format). E.164 (+14805288227) is most compatible, but you asked for 4805288227.
+  const phoneLocal = '4805288227';
+  const phoneE164  = '+14805288227';
+
+  // iOS prefers ;body=, most Android accepts ?body=
+  const isiOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+  const smsHrefLocal = isiOS ? `sms:${phoneLocal};body=${encoded}` : `sms:${phoneLocal}?body=${encoded}`;
+  const smsHrefE164  = isiOS ? `sms:${phoneE164};body=${encoded}`  : `sms:${phoneE164}?body=${encoded}`;
+
+  // Try local number first (as requested); if it fails to navigate, fall back to E.164.
+  try {
+    window.location.href = smsHrefLocal;
+    // If desktop or blocked, also offer clipboard fallback after a short delay:
+    setTimeout(() => {
+      if (!/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+        if (navigator.clipboard?.writeText) {
           navigator.clipboard.writeText(smsBody).then(() => {
-            alert('Your quote request has been copied to clipboard!\n\nPlease text it to: (480) 528-8227\n\nOr call us directly for immediate assistance.');
+            alert('Message copied. Please text it to 480-528-8227.');
           }).catch(() => {
-            prompt('Copy this message and text it to (480) 528-8227:', smsBody);
+            prompt('Copy this message and text it to 480-528-8227:', smsBody);
           });
         } else {
-          prompt('Copy this message and text it to (480) 528-8227:', smsBody);
+          prompt('Copy this message and text it to 480-528-8227:', smsBody);
         }
       }
-    };
+    }, 500);
+  } catch (e) {
+    // Fallback to E.164 if the first navigation throws
+    window.location.href = smsHrefE164;
+  }
+};
+
 
     // Checkbox selection highlighting (delegate after modal exists)
     document.querySelectorAll('.service-option input[type="checkbox"]').forEach(cb => {
