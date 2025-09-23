@@ -1692,21 +1692,3 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <!-- Load your action buttons script -->
   <script src="/action-buttons.js" defer></script>
-
-  <!-- iOS visualViewport nudge so the mobile footer doesn't jump when URL bar shows/hides -->
-  <script>
-    window.addEventListener('load', function(){
-      const footer = document.querySelector('.mobile-sticky-footer');
-      if (!footer || !window.visualViewport) return;
-      const sync = () => {
-        const vv = window.visualViewport;
-        const offset = Math.max(0, window.innerHeight - vv.height - vv.offsetTop);
-        footer.style.transform = `translateY(${offset}px)`;
-      };
-      visualViewport.addEventListener('resize', sync);
-      visualViewport.addEventListener('scroll', sync);
-      sync();
-    });
-  </script>
-</body>
-</html>
