@@ -1,48 +1,39 @@
-// action-buttons.js — Shine Design Mobile Detailing
-// Floating buttons (mobile footer + desktop FABs) with service calculator
+// action-buttons.js - Shine Design Mobile Detailing
+// Floating buttons for desktop, sticky footer for mobile, with service calculator
 (function () {
   'use strict';
 
-  // ======= CONFIG =======
-  const PHONE_NUMBER = '+14805288227';
-  const BOOK_URL = 'https://booknow.shinedesignauto.com/';
-
-  // Mobile layouts: 'book-center' | 'book-first' | 'two-by-two'
-  const MOBILE_LAYOUT = 'book-center';
-  // Desktop layouts: 'book-top' | 'calc-top' | 'text-top'
-  const DESKTOP_LAYOUT = 'book-top';
-
-  // How much to sink the mobile bar into iOS safe-area (visual lower position)
-  const LOWER_OFFSET_PX = 8; // try 6–12 if you want to tweak
-
-  // ======= INIT GUARD / DOM READY =======
-  function onReady(fn){ document.readyState === 'loading' ? document.addEventListener('DOMContentLoaded', fn) : fn(); }
-
   function init() {
+    // Prevent duplicate loading
     if (window.shineActionButtonsLoaded) return;
     window.shineActionButtonsLoaded = true;
 
-    // ======= CSS INJECTION =======
-    const css = `
+    // Inject CSS (sit LOWER on mobile; safe-area aware; no sideways scroll)
+    const styles = `
       html,body{max-width:100%;overflow-x:hidden}
 
       @media(max-width:768px){
+        /* Reserve just enough space so content doesn't hide behind footer.
+           We subtract ~8px so the bar sits LOWER into the safe-area (closer to the edge). */
         body{
-          padding-bottom:calc(64px + max(0px, calc(env(safe-area-inset-bottom,0px) - ${LOWER_OFFSET_PX}px)))!important;
+          padding-bottom:calc(64px + max(0px, calc(env(safe-area-inset-bottom, 0px) - 8px)))!important
         }
 
         .mobile-sticky-footer{
           position:fixed;left:0;right:0;
-          bottom:max(0px, calc(env(safe-area-inset-bottom,0px) - ${LOWER_OFFSET_PX}px));
+          /* Slide the bar DOWN into the safe-area for a lower visual position */
+          bottom:max(0px, calc(env(safe-area-inset-bottom, 0px) - 12px));
           background:#fff;box-shadow:0 -2px 14px rgba(0,0,0,.12);
           z-index:1100;display:block;animation:slideUp .25s ease-out;
-          padding-bottom:max(0px, calc(env(safe-area-inset-bottom,0px) - ${LOWER_OFFSET_PX}px));
+          /* keep tappable area comfy while still tucked low */
+          padding-bottom:max(0px, calc(env(safe-area-inset-bottom, 0px) - 12px));
         }
+
         @keyframes slideUp{from{transform:translateY(100%)}to{transform:translateY(0)}}
 
         .footer-grid{
-          display:grid;gap:0;background:#fff;max-width:100%;
-          border-top:1px solid #e2e8f0
+          display:grid;grid-template-columns:repeat(4,1fr);gap:0;background:#fff;
+          max-width:100%;border-top:1px solid #e2e8f0
         }
         .footer-item{
           background:#fff;padding:10px 6px;text-align:center;cursor:pointer;transition:all .2s ease;
@@ -53,43 +44,17 @@
         .footer-item:active{transform:scale(.97);background:#f8fafc}
         .footer-item svg{width:22px;height:22px;margin-bottom:4px;color:#0ea5e9}
         .footer-item span{display:block;font-size:11px;font-weight:700;color:#475569;line-height:1.2}
-        .footer-item--emph{font-size:12px}
-        .footer-item--emph svg{width:26px;height:26px}
-
-        /* Mobile layout variants */
-        .footer-grid--book-center{ grid-template-columns:1fr 1.2fr 1fr 1fr }
-        .footer-grid--book-center .footer-item[data-key="book"]{
-          background:linear-gradient(135deg,#0ea5e9,#0284c7); color:#fff;border-right:1px solid rgba(255,255,255,.15)
-        }
-        .footer-grid--book-center .footer-item[data-key="book"] svg{ color:#fff }
-
-        .footer-grid--book-first{ grid-template-columns:repeat(4,1fr) }
-        .footer-grid--book-first .footer-item{ order:2 }
-        .footer-grid--book-first .footer-item[data-key="book"]{ order:1 }
-        .footer-grid--book-first .footer-item[data-key="calc"]{ order:3 }
-        .footer-grid--book-first .footer-item[data-key="call"]{ order:4 }
-        .footer-grid--book-first .footer-item[data-key="text"]{ order:5 }
-
-        .footer-grid--two-by-two{ grid-template-columns:repeat(2,1fr) }
-        .footer-grid--two-by-two .footer-item{ border-right:1px solid #f1f5f9 }
-        .footer-grid--two-by-two .footer-item:nth-child(2n){ border-right:none }
-        .footer-grid--two-by-two .footer-item[data-key="book"]{
-          background:linear-gradient(135deg,#0ea5e9,#0284c7); color:#fff
-        }
-        .footer-grid--two-by-two .footer-item[data-key="book"] svg{ color:#fff }
 
         .desktop-floating-buttons{display:none!important}
       }
 
       @media(min-width:769px){
         .mobile-sticky-footer{display:none!important}
-
         .desktop-floating-buttons{
           position:fixed;bottom:24px;right:16px;z-index:1100;
           display:flex;flex-direction:column-reverse;gap:12px;animation:fadeInUp .4s ease-out
         }
         @keyframes fadeInUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
-
         .floating-btn{
           width:60px;height:60px;border-radius:50%;background:#fff;
           box-shadow:0 6px 22px rgba(0,0,0,.16);
@@ -101,25 +66,9 @@
         .floating-btn.primary{width:70px;height:70px;background:linear-gradient(135deg,#0ea5e9,#0284c7);animation:pulse 2s infinite}
         @keyframes pulse{0%,100%{box-shadow:0 6px 24px rgba(14,165,233,.45)}50%{box-shadow:0 6px 34px rgba(14,165,233,.65)}}
         .floating-btn.primary svg{color:#fff;width:32px;height:32px}
-
-        /* Desktop order variants */
-        .desktop-floating-buttons.variant--book-top .btn--book{ order:1 }
-        .desktop-floating-buttons.variant--book-top .btn--calc{ order:2 }
-        .desktop-floating-buttons.variant--book-top .btn--call{ order:3 }
-        .desktop-floating-buttons.variant--book-top .btn--text{ order:4 }
-
-        .desktop-floating-buttons.variant--calc-top .btn--calc{ order:1 }
-        .desktop-floating-buttons.variant--calc-top .btn--book{ order:2 }
-        .desktop-floating-buttons.variant--calc-top .btn--call{ order:3 }
-        .desktop-floating-buttons.variant--calc-top .btn--text{ order:4 }
-
-        .desktop-floating-buttons.variant--text-top .btn--text{ order:1 }
-        .desktop-floating-buttons.variant--text-top .btn--book{ order:2 }
-        .desktop-floating-buttons.variant--text-top .btn--calc{ order:3 }
-        .desktop-floating-buttons.variant--text-top .btn--call{ order:4 }
       }
 
-      /* Calculator modal */
+      /* Calculator modal styles (unchanged) */
       .calculator-modal{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,.5);z-index:2000}
       .calculator-modal.active{display:flex;align-items:center;justify-content:center;padding:20px}
       .calculator-content{background:#fff;border-radius:20px;padding:24px;width:100%;max-width:400px;max-height:90vh;overflow-y:auto}
@@ -143,96 +92,70 @@
       .sms-notice{font-size:12px;color:#64748b;text-align:center;margin-top:10px;display:flex;align-items:center;justify-content:center;gap:6px}
       .sms-notice svg{width:16px;height:16px}
     `;
-    const st = document.createElement('style'); st.textContent = css; document.head.appendChild(st);
 
-    // ======= TEMPLATES =======
-    function mobileFooterTemplate(variant){
-      const calc = `
-        <button class="footer-item" data-key="calc" onclick="window.openCalculator()" aria-label="Service Calculator">
-          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
-          </svg><span>Calculator</span>
-        </button>`;
-      const book = `
-        <a class="footer-item footer-item--emph" data-key="book" href="${BOOK_URL}" aria-label="Book Online">
-          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-          </svg><span>Book</span>
-        </a>`;
-      const call = `
-        <a class="footer-item" data-key="call" href="tel:${PHONE_NUMBER}" aria-label="Call">
-          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
-          </svg><span>Call</span>
-        </a>`;
-      const text = `
-        <a class="footer-item" data-key="text" href="sms:${PHONE_NUMBER}" aria-label="Text Us">
-          <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
-          </svg><span>Text</span>
-        </a>`;
+    const styleSheet = document.createElement('style');
+    styleSheet.textContent = styles;
+    document.head.appendChild(styleSheet);
 
-      if (variant === 'book-first') {
-        return `
-          <div class="mobile-sticky-footer">
-            <div class="footer-grid footer-grid--book-first">
-              ${book}${call}${text}${calc}
-            </div>
-          </div>`;
-      }
-      if (variant === 'two-by-two') {
-        return `
-          <div class="mobile-sticky-footer">
-            <div class="footer-grid footer-grid--two-by-two">
-              ${book}${call}${text}${calc}
-            </div>
-          </div>`;
-      }
-      // default: book-center
-      return `
-        <div class="mobile-sticky-footer">
-          <div class="footer-grid footer-grid--book-center">
-            ${calc}${book}${call}${text}
-          </div>
-        </div>`;
-    }
+    // Mobile Footer (booking points to shinedesignauto.com)
+    const mobileFooter = `
+      <div class="mobile-sticky-footer">
+        <div class="footer-grid">
+          <button class="footer-item" onclick="window.openCalculator()" aria-label="Service Calculator">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+            </svg>
+            <span>Calculator</span>
+          </button>
+          <a href="https://booknow.shinedesignauto.com/" class="footer-item" aria-label="Book Online">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+            </svg>
+            <span>Book</span>
+          </a>
+          <a href="tel:+14805288227" class="footer-item" aria-label="Call">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+            </svg>
+            <span>Call</span>
+          </a>
+          <a href="sms:+14805288227" class="footer-item" aria-label="Text Us">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+            </svg>
+            <span>Text</span>
+          </a>
+        </div>
+      </div>
+    `;
 
-    function desktopButtonsTemplate(variant){
-      const btnText = `
-        <a href="sms:${PHONE_NUMBER}" class="floating-btn btn--text" aria-label="Text Us">
+    // Desktop Floating Buttons (book uses shinedesignauto)
+    const desktopButtons = `
+      <div class="desktop-floating-buttons">
+        <a href="sms:+14805288227" class="floating-btn" aria-label="Text Us">
           <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
           </svg>
-        </a>`;
-      const btnCall = `
-        <a href="tel:${PHONE_NUMBER}" class="floating-btn btn--call" aria-label="Call">
+        </a>
+        <a href="tel:+14805288227" class="floating-btn" aria-label="Call">
           <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
           </svg>
-        </a>`;
-      const btnCalc = `
-        <button class="floating-btn btn--calc" onclick="window.openCalculator()" aria-label="Open Calculator">
+        </a>
+        <button class="floating-btn" onclick="window.openCalculator()" aria-label="Open Calculator">
           <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
           </svg>
-        </button>`;
-      const btnBook = `
-        <a href="${BOOK_URL}" class="floating-btn primary btn--book" aria-label="Book Online">
+        </button>
+        <a href="https://booknow.shinedesignauto.com/" class="floating-btn primary" aria-label="Book Online">
           <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
           </svg>
-        </a>`;
+        </a>
+      </div>
+    `;
 
-      const cl = variant === 'calc-top' ? 'variant--calc-top'
-               : variant === 'text-top' ? 'variant--text-top'
-               : 'variant--book-top';
-
-      return `
-        <div class="desktop-floating-buttons ${cl}">
-          ${btnText}${btnCall}${btnCalc}${btnBook}
-        </div>`;
-    }
-
+    // Calculator Modal HTML
     const calculatorModal = `
       <div class="calculator-modal" id="calculatorModal">
         <div class="calculator-content">
@@ -440,51 +363,42 @@
       </div>
     `;
 
-    // ======= INJECT MARKUP (once) =======
-    document.body.insertAdjacentHTML('beforeend', mobileFooterTemplate(MOBILE_LAYOUT));
-    document.body.insertAdjacentHTML('beforeend', desktopButtonsTemplate(DESKTOP_LAYOUT));
+    // Add elements to page (once)
+    document.body.insertAdjacentHTML('beforeend', mobileFooter);
+    document.body.insertAdjacentHTML('beforeend', desktopButtons);
     document.body.insertAdjacentHTML('beforeend', calculatorModal);
 
-    // ======= CALCULATOR LOGIC =======
+    // Calculator Functions
     window.openCalculator = function () {
-      const modal = document.getElementById('calculatorModal');
-      if (!modal) return;
-      modal.classList.add('active');
+      document.getElementById('calculatorModal').classList.add('active');
       document.body.style.overflow = 'hidden';
       window.updatePrices();
-      // bind selection highlighting once
-      document.querySelectorAll('.service-option input[type="checkbox"]').forEach(cb => {
-        if (cb._shineBound) return;
-        cb.addEventListener('change', function () {
-          this.closest('.service-option')?.classList.toggle('selected', this.checked);
-        });
-        cb._shineBound = true;
-      });
     };
 
     window.closeCalculator = function () {
-      const modal = document.getElementById('calculatorModal');
-      if (!modal) return;
-      modal.classList.remove('active');
+      document.getElementById('calculatorModal').classList.remove('active');
       document.body.style.overflow = '';
-      // Reset selections
+      // Clear selections
       document.querySelectorAll('.service-option input[type="checkbox"]').forEach(cb => {
         cb.checked = false;
         cb.closest('.service-option').classList.remove('selected');
       });
-      const totalEl = document.getElementById('totalPrice');
-      if (totalEl) totalEl.textContent = '$0';
+      document.getElementById('totalPrice').textContent = '$0';
     };
 
     window.updatePrices = function () {
-      const vehicleSize = document.getElementById('vehicleType')?.value || 'small';
-      document.querySelectorAll('.service-option input[type="checkbox"]').forEach(cb => {
+      const vehicleSize = document.getElementById('vehicleType').value;
+
+      document.querySelectorAll('.service-option input[type="checkbox"]').forEach(checkbox => {
         const priceAttr = `data-price-${vehicleSize}`;
-        const basePrice = cb.getAttribute(priceAttr) || cb.getAttribute('data-price');
-        const priceSpan = cb.parentElement.querySelector('.service-price');
-        if (!priceSpan || !basePrice) return;
-        const labelText = cb.parentElement.textContent;
-        if (cb.hasAttribute(priceAttr)) {
+        const basePrice = checkbox.getAttribute(priceAttr) || checkbox.getAttribute('data-price');
+        if (!basePrice) return;
+
+        const priceSpan = checkbox.parentElement.querySelector('.service-price');
+        if (!priceSpan) return;
+
+        const labelText = checkbox.parentElement.textContent;
+        if (checkbox.hasAttribute(priceAttr)) {
           priceSpan.textContent = '$' + basePrice + '+';
         } else if (labelText.includes('/pair')) {
           priceSpan.textContent = '$' + basePrice + '/pair';
@@ -494,12 +408,13 @@
           priceSpan.textContent = '$' + basePrice;
         }
       });
+
       window.calculateTotal();
     };
 
     window.calculateTotal = function () {
       const checked = document.querySelectorAll('.service-option input[type="checkbox"]:checked');
-      const vehicleSize = document.getElementById('vehicleType')?.value || 'small';
+      const vehicleSize = document.getElementById('vehicleType').value;
 
       let total = 0;
       let hasBundle = false, hasInterior = false, hasExterior = false;
@@ -511,7 +426,7 @@
         else if (type === 'exterior') hasExterior = true;
       });
 
-      // Avoid double-counting interior/exterior when bundle chosen
+      // If bundle is selected, unselect interior/exterior to avoid double counting
       if (hasBundle && (hasInterior || hasExterior)) {
         document.querySelectorAll('.service-option input[data-service="interior"], .service-option input[data-service="exterior"]').forEach(cb => {
           cb.checked = false;
@@ -527,21 +442,21 @@
 
       const discountMessage = total > 1000 ? ' (Ask about 15% multi-vehicle discount!)' : '';
       total = Math.round(total);
-      const totalEl = document.getElementById('totalPrice');
-      if (totalEl) totalEl.textContent = '$' + total.toLocaleString() + discountMessage;
+      document.getElementById('totalPrice').textContent = '$' + total.toLocaleString() + discountMessage;
     };
 
     window.bookWithTotal = function () {
-      const total = document.getElementById('totalPrice')?.textContent || '$0';
-      const vehicleTypeSelect = document.getElementById('vehicleType');
-      const vehicleType = vehicleTypeSelect ? vehicleTypeSelect.options[vehicleTypeSelect.selectedIndex].text : 'Small (Sedan/Coupe/Hatchback)';
+      const total = document.getElementById('totalPrice').textContent;
       const services = [];
+      const vehicleTypeSelect = document.getElementById('vehicleType');
+      const vehicleType = vehicleTypeSelect.options[vehicleTypeSelect.selectedIndex].text;
+
       document.querySelectorAll('.service-option input[type="checkbox"]:checked').forEach(cb => {
         const serviceName = cb.parentElement.querySelector('span').textContent;
         services.push(serviceName);
       });
 
-      if (!services.length) {
+      if (services.length === 0) {
         alert('Please select at least one service');
         return;
       }
@@ -554,19 +469,16 @@
       smsBody += 'Please send me an exact quote for these services. Thanks!';
 
       const encodedBody = encodeURIComponent(smsBody);
-      const ua = navigator.userAgent;
-      const isiOS = /iPhone|iPad|iPod/i.test(ua);
-      const isAndroid = /Android/i.test(ua);
-      const isMobile = isiOS || isAndroid;
+      const phoneNumber = '+14805288227';
+      const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
       if (isMobile) {
-        // iOS uses ;body= — many Android devices accept ?body=
-        const href = isiOS
-          ? `sms:${PHONE_NUMBER};body=${encodedBody}`
-          : `sms:${PHONE_NUMBER}?body=${encodedBody}`;
-        window.location.href = href;
+        // iOS accepts ;body=, many Androids accept ?body=
+        const isiOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+        window.location.href = isiOS
+          ? `sms:${phoneNumber};body=${encodedBody}`
+          : `sms:${phoneNumber}?body=${encodedBody}`;
       } else {
-        // Desktop fallback: copy to clipboard & prompt
         if (navigator.clipboard && navigator.clipboard.writeText) {
           navigator.clipboard.writeText(smsBody).then(() => {
             alert('Your quote request has been copied to clipboard!\n\nPlease text it to: (480) 528-8227\n\nOr call us directly for immediate assistance.');
@@ -579,11 +491,19 @@
       }
     };
 
+    // Checkbox selection highlighting (delegate after modal exists)
+    document.querySelectorAll('.service-option input[type="checkbox"]').forEach(cb => {
+      cb.addEventListener('change', function () {
+        this.closest('.service-option')?.classList.toggle('selected', this.checked);
+      });
+    });
+
     // Close modal on outside click
     document.getElementById('calculatorModal').addEventListener('click', function (e) {
       if (e.target === this) window.closeCalculator();
     });
-    // ESC key closes modal
+
+    // ESC key to close calculator
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape' && document.getElementById('calculatorModal').classList.contains('active')) {
         window.closeCalculator();
@@ -591,5 +511,10 @@
     });
   }
 
-  onReady(init);
+  // Ensure DOM is ready before injecting
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
 })();
