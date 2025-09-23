@@ -24,23 +24,23 @@
 
       @media(max-width:768px) {
         body {
-          padding-bottom: calc(72px + env(safe-area-inset-bottom, 0px)) !important;
+          padding-bottom: calc(90px + env(safe-area-inset-bottom, 0px)) !important;
         }
 
         .mobile-sticky-footer {
           position: fixed;
-          left: 0;
-          right: 0;
-          bottom: 0;
+          left: 10px;
+          right: 10px;
+          bottom: calc(10px + env(safe-area-inset-bottom, 0px));
           background: rgba(255, 255, 255, 0.98);
           backdrop-filter: blur(20px);
           -webkit-backdrop-filter: blur(20px);
-          box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.08);
+          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), 0 2px 8px rgba(0, 0, 0, 0.04);
           z-index: 1100;
           display: block;
           animation: slideUpSmooth .4s cubic-bezier(0.34, 1.56, 0.64, 1);
-          padding-bottom: env(safe-area-inset-bottom, 0px);
-          border-top: 1px solid rgba(226, 232, 240, 0.5);
+          border: 1px solid rgba(226, 232, 240, 0.5);
+          border-radius: 20px;
         }
 
         @keyframes slideUpSmooth {
@@ -55,28 +55,33 @@
         }
 
         .footer-grid {
-          display: grid;
-          grid-template-columns: repeat(4, 1fr);
-          gap: 0;
-          padding: 8px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 8px;
+          padding: 12px 16px;
+          max-width: 420px;
+          margin: 0 auto;
         }
 
         .footer-item {
           position: relative;
-          background: linear-gradient(145deg, rgba(255, 255, 255, 0.9), rgba(248, 250, 252, 0.9));
-          padding: 12px 6px;
+          background: linear-gradient(145deg, rgba(255, 255, 255, 1), rgba(248, 250, 252, 1));
+          padding: 10px 8px;
           text-align: center;
           cursor: pointer;
           transition: all .3s cubic-bezier(0.4, 0, 0.2, 1);
           text-decoration: none;
           color: #0f172a;
-          border: none;
+          border: 2px solid rgba(226, 232, 240, 0.8);
           font-family: 'Inter', system-ui, -apple-system, sans-serif;
-          font-size: 11px;
-          border-radius: 16px;
-          margin: 4px;
+          font-size: 10px;
+          border-radius: 14px;
           -webkit-tap-highlight-color: transparent;
           overflow: hidden;
+          flex: 1;
+          min-width: 0;
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
         }
 
         .footer-item::before {
@@ -89,18 +94,20 @@
           background: linear-gradient(135deg, #0ea5e9, #0284c7);
           opacity: 0;
           transition: opacity .3s ease;
-          border-radius: 16px;
+          border-radius: 14px;
         }
 
         .footer-item.primary {
           background: linear-gradient(135deg, #0ea5e9, #0284c7);
           color: white;
-          transform: scale(1.05);
-          box-shadow: 0 4px 20px rgba(14, 165, 233, 0.25);
+          border-color: rgba(14, 165, 233, 0.3);
+          box-shadow: 0 4px 16px rgba(14, 165, 233, 0.25), 0 2px 8px rgba(0, 0, 0, 0.08);
+          transform: scale(1.02);
         }
 
         .footer-item:active {
-          transform: scale(0.95);
+          transform: scale(0.96);
+          box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
         }
 
         .footer-item.primary:active {
@@ -108,9 +115,9 @@
         }
 
         .footer-item svg {
-          width: 24px;
-          height: 24px;
-          margin-bottom: 6px;
+          width: 22px;
+          height: 22px;
+          margin-bottom: 4px;
           color: #0ea5e9;
           position: relative;
           z-index: 1;
@@ -119,12 +126,14 @@
 
         .footer-item.primary svg {
           color: white;
-          filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+          width: 24px;
+          height: 24px;
+          filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
         }
 
         .footer-item span {
           display: block;
-          font-size: 11px;
+          font-size: 10px;
           font-weight: 600;
           color: #475569;
           line-height: 1.2;
@@ -136,19 +145,26 @@
         .footer-item.primary span {
           color: white;
           font-weight: 700;
+          font-size: 11px;
         }
 
         .footer-item:hover:not(.primary)::before {
-          opacity: 0.08;
+          opacity: 0.06;
         }
 
         .footer-item.pulse {
-          animation: subtlePulse 2s infinite;
+          animation: subtlePulse 2.5s infinite;
         }
 
         @keyframes subtlePulse {
-          0%, 100% { transform: scale(1.05); }
-          50% { transform: scale(1.08); }
+          0%, 100% { 
+            transform: scale(1.02);
+            box-shadow: 0 4px 16px rgba(14, 165, 233, 0.25), 0 2px 8px rgba(0, 0, 0, 0.08);
+          }
+          50% { 
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(14, 165, 233, 0.35), 0 2px 10px rgba(0, 0, 0, 0.1);
+          }
         }
 
         .desktop-floating-buttons { display: none !important; }
@@ -628,7 +644,7 @@
     styleSheet.textContent = styles;
     document.head.appendChild(styleSheet);
 
-    // Enhanced Mobile Footer
+    // Enhanced Mobile Footer with contained design
     const mobileFooter = `
       <div class="mobile-sticky-footer">
         <div class="footer-grid">
@@ -636,13 +652,13 @@
             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
             </svg>
-            <span>Calculator</span>
+            <span>Quote</span>
           </button>
           <a href="https://booknow.shinedesignauto.com/" class="footer-item primary pulse" aria-label="Book Online">
             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
             </svg>
-            <span>Book Now</span>
+            <span>Book</span>
           </a>
           <a href="tel:+14805288227" class="footer-item" aria-label="Call">
             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
