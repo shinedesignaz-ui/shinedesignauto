@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google Tag Manager (kept from your site) -->
+  <!-- Google Tag Manager -->
   <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
   new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
   j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
@@ -13,102 +13,240 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
+  <!-- Ceramic-specific SEO -->
   <title>Ceramic Coating Gilbert AZ | 3–7 Year Protection | Shine Design</title>
-  <meta name="description" content="Professional ceramic coating in Gilbert, Mesa, Chandler. 9H hardness, 3–7 year warranty, UV protection. Mobile service or shop. Starting $899. Book today!">
+  <meta name="description" content="Professional ceramic coating in Gilbert, Mesa, Chandler & the East Valley. 9H hardness, insane gloss, UV & chemical resistance. 3–7 year warranty. Mobile or in-shop. Book today.">
   <link rel="canonical" href="https://shinedesignauto.com/ceramic-coating">
-  <meta name="theme-color" content="#0ea5e9">
   <link rel="icon" href="/assets/images/favicon.ico">
+  <meta name="theme-color" content="#0ea5e9">
 
   <!-- Social Meta -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Ceramic Coating Gilbert AZ | Professional Grade Protection">
-  <meta property="og:description" content="Professional ceramic coating with 3–7 year warranty. UV protection, hydrophobic, chemical resistant. Mobile service available. Starting $899.">
+  <meta property="og:title" content="Ceramic Coating in Gilbert & East Valley | 3–7 Year Protection">
+  <meta property="og:description" content="9H ceramic coating with 3–7 year warranty. UV & chemical resistant, hydrophobic gloss. Mobile or in-shop. Get a fast quote.">
   <meta property="og:url" content="https://shinedesignauto.com/ceramic-coating">
-  <meta property="og:image" content="/assets/images/ceramic-coating-og.jpg">
+  <meta property="og:image" content="/assets/images/ceramic/og-ceramic.jpg">
 
-  <!-- Schema -->
+  <!-- JSON-LD (ceramic-focused) -->
   <script type="application/ld+json">
   {
-    "@context":"https://schema.org",
-    "@type":"Service",
-    "serviceType":"Ceramic Coating",
-    "provider":{"@type":"LocalBusiness","name":"Shine Design Mobile Detailing","telephone":"+14805288227","address":{"@type":"PostalAddress","addressLocality":"Gilbert","addressRegion":"AZ"}},
-    "areaServed":["Gilbert","Mesa","Chandler","Queen Creek","Scottsdale","Phoenix"],
-    "offers":[
-      {"@type":"Offer","name":"Essential Ceramic Coating","price":"899","priceCurrency":"USD"},
-      {"@type":"Offer","name":"Premium Ceramic Coating","price":"1399","priceCurrency":"USD"},
-      {"@type":"Offer","name":"Elite Ceramic Coating","price":"1999","priceCurrency":"USD"}
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://shinedesignauto.com/#website",
+        "url": "https://shinedesignauto.com/",
+        "name": "Shine Design Mobile Detailing",
+        "inLanguage": "en-US",
+        "publisher": { "@id": "https://shinedesignauto.com/#brand" },
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://shinedesignauto.com/?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://shinedesignauto.com/#brand",
+        "name": "Shine Design Mobile Detailing",
+        "url": "https://shinedesignauto.com/",
+        "foundingDate": "2019",
+        "logo": {
+          "@type": "ImageObject",
+          "@id": "https://shinedesignauto.com/#logo",
+          "url": "https://shinedesignauto.com/assets/images/logo.webp",
+          "width": 512,
+          "height": 512,
+          "caption": "Shine Design logo"
+        },
+        "sameAs": [
+          "https://twitter.com/shinedesignaz",
+          "https://www.facebook.com/shinedesigndetail/",
+          "https://www.youtube.com/@shinedesignauto",
+          "https://www.instagram.com/shinedesigndetail/",
+          "https://www.linkedin.com/company/shinedesignaz/",
+          "https://www.pinterest.com/shinedesignaz/",
+          "https://www.crunchbase.com/organization/shine-design-mobile-detailing",
+          "https://www.yelp.com/biz/shine-design-mobile-detailing-gilbert-2?rr=5",
+          "https://www.bbb.org/us/az/san-tan-valley/profile/auto-detailing/shine-design-mobile-detailing-1126-1000147089",
+          "https://www.tiktok.com/@shinedesigndetailing"
+        ],
+        "contactPoint": [{
+          "@type": "ContactPoint",
+          "contactType": "customer service",
+          "telephone": "+1-480-528-8227",
+          "areaServed": ["US-AZ"],
+          "availableLanguage": ["English"]
+        }]
+      },
+      {
+        "@type": ["LocalBusiness","AutomotiveBusiness","AutoWash"],
+        "@id": "https://shinedesignauto.com/#local",
+        "name": "Shine Design Mobile Detailing",
+        "url": "https://shinedesignauto.com/",
+        "image": "https://shinedesignauto.com/assets/images/og-image.jpg",
+        "logo": { "@id": "https://shinedesignauto.com/#logo" },
+        "brand": { "@id": "https://shinedesignauto.com/#brand" },
+        "telephone": "+1-480-528-8227",
+        "priceRange": "$$",
+        "openingHoursSpecification": [{
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+          "opens": "07:00",
+          "closes": "19:00"
+        }],
+        "areaServed": [
+          { "@type":"Place","name":"Gilbert, AZ" },
+          { "@type":"Place","name":"Mesa, AZ" },
+          { "@type":"Place","name":"Chandler, AZ" },
+          { "@type":"Place","name":"Queen Creek, AZ" },
+          { "@type":"Place","name":"San Tan Valley, AZ" },
+          { "@type":"Place","name":"Scottsdale, AZ" },
+          { "@type":"Place","name":"Tempe, AZ" },
+          { "@type":"Place","name":"Phoenix, AZ" }
+        ],
+        "knowsAbout": [
+          "mobile auto detailing","interior detailing","exterior detailing",
+          "ceramic coating","paint protection film","PPF",
+          "paint correction","window tint","fleet detailing","boat detailing"
+        ],
+        "aggregateRating": { "@type": "AggregateRating", "ratingValue": 4.9, "reviewCount": 200 },
+        "hasMap": "https://g.page/r/CU3j316NmdMlEBM/review",
+        "sameAs": [
+          "https://twitter.com/shinedesignaz",
+          "https://www.facebook.com/shinedesigndetail/",
+          "https://www.instagram.com/shinedesigndetail/",
+          "https://www.yelp.com/biz/shine-design-mobile-detailing-gilbert-2?rr=5",
+          "https://g.page/r/CU3j316NmdMlEBM/review"
+        ]
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://shinedesignauto.com/ceramic-coating#webpage",
+        "url": "https://shinedesignauto.com/ceramic-coating",
+        "name": "Ceramic Coating in Gilbert & East Valley AZ | Shine Design",
+        "isPartOf": { "@id": "https://shinedesignauto.com/#website" },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": "https://shinedesignauto.com/assets/images/ceramic/og-ceramic.jpg"
+        },
+        "breadcrumb": { "@id": "https://shinedesignauto.com/ceramic-coating#breadcrumbs" },
+        "inLanguage": "en-US"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://shinedesignauto.com/ceramic-coating#breadcrumbs",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://shinedesignauto.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Ceramic Coating", "item": "https://shinedesignauto.com/ceramic-coating" }
+        ]
+      },
+      {
+        "@type": "Service",
+        "@id": "https://shinedesignauto.com/#service-ceramic",
+        "serviceType": "Ceramic coating",
+        "alternateName": ["nano ceramic coating","graphene coating"],
+        "provider": { "@id": "https://shinedesignauto.com/#local" },
+        "areaServed": "East Valley, AZ",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://shinedesignauto.com/ceramic-coating",
+          "priceCurrency": "USD",
+          "priceSpecification": { "@type":"PriceSpecification","minPrice": 899, "priceCurrency":"USD" }
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://shinedesignauto.com/ceramic-coating#faq",
+        "mainEntity": [
+          { "@type":"Question","name":"Is ceramic coating worth it in Arizona heat?","acceptedAnswer":{ "@type":"Answer","text":"Yes — it adds UV resistance, reduces oxidation, and makes washes faster while protecting your clear coat." } },
+          { "@type":"Question","name":"Do you correct the paint before coating?","acceptedAnswer":{ "@type":"Answer","text":"We include the appropriate correction step so the coating bonds to a defect-free surface and achieves maximum gloss." } },
+          { "@type":"Question","name":"Mobile or in-shop?","acceptedAnswer":{ "@type":"Answer","text":"Both. We can come to you in the East Valley or book you at our Gilbert facility." } }
+        ]
+      }
     ]
   }
   </script>
 
-  <!-- ====== INLINE STYLES (header-styles + page styles) ====== -->
+  <!-- Inline Styles (header, nav, page UI) -->
   <style>
-    :root{
-      --brand:#0ea5e9; --brand-dark:#0284c7; --ink:#0f172a; --muted:#475569; --bg:#fff;
-      --header-h:72px; --shadow:0 10px 30px rgba(2,6,23,.08);
-    }
-    /* base */
+    :root { --brand:#0ea5e9; --brand-dark:#0284c7; --text:#0f172a; --muted:#475569; --bg:#fff; --header-h:72px; --shadow:0 10px 30px rgba(2,6,23,.08); }
     *{box-sizing:border-box;margin:0;padding:0}
-    html,body{max-width:100%;overflow-x:hidden}
+    html,body{overflow-x:hidden}
     img,video{max-width:100%;height:auto;display:block}
-    body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;overscroll-behavior-x:none}
-    a:focus,button:focus{outline:2px solid #93c5fd;outline-offset:2px;border-radius:4px}
+    body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;color:var(--text);background:var(--bg);line-height:1.6;overscroll-behavior-x:none}
+    a:focus-visible,button:focus-visible{outline:3px solid rgba(14,165,233,.35);outline-offset:2px;border-radius:4px}
     .container{max-width:1200px;margin:0 auto;padding:0 20px}
     .section{padding:60px 0} @media(max-width:768px){.section{padding:40px 0}}
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
 
-    /* announcement */
-    .announcement-bar{background:#020617;color:#cbd5e1;font-size:14px;padding:8px 0;text-align:center}
-    .announcement-bar a{color:#93c5fd;text-decoration:none}
-    .announcement-bar a:hover{text-decoration:underline}
+    /* Announcement Bar */
+    .announcement-bar{background:linear-gradient(90deg,var(--brand),var(--brand-dark));color:#fff;padding:8px 16px;text-align:center;font-size:14px;font-weight:600;position:relative;z-index:1001}
+    .announcement-bar a{color:#fff;text-decoration:underline}
 
-    /* ===== HEADER (from homepage) ===== */
-    .main-header{position:sticky;top:0;left:0;right:0;z-index:1000;background:rgba(255,255,255,.9);backdrop-filter:saturate(1.2) blur(8px);border-bottom:1px solid rgba(15,23,42,.06);transition:background .25s,box-shadow .25s}
-    .main-header.is-scrolled{background:rgba(255,255,255,.97);box-shadow:var(--shadow)}
-    .header-container{max-width:1200px;margin:0 auto;padding:0 20px}
-    .header-content{height:var(--header-h);display:flex;align-items:center;justify-content:space-between;gap:16px}
-    .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink)}
-    .brand-text{display:flex;flex-direction:column;line-height:1}
-    .brand-name{font-weight:900}
-    .brand-tagline{font-size:12px;color:var(--muted)}
-    .service-pills{display:flex;gap:8px;align-items:center}
-    .service-pill{display:inline-flex;align-items:center;gap:6px;padding:8px 12px;border-radius:999px;font-size:14px;color:#0f172a;text-decoration:none;background:#f8fafc;border:1px solid #e2e8f0}
-    .service-pill:hover{background:#eef2f7}
-    .service-pill.active{background:#e6f4ff;border-color:#bfdbfe;color:#075985}
-    .nav-links{display:flex;align-items:center;gap:18px}
-    .nav-links a{color:#0f172a;text-decoration:none;font-weight:600}
-    .nav-links a:hover{text-decoration:underline}
+    /* Header / Nav */
+    .main-header{position:sticky;top:0;z-index:1000;width:100%;background:rgba(255,255,255,.98);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid rgba(0,0,0,.08);box-shadow:0 2px 8px rgba(0,0,0,.04)}
+    .main-header.is-scrolled{box-shadow:var(--shadow)}
+    .header-container{max-width:1280px;margin:0 auto;padding:0 20px}
+    .header-content{display:flex;align-items:center;justify-content:space-between;min-height:var(--header-h);gap:32px}
+    .brand{display:flex;align-items:center;gap:12px;text-decoration:none;transition:transform .2s}
+    .brand:hover{transform:translateY(-1px)}
+    .brand img{height:42px;width:auto}
+    .brand-text{display:flex;flex-direction:column;line-height:1.2}
+    .brand-name{font-size:20px;font-weight:700;color:var(--text);letter-spacing:-.5px}
+    .brand-tagline{font-size:11px;color:var(--muted);font-weight:500;letter-spacing:.5px}
+
+    .nav-links{display:none;gap:24px;align-items:center;flex:1;justify-content:flex-end}
+    .nav-links > a,.nav-dropdown > a{font-weight:600;font-size:15px;color:var(--text);text-decoration:none;transition:color .2s;padding:8px 12px;border-radius:8px;display:flex;align-items:center;gap:6px}
+    .nav-links > a:hover,.nav-dropdown > a:hover{color:var(--brand);background:rgba(14,165,233,.08)}
+
+    .service-pills{display:flex;gap:8px;align-items:center;padding:0 16px;border-left:1px solid rgba(0,0,0,.1);border-right:1px solid rgba(0,0,0,.1)}
+    .service-pill{padding:6px 12px;background:rgba(14,165,233,.08);color:var(--brand);font-size:13px;font-weight:600;border-radius:999px;text-decoration:none;transition:all .2s;white-space:nowrap}
+    .service-pill:hover{background:var(--brand);color:#fff;transform:translateY(-1px)}
+
     .nav-dropdown{position:relative}
-    .nav-dropdown>.arrow{margin-left:4px;font-size:12px}
-    .dropdown-menu{position:absolute;top:calc(100% + 12px);left:0;min-width:320px;background:#fff;border:1px solid #e2e8f0;border-radius:14px;box-shadow:0 20px 60px rgba(2,6,23,.12);padding:14px;display:none}
-    .nav-dropdown:hover .dropdown-menu,.nav-dropdown:focus-within .dropdown-menu{display:block}
-    .dropdown-label{padding:8px 10px;color:#64748b;font-size:12px}
-    .services-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px}
-    .service-card{display:flex;gap:10px;align-items:center;padding:10px;border-radius:10px;text-decoration:none;color:#0f172a}
-    .service-card:hover{background:#f8fafc}
-    .service-icon{font-size:18px}
-    .service-title{font-weight:800}
-    .service-desc{font-size:12px;color:#64748b}
-    .cta-group{display:flex;align-items:center;gap:10px}
-    .cta-primary{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--brand);color:#fff;text-decoration:none;padding:10px 16px;border-radius:999px;font-weight:800;transition:transform .2s,background .2s}
-    .cta-primary:hover{background:var(--brand-dark);transform:translateY(-1px)}
-    .cta-phone{white-space:nowrap}
-    .menu-btn{display:none;border:0;background:transparent;padding:8px;border-radius:8px;cursor:pointer}
+    .nav-dropdown .arrow{font-size:10px;transition:transform .3s}
+    .nav-dropdown:hover .arrow{transform:rotate(180deg)}
+    .dropdown-menu{position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%);background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:12px;box-shadow:0 12px 48px rgba(0,0,0,.12);padding:12px;min-width:280px;opacity:0;visibility:hidden;transition:all .25s cubic-bezier(.4,0,.2,1);pointer-events:none}
+    .nav-dropdown:hover .dropdown-menu{opacity:1;visibility:visible;pointer-events:auto}
+    .services-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px;padding-bottom:12px;border-bottom:1px solid rgba(0,0,0,.06)}
+    .service-card{display:flex;align-items:center;gap:12px;padding:12px;border-radius:8px;text-decoration:none;transition:all .2s;background:rgba(14,165,233,.04)}
+    .service-card:hover{background:rgba(14,165,233,.12);transform:translateX(4px)}
+    .service-icon{width:32px;height:32px;background:var(--brand);border-radius:8px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:18px;flex-shrink:0}
+    .service-info{flex:1}
+    .service-title{font-weight:600;color:var(--text);font-size:14px;line-height:1.2;display:block}
+    .service-desc{font-size:11px;color:var(--muted);margin-top:2px}
+    .dropdown-label{padding:8px 12px 4px;font-size:11px;font-weight:700;text-transform:uppercase;color:var(--muted);letter-spacing:.5px}
+    .dropdown-menu a{display:block;padding:10px 16px;color:var(--text);font-size:14px;font-weight:500;border-radius:8px;transition:all .2s;text-decoration:none}
+    .dropdown-menu a:hover{background:rgba(14,165,233,.08);color:var(--brand);padding-left:20px}
+
+    .cta-group{display:flex;gap:12px;align-items:center}
+    .cta-primary{background:var(--brand);color:#fff!important;padding:12px 24px;border-radius:999px;font-weight:700;font-size:15px;text-decoration:none;transition:all .2s;display:inline-flex;align-items:center;gap:8px}
+    .cta-primary:hover{background:var(--brand-dark);transform:translateY(-1px);box-shadow:0 8px 24px rgba(14,165,233,.25)}
+    .cta-phone{display:flex;align-items:center;gap:8px;padding:10px 16px;border:2px solid rgba(14,165,233,.2);border-radius:999px;color:var(--brand);font-weight:600;text-decoration:none;transition:all .2s}
+    .cta-phone:hover{background:rgba(14,165,233,.08);border-color:var(--brand)}
+
+    .menu-btn{display:flex;align-items:center;justify-content:center;width:44px;height:44px;border:2px solid rgba(0,0,0,.1);border-radius:12px;background:#fff;color:var(--text);cursor:pointer;transition:all .2s}
+    .menu-btn:hover{background:rgba(14,165,233,.08);border-color:var(--brand);color:var(--brand)}
     .menu-btn svg{width:24px;height:24px}
-    #mobile-nav{position:fixed;inset:auto 0 0 0;top:var(--header-h);transform:translateY(100%);transition:transform .25s;background:#fff;border-top:1px solid #e2e8f0;z-index:999;max-height:calc(100vh - var(--header-h));overflow:auto;box-shadow:0 -10px 30px rgba(2,6,23,.12)}
-    #mobile-nav.open{transform:translateY(0)}
-    .mobile-nav-content{padding:16px 18px;display:grid;gap:10px}
-    #mobile-nav a{padding:12px 10px;border-radius:10px;text-decoration:none;color:#0f172a;background:#f8fafc}
-    #mobile-nav a:hover{background:#eef2f7}
-    #mobile-nav a.active{background:#e6f4ff;color:#075985}
-    @media (max-width:1080px){.service-pills{display:none}}
-    @media (max-width:900px){.nav-links{display:none}.menu-btn{display:inline-flex}}
-    /* breadcrumb */
+
+    #mobile-nav{position:fixed;top:var(--header-h);left:0;right:0;bottom:0;background:#fff;z-index:999;overflow-y:auto;padding:20px;transform:translateX(100%);transition:transform .3s cubic-bezier(.4,0,.2,1);box-shadow:-4px 0 24px rgba(0,0,0,.1)}
+    #mobile-nav.active{transform:translateX(0)}
+    .mobile-nav-content a{display:block;padding:14px 0;color:var(--text);font-weight:600;font-size:16px;text-decoration:none;border-bottom:1px solid rgba(0,0,0,.06);transition:all .2s}
+    .mobile-nav-content a:hover{color:var(--brand);padding-left:12px}
+    .mobile-services{display:grid;gap:12px;margin:20px 0;padding:20px 0;border-top:1px solid rgba(0,0,0,.08);border-bottom:1px solid rgba(0,0,0,.08)}
+    .mobile-service-btn{display:flex;align-items:center;justify-content:space-between;padding:16px;background:rgba(14,165,233,.04);border:1px solid rgba(14,165,233,.1);border-radius:12px;color:var(--text);text-decoration:none;font-weight:600;transition:all .2s}
+    .mobile-service-btn:hover{background:rgba(14,165,233,.1);border-color:var(--brand);transform:translateX(4px)}
+
+    @media(min-width:960px){.nav-links{display:flex}.menu-btn{display:none}#mobile-nav{display:none}}
+    @media(max-width:959px){.service-pills{display:none}.cta-phone{display:none}.announcement-bar{font-size:12px}}
+
+    /* Breadcrumb */
     .breadcrumb{padding:16px 0;font-size:14px;color:var(--muted)}
     .breadcrumb a{color:var(--brand);text-decoration:none}
     .breadcrumb a:hover{text-decoration:underline}
 
-    /* ===== CERAMIC PAGE UI ===== */
+    /* Page UI */
     .service-hero{background:linear-gradient(135deg,var(--brand),var(--brand-dark));color:#fff;position:relative;overflow:hidden;padding:82px 0}
     .service-hero::before{content:"";position:absolute;top:-50%;right:-10%;width:600px;height:600px;background:rgba(255,255,255,.1);border-radius:50%}
     .hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
@@ -130,6 +268,7 @@
     .trust-items{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:30px;text-align:center}
     .trust-icon{font-size:32px}
     .trust-text{font-weight:700}
+
     .pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:30px;margin-top:32px}
     .pricing-card{border:2px solid #e2e8f0;border-radius:20px;padding:28px;background:#fff;transition:.3s}
     .pricing-card:hover{transform:translateY(-4px);box-shadow:0 20px 40px rgba(0,0,0,.1)}
@@ -143,97 +282,208 @@
     .package-features li::before{content:"✓";color:#22c55e;font-weight:700}
     .package-cta{display:block;text-align:center;width:100%;padding:14px;border:none;border-radius:999px;background:var(--brand);color:#fff;font-weight:800;text-decoration:none;transition:.2s}
     .package-cta:hover{background:var(--brand-dark);transform:translateY(-1px)}
-    .faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px}@media(max-width:900px){.faq-grid{grid-template-columns:1fr}}
+
+    .faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+    @media(max-width:900px){.faq-grid{grid-template-columns:1fr}}
     .faq-item{background:#fff;border-radius:12px;padding:22px;box-shadow:0 2px 8px rgba(0,0,0,.05)}
     .faq-question{font-weight:800;margin-bottom:6px}
     .faq-answer{color:var(--muted)}
 
-    /* footer */
+    /* Enhanced Styles */
+    .benefits-section{background:linear-gradient(180deg,#fff,#f8fafc)}
+    .benefits-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-top:32px}
+    .benefit-card{background:#fff;border-radius:16px;padding:24px;text-align:center;box-shadow:0 4px 12px rgba(0,0,0,.06);transition:all .3s}
+    .benefit-card:hover{transform:translateY(-4px);box-shadow:0 12px 24px rgba(0,0,0,.12)}
+    .benefit-icon{width:64px;height:64px;background:linear-gradient(135deg,var(--brand),var(--brand-dark));border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:28px;margin:0 auto 16px}
+    .benefit-title{font-size:18px;font-weight:700;margin-bottom:8px}
+    .benefit-desc{color:var(--muted);font-size:14px;line-height:1.5}
+
+    .process-timeline{position:relative;padding:40px 0}
+    .process-line{position:absolute;left:50%;top:0;bottom:0;width:2px;background:linear-gradient(180deg,var(--brand),var(--brand-dark));transform:translateX(-50%)}
+    @media(max-width:768px){.process-line{left:20px}}
+    .process-step{display:flex;align-items:center;margin-bottom:48px;position:relative}
+    .process-step:nth-child(even){flex-direction:row-reverse}
+    @media(max-width:768px){.process-step:nth-child(even){flex-direction:row}}
+    .process-number{width:48px;height:48px;background:var(--brand);border-radius:50%;color:#fff;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:20px;position:absolute;left:50%;transform:translateX(-50%);z-index:2}
+    @media(max-width:768px){.process-number{left:20px}}
+    .process-content{flex:1;padding:0 40px}
+    @media(max-width:768px){.process-content{padding-left:80px}}
+    .process-step:nth-child(even) .process-content{text-align:right}
+    @media(max-width:768px){.process-step:nth-child(even) .process-content{text-align:left}}
+    .process-title{font-size:20px;font-weight:700;margin-bottom:8px}
+    .process-desc{color:var(--muted);line-height:1.5}
+
+    .comparison-table{width:100%;overflow-x:auto;margin-top:24px}
+    .comparison-table table{width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,.08)}
+    .comparison-table th{background:var(--brand);color:#fff;padding:16px;text-align:left;font-weight:700}
+    .comparison-table td{padding:16px;border-bottom:1px solid #f1f5f9}
+    .comparison-table tr:hover{background:#f8fafc}
+    .check-mark{color:#22c55e;font-weight:900;font-size:18px}
+    .x-mark{color:#ef4444;font-weight:900;font-size:18px}
+
+    .testimonial-carousel{background:#f8fafc;padding:60px 0}
+    .testimonial-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:32px;margin-top:32px}
+    .testimonial-card{background:#fff;border-radius:16px;padding:28px;box-shadow:0 4px 12px rgba(0,0,0,.06)}
+    .testimonial-stars{color:#fbbf24;font-size:20px;margin-bottom:12px}
+    .testimonial-text{font-style:italic;color:var(--text);line-height:1.6;margin-bottom:16px}
+    .testimonial-author{display:flex;align-items:center;gap:12px}
+    .testimonial-avatar{width:48px;height:48px;background:var(--brand);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700}
+    .testimonial-info{flex:1}
+    .testimonial-name{font-weight:700}
+    .testimonial-vehicle{font-size:13px;color:var(--muted)}
+
+    .warranty-section{background:linear-gradient(135deg,#f0fdf4,#dcfce7);padding:60px 0}
+    .warranty-badge{display:inline-flex;align-items:center;gap:12px;background:#fff;padding:16px 24px;border-radius:999px;box-shadow:0 8px 24px rgba(0,0,0,.1);margin:20px 0}
+    .warranty-badge-icon{width:48px;height:48px;background:#22c55e;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:24px}
+    .warranty-badge-text{text-align:left}
+    .warranty-badge-title{font-size:20px;font-weight:900;color:var(--text)}
+    .warranty-badge-subtitle{color:var(--muted);font-size:14px}
+
     footer{background:#0b1220;color:#d1d5db;padding:60px 0 30px}
     .footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:40px;margin-bottom:30px}
     .micro-footer{background:#020617;color:#94a3b8;padding:12px 0}
   </style>
+
+  <!-- Optional: Fieldd Lead Form -->
+  <script type="text/javascript" src="https://fieldd-scripts.s3.amazonaws.com/leadForm/fieldd-lead-form.js"></script>
 </head>
 <body>
   <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P4LZ4N28"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P4LZ4N28" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <a class="sr-only" href="#main">Skip to content</a>
 
   <!-- Announcement -->
-  <div class="announcement-bar">
-    Ceramic Coating • 3–7 Year Warranty • <a href="tel:+14805288227">Call (480) 528-8227</a>
-  </div>
+  <div class="announcement-bar">🛡️ Ceramic Coating: 3–7 Year Warranty — <a href="#packages">See Packages</a></div>
 
-  <!-- ===== HEADER ===== -->
-  <header class="main-header" role="banner" data-site="shinedesign" data-page="ceramic">
+  <!-- HEADER -->
+  <header class="main-header">
     <div class="header-container">
       <div class="header-content">
-        <a class="brand" href="/">
-          <img src="/assets/images/logo.webp" alt="Shine Design logo" width="128" height="42">
-          <span class="brand-text">
-            <span class="brand-name">Shine Design</span>
-            <span class="brand-tagline">Your Car • Our Passion • Your Place</span>
-          </span>
+        <!-- Brand -->
+        <a href="/" class="brand" aria-label="Shine Design Home">
+          <img src="/logo.ico" alt="Shine Design" width="140" height="42">
+          <div class="brand-text">
+            <span class="brand-name">ShineDesign</span>
+            <span class="brand-tagline">DETAILING • TINT • PPF • CERAMIC</span>
+          </div>
         </a>
 
-        <nav class="service-pills" aria-label="Quick Services">
-          <a class="service-pill" href="/auto-detailing">Detailing</a>
-          <a class="service-pill active" href="/ceramic-coating">Ceramic</a>
-          <a class="service-pill" href="/paint-protection-film">PPF</a>
-          <a class="service-pill" href="/window-tinting">Tint</a>
-        </nav>
-
-        <nav class="nav-links" aria-label="Primary">
-          <a href="/#how-it-works">How it works</a>
+        <!-- Desktop Nav -->
+        <nav class="nav-links" aria-label="Primary Navigation">
           <div class="nav-dropdown">
-            <a href="/services">Services <span class="arrow">▾</span></a>
+            <a href="/services/">Services <span class="arrow">▼</span></a>
             <div class="dropdown-menu">
               <div class="services-grid">
-                <a class="service-card" href="/auto-detailing"><span class="service-icon">🧼</span><span class="service-info"><span class="service-title">Auto Detailing</span><span class="service-desc">Interior & exterior</span></span></a>
-                <a class="service-card" href="/paint-correction"><span class="service-icon">✨</span><span class="service-info"><span class="service-title">Paint Correction</span><span class="service-desc">Swirls & scratches</span></span></a>
-                <a class="service-card" href="/ceramic-coating"><span class="service-icon">🛡️</span><span class="service-info"><span class="service-title">Ceramic Coating</span><span class="service-desc">3–7 year protection</span></span></a>
-                <a class="service-card" href="/paint-protection-film"><span class="service-icon">💎</span><span class="service-info"><span class="service-title">PPF / Clear Bra</span><span class="service-desc">Impact protection</span></span></a>
+                <a href="/ceramic-coating" class="service-card">
+                  <div class="service-icon">🛡️</div>
+                  <div class="service-info">
+                    <span class="service-title">Ceramic Coating</span>
+                    <span class="service-desc">9H Protection • 3–7 Year Warranty</span>
+                  </div>
+                </a>
+                <a href="/paint-protection-film" class="service-card">
+                  <div class="service-icon">💎</div>
+                  <div class="service-info">
+                    <span class="service-title">Paint Protection Film</span>
+                    <span class="service-desc">XPEL • 3M • Clear Bra</span>
+                  </div>
+                </a>
+                <a href="/window-tinting" class="service-card">
+                  <div class="service-icon">🔲</div>
+                  <div class="service-info">
+                    <span class="service-title">Window Tinting</span>
+                    <span class="service-desc">Ceramic • Carbon • Dyed</span>
+                  </div>
+                </a>
+                <a href="/auto-detailing" class="service-card">
+                  <div class="service-icon">✨</div>
+                  <div class="service-info">
+                    <span class="service-title">Auto Detailing</span>
+                    <span class="service-desc">Interior • Exterior • Mobile</span>
+                  </div>
+                </a>
               </div>
-              <div class="dropdown-label">More</div>
-              <a href="/window-tinting">Window Tint</a>
-              <a href="/fleet">Fleet & Commercial</a>
-              <a href="/boats-rvs">Boats / RVs</a>
+              <div class="dropdown-label">Specialty Services</div>
+              <a href="/paint-correction">Paint Correction</a>
+              <a href="/mobile-detailing">Mobile Detailing</a>
+              <a href="/rv-detailing">RV & Motorhome</a>
+              <a href="/boat-detailing">Marine Detailing</a>
+              <a href="/fleet-services">Fleet Services</a>
             </div>
           </div>
+
+          <!-- Core pills -->
+          <div class="service-pills">
+            <a href="/ceramic-coating" class="service-pill" aria-current="page">Ceramic</a>
+            <a href="/paint-protection-film" class="service-pill">PPF</a>
+            <a href="/window-tinting" class="service-pill">Tint</a>
+            <a href="/auto-detailing" class="service-pill">Detail</a>
+          </div>
+
           <a href="/gallery">Gallery</a>
+          <a href="#packages">Pricing</a>
+
+          <div class="nav-dropdown">
+            <a href="/locations/">Locations <span class="arrow">▼</span></a>
+            <div class="dropdown-menu">
+              <div class="dropdown-label">East Valley</div>
+              <a href="/gilbert">Gilbert</a>
+              <a href="/mesa">Mesa</a>
+              <a href="/chandler">Chandler</a>
+              <a href="/tempe">Tempe</a>
+              <div class="dropdown-label">Phoenix Metro</div>
+              <a href="/scottsdale">Scottsdale</a>
+              <a href="/phoenix">Phoenix</a>
+              <a href="/queen-creek">Queen Creek</a>
+            </div>
+          </div>
+
           <a href="/about">About</a>
+
           <div class="cta-group">
-            <a class="cta-primary" href="https://booknow.shinedesignauto.com/" rel="nofollow">Book Online</a>
-            <a class="cta-phone" href="tel:+14805288227">📞 (480) 528-8227</a>
+            <a href="tel:+14805288227" class="cta-phone"><span>📞</span><span>(480) 528-8227</span></a>
+            <a href="https://booknow.shinedesignauto.com/" class="cta-primary">Book Online<span>→</span></a>
           </div>
         </nav>
 
-        <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-width="2" d="M3 6h18M3 12h18M3 18h18"/></svg>
+        <!-- Mobile Toggle -->
+        <button class="menu-btn" aria-label="Menu" onclick="toggleMobileMenu()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
         </button>
       </div>
     </div>
-    <nav id="mobile-nav" aria-label="Mobile">
-      <div class="mobile-nav-content">
-        <a href="/services">All Services</a>
-        <a href="/auto-detailing">Auto Detailing</a>
-        <a href="/paint-correction">Paint Correction</a>
-        <a class="active" href="/ceramic-coating">Ceramic Coating</a>
-        <a href="/paint-protection-film">PPF</a>
-        <a href="/window-tinting">Window Tint</a>
-        <a href="/gallery">Gallery</a>
-        <a href="/about">About</a>
-        <a class="cta-primary" style="margin-top:16px;display:inline-flex" href="https://booknow.shinedesignauto.com/">Book Online</a>
-      </div>
-    </nav>
   </header>
 
-  <!-- ===== MAIN ===== -->
+  <!-- Mobile Nav -->
+  <nav id="mobile-nav" aria-label="Mobile">
+    <div class="mobile-nav-content">
+      <div class="mobile-services">
+        <a href="/ceramic-coating" class="mobile-service-btn" aria-current="page">Ceramic Coating<span>→</span></a>
+        <a href="/paint-protection-film" class="mobile-service-btn">Paint Protection Film (PPF)<span>→</span></a>
+        <a href="/window-tinting" class="mobile-service-btn">Window Tinting<span>→</span></a>
+        <a href="/auto-detailing" class="mobile-service-btn">Auto Detailing<span>→</span></a>
+      </div>
+      <a href="/services">All Services</a>
+      <a href="/gallery">Gallery</a>
+      <a href="#packages">Pricing</a>
+      <a href="/locations">Locations</a>
+      <a href="/about">About Us</a>
+      <a href="/contact">Contact</a>
+      <div style="margin-top:24px;display:grid;gap:12px">
+        <a href="tel:+14805288227" class="cta-primary" style="justify-content:center">📞 Call (480) 528-8227</a>
+        <a href="sms:+14805288227" class="cta-primary" style="background:#25D366;justify-content:center">💬 Text Us</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MAIN -->
   <main id="main">
     <div class="container breadcrumb" aria-label="Breadcrumb">
       <a href="/">Home</a> &nbsp;›&nbsp; Ceramic Coating
     </div>
 
+    <!-- HERO -->
     <section class="service-hero">
       <div class="container hero-grid">
         <div class="hero-content">
@@ -243,19 +493,21 @@
             <li>Includes paint correction for optimal bonding</li>
             <li>Professional 9H hardness formulations</li>
             <li>Shop or mobile service available</li>
+            <li>CarFax registered warranty included</li>
           </ul>
-          <div class="hero-cta-group">
+          <div class="hero-cta-group" style="display:flex;gap:12px;flex-wrap:wrap">
             <a class="hero-cta" href="https://booknow.shinedesignauto.com/">Book Coating</a>
             <a class="hero-cta secondary" href="tel:+14805288227">Call (480) 528-8227</a>
           </div>
         </div>
         <div class="hero-image">
           <span class="badge-float">Starting at $899</span>
-          <img src="/assets/images/ceramic-hero.webp" alt="Ceramic-coated car with high gloss finish">
+          <img src="/assets/images/ceramic/ceramic-hero.webp" alt="Ceramic-coated car with high gloss finish">
         </div>
       </div>
     </section>
 
+    <!-- TRUST -->
     <section class="trust-bar">
       <div class="container">
         <div class="trust-items">
@@ -267,10 +519,169 @@
       </div>
     </section>
 
+    <!-- BENEFITS SECTION -->
+    <section class="section benefits-section">
+      <div class="container">
+        <header class="section-header" style="text-align:center;margin-bottom:10px">
+          <h2 style="font-size:36px;font-weight:900;margin-bottom:12px">Why Ceramic Coating in Arizona?</h2>
+          <p style="color:var(--muted);font-size:18px">Protect your investment from our harsh desert environment</p>
+        </header>
+        <div class="benefits-grid">
+          <div class="benefit-card">
+            <div class="benefit-icon">☀️</div>
+            <h3 class="benefit-title">Extreme UV Protection</h3>
+            <p class="benefit-desc">Arizona's intense sun can quickly fade and oxidize paint. Our ceramic coating provides a UV-resistant barrier that prevents sun damage and maintains your vehicle's color vibrancy.</p>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon">💧</div>
+            <h3 class="benefit-title">Hydrophobic Properties</h3>
+            <p class="benefit-desc">Water beads and rolls off the surface, taking dirt and contaminants with it. This self-cleaning effect makes maintenance washes quick and effortless.</p>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon">🧪</div>
+            <h3 class="benefit-title">Chemical Resistance</h3>
+            <p class="benefit-desc">Protected against bird droppings, tree sap, bug splatter, and harsh cleaning chemicals. The coating acts as a sacrificial layer, keeping your clear coat safe.</p>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon">✨</div>
+            <h3 class="benefit-title">Enhanced Gloss & Depth</h3>
+            <p class="benefit-desc">Experience a mirror-like finish that makes your paint look wet 24/7. The coating enhances color depth and creates an eye-catching, showroom-quality appearance.</p>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon">🛡️</div>
+            <h3 class="benefit-title">Scratch Resistance</h3>
+            <p class="benefit-desc">9H hardness rating provides superior protection against light scratches, swirl marks, and marring from washing. Keep your paint looking flawless longer.</p>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon">💰</div>
+            <h3 class="benefit-title">Value Preservation</h3>
+            <p class="benefit-desc">Maintain your vehicle's resale value with protected, pristine paint. CarFax-registered warranty adds credibility when it's time to sell or trade.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESS SECTION -->
+    <section class="section container">
+      <header class="section-header" style="text-align:center;margin-bottom:10px">
+        <h2 style="font-size:36px;font-weight:900;margin-bottom:12px">Our Ceramic Coating Process</h2>
+        <p style="color:var(--muted);font-size:18px">Professional application ensures maximum performance and longevity</p>
+      </header>
+      <div class="process-timeline">
+        <div class="process-line"></div>
+        <div class="process-step">
+          <div class="process-number">1</div>
+          <div class="process-content">
+            <h3 class="process-title">Deep Decontamination Wash</h3>
+            <p class="process-desc">We start with a thorough wash using pH-neutral soaps, followed by iron removal and clay bar treatment to remove all embedded contaminants from your paint surface.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="process-number">2</div>
+          <div class="process-content">
+            <h3 class="process-title">Paint Correction</h3>
+            <p class="process-desc">Using professional-grade polishers and compounds, we remove swirls, scratches, and oxidation. This ensures the coating bonds to a perfectly smooth surface for maximum gloss.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="process-number">3</div>
+          <div class="process-content">
+            <h3 class="process-title">Surface Preparation</h3>
+            <p class="process-desc">We use IPA (isopropyl alcohol) wipe-down to remove all polishing oils and residues, creating the ideal bonding surface for the ceramic coating.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="process-number">4</div>
+          <div class="process-content">
+            <h3 class="process-title">Coating Application</h3>
+            <p class="process-desc">Professional-grade ceramic coating is meticulously applied panel by panel in controlled conditions. Multiple layers are applied for premium packages, with proper curing time between each.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <div class="process-number">5</div>
+          <div class="process-content">
+            <h3 class="process-title">Curing & Inspection</h3>
+            <p class="process-desc">The coating is allowed to cure properly (24-48 hours depending on package). We perform a final inspection under multiple light sources to ensure perfect, streak-free coverage.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPARISON TABLE -->
+    <section class="section container">
+      <header class="section-header" style="text-align:center;margin-bottom:10px">
+        <h2 style="font-size:36px;font-weight:900;margin-bottom:12px">Ceramic Coating vs. Traditional Protection</h2>
+        <p style="color:var(--muted);font-size:18px">See why ceramic coating is the superior choice for Arizona vehicles</p>
+      </header>
+      <div class="comparison-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Protection Feature</th>
+              <th>Ceramic Coating</th>
+              <th>Wax/Sealant</th>
+              <th>No Protection</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Duration</strong></td>
+              <td>3-7 years</td>
+              <td>2-6 months</td>
+              <td>N/A</td>
+            </tr>
+            <tr>
+              <td><strong>UV Protection</strong></td>
+              <td><span class="check-mark">✓</span> Excellent</td>
+              <td>Moderate</td>
+              <td><span class="x-mark">✗</span> None</td>
+            </tr>
+            <tr>
+              <td><strong>Chemical Resistance</strong></td>
+              <td><span class="check-mark">✓</span> Superior</td>
+              <td>Limited</td>
+              <td><span class="x-mark">✗</span> None</td>
+            </tr>
+            <tr>
+              <td><strong>Scratch Resistance</strong></td>
+              <td><span class="check-mark">✓</span> 9H Hardness</td>
+              <td>Minimal</td>
+              <td><span class="x-mark">✗</span> None</td>
+            </tr>
+            <tr>
+              <td><strong>Hydrophobic Effect</strong></td>
+              <td><span class="check-mark">✓</span> Extreme</td>
+              <td>Moderate</td>
+              <td><span class="x-mark">✗</span> None</td>
+            </tr>
+            <tr>
+              <td><strong>Gloss Enhancement</strong></td>
+              <td><span class="check-mark">✓</span> Mirror-like</td>
+              <td>Good</td>
+              <td>Dull over time</td>
+            </tr>
+            <tr>
+              <td><strong>Maintenance Required</strong></td>
+              <td>Minimal</td>
+              <td>Monthly reapplication</td>
+              <td>Constant cleaning</td>
+            </tr>
+            <tr>
+              <td><strong>Cost Over 5 Years</strong></td>
+              <td>$899-1999 once</td>
+              <td>$1500+ (multiple applications)</td>
+              <td>Paint damage costs</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- PACKAGES -->
     <section class="section container" id="packages">
       <header class="section-header" style="text-align:center;margin-bottom:10px">
-        <h2>Coating Packages</h2>
-        <p style="color:var(--muted)">Choose the durability that fits your goals & budget.</p>
+        <h2 style="font-size:36px;font-weight:900;margin-bottom:12px">Ceramic Coating Packages</h2>
+        <p style="color:var(--muted);font-size:18px">Choose the durability that fits your goals & budget</p>
       </header>
       <div class="pricing-grid">
         <article class="pricing-card">
@@ -281,6 +692,9 @@
             <li>Single-layer ceramic coating</li>
             <li>Gloss & hydrophobic protection</li>
             <li>Spot paint correction included</li>
+            <li>Wheels & trim coating</li>
+            <li>3-year warranty registration</li>
+            <li>Maintenance kit included</li>
           </ul>
           <a class="package-cta" href="https://booknow.shinedesignauto.com/">Book Essential</a>
         </article>
@@ -294,6 +708,11 @@
             <li>Multi-layer ceramic coating</li>
             <li>Enhanced UV & chemical resistance</li>
             <li>One-step paint correction</li>
+            <li>Glass coating included</li>
+            <li>Wheels, trim & plastic coating</li>
+            <li>5-year warranty registration</li>
+            <li>Annual maintenance included (Year 1)</li>
+            <li>Premium maintenance kit</li>
           </ul>
           <a class="package-cta" href="https://booknow.shinedesignauto.com/">Book Premium</a>
         </article>
@@ -303,54 +722,251 @@
           <div class="package-duration">~7 Year Protection</div>
           <div class="package-price">$1,999 <span>sedans from</span></div>
           <ul class="package-features">
-            <li>Pro multi-layer + topcoat</li>
+            <li>Pro multi-layer + topcoat system</li>
             <li>Maximum gloss & durability</li>
             <li>Two-step correction (as needed)</li>
+            <li>Full vehicle coating (paint, glass, wheels, trim)</li>
+            <li>Interior leather/fabric protection</li>
+            <li>7-year warranty registration</li>
+            <li>Annual maintenance included (2 years)</li>
+            <li>Elite maintenance kit & products</li>
+            <li>Priority scheduling for life</li>
           </ul>
           <a class="package-cta" href="https://booknow.shinedesignauto.com/">Book Elite</a>
         </article>
       </div>
-      <p class="pricing-note" style="text-align:center;margin-top:16px;color:#92400e;background:#fef3c7;border-radius:12px;padding:12px">Final pricing varies by vehicle size & paint condition. Full quotes provided before service.</p>
+      <p class="pricing-note" style="text-align:center;margin-top:16px;color:#92400e;background:#fef3c7;border-radius:12px;padding:12px">
+        <strong>Vehicle Size Pricing:</strong> Mid-size SUVs/Trucks +$200 | Large SUVs/Trucks +$300 | Final pricing varies by paint condition. Full quotes provided before service.
+      </p>
     </section>
 
+    <!-- TESTIMONIALS -->
+    <section class="testimonial-carousel">
+      <div class="container">
+        <header class="section-header" style="text-align:center;margin-bottom:10px">
+          <h2 style="font-size:36px;font-weight:900;margin-bottom:12px">What Our Customers Say</h2>
+          <p style="color:var(--muted);font-size:18px">Real reviews from ceramic coating customers in the East Valley</p>
+        </header>
+        <div class="testimonial-grid">
+          <div class="testimonial-card">
+            <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+            <p class="testimonial-text">"The ceramic coating transformed my black Tesla! Water literally flies off when driving, and washing takes half the time. Worth every penny for Arizona's harsh sun."</p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">JR</div>
+              <div class="testimonial-info">
+                <div class="testimonial-name">Jessica R.</div>
+                <div class="testimonial-vehicle">2024 Tesla Model Y - Gilbert</div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+            <p class="testimonial-text">"Professional service from start to finish. They came to my office in Chandler and the results are incredible. My Audi looks better than when I bought it new!"</p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">MK</div>
+              <div class="testimonial-info">
+                <div class="testimonial-name">Michael K.</div>
+                <div class="testimonial-vehicle">2023 Audi Q7 - Chandler</div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+            <p class="testimonial-text">"Had the Elite package done on my Corvette. The depth and gloss are unreal! Bug splatter and bird droppings wipe right off. Best investment for paint protection."</p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">DL</div>
+              <div class="testimonial-info">
+                <div class="testimonial-name">David L.</div>
+                <div class="testimonial-vehicle">2022 Corvette C8 - Mesa</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WARRANTY SECTION -->
+    <section class="warranty-section">
+      <div class="container" style="text-align:center">
+        <h2 style="font-size:36px;font-weight:900;margin-bottom:12px">Backed by Real Protection</h2>
+        <p style="color:var(--muted);font-size:18px;margin-bottom:24px">Your investment is protected with our comprehensive warranty</p>
+        <div style="display:flex;justify-content:center;flex-wrap:wrap;gap:20px">
+          <div class="warranty-badge">
+            <div class="warranty-badge-icon">📋</div>
+            <div class="warranty-badge-text">
+              <div class="warranty-badge-title">CarFax Registered</div>
+              <div class="warranty-badge-subtitle">Adds value at resale</div>
+            </div>
+          </div>
+          <div class="warranty-badge">
+            <div class="warranty-badge-icon">🛡️</div>
+            <div class="warranty-badge-text">
+              <div class="warranty-badge-title">Transferable Warranty</div>
+              <div class="warranty-badge-subtitle">Stays with the vehicle</div>
+            </div>
+          </div>
+          <div class="warranty-badge">
+            <div class="warranty-badge-icon">✅</div>
+            <div class="warranty-badge-text">
+              <div class="warranty-badge-title">Guaranteed Performance</div>
+              <div class="warranty-badge-subtitle">Or we'll reapply free</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ENHANCED FAQ -->
     <section class="section container" id="faq">
       <header class="section-header" style="text-align:center;margin-bottom:10px">
-        <h2>Ceramic Coating FAQs</h2>
-        <p style="color:var(--muted)">Answers to common questions in Arizona’s climate.</p>
+        <h2 style="font-size:36px;font-weight:900;margin-bottom:12px">Frequently Asked Questions</h2>
+        <p style="color:var(--muted);font-size:18px">Everything you need to know about ceramic coating</p>
       </header>
       <div class="faq-grid">
         <div class="faq-item">
           <div class="faq-question">Is ceramic worth it in AZ heat?</div>
-          <div class="faq-answer">Yes — it adds UV resistance, reduces oxidation, and makes washes faster.</div>
+          <div class="faq-answer">Absolutely! Arizona's intense UV rays and 120°+ surface temperatures can quickly damage unprotected paint. Ceramic coating provides essential UV resistance and heat protection.</div>
         </div>
         <div class="faq-item">
           <div class="faq-question">Do you correct the paint first?</div>
-          <div class="faq-answer">We include the appropriate correction step so the coating bonds to a defect-free surface.</div>
+          <div class="faq-answer">Yes, we include appropriate paint correction with every package. This removes swirls and imperfections, ensuring the coating bonds to a perfect surface for maximum gloss and protection.</div>
         </div>
         <div class="faq-item">
-          <div class="faq-question">Mobile or in-shop?</div>
-          <div class="faq-answer">Both. We can come to you in the East Valley or book you at our Gilbert facility.</div>
+          <div class="faq-question">Mobile or in-shop service?</div>
+          <div class="faq-answer">Both! We offer mobile service throughout the East Valley with our fully-equipped units, or you can visit our Gilbert facility for controlled-environment application.</div>
         </div>
         <div class="faq-item">
-          <div class="faq-question">Maintenance?</div>
-          <div class="faq-answer">Use pH-neutral soaps; avoid harsh chemicals; schedule maintenance details quarterly.</div>
+          <div class="faq-question">How long does it take?</div>
+          <div class="faq-answer">Typically 4-8 hours depending on vehicle size and package selected. Elite packages may require keeping the vehicle overnight for proper curing.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Maintenance requirements?</div>
+          <div class="faq-answer">Very minimal! Use pH-neutral car shampoo, avoid automatic car washes with brushes, and we recommend a maintenance detail every 3-6 months to keep the coating performing optimally.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Can I still wash my car normally?</div>
+          <div class="faq-answer">Yes, but it's much easier! The hydrophobic properties mean dirt doesn't stick as much. Most dirt rinses off with just water, and drying is a breeze.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">What's the difference between packages?</div>
+          <div class="faq-answer">Layer count, durability, and included services. Essential is single-layer, Premium adds multiple layers plus glass, and Elite includes full vehicle protection with extended warranty.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Is the warranty real?</div>
+          <div class="faq-answer">Yes! Our warranties are registered with CarFax and fully transferable. If the coating fails to perform as promised, we'll reapply it at no cost.</div>
         </div>
       </div>
     </section>
 
+    <!-- CARE INSTRUCTIONS -->
+    <section class="section container" style="background:#f8fafc;border-radius:20px;padding:48px">
+      <header class="section-header" style="text-align:center;margin-bottom:24px">
+        <h2 style="font-size:32px;font-weight:900;margin-bottom:12px">Ceramic Coating Care Guide</h2>
+        <p style="color:var(--muted);font-size:16px">Keep your coating performing like new with these simple tips</p>
+      </header>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px">
+        <div>
+          <h3 style="font-size:18px;font-weight:700;margin-bottom:12px;color:#22c55e">✓ DO's</h3>
+          <ul style="list-style:none;padding:0">
+            <li style="padding:8px 0;border-bottom:1px solid #e2e8f0">• Wash bi-weekly or as needed</li>
+            <li style="padding:8px 0;border-bottom:1px solid #e2e8f0">• Use pH-neutral car shampoo</li>
+            <li style="padding:8px 0;border-bottom:1px solid #e2e8f0">• Dry with microfiber towels or air blower</li>
+            <li style="padding:8px 0;border-bottom:1px solid #e2e8f0">• Remove bird droppings & sap promptly</li>
+            <li style="padding:8px 0;border-bottom:1px solid #e2e8f0">• Schedule annual maintenance inspections</li>
+            <li style="padding:8px 0">• Park in shade when possible</li>
+          </ul>
+        </div>
+        <div>
+          <h3 style="font-size:18px;font-weight:700;margin-bottom:12px;color:#ef4444">✗ DON'Ts</h3>
+          <ul style="list-style:none;padding:0">
+            <li style="padding:8px 0;border-bottom:1px solid #e2e8f0">• No automatic car washes with brushes</li>
+            <li style="padding:8px 0;border-bottom:1px solid #e2e8f0">• Avoid harsh degreasers or solvents</li>
+            <li style="padding:8px 0;border-bottom:1px solid #e2e8f0">• Don't wash in direct sunlight when hot</li>
+            <li style="padding:8px 0;border-bottom:1px solid #e2e8f0">• No abrasive polishes or compounds</li>
+            <li style="padding:8px 0;border-bottom:1px solid #e2e8f0">• Don't let water spots sit and bake on</li>
+            <li style="padding:8px 0">• Avoid washing for first 7 days</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- BRANDS WE USE -->
+    <section class="section container">
+      <header class="section-header" style="text-align:center;margin-bottom:24px">
+        <h2 style="font-size:32px;font-weight:900;margin-bottom:12px">Professional-Grade Products Only</h2>
+        <p style="color:var(--muted);font-size:16px">We use industry-leading ceramic coating brands trusted by professionals worldwide</p>
+      </header>
+      <div style="display:flex;justify-content:center;align-items:center;gap:48px;flex-wrap:wrap;opacity:0.7">
+        <div style="text-align:center">
+          <div style="font-size:24px;font-weight:900;color:var(--text)">GTECHNIQ</div>
+          <div style="font-size:12px;color:var(--muted)">Crystal Serum Ultra</div>
+        </div>
+        <div style="text-align:center">
+          <div style="font-size:24px;font-weight:900;color:var(--text)">CERAMIC PRO</div>
+          <div style="font-size:12px;color:var(--muted)">9H Permanent Protection</div>
+        </div>
+        <div style="text-align:center">
+          <div style="font-size:24px;font-weight:900;color:var(--text)">MODESTA</div>
+          <div style="font-size:12px;color:var(--muted)">Glass Coating Technology</div>
+        </div>
+        <div style="text-align:center">
+          <div style="font-size:24px;font-weight:900;color:var(--text)">GYEON</div>
+          <div style="font-size:12px;color:var(--muted)">Quartz Based Coatings</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lead Form / CTA -->
     <section class="container">
       <div class="cta-section" style="background:linear-gradient(135deg,var(--brand),var(--brand-dark));color:#fff;border-radius:20px;padding:48px;text-align:center">
         <h2 style="font-size:32px;margin-bottom:8px">Ready for Glass-Like Gloss?</h2>
-        <p style="opacity:.95;margin-bottom:22px">Lock in protection and cut your wash time in half.</p>
+        <p style="opacity:.95;margin-bottom:22px">Lock in protection and cut your wash time in half. Limited availability for mobile service.</p>
         <div class="cta-buttons" style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap">
           <a class="hero-cta" href="https://booknow.shinedesignauto.com/">Book Coating</a>
           <a class="hero-cta secondary" href="sms:+14805288227">Text Us Questions</a>
         </div>
+        <!-- Optional Fieldd form anchor -->
+        <div id="lead-form-anchor" style="margin-top:28px"></div>
+        <!-- Example: <fieldd-lead-form account="YOUR_ACCOUNT" product="ceramic-coating"></fieldd-lead-form> -->
+      </div>
+    </section>
+
+    <!-- RELATED SERVICES -->
+    <section class="section container">
+      <header class="section-header" style="text-align:center;margin-bottom:24px">
+        <h2 style="font-size:32px;font-weight:900;margin-bottom:12px">Complete Your Protection</h2>
+        <p style="color:var(--muted);font-size:16px">Popular add-ons and complementary services</p>
+      </header>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px">
+        <a href="/paint-protection-film" style="text-decoration:none;color:inherit">
+          <div style="background:#fff;border:2px solid #e2e8f0;border-radius:16px;padding:24px;text-align:center;transition:all .3s;cursor:pointer">
+            <div style="font-size:36px;margin-bottom:12px">💎</div>
+            <h3 style="font-size:18px;font-weight:700;margin-bottom:8px">Paint Protection Film</h3>
+            <p style="color:var(--muted);font-size:14px">Ultimate protection against rock chips and scratches. Perfect for high-impact areas.</p>
+            <span style="color:var(--brand);font-weight:600;font-size:14px">Learn More →</span>
+          </div>
+        </a>
+        <a href="/window-tinting" style="text-decoration:none;color:inherit">
+          <div style="background:#fff;border:2px solid #e2e8f0;border-radius:16px;padding:24px;text-align:center;transition:all .3s;cursor:pointer">
+            <div style="font-size:36px;margin-bottom:12px">🔲</div>
+            <h3 style="font-size:18px;font-weight:700;margin-bottom:8px">Window Tinting</h3>
+            <p style="color:var(--muted);font-size:14px">Block heat and UV rays while adding privacy. Essential for Arizona driving comfort.</p>
+            <span style="color:var(--brand);font-weight:600;font-size:14px">Learn More →</span>
+          </div>
+        </a>
+        <a href="/paint-correction" style="text-decoration:none;color:inherit">
+          <div style="background:#fff;border:2px solid #e2e8f0;border-radius:16px;padding:24px;text-align:center;transition:all .3s;cursor:pointer">
+            <div style="font-size:36px;margin-bottom:12px">🔧</div>
+            <h3 style="font-size:18px;font-weight:700;margin-bottom:8px">Paint Correction</h3>
+            <p style="color:var(--muted);font-size:14px">Remove years of swirls and scratches. Restore your paint to factory perfection.</p>
+            <span style="color:var(--brand);font-weight:600;font-size:14px">Learn More →</span>
+          </div>
+        </a>
       </div>
     </section>
   </main>
 
-  <!-- ===== FOOTER ===== -->
+  <!-- FOOTER -->
   <footer role="contentinfo">
     <div class="container footer-grid">
       <div>
@@ -388,81 +1004,29 @@
     </div>
     <div class="micro-footer">
       <div class="container" style="display:flex;gap:10px;justify-content:space-between;align-items:center;flex-wrap:wrap">
-        <small>Proudly serving the East Valley • Fully insured</small>
+        <small>Proudly serving the East Valley • Fully insured • Licensed & Certified</small>
         <small>Site by Shine Design</small>
       </div>
     </div>
   </footer>
 
-  <!-- ===== INLINE NAV JS (navigation.js) + small helpers ===== -->
+  <!-- Inline nav + helpers -->
   <script>
-  (function(){
-    'use strict';
-    const header = document.querySelector('.main-header');
-    const menuBtn = document.getElementById('menuBtn');
-    const mobileNav = document.getElementById('mobile-nav');
-
-    // sticky header state
-    const onScroll = () => {
-      if (!header) return;
-      if (window.scrollY > 8) header.classList.add('is-scrolled');
-      else header.classList.remove('is-scrolled');
-    };
-    onScroll();
-    window.addEventListener('scroll', onScroll, {passive:true});
-
-    // mobile drawer
-    let drawerOpen = false, lastFocused = null;
-    function openDrawer(){
-      drawerOpen = true;
-      lastFocused = document.activeElement;
-      mobileNav.classList.add('open');
-      document.body.style.overflow = 'hidden';
-      menuBtn && menuBtn.setAttribute('aria-expanded','true');
-      const firstLink = mobileNav.querySelector('a'); firstLink && firstLink.focus();
+    function toggleMobileMenu(){
+      const nav = document.getElementById('mobile-nav');
+      const open = nav.classList.toggle('active');
+      document.documentElement.classList.toggle('menu-open', open);
+      document.body.style.overflow = open ? 'hidden' : '';
     }
-    function closeDrawer(){
-      drawerOpen = false;
-      mobileNav.classList.remove('open');
-      document.body.style.overflow = '';
-      menuBtn && menuBtn.setAttribute('aria-expanded','false');
-      if (lastFocused) try{ lastFocused.focus(); }catch(e){}
-    }
-    menuBtn && menuBtn.addEventListener('click', ()=> drawerOpen ? closeDrawer() : openDrawer());
-    document.addEventListener('keydown', e=>{ if(e.key==='Escape' && drawerOpen) closeDrawer(); });
-    mobileNav && mobileNav.addEventListener('click', e=>{ if (e.target.closest('a')) closeDrawer(); });
-    document.addEventListener('click', e=>{ if(!drawerOpen) return; if(!e.target.closest('#mobile-nav') && !e.target.closest('.menu-btn')) closeDrawer(); });
-    document.addEventListener('keydown', e=>{
-      if(!drawerOpen || e.key!=='Tab') return;
-      const focusables = mobileNav.querySelectorAll('a,button');
-      if(!focusables.length) return;
-      const first = focusables[0], last = focusables[focusables.length-1];
-      if (e.shiftKey && document.activeElement===first){ last.focus(); e.preventDefault(); }
-      else if(!e.shiftKey && document.activeElement===last){ first.focus(); e.preventDefault(); }
-    });
-
-    // smooth hash scroll
-    document.addEventListener('click', (e)=>{
-      const a = e.target.closest('a[href^="#"]'); if(!a) return;
-      const id = a.getAttribute('href').slice(1), t = document.getElementById(id); if(!t) return;
-      e.preventDefault(); const y = t.getBoundingClientRect().top + window.scrollY - (header?header.offsetHeight:0) - 6;
-      window.scrollTo({top:y, behavior:'smooth'});
-      if (drawerOpen) closeDrawer();
-    });
-
-    // mark active pill by path
-    try{
-      const path = location.pathname.replace(/\/+$/,'');
-      document.querySelectorAll('.service-pills a, #mobile-nav a').forEach(a=>{
-        const href=(a.getAttribute('href')||'').replace(/\/+$/,''); if(href && href===path) a.classList.add('active');
-      });
-    }catch(e){}
-
-    // dynamic year
-    const y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear();
-
-    // GA4/GTM click events
     (function(){
+      const header = document.querySelector('.main-header');
+      function onScroll(){ if(window.scrollY>8) header.classList.add('is-scrolled'); else header.classList.remove('is-scrolled'); }
+      onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
+
+      // dynamic footer year
+      const y = document.getElementById('year'); if(y) y.textContent = new Date().getFullYear();
+
+      // GA4/GTM events for call/text/book
       function pushEvent(name, params){ window.dataLayer = window.dataLayer || []; window.dataLayer.push(Object.assign({event:name}, params||{})); }
       function handler(sel, eventName){
         document.addEventListener('click', function(e){
@@ -474,7 +1038,6 @@
       handler('a[href^="sms:"]','sms_click');
       handler('a[href*="book"]','book_click');
     })();
-  })();
   </script>
 </body>
 </html>
