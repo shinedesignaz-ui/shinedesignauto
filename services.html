@@ -70,11 +70,15 @@
       padding: 0;
     }
     
+    html, body { overflow-x: hidden; }
+    img, video { max-width: 100%; height: auto; display: block; }
+    
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
       color: var(--text);
       background: var(--bg);
       line-height: 1.6;
+      overscroll-behavior-x: none;
     }
 
     /* Focus styles */
@@ -84,7 +88,7 @@
       border-radius: 4px;
     }
 
-    /* ===== Header Styles (Same as Homepage) ===== */
+    /* ===== Header Styles (Consistent with Homepage) ===== */
     .main-header {
       position: sticky;
       top: 0;
@@ -305,12 +309,91 @@
       transition: all .2s;
     }
 
+    .menu-btn:hover {
+      background: rgba(14, 165, 233, .08);
+      border-color: var(--brand);
+      color: var(--brand);
+    }
+
+    .menu-btn svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    /* Mobile Navigation */
+    #mobile-nav {
+      position: fixed;
+      top: var(--header-h);
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: white;
+      z-index: 999;
+      overflow-y: auto;
+      padding: 20px;
+      transform: translateX(100%);
+      transition: transform .3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: -4px 0 24px rgba(0, 0, 0, .1);
+    }
+
+    #mobile-nav.active {
+      transform: translateX(0);
+    }
+
+    .mobile-nav-content a {
+      display: block;
+      padding: 14px 0;
+      color: var(--text);
+      font-weight: 600;
+      font-size: 16px;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(0, 0, 0, .06);
+      transition: all .2s;
+    }
+
+    .mobile-nav-content a:hover {
+      color: var(--brand);
+      padding-left: 12px;
+    }
+
+    .mobile-services {
+      display: grid;
+      gap: 12px;
+      margin: 20px 0;
+      padding: 20px 0;
+      border-top: 1px solid rgba(0, 0, 0, .08);
+      border-bottom: 1px solid rgba(0, 0, 0, .08);
+    }
+
+    .mobile-service-btn {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px;
+      background: rgba(14, 165, 233, .04);
+      border: 1px solid rgba(14, 165, 233, .1);
+      border-radius: 12px;
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 600;
+      transition: all .2s;
+    }
+
+    .mobile-service-btn:hover {
+      background: rgba(14, 165, 233, .1);
+      border-color: var(--brand);
+      transform: translateX(4px);
+    }
+
     /* Responsive */
     @media (min-width: 960px) {
       .nav-links {
         display: flex;
       }
       .menu-btn {
+        display: none;
+      }
+      #mobile-nav {
         display: none;
       }
     }
@@ -536,23 +619,22 @@
       font-weight: 700;
     }
 
-    .service-price {
-      display: flex;
-      align-items: baseline;
-      gap: 8px;
+    .service-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--brand);
+      font-weight: 600;
+      font-size: 14px;
+      text-decoration: none;
       padding-top: 16px;
       border-top: 1px solid #f1f5f9;
+      transition: all .2s;
     }
 
-    .price-label {
-      font-size: 12px;
-      color: var(--muted);
-    }
-
-    .price-value {
-      font-size: 24px;
-      font-weight: 800;
-      color: var(--brand);
+    .service-cta:hover {
+      color: var(--brand-dark);
+      transform: translateX(4px);
     }
 
     .service-badge {
@@ -628,11 +710,12 @@
       font-weight: 700;
       color: var(--text);
       margin-bottom: 4px;
+      font-size: 16px;
     }
 
-    .popular-price {
-      color: var(--brand);
-      font-weight: 600;
+    .popular-subtitle {
+      color: var(--muted);
+      font-size: 13px;
     }
 
     /* Service Areas */
@@ -723,6 +806,8 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
+      border: none;
+      cursor: pointer;
     }
 
     .hero-cta:hover {
@@ -795,7 +880,7 @@
 </head>
 <body>
 
-  <!-- HEADER -->
+  <!-- HEADER (Consistent with Homepage) -->
   <header class="main-header">
     <div class="header-container">
       <div class="header-content">
@@ -816,23 +901,28 @@
           <div class="nav-dropdown">
             <a href="/services/" class="active">Services <span class="arrow">▼</span></a>
             <div class="dropdown-menu">
-              <!-- Dropdown would go here -->
+              <!-- Dropdown content would go here -->
             </div>
           </div>
 
           <!-- Quick Service Pills -->
           <div class="service-pills">
-            <a href="/ceramic-coating.html" class="service-pill">Ceramic</a>
-            <a href="/paint-protection-film.html" class="service-pill">PPF</a>
-            <a href="/window-tinting.html" class="service-pill">Tint</a>
-            <a href="/auto-detailing.html" class="service-pill">Detail</a>
+            <a href="/ceramic-coating" class="service-pill">Ceramic</a>
+            <a href="/paint-protection-film" class="service-pill">PPF</a>
+            <a href="/window-tinting" class="service-pill">Tint</a>
+            <a href="/auto-detailing" class="service-pill">Detail</a>
           </div>
 
           <!-- Other Nav Items -->
           <a href="/gallery">Gallery</a>
-          <a href="/pricing">Pricing</a>
+          <a href="#pricing">Pricing</a>
+          
+          <!-- Locations Dropdown -->
+          <div class="nav-dropdown">
+            <a href="/locations/">Locations <span class="arrow">▼</span></a>
+          </div>
+
           <a href="/about">About</a>
-          <a href="/contact">Contact</a>
 
           <!-- CTAs -->
           <div class="cta-group">
@@ -848,7 +938,7 @@
         </nav>
 
         <!-- Mobile Menu Toggle -->
-        <button class="menu-btn" aria-label="Menu">
+        <button class="menu-btn" aria-label="Menu" onclick="toggleMobileMenu()">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M3 12h18M3 6h18M3 18h18"/>
           </svg>
@@ -856,6 +946,28 @@
       </div>
     </div>
   </header>
+
+  <!-- Mobile Navigation -->
+  <nav id="mobile-nav">
+    <div class="mobile-nav-content">
+      <div class="mobile-services">
+        <a href="/ceramic-coating" class="mobile-service-btn">Ceramic Coating<span>→</span></a>
+        <a href="/paint-protection-film" class="mobile-service-btn">Paint Protection Film<span>→</span></a>
+        <a href="/window-tinting" class="mobile-service-btn">Window Tinting<span>→</span></a>
+        <a href="/auto-detailing" class="mobile-service-btn">Auto Detailing<span>→</span></a>
+      </div>
+      <a href="/services">All Services</a>
+      <a href="/gallery">Gallery</a>
+      <a href="#pricing">Pricing</a>
+      <a href="/locations">Locations</a>
+      <a href="/about">About Us</a>
+      <a href="/contact">Contact</a>
+      <div style="margin-top:24px; display:grid; gap:12px;">
+        <a href="tel:+14805288227" class="cta-primary" style="justify-content:center;">📞 Call (480) 528-8227</a>
+        <a href="https://booknow.shinedesignauto.com/" class="cta-primary" style="background:#25D366;justify-content:center;">Book Now</a>
+      </div>
+    </div>
+  </nav>
 
   <main>
     <!-- Page Hero -->
@@ -879,38 +991,38 @@
         <div class="popular-services">
           <div class="popular-header">
             <h2>Most Popular Services</h2>
-            <p>Our top-requested services with transparent pricing</p>
+            <p>Our top-requested services for all vehicle types</p>
           </div>
           
           <div class="popular-grid">
-            <a href="/ceramic-coating.html" class="popular-card">
+            <a href="/ceramic-coating" class="popular-card">
               <div class="popular-icon">🛡️</div>
               <div class="popular-name">Ceramic Coating</div>
-              <div class="popular-price">From $899</div>
+              <div class="popular-subtitle">Long-term paint protection</div>
             </a>
             
-            <a href="/paint-protection-film.html" class="popular-card">
+            <a href="/paint-protection-film" class="popular-card">
               <div class="popular-icon">💎</div>
               <div class="popular-name">Paint Protection Film</div>
-              <div class="popular-price">Custom Quote</div>
+              <div class="popular-subtitle">Ultimate chip prevention</div>
             </a>
             
-            <a href="/window-tinting.html" class="popular-card">
+            <a href="/window-tinting" class="popular-card">
               <div class="popular-icon">🔲</div>
               <div class="popular-name">Window Tinting</div>
-              <div class="popular-price">From $399</div>
+              <div class="popular-subtitle">Heat & UV rejection</div>
             </a>
             
-            <a href="/mobile-detailing.html" class="popular-card">
+            <a href="/auto-detailing" class="popular-card">
               <div class="popular-icon">🚗</div>
               <div class="popular-name">Mobile Detailing</div>
-              <div class="popular-price">From $179</div>
+              <div class="popular-subtitle">We come to you</div>
             </a>
             
-            <a href="/paint-correction.html" class="popular-card">
+            <a href="/paint-correction" class="popular-card">
               <div class="popular-icon">✨</div>
               <div class="popular-name">Paint Correction</div>
-              <div class="popular-price">From $299</div>
+              <div class="popular-subtitle">Remove swirls & scratches</div>
             </a>
           </div>
         </div>
@@ -930,7 +1042,7 @@
           </div>
           
           <div class="services-grid">
-            <a href="/ceramic-coating.html" class="service-card">
+            <a href="/ceramic-coating" class="service-card">
               <span class="service-badge">POPULAR</span>
               <h3 class="service-name">Ceramic Coating</h3>
               <p class="service-description">9H hardness protection with hydrophobic properties. UV protection and chemical resistance for 3-7 years.</p>
@@ -939,13 +1051,10 @@
                 <li>Self-cleaning properties</li>
                 <li>Enhanced gloss & depth</li>
               </ul>
-              <div class="service-price">
-                <span class="price-label">Starting at</span>
-                <span class="price-value">$899</span>
-              </div>
+              <span class="service-cta">Learn More →</span>
             </a>
 
-            <a href="/paint-protection-film.html" class="service-card">
+            <a href="/paint-protection-film" class="service-card">
               <h3 class="service-name">Paint Protection Film (PPF)</h3>
               <p class="service-description">Self-healing clear film that prevents rock chips and scratches. Invisible protection with 10-year warranty.</p>
               <ul class="service-features">
@@ -953,13 +1062,10 @@
                 <li>10-year manufacturer warranty</li>
                 <li>Custom coverage options</li>
               </ul>
-              <div class="service-price">
-                <span class="price-label">Call for</span>
-                <span class="price-value">Quote</span>
-              </div>
+              <span class="service-cta">Get Quote →</span>
             </a>
 
-            <a href="/paint-correction.html" class="service-card">
+            <a href="/paint-correction" class="service-card">
               <h3 class="service-name">Paint Correction</h3>
               <p class="service-description">Remove swirls, scratches, and oxidation. Multi-stage machine polishing to restore factory finish.</p>
               <ul class="service-features">
@@ -967,13 +1073,10 @@
                 <li>Restore original clarity</li>
                 <li>Prep for coating</li>
               </ul>
-              <div class="service-price">
-                <span class="price-label">Starting at</span>
-                <span class="price-value">$299</span>
-              </div>
+              <span class="service-cta">View Options →</span>
             </a>
 
-            <a href="/glass-ceramic-coating.html" class="service-card">
+            <a href="/glass-ceramic-coating" class="service-card">
               <h3 class="service-name">Glass Ceramic Coating</h3>
               <p class="service-description">Hydrophobic coating for all glass surfaces. Improved visibility and easier cleaning.</p>
               <ul class="service-features">
@@ -981,13 +1084,10 @@
                 <li>Easier ice removal</li>
                 <li>2-year durability</li>
               </ul>
-              <div class="service-price">
-                <span class="price-label">Starting at</span>
-                <span class="price-value">$149</span>
-              </div>
+              <span class="service-cta">Learn More →</span>
             </a>
 
-            <a href="/trim-ceramic-coating.html" class="service-card">
+            <a href="/trim-ceramic-coating" class="service-card">
               <h3 class="service-name">Trim & Plastic Coating</h3>
               <p class="service-description">Restore and protect faded trim. Long-lasting UV protection for plastic and rubber.</p>
               <ul class="service-features">
@@ -995,13 +1095,10 @@
                 <li>2-year protection</li>
                 <li>UV resistance</li>
               </ul>
-              <div class="service-price">
-                <span class="price-label">Starting at</span>
-                <span class="price-value">$199</span>
-              </div>
+              <span class="service-cta">View Details →</span>
             </a>
 
-            <a href="/wheel-coating.html" class="service-card">
+            <a href="/wheel-coating" class="service-card">
               <h3 class="service-name">Wheel Ceramic Coating</h3>
               <p class="service-description">Protect wheels from brake dust and road grime. Makes cleaning 90% easier.</p>
               <ul class="service-features">
@@ -1009,10 +1106,7 @@
                 <li>Brake dust protection</li>
                 <li>Easy maintenance</li>
               </ul>
-              <div class="service-price">
-                <span class="price-label">Starting at</span>
-                <span class="price-value">$299</span>
-              </div>
+              <span class="service-cta">Learn More →</span>
             </a>
           </div>
         </div>
@@ -1032,7 +1126,7 @@
           </div>
           
           <div class="services-grid">
-            <a href="/mobile-detailing.html" class="service-card">
+            <a href="/mobile-detailing" class="service-card">
               <span class="service-badge">MOBILE</span>
               <h3 class="service-name">Mobile Detailing</h3>
               <p class="service-description">We come to you! Complete detailing service at your home or office.</p>
@@ -1041,13 +1135,10 @@
                 <li>Same-day service</li>
                 <li>All East Valley</li>
               </ul>
-              <div class="service-price">
-                <span class="price-label">Starting at</span>
-                <span class="price-value">$179</span>
-              </div>
+              <span class="service-cta">Book Now →</span>
             </a>
 
-            <a href="/interior-detailing.html" class="service-card">
+            <a href="/interior-detailing" class="service-card">
               <h3 class="service-name">Interior Detailing</h3>
               <p class="service-description">Deep clean and protect your interior. From basic vacuum to full extraction.</p>
               <ul class="service-features">
@@ -1055,13 +1146,10 @@
                 <li>Stain removal</li>
                 <li>Odor elimination</li>
               </ul>
-              <div class="service-price">
-                <span class="price-label">Starting at</span>
-                <span class="price-value">$89</span>
-              </div>
+              <span class="service-cta">View Packages →</span>
             </a>
 
-            <a href="/exterior-detailing.html" class="service-card">
+            <a href="/exterior-detailing" class="service-card">
               <h3 class="service-name">Exterior Detailing</h3>
               <p class="service-description">Hand wash, decontamination, and protection. Multiple packages available.</p>
               <ul class="service-features">
@@ -1069,13 +1157,10 @@
                 <li>Paint sealant</li>
                 <li>Tire dressing</li>
               </ul>
-              <div class="service-price">
-                <span class="price-label">Starting at</span>
-                <span class="price-value">$89</span>
-              </div>
+              <span class="service-cta">See Options →</span>
             </a>
 
-            <a href="/window-tinting.html" class="service-card">
+            <a href="/window-tinting" class="service-card">
               <h3 class="service-name">Window Tinting</h3>
               <p class="service-description">Beat the Arizona heat with ceramic tint. Up to 98% heat rejection.</p>
               <ul class="service-features">
@@ -1083,13 +1168,10 @@
                 <li>Legal tint levels</li>
                 <li>UV protection</li>
               </ul>
-              <div class="service-price">
-                <span class="price-label">Starting at</span>
-                <span class="price-value">$399</span>
-              </div>
+              <span class="service-cta">View Options →</span>
             </a>
 
-            <a href="/engine-bay-detail.html" class="service-card">
+            <a href="/engine-bay-detail" class="service-card">
               <h3 class="service-name">Engine Bay Detail</h3>
               <p class="service-description">Safe cleaning and dressing of engine compartment. Great for shows or sale.</p>
               <ul class="service-features">
@@ -1097,13 +1179,10 @@
                 <li>Component protection</li>
                 <li>Like-new appearance</li>
               </ul>
-              <div class="service-price">
-                <span class="price-label">Starting at</span>
-                <span class="price-value">$49</span>
-              </div>
+              <span class="service-cta">Learn More →</span>
             </a>
 
-            <a href="/headlight-restoration.html" class="service-card">
+            <a href="/headlight-restoration" class="service-card">
               <h3 class="service-name">Headlight Restoration</h3>
               <p class="service-description">Remove yellowing and haze. Restore clarity and improve night visibility.</p>
               <ul class="service-features">
@@ -1111,10 +1190,7 @@
                 <li>UV sealant applied</li>
                 <li>1-year warranty</li>
               </ul>
-              <div class="service-price">
-                <span class="price-label">Starting at</span>
-                <span class="price-value">$89</span>
-              </div>
+              <span class="service-cta">See Process →</span>
             </a>
           </div>
         </div>
@@ -1126,7 +1202,7 @@
       <div class="container">
         <div class="service-category">
           <div class="category-header">
-            <div class="category-icon">🚁</div>
+            <div class="category-icon">🚐</div>
             <div class="category-info">
               <h2 class="category-title">Specialty Vehicle Detailing</h2>
               <p class="category-subtitle">Expert care for RVs, boats, aircraft, and more</p>
@@ -1134,7 +1210,7 @@
           </div>
           
           <div class="services-grid">
-            <a href="/rv-detailing.html" class="service-card">
+            <a href="/rv-detailing" class="service-card">
               <h3 class="service-name">🚐 RV & Motorhome</h3>
               <p class="service-description">Complete detailing for all RV types. Roof treatment, oxidation removal, interior deep clean.</p>
               <ul class="service-features">
@@ -1142,13 +1218,10 @@
                 <li>Oxidation removal</li>
                 <li>Black streak removal</li>
               </ul>
-              <div class="service-price">
-                <span class="price-label">Starting at</span>
-                <span class="price-value">$599</span>
-              </div>
+              <span class="service-cta">Get Quote →</span>
             </a>
 
-            <a href="/boat-detailing.html" class="service-card">
+            <a href="/boat-detailing" class="service-card">
               <h3 class="service-name">⛵ Boat & Marine</h3>
               <p class="service-description">Hull cleaning, gel coat restoration, teak cleaning. We come to your marina or storage.</p>
               <ul class="service-features">
@@ -1156,13 +1229,10 @@
                 <li>Teak cleaning</li>
                 <li>Canvas protection</li>
               </ul>
-              <div class="service-price">
-                <span class="price-label">Starting at</span>
-                <span class="price-value">$399</span>
-              </div>
+              <span class="service-cta">Learn More →</span>
             </a>
 
-            <a href="/aircraft-detailing.html" class="service-card">
+            <a href="/aircraft-detailing" class="service-card">
               <h3 class="service-name">✈️ Aircraft Detailing</h3>
               <p class="service-description">Specialized aircraft cleaning and protection. Brightwork polishing, interior detail.</p>
               <ul class="service-features">
@@ -1170,13 +1240,10 @@
                 <li>Brightwork polishing</li>
                 <li>Leather conditioning</li>
               </ul>
-              <div class="service-price">
-                <span class="price-label">Call for</span>
-                <span class="price-value">Quote</span>
-              </div>
+              <span class="service-cta">Contact Us →</span>
             </a>
 
-            <a href="/motorcycle-detailing.html" class="service-card">
+            <a href="/motorcycle-detailing" class="service-card">
               <h3 class="service-name">🏍️ Motorcycle</h3>
               <p class="service-description">Complete motorcycle detailing. Chrome polishing, leather care, engine detail.</p>
               <ul class="service-features">
@@ -1184,13 +1251,10 @@
                 <li>Chain cleaning</li>
                 <li>Leather treatment</li>
               </ul>
-              <div class="service-price">
-                <span class="price-label">Starting at</span>
-                <span class="price-value">$149</span>
-              </div>
+              <span class="service-cta">View Services →</span>
             </a>
 
-            <a href="/atv-detailing.html" class="service-card">
+            <a href="/atv-detailing" class="service-card">
               <h3 class="service-name">🏜️ ATV & UTV</h3>
               <p class="service-description">Remove mud, dust, and grime. Protect plastics and prevent fading.</p>
               <ul class="service-features">
@@ -1198,13 +1262,10 @@
                 <li>Plastic restoration</li>
                 <li>Undercarriage clean</li>
               </ul>
-              <div class="service-price">
-                <span class="price-label">Starting at</span>
-                <span class="price-value">$129</span>
-              </div>
+              <span class="service-cta">Book Service →</span>
             </a>
 
-            <a href="/fleet-services.html" class="service-card">
+            <a href="/fleet-services" class="service-card">
               <h3 class="service-name">🚚 Fleet Services</h3>
               <p class="service-description">Commercial fleet maintenance programs. Volume discounts available.</p>
               <ul class="service-features">
@@ -1212,10 +1273,7 @@
                 <li>Volume discounts</li>
                 <li>Flexible scheduling</li>
               </ul>
-              <div class="service-price">
-                <span class="price-label">Call for</span>
-                <span class="price-value">Quote</span>
-              </div>
+              <span class="service-cta">Get Quote →</span>
             </a>
           </div>
         </div>
@@ -1235,40 +1293,40 @@
           </div>
           
           <div class="services-grid">
-            <a href="/odor-removal-ozone.html" class="service-card">
+            <a href="/odor-removal" class="service-card">
               <h3 class="service-name">Odor Removal (Ozone)</h3>
               <p class="service-description">Eliminate smoke, pet, and other odors at the molecular level.</p>
-              <div class="service-price">
-                <span class="price-label">Starting at</span>
-                <span class="price-value">$75</span>
-              </div>
+              <span class="service-cta">Learn More →</span>
             </a>
 
-            <a href="/interior-ceramic-protection.html" class="service-card">
+            <a href="/interior-protection" class="service-card">
               <h3 class="service-name">Interior Ceramic Protection</h3>
               <p class="service-description">Protect leather, fabric, and surfaces from stains and UV damage.</p>
-              <div class="service-price">
-                <span class="price-label">Starting at</span>
-                <span class="price-value">$299</span>
-              </div>
+              <span class="service-cta">View Options →</span>
             </a>
 
-            <a href="/paint-touchup.html" class="service-card">
+            <a href="/paint-touchup" class="service-card">
               <h3 class="service-name">Paint Touch-Up</h3>
               <p class="service-description">Professional touch-up for chips and scratches. Color matched.</p>
-              <div class="service-price">
-                <span class="price-label">Starting at</span>
-                <span class="price-value">$149</span>
-              </div>
+              <span class="service-cta">Get Quote →</span>
             </a>
 
-            <a href="/paintless-dent-repair.html" class="service-card">
+            <a href="/dent-repair" class="service-card">
               <h3 class="service-name">Paintless Dent Repair</h3>
               <p class="service-description">Remove dents without repainting. Perfect for hail damage.</p>
-              <div class="service-price">
-                <span class="price-label">Call for</span>
-                <span class="price-value">Quote</span>
-              </div>
+              <span class="service-cta">Contact Us →</span>
+            </a>
+
+            <a href="/pet-hair-removal" class="service-card">
+              <h3 class="service-name">Pet Hair Removal</h3>
+              <p class="service-description">Complete pet hair extraction using specialized tools and techniques.</p>
+              <span class="service-cta">Book Now →</span>
+            </a>
+
+            <a href="/fabric-protection" class="service-card">
+              <h3 class="service-name">Fabric Protection</h3>
+              <p class="service-description">Stain-resistant coating for carpets and upholstery.</p>
+              <span class="service-cta">Learn More →</span>
             </a>
           </div>
         </div>
@@ -1285,40 +1343,40 @@
           </div>
           
           <div class="areas-grid">
-            <a href="/gilbert.html" class="area-link">
+            <a href="/locations/gilbert" class="area-link">
               <span>📍</span> Gilbert
             </a>
-            <a href="/mesa.html" class="area-link">
+            <a href="/locations/mesa" class="area-link">
               <span>📍</span> Mesa
             </a>
-            <a href="/chandler.html" class="area-link">
+            <a href="/locations/chandler" class="area-link">
               <span>📍</span> Chandler
             </a>
-            <a href="/queen-creek.html" class="area-link">
+            <a href="/locations/queen-creek" class="area-link">
               <span>📍</span> Queen Creek
             </a>
-            <a href="/san-tan-valley.html" class="area-link">
+            <a href="/locations/san-tan-valley" class="area-link">
               <span>📍</span> San Tan Valley
             </a>
-            <a href="/scottsdale.html" class="area-link">
+            <a href="/locations/scottsdale" class="area-link">
               <span>📍</span> Scottsdale
             </a>
-            <a href="/tempe.html" class="area-link">
+            <a href="/locations/tempe" class="area-link">
               <span>📍</span> Tempe
             </a>
-            <a href="/phoenix.html" class="area-link">
+            <a href="/locations/phoenix" class="area-link">
               <span>📍</span> Phoenix
             </a>
-            <a href="/apache-junction.html" class="area-link">
+            <a href="/locations/apache-junction" class="area-link">
               <span>📍</span> Apache Junction
             </a>
-            <a href="/coolidge.html" class="area-link">
+            <a href="/locations/coolidge" class="area-link">
               <span>📍</span> Coolidge
             </a>
-            <a href="/florence.html" class="area-link">
+            <a href="/locations/florence" class="area-link">
               <span>📍</span> Florence
             </a>
-            <a href="/gold-canyon.html" class="area-link">
+            <a href="/locations/gold-canyon" class="area-link">
               <span>📍</span> Gold Canyon
             </a>
           </div>
@@ -1337,10 +1395,10 @@
             Book Online Now
             <span>→</span>
           </a>
-          <a href="tel:4805288227" class="hero-cta secondary">
+          <button class="hero-cta secondary" onclick="window.location.href='tel:4805288227'">
             <span>📞</span>
             Call (480) 528-8227
-          </a>
+          </button>
         </div>
 
         <p style="margin-top: 20px; font-size: 14px; opacity: 0.9;">
@@ -1357,28 +1415,28 @@
       <div class="footer-grid">
         <div class="footer-column">
           <h3>Popular Services</h3>
-          <a href="/ceramic-coating.html">Ceramic Coating</a>
-          <a href="/paint-protection-film.html">Paint Protection Film</a>
-          <a href="/window-tinting.html">Window Tinting</a>
-          <a href="/mobile-detailing.html">Mobile Detailing</a>
-          <a href="/paint-correction.html">Paint Correction</a>
+          <a href="/ceramic-coating">Ceramic Coating</a>
+          <a href="/paint-protection-film">Paint Protection Film</a>
+          <a href="/window-tinting">Window Tinting</a>
+          <a href="/mobile-detailing">Mobile Detailing</a>
+          <a href="/paint-correction">Paint Correction</a>
         </div>
         <div class="footer-column">
           <h3>Service Areas</h3>
-          <a href="/gilbert.html">Gilbert</a>
-          <a href="/mesa.html">Mesa</a>
-          <a href="/chandler.html">Chandler</a>
-          <a href="/queen-creek.html">Queen Creek</a>
-          <a href="/scottsdale.html">Scottsdale</a>
-          <a href="/phoenix.html">Phoenix</a>
+          <a href="/locations/gilbert">Gilbert</a>
+          <a href="/locations/mesa">Mesa</a>
+          <a href="/locations/chandler">Chandler</a>
+          <a href="/locations/queen-creek">Queen Creek</a>
+          <a href="/locations/scottsdale">Scottsdale</a>
+          <a href="/locations/phoenix">Phoenix</a>
         </div>
         <div class="footer-column">
           <h3>Specialty Services</h3>
-          <a href="/rv-detailing.html">RV Detailing</a>
-          <a href="/boat-detailing.html">Boat Detailing</a>
-          <a href="/aircraft-detailing.html">Aircraft Detailing</a>
-          <a href="/fleet-services.html">Fleet Services</a>
-          <a href="/motorcycle-detailing.html">Motorcycle Detailing</a>
+          <a href="/rv-detailing">RV Detailing</a>
+          <a href="/boat-detailing">Boat Detailing</a>
+          <a href="/aircraft-detailing">Aircraft Detailing</a>
+          <a href="/fleet-services">Fleet Services</a>
+          <a href="/motorcycle-detailing">Motorcycle Detailing</a>
         </div>
         <div class="footer-column">
           <h3>Contact</h3>
@@ -1399,6 +1457,22 @@
   </footer>
 
   <script>
+    // Mobile Menu Toggle
+    function toggleMobileMenu() {
+      const mobileNav = document.getElementById('mobile-nav');
+      const menuBtn = document.querySelector('.menu-btn');
+      
+      if (mobileNav.classList.contains('active')) {
+        mobileNav.classList.remove('active');
+        menuBtn.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      } else {
+        mobileNav.classList.add('active');
+        menuBtn.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
     // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
