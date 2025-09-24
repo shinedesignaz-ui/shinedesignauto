@@ -984,77 +984,29 @@
               <p>Fill out the form below and we'll get back to you within 30 minutes during business hours</p>
             </div>
 
-            <form id="contactForm" action="/submit-contact" method="POST">
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="firstName" class="form-label">First Name *</label>
-                  <input type="text" id="firstName" name="firstName" class="form-input" required>
-                </div>
-                <div class="form-group">
-                  <label for="lastName" class="form-label">Last Name *</label>
-                  <input type="text" id="lastName" name="lastName" class="form-input" required>
-                </div>
-              </div>
+            <!-- Go High Level Form Embed -->
+            <iframe
+              src="https://api.leadconnectorhq.com/widget/form/G7MfCGIjHgikzqLQknWw"
+              style="width:100%;height:779px;border:none;border-radius:4px"
+              id="inline-G7MfCGIjHgikzqLQknWw" 
+              data-layout="{'id':'INLINE'}"
+              data-trigger-type="alwaysShow"
+              data-trigger-value=""
+              data-activation-type="alwaysActivated"
+              data-activation-value=""
+              data-deactivation-type="neverDeactivate"
+              data-deactivation-value=""
+              data-form-name="Marketing Form - Claim Offer"
+              data-height="779"
+              data-layout-iframe-id="inline-G7MfCGIjHgikzqLQknWw"
+              data-form-id="G7MfCGIjHgikzqLQknWw"
+              title="Marketing Form - Claim Offer"
+              loading="lazy">
+            </iframe>
 
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="email" class="form-label">Email *</label>
-                  <input type="email" id="email" name="email" class="form-input" required>
-                </div>
-                <div class="form-group">
-                  <label for="phone" class="form-label">Phone *</label>
-                  <input type="tel" id="phone" name="phone" class="form-input" required>
-                </div>
-              </div>
-
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="vehicleMake" class="form-label">Vehicle Make</label>
-                  <input type="text" id="vehicleMake" name="vehicleMake" class="form-input" placeholder="e.g., Toyota">
-                </div>
-                <div class="form-group">
-                  <label for="vehicleModel" class="form-label">Vehicle Model</label>
-                  <input type="text" id="vehicleModel" name="vehicleModel" class="form-input" placeholder="e.g., Camry">
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label for="service" class="form-label">Service Needed *</label>
-                <select id="service" name="service" class="form-select" required>
-                  <option value="">Select a service...</option>
-                  <option value="detailing">Auto Detailing</option>
-                  <option value="ceramic">Ceramic Coating</option>
-                  <option value="ppf">Paint Protection Film</option>
-                  <option value="tint">Window Tinting</option>
-                  <option value="correction">Paint Correction</option>
-                  <option value="multiple">Multiple Services</option>
-                  <option value="question">General Question</option>
-                </select>
-              </div>
-
-              <div class="form-group">
-                <label for="location" class="form-label">Your Location</label>
-                <input type="text" id="location" name="location" class="form-input" placeholder="City or ZIP code">
-              </div>
-
-              <div class="form-group">
-                <label for="message" class="form-label">Message *</label>
-                <textarea id="message" name="message" class="form-textarea" required placeholder="Tell us about your vehicle's needs..."></textarea>
-              </div>
-
-              <div class="checkbox-group">
-                <input type="checkbox" id="marketing" name="marketing" class="checkbox-input">
-                <label for="marketing" class="checkbox-label">
-                  I'd like to receive special offers and detailing tips via email
-                </label>
-              </div>
-
-              <button type="submit" class="form-submit">Send Message</button>
-
-              <p style="margin-top: 16px; text-align: center; font-size: 14px; color: var(--muted);">
-                Or call us directly at <a href="tel:4805288227" style="color: var(--brand); font-weight: 600;">(480) 528-8227</a>
-              </p>
-            </form>
+            <p style="margin-top: 16px; text-align: center; font-size: 14px; color: var(--muted);">
+              Or call us directly at <a href="tel:4805288227" style="color: var(--brand); font-weight: 600;">(480) 528-8227</a>
+            </p>
           </div>
 
           <!-- Contact Info Sidebar -->
@@ -1289,16 +1241,82 @@
       }
     }
 
-    // Form submission handler
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
+    // Go High Level Form Submission
+    document.getElementById('contactForm').addEventListener('submit', async function(e) {
       e.preventDefault();
       
-      // Here you would normally handle form submission
-      // For now, just show an alert
-      alert('Thank you for your message! We\'ll get back to you within 30 minutes during business hours.');
+      // Get form data
+      const formData = new FormData(this);
       
-      // Reset form
-      this.reset();
+      // Format data for Go High Level
+      const ghlData = {
+        first_name: formData.get('firstName'),
+        last_name: formData.get('lastName'),
+        email: formData.get('email'),
+        phone: formData.get('phone'),
+        // Custom fields - adjust field names to match your GHL setup
+        customField: {
+          vehicle_make: formData.get('vehicleMake'),
+          vehicle_model: formData.get('vehicleModel'),
+          service_type: formData.get('service'),
+          location: formData.get('location'),
+          message: formData.get('message')
+        },
+        tags: [formData.get('service'), 'website-contact'],
+        source: 'Website Contact Form'
+      };
+
+      // Show loading state
+      const submitBtn = this.querySelector('.form-submit');
+      const originalText = submitBtn.textContent;
+      submitBtn.textContent = 'Sending...';
+      submitBtn.disabled = true;
+
+      try {
+        // REPLACE WITH YOUR GO HIGH LEVEL WEBHOOK URL
+        // You'll get this from GHL: Settings > Webhooks > Incoming Webhook
+        const GHL_WEBHOOK_URL = 'https://services.leadconnectorhq.com/hooks/YOUR_WEBHOOK_ID/webchat-widget/YOUR_LOCATION_ID';
+        
+        const response = await fetch(GHL_WEBHOOK_URL, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(ghlData)
+        });
+
+        if (response.ok) {
+          // Success message
+          alert('Thank you! We\'ll contact you within 30 minutes during business hours.');
+          this.reset();
+          
+          // Optional: Redirect to thank you page
+          // window.location.href = '/thank-you';
+          
+          // Optional: Track conversion in Google Analytics/GTM
+          if (typeof gtag !== 'undefined') {
+            gtag('event', 'form_submit', {
+              'event_category': 'Contact',
+              'event_label': 'Contact Form'
+            });
+          }
+        } else {
+          throw new Error('Failed to submit');
+        }
+      } catch (error) {
+        console.error('Form submission error:', error);
+        
+        // Fallback - try to submit via regular form POST
+        alert('There was an error submitting the form. Please call us at (480) 528-8227');
+        
+        // Optional: Send to backup endpoint
+        // this.action = '/backup-form-handler';
+        // this.submit();
+      } finally {
+        // Reset button
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+      }
     });
 
     // Format phone number as user types
