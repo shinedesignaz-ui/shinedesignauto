@@ -1,4 +1,3 @@
-
 // /action-buttons.js — Shine Design Mobile Detailing
 // Modern floating action buttons + mobile bar + service selector modal
 // Single-file, drop-in script (no external dependencies)
@@ -30,7 +29,10 @@
       }
 
       @media(max-width:768px){
-        body{padding-bottom:calc(var(--ab-bar-h) + env(safe-area-inset-bottom,0px))!important}
+        /* Only reserve space when our footer is mounted & visible */
+        body.ab-foot-visible{
+          padding-bottom:calc(var(--ab-bar-h) + env(safe-area-inset-bottom,0px))!important
+        }
         .mobile-sticky-footer{
           position:fixed;
           left:${AB.footerMode==='floating'?'10px':'0'};
@@ -96,6 +98,10 @@
         .floating-btn:hover .tooltip{opacity:1}
       }
 
+      /* Hide footer & remove padding when keyboard is open */
+      .ab-hide-footer .mobile-sticky-footer{ display:none !important; }
+      .ab-hide-footer.ab-foot-visible{ padding-bottom:0 !important; }
+
       /* Modal base */
       .calculator-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);z-index:2000;animation:fadeIn .3s ease}
       @keyframes fadeIn{from{opacity:0}to{opacity:1}}
@@ -156,9 +162,10 @@
           <a href="tel:${AB.phone}" class="footer-item" data-gtm-event="call_click" aria-label="Call">
             ${iconPhone()}<span>Call</span>
           </a>
-          <a href="sms:${AB.phone}" class="footer-item" data-gtm-event="sms_click" aria-label="Text Us">
+          <!-- Use a button so we can build a clean, encoded SMS -->
+          <button type="button" class="footer-item" id="ab-text-btn" data-gtm-event="sms_click" aria-label="Text Us">
             ${iconChat()}<span>Text</span>
-          </a>
+          </button>
         </div>
       </div>
     `;
@@ -166,9 +173,9 @@
     // ------- UI: Desktop buttons -------
     const desktopButtons = `
       <div class="desktop-floating-buttons" aria-hidden="false">
-        <a href="sms:${AB.phone}" class="floating-btn" data-gtm-event="sms_click" aria-label="Text Us">
+        <button type="button" class="floating-btn" id="ab-text-btn-desktop" data-gtm-event="sms_click" aria-label="Text Us">
           <span class="tooltip">Text Us</span>${iconChat(28)}
-        </a>
+        </button>
         <a href="tel:${AB.phone}" class="floating-btn" data-gtm-event="call_click" aria-label="Call">
           <span class="tooltip">Call Now</span>${iconPhone(28)}
         </a>
@@ -307,6 +314,20 @@
     document.body.insertAdjacentHTML('beforeend', mobileFooter);
     document.body.insertAdjacentHTML('beforeend', desktopButtons);
     document.body.insertAdjacentHTML('beforeend', calculatorModal);
+    // Mark footer present to enable padding
+    document.body.classList.add('ab-foot-visible');
+
+    // Hide footer when keyboard/pickers open (prevents cutoff)
+    if (window.visualViewport){
+      const onViewport = () => {
+        const keyboardOpen = (window.innerHeight - window.visualViewport.height) > 150;
+        document.body.classList.toggle('ab-hide-footer', keyboardOpen);
+      };
+      window.visualViewport.addEventListener('resize', onViewport);
+      window.visualViewport.addEventListener('scroll', onViewport);
+      window.addEventListener('focusin', onViewport);
+      window.addEventListener('focusout', onViewport);
+    }
 
     // ------- GTM events -------
     document.addEventListener('click', (e) => {
@@ -410,6 +431,17 @@
       el.classList.toggle('hidden', !show);
     }
 
+    // ------- SMS helpers (clean iOS/Android prefill) -------
+    function encodeSMSBody(str){
+      return encodeURIComponent(String(str || '').replace(/\r\n?/g, '\n'));
+    }
+    function buildSMSHref(number, bodyText){
+      const ua = navigator.userAgent || '';
+      const isiOS = /iPad|iPhone|iPod/.test(ua) && !window.MSStream;
+      const sep = isiOS ? '&' : '?'; // iOS uses &body=, Android uses ?body=
+      return `sms:${number}${bodyText ? `${sep}body=${encodeSMSBody(bodyText)}` : ''}`;
+    }
+
     // ------- SMS compose -------
     window.sendServiceRequest = function(){
       const vehicleTypeEl = document.getElementById('vehicleType');
@@ -449,12 +481,10 @@
         'Please send me pricing for these services.',
         '',
         'Thank you!'
-      ].join('\\n');
+      ].join('\n');
 
-      const encoded = encodeURIComponent(smsBody);
-      const isiOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
-      const smsHref = isiOS ? `sms:${AB.phone}&body=${encoded}` : `sms:${AB.phone}?body=${encoded}`;
-      location.href = smsHref;
+      // Open SMS app with a clean, encoded message
+      location.href = buildSMSHref(AB.phone, smsBody);
 
       // Desktop fallback
       setTimeout(()=>{
@@ -467,6 +497,17 @@
         }
       }, 500);
     };
+
+    // Wire “Text” buttons (mobile + desktop) to use the same SMS flow
+    ['ab-text-btn','ab-text-btn-desktop'].forEach(id=>{
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.addEventListener('click', ()=>{
+        const modalOpen = document.getElementById('calculatorModal')?.classList.contains('active');
+        if (!modalOpen) { window.openCalculator(); return; }
+        window.sendServiceRequest();
+      });
+    });
 
     // Checkbox visuals
     document.querySelectorAll('.service-option input[type="checkbox"]').forEach(cb=>{
