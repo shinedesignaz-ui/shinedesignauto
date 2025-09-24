@@ -66,11 +66,15 @@
       padding: 0;
     }
     
+    html, body { overflow-x: hidden; }
+    img, video { max-width: 100%; height: auto; display: block; }
+    
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
       color: var(--text);
       background: var(--bg);
       line-height: 1.6;
+      overscroll-behavior-x: none;
     }
 
     /* Focus styles */
@@ -80,7 +84,7 @@
       border-radius: 4px;
     }
 
-    /* ===== Header Styles (Same as Homepage) ===== */
+    /* ===== Header Styles (Consistent with Homepage) ===== */
     .main-header {
       position: sticky;
       top: 0;
@@ -311,12 +315,85 @@
       color: var(--brand);
     }
 
+    .menu-btn svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    /* Mobile Navigation */
+    #mobile-nav {
+      position: fixed;
+      top: var(--header-h);
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: white;
+      z-index: 999;
+      overflow-y: auto;
+      padding: 20px;
+      transform: translateX(100%);
+      transition: transform .3s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: -4px 0 24px rgba(0, 0, 0, .1);
+    }
+
+    #mobile-nav.active {
+      transform: translateX(0);
+    }
+
+    .mobile-nav-content a {
+      display: block;
+      padding: 14px 0;
+      color: var(--text);
+      font-weight: 600;
+      font-size: 16px;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(0, 0, 0, .06);
+      transition: all .2s;
+    }
+
+    .mobile-nav-content a:hover {
+      color: var(--brand);
+      padding-left: 12px;
+    }
+
+    .mobile-services {
+      display: grid;
+      gap: 12px;
+      margin: 20px 0;
+      padding: 20px 0;
+      border-top: 1px solid rgba(0, 0, 0, .08);
+      border-bottom: 1px solid rgba(0, 0, 0, .08);
+    }
+
+    .mobile-service-btn {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px;
+      background: rgba(14, 165, 233, .04);
+      border: 1px solid rgba(14, 165, 233, .1);
+      border-radius: 12px;
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 600;
+      transition: all .2s;
+    }
+
+    .mobile-service-btn:hover {
+      background: rgba(14, 165, 233, .1);
+      border-color: var(--brand);
+      transform: translateX(4px);
+    }
+
     /* Responsive */
     @media (min-width: 960px) {
       .nav-links {
         display: flex;
       }
       .menu-btn {
+        display: none;
+      }
+      #mobile-nav {
         display: none;
       }
     }
@@ -797,7 +874,7 @@
 </head>
 <body>
 
-  <!-- HEADER (Same as Homepage) -->
+  <!-- HEADER (Consistent with Homepage) -->
   <header class="main-header">
     <div class="header-container">
       <div class="header-content">
@@ -832,7 +909,13 @@
 
           <!-- Other Nav Items -->
           <a href="/gallery">Gallery</a>
-          <a href="/pricing">Pricing</a>
+          <a href="#pricing">Pricing</a>
+          
+          <!-- Locations Dropdown -->
+          <div class="nav-dropdown">
+            <a href="/locations/">Locations <span class="arrow">▼</span></a>
+          </div>
+
           <a href="/about">About</a>
           <a href="/contact" class="active">Contact</a>
 
@@ -850,7 +933,7 @@
         </nav>
 
         <!-- Mobile Menu Toggle -->
-        <button class="menu-btn" aria-label="Menu">
+        <button class="menu-btn" aria-label="Menu" onclick="toggleMobileMenu()">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M3 12h18M3 6h18M3 18h18"/>
           </svg>
@@ -858,6 +941,28 @@
       </div>
     </div>
   </header>
+
+  <!-- Mobile Navigation -->
+  <nav id="mobile-nav">
+    <div class="mobile-nav-content">
+      <div class="mobile-services">
+        <a href="/ceramic-coating" class="mobile-service-btn">Ceramic Coating<span>→</span></a>
+        <a href="/paint-protection-film" class="mobile-service-btn">Paint Protection Film<span>→</span></a>
+        <a href="/window-tinting" class="mobile-service-btn">Window Tinting<span>→</span></a>
+        <a href="/auto-detailing" class="mobile-service-btn">Auto Detailing<span>→</span></a>
+      </div>
+      <a href="/services">All Services</a>
+      <a href="/gallery">Gallery</a>
+      <a href="#pricing">Pricing</a>
+      <a href="/locations">Locations</a>
+      <a href="/about">About Us</a>
+      <a href="/contact" class="active">Contact</a>
+      <div style="margin-top:24px; display:grid; gap:12px;">
+        <a href="tel:+14805288227" class="cta-primary" style="justify-content:center;">📞 Call (480) 528-8227</a>
+        <a href="https://booknow.shinedesignauto.com/" class="cta-primary" style="background:#25D366;justify-content:center;">Book Now</a>
+      </div>
+    </div>
+  </nav>
 
   <main>
     <!-- Page Hero -->
@@ -1144,7 +1249,7 @@
           <h3>Company</h3>
           <a href="/about">About Us</a>
           <a href="/gallery">Gallery</a>
-          <a href="/pricing">Pricing</a>
+          <a href="#pricing">Pricing</a>
           <a href="/contact">Contact</a>
           <a href="https://g.page/r/CU3j316NmdMlEBM/review">Leave a Review</a>
         </div>
@@ -1168,6 +1273,22 @@
 
   <!-- Scripts -->
   <script>
+    // Mobile Menu Toggle
+    function toggleMobileMenu() {
+      const mobileNav = document.getElementById('mobile-nav');
+      const menuBtn = document.querySelector('.menu-btn');
+      
+      if (mobileNav.classList.contains('active')) {
+        mobileNav.classList.remove('active');
+        menuBtn.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      } else {
+        mobileNav.classList.add('active');
+        menuBtn.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
     // Form submission handler
     document.getElementById('contactForm').addEventListener('submit', function(e) {
       e.preventDefault();
@@ -1202,6 +1323,9 @@
       e.target.value = parts.join('-');
     });
   </script>
+
+  <!-- Load your action buttons script -->
+  <script src="/action-buttons.js" defer></script>
 
 </body>
 </html>
