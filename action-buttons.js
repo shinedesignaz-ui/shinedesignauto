@@ -1,5 +1,5 @@
 // /action-buttons.js — Shine Design Mobile Detailing
-// Modern floating action buttons + mobile bar + service selector modal
+// Vehicle-first flow, grouped options, live summary, safe gap above date/time
 // Single-file, drop-in script (no external dependencies)
 (function () {
   'use strict';
@@ -40,25 +40,23 @@
           bottom:${AB.footerMode==='floating'
             ? 'calc(10px + env(safe-area-inset-bottom,0px))'
             : 'max(0px, env(safe-area-inset-bottom,0px))'};
-          background:rgba(255,255,255,0.98);
+          background:#fff;
           backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
           box-shadow:${AB.footerMode==='floating'
             ? '0 8px 32px rgba(0,0,0,.12),0 2px 8px rgba(0,0,0,.04)'
             : '0 -2px 16px rgba(0,0,0,.08)'};
-          z-index:1100;display:block;border:1px solid rgba(226,232,240,.5);
+          z-index:1100;display:block;border-top:1px solid #e2e8f0;
           border-radius:${AB.footerMode==='floating'?'20px':'0'};
           animation:slideUpSmooth .4s cubic-bezier(.34,1.56,.64,1);
         }
         @keyframes slideUpSmooth { from{transform:translateY(120%);opacity:0} to{transform:translateY(0);opacity:1} }
         .footer-grid{display:flex;align-items:center;justify-content:center;gap:8px;padding:12px 16px;max-width:420px;margin:0 auto}
         .footer-item{
-          position:relative;background:#fff;
-          padding:10px 8px;text-align:center;cursor:pointer;transition:all .25s cubic-bezier(.4,0,.2,1);
-          text-decoration:none;color:#0f172a;border:1.5px solid #e2e8f0;
-          font-family: system-ui,-apple-system,Segoe UI,Roboto,Inter,Helvetica,Arial,sans-serif;
-          font-size:11px;border-radius:14px;-webkit-tap-highlight-color:transparent;overflow:hidden;flex:1;min-width:0;box-shadow:0 1px 6px rgba(0,0,0,.05)
+          position:relative;background:#fff;border:1.5px solid #e2e8f0;
+          padding:10px 8px;text-align:center;cursor:pointer;transition:all .2s ease;
+          text-decoration:none;color:#0f172a;border-radius:14px;-webkit-tap-highlight-color:transparent;overflow:hidden;flex:1;min-width:0;
         }
-        .footer-item.primary{background:linear-gradient(135deg,#0ea5e9,#0284c7);color:#fff;border-color:rgba(14,165,233,.3);box-shadow:0 6px 18px rgba(14,165,233,.28)}
+        .footer-item.primary{background:linear-gradient(135deg,#0ea5e9,#0284c7);color:#fff;border-color:rgba(14,165,233,.3)}
         .footer-item:active{transform:scale(.97)}
         .footer-item svg{width:22px;height:22px;margin-bottom:4px}
         .footer-item.primary svg{color:#fff}
@@ -69,22 +67,18 @@
       @media(min-width:769px){
         .mobile-sticky-footer{display:none!important}
         .desktop-floating-buttons{
-          position:fixed;bottom:24px;right:20px;z-index:1100;display:flex;flex-direction:column-reverse;gap:14px;animation:cascadeIn .6s cubic-bezier(.34,1.56,.64,1)
+          position:fixed;bottom:24px;right:20px;z-index:1100;display:flex;flex-direction:column-reverse;gap:14px;
         }
-        @keyframes cascadeIn {from{opacity:0;transform:translateY(40px) scale(.8)} to{opacity:1;transform:translateY(0) scale(1)}}
         .floating-btn{
-          width:64px;height:64px;border-radius:20px;background:rgba(255,255,255,.95);
-          backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
-          box-shadow:0 8px 32px rgba(0,0,0,.12),inset 0 1px 0 rgba(255,255,255,.8);
-          display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .4s cubic-bezier(.4,0,.2,1);text-decoration:none;border:1px solid rgba(226,232,240,.3);position:relative;overflow:hidden;animation:floatButton 3s ease-in-out infinite
+          width:64px;height:64px;border-radius:20px;background:#fff;border:1px solid #e2e8f0;
+          display:flex;align-items:center;justify-content:center;text-decoration:none;transition:.25s;
+          box-shadow:0 8px 24px rgba(0,0,0,.12)
         }
-        .floating-btn:nth-child(1){--index:0}.floating-btn:nth-child(2){--index:1}.floating-btn:nth-child(3){--index:2}.floating-btn:nth-child(4){--index:3}
-        @keyframes floatButton {0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
-        .floating-btn:hover{transform:translateY(-4px) scale(1.05)}
+        .floating-btn:hover{transform:translateY(-4px) scale(1.03)}
         .floating-btn svg{width:28px;height:28px;color:#0ea5e9}
-        .floating-btn.primary{width:76px;height:76px;background:linear-gradient(135deg,#0ea5e9,#0284c7);border:2px solid rgba(255,255,255,.3)}
+        .floating-btn.primary{width:76px;height:76px;background:linear-gradient(135deg,#0ea5e9,#0284c7);border:2px solid rgba(255,255,255,.4)}
         .floating-btn.primary svg{color:#fff;width:34px;height:34px}
-        .tooltip{position:absolute;right:80px;background:rgba(15,23,42,.95);color:#fff;padding:8px 12px;border-radius:8px;font-size:13px;font-weight:500;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .3s ease;backdrop-filter:blur(12px)}
+        .tooltip{position:absolute;right:80px;background:rgba(15,23,42,.95);color:#fff;padding:8px 12px;border-radius:8px;font-size:13px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .2s}
         .floating-btn:hover .tooltip{opacity:1}
       }
 
@@ -97,40 +91,47 @@
       @keyframes fadeIn{from{opacity:0}to{opacity:1}}
       .calculator-modal.active{display:flex;align-items:center;justify-content:center;padding:20px}
       .calculator-content{
-        background:#fff;border-radius:24px;padding:28px;width:100%;max-width:520px;max-height:90vh;overflow-y:auto;
-        box-shadow:0 20px 60px rgba(0,0,0,.3);animation:slideUpCalc .4s cubic-bezier(.34,1.56,.64,1);
-        font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Helvetica,Arial,sans-serif;
-        /* Keep focused inputs clear of browser chrome/keyboard */
-        scroll-padding-bottom: calc(160px + env(safe-area-inset-bottom,0px));
+        background:#fff;border-radius:24px;padding:24px 24px 28px;width:100%;max-width:560px;max-height:90vh;overflow-y:auto;
+        box-shadow:0 20px 60px rgba(0,0,0,.3);font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Helvetica,Arial,sans-serif;
+        scroll-padding-bottom: calc(220px + env(safe-area-inset-bottom,0px));
       }
-      /* Extra padding at the bottom when keyboard is open */
-      .kb-open .calculator-content{ padding-bottom: calc(180px + env(safe-area-inset-bottom,0px)); }
+      .kb-open .calculator-content{ padding-bottom: calc(240px + env(safe-area-inset-bottom,0px)); }
 
-      @keyframes slideUpCalc{from{opacity:0;transform:translateY(40px) scale(.95)}to{opacity:1;transform:translateY(0) scale(1)}}
-      .calculator-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px;padding-bottom:14px;border-bottom:2px solid #f1f5f9}
+      .calculator-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;padding-bottom:12px;border-bottom:2px solid #f1f5f9}
       .calculator-header h3{color:#0f172a;font-size:22px;margin:0;font-weight:800}
-      .close-btn{background:#f1f5f9;border:none;font-size:22px;color:#64748b;cursor:pointer;width:40px;height:40px;border-radius:12px;transition:all .2s ease;display:flex;align-items:center;justify-content:center}
+
+      .close-btn{background:#f1f5f9;border:none;font-size:22px;color:#64748b;cursor:pointer;width:40px;height:40px;border-radius:12px;display:flex;align-items:center;justify-content:center}
       .close-btn:hover{background:#e2e8f0;color:#ef4444}
 
-      /* Streamlined option cards */
-      .section-title{margin:18px 0 8px;color:#0f172a;font-size:13px;font-weight:900;text-transform:uppercase;letter-spacing:.8px}
-      .service-option{padding:0;margin-bottom:8px;border:1.5px solid #e2e8f0;border-radius:12px;cursor:pointer;transition:all .18s cubic-bezier(.4,0,.2,1);background:#fff;position:relative;overflow:hidden}
-      .service-option:hover{border-color:#0ea5e9}
-      .service-option.selected{border-color:#0ea5e9;box-shadow:0 4px 14px rgba(14,165,233,.18)}
-      .service-option label{display:flex;align-items:center;gap:10px;cursor:pointer;font-size:15px;color:#0f172a;margin:0;padding:14px;position:relative;font-weight:700}
-      .service-option small{font-weight:600;color:#64748b}
-      .service-option input[type="checkbox"]{margin-right:4px;width:20px;height:20px;cursor:pointer;accent-color:#0ea5e9;border-radius:6px}
+      /* Group titles */
+      .section-title{margin:18px 0 10px;color:#0f172a;font-size:13px;font-weight:900;text-transform:uppercase;letter-spacing:.8px}
 
-      .request-section{margin-top:18px;padding:14px;background:linear-gradient(135deg,#0ea5e9,#0284c7);border-radius:16px;text-align:center;box-shadow:0 8px 24px rgba(14,165,233,.25);color:#fff;font-weight:800}
-      .cta-button{width:100%;padding:16px;background:linear-gradient(135deg,#0ea5e9,#0284c7);color:#fff;border:none;border-radius:999px;font-size:16px;font-weight:900;cursor:pointer;margin-top:14px;transition:all .25s cubic-bezier(.4,0,.2,1);box-shadow:0 8px 24px rgba(14,165,233,.3);letter-spacing:-.02em}
-      .cta-button:hover{background:linear-gradient(135deg,#0284c7,#0369a1)}
-      .sms-notice{font-size:13px;color:#64748b;text-align:center;margin-top:10px;display:flex;align-items:center;justify-content:center;gap:6px;padding:8px;background:#f8fafc;border-radius:8px}
+      /* Streamlined option pills */
+      .grid{display:grid;grid-template-columns:1fr;gap:8px}
+      @media(min-width:520px){ .grid{grid-template-columns:1fr 1fr} }
+      .option{
+        display:flex;align-items:center;gap:10px;background:#fff;border:1.5px solid #e2e8f0;border-radius:12px;padding:12px 14px;cursor:pointer;transition:.2s;
+      }
+      .option:hover{border-color:#0ea5e9}
+      .option input{width:20px;height:20px;accent-color:#0ea5e9}
+      .opt-label{font-weight:800;color:#0f172a}
+      .opt-sub{display:block;font-size:12px;color:#64748b;font-weight:600;line-height:1.2}
+      .option.selected{border-color:#0ea5e9;box-shadow:0 4px 16px rgba(14,165,233,.18)}
 
+      /* Summary card */
+      .summary-card{margin-top:16px;border:1.5px solid #e2e8f0;border-radius:14px;padding:12px 14px;background:#f8fafc}
+      .summary-card h5{margin:0 0 8px;font-size:14px;color:#0f172a}
+      .summary-list{margin:0;padding-left:18px}
+      .summary-list li{font-size:13px;color:#334155;margin:2px 0}
+
+      /* Inputs */
       .inline-fields{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
-      .input{width:100%;padding:12px 14px;border:1.5px solid #e2e8f0;border-radius:12px;font-size:14px;background:#fff;color:#0f172a;transition:.2s}
+      .input{width:100%;padding:12px 14px;border:1.5px solid #e2e8f0;border-radius:12px;font-size:14px;background:#fff;color:#0f172a}
       .input:focus{outline:none;border-color:#0ea5e9;box-shadow:0 0 0 3px rgba(14,165,233,.12)}
       .textarea{width:100%;padding:12px 14px;border:1.5px solid #e2e8f0;border-radius:12px;font-size:14px;min-height:64px;resize:vertical}
-      .textarea:focus{outline:none;border-color:#0ea5e9;box-shadow:0 0 0 3px rgba(14,165,233,.12)}
+
+      .cta-button{width:100%;padding:16px;background:linear-gradient(135deg,#0ea5e9,#0284c7);color:#fff;border:none;border-radius:999px;font-size:16px;font-weight:900;cursor:pointer;margin-top:14px}
+      .sms-notice{font-size:13px;color:#64748b;text-align:center;margin-top:10px;display:flex;align-items:center;justify-content:center;gap:6px}
 
       /* Wrap color UI */
       .swatches{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
@@ -139,6 +140,9 @@
       .wrap-picker{display:grid;grid-template-columns:1fr auto;gap:10px;margin-top:10px;align-items:center}
       .wrap-chip{display:inline-flex;align-items:center;gap:8px;padding:8px 10px;border-radius:10px;background:#f8fafc;border:1.5px solid #e2e8f0;font-size:12px;color:#0f172a;margin-top:8px}
       .wrap-chip .chip-dot{width:12px;height:12px;border-radius:50%;border:1px solid rgba(0,0,0,.2)}
+
+      /* Guaranteed bottom space BEFORE date/time */
+      .safe-gap{height:24px}
     `;
 
     const styleSheet = document.createElement('style');
@@ -158,7 +162,6 @@
           <a href="tel:${AB.phone}" class="footer-item" data-gtm-event="call_click" aria-label="Call">
             ${iconPhone()}<span>Call</span>
           </a>
-          <!-- Use a button so we can build a clean, encoded SMS -->
           <button type="button" class="footer-item" id="ab-text-btn" data-gtm-event="sms_click" aria-label="Text Us">
             ${iconChat()}<span>Text</span>
           </button>
@@ -184,17 +187,17 @@
       </div>
     `;
 
-    // ------- Modal (with expanded vehicle types) -------
+    // ------- Modal (vehicle-first + grouped options + summary) -------
     const calculatorModal = `
       <div class="calculator-modal" id="calculatorModal">
         <div class="calculator-content" role="dialog" aria-modal="true" aria-labelledby="calcTitle">
           <div class="calculator-header">
-            <h3 id="calcTitle">✨ Service Selection</h3>
+            <h3 id="calcTitle">✨ Build Your Package</h3>
             <button class="close-btn" onclick="window.closeCalculator()" aria-label="Close">✕</button>
           </div>
 
           <label style="display:block;margin-bottom:8px;color:#475569;font-size:14px;font-weight:700;">Vehicle Type:</label>
-          <select class="vehicle-select" id="vehicleType" aria-label="Vehicle type">
+          <select class="input" id="vehicleType" aria-label="Vehicle type">
             <option value="small">🚗 Small (Sedan/Coupe/Hatchback)</option>
             <option value="medium">🚙 Medium (Small SUV/Crossover)</option>
             <option value="large">🚚 Large (Full-Size Truck/Large Sedan)</option>
@@ -205,35 +208,63 @@
             <option value="aircraft">✈️ Aircraft</option>
           </select>
 
-          <div class="section-title">💰 Bundle Packages</div>
-          ${opt('bundle','Silver Package (Interior L1 + Exterior L1)')}
-          ${opt('bundle','Gold Package (Interior L2 + Exterior L2)')}
-          ${opt('bundle','Platinum Package (Interior L3 + Exterior L2)')}
+          <div class="section-title">💰 Packages (Best Value)</div>
+          <div class="grid">
+            ${opt('bundle','Silver Package','Interior L1 + Exterior L1')}
+            ${opt('bundle','Gold Package','Interior L2 + Exterior L2')}
+            ${opt('bundle','Platinum Package','Interior L3 + Exterior L2')}
+          </div>
 
           <div class="section-title">🧹 Interior</div>
-          ${opt('interior','Level 1: Refresh & Clean <small>vacuum, wipe-down, windows</small>')}
-          ${opt('interior','Level 2: Deep Clean & Restore <small>steam, plastics, leather care</small>')}
-          ${opt('interior','Level 3: Elite Transformation <small>full shampoo & extraction</small>')}
+          <div class="grid">
+            ${opt('interior','Vacuum & Wipe Down','all carpets, seats, mats, windows')}
+            ${opt('interior','Shampoo / Extraction','carpet & upholstery')}
+            ${opt('interior','Stain Treatment','spot stains & spills')}
+            ${opt('interior','Pet Hair Removal','moderate to heavy')}
+            ${opt('interior','Odor/Ozone Treatment','smoke, mildew, pet')}
+            ${opt('interior','Leather Clean & Condition','clean + moisturize')}
+          </div>
 
           <div class="section-title">✨ Exterior</div>
-          ${opt('exterior','Level 1: Maintenance Wash <small>foam wash, protection</small>')}
-          ${opt('exterior','Level 2: Deep Clean & Seal <small>iron/clay decon + 6-mo sealant</small>')}
+          <div class="grid">
+            ${opt('exterior','Maintenance Wash','foam, hand wash, basic protect')}
+            ${opt('exterior','Iron Decon','removes embedded iron')}
+            ${opt('exterior','Clay Bar','smooths surface')}
+            ${opt('exterior','One-Step Polish','gloss boost, light defects')}
+            ${opt('exterior','Two-Step Correction','cut + polish, deeper defects')}
+            ${opt(null,'Trim & Tire Restore','dress plastics & tires')}
+          </div>
 
           <div class="section-title">🛠 Paint Correction</div>
-          ${opt(null,'Enhancement Polish (≈70% correction)')}
-          ${opt(null,'Paint Correction (≈85% correction)')}
-          ${opt(null,'Show Car Finish (≈95% perfection)')}
+          <div class="grid">
+            ${opt(null,'Enhancement Polish (≈70%)','single-stage refine')}
+            ${opt(null,'Full Correction (≈85%)','multi-stage cut & polish')}
+            ${opt(null,'Show Car Finish (≈95%)','maximum clarity')}
+          </div>
 
           <div class="section-title">🛡️ Ceramic Coating</div>
-          ${opt(null,'Essential – 3 Year Protection')}
-          ${opt(null,'Premium – 5+ Year Protection')}
-          ${opt(null,'Elite – 7+ Year / Lifetime')}
+          <div class="grid">
+            ${opt(null,'Essential – 3 Year','great daily driver')}
+            ${opt(null,'Premium – 5+ Year','high gloss & durability')}
+            ${opt(null,'Elite – 7+ Year / Lifetime','ultimate protection')}
+          </div>
+
+          <div class="section-title">🛡️ PPF (Paint Protection Film)</div>
+          <div class="grid">
+            ${opt('ppf','Front Bumper','')}
+            ${opt('ppf','Partial Front','bumper + 18–24" hood/fenders + mirrors')}
+            ${opt('ppf','Full Front','bumper + full hood/fenders + mirrors')}
+            ${opt('ppf','High-Impact','rockers, A-pillars, door cups')}
+            ${opt('ppf','Full Body PPF','maximum coverage')}
+          </div>
 
           <div class="section-title">🎨 Window Tint</div>
-          ${opt('tint','Sedan – Ceramic Tint')}
-          ${opt('tint','Truck – Ceramic Tint')}
-          ${opt('tint','SUV – Ceramic Tint')}
-          <div id="tintOptions" class="inline-fields hidden" aria-label="Tint preferences">
+          <div class="grid">
+            ${opt('tint','Sedan – Ceramic Tint','')}
+            ${opt('tint','Truck – Ceramic Tint','')}
+            ${opt('tint','SUV – Ceramic Tint','')}
+          </div>
+          <div id="tintOptions" class="inline-fields hidden" aria-label="Tint preferences" style="margin-top:8px">
             <select id="tintPercent" class="input" aria-label="Tint percentage">
               <option value="">Tint % (optional)</option>
               <option>5%</option><option>15%</option><option>20%</option>
@@ -242,33 +273,19 @@
             <input id="tintNotes" class="input" placeholder="Windows (front/rear/windshield)" />
           </div>
 
-          <div class="section-title">🧭 Specialty</div>
-          ${opt('special','RV / Motorhome – Exterior Detail')}
-          ${opt('special','RV / Motorhome – Interior Detail')}
-          ${opt('special','Boat (≤20 ft) – Wash & Protect')}
-          ${opt('special','Boat (>20 ft) – Wash & Protect')}
-          ${opt('special','Aircraft – Exterior Wash & Dry')}
-          ${opt('special','Aircraft – Interior Detail')}
-
-          <div class="section-title">🛡️ PPF / Paint Protection Film</div>
-          ${opt('ppf','Front Bumper')}
-          ${opt('ppf','Partial Front (Bumper, 18–24" Hood/Fenders, Mirrors)')}
-          ${opt('ppf','Full Front (Bumper, Full Hood/Fenders, Mirrors)')}
-          ${opt('ppf','High-Impact (Rocker Panels, A-Pillars, Door Cups)')}
-          ${opt('ppf','Full Body PPF')}
-
-          <div class="section-title">🖼️ Vinyl Wraps</div>
-          ${opt('wrap','Full Vehicle Wrap')}
-          ${opt('wrap','Partial Wrap (Sides / Hood / Roof)')}
-          ${opt('wrap','Logos & Decals Only')}
-          ${opt('wrap','Chrome Delete')}
-          ${opt('wrap','Roof or Hood Accent')}
-          ${opt('wrap','Color Change (Specify color)')}
+          <div class="section-title">🧭 Specialty & Add-Ons</div>
+          <div class="grid">
+            ${opt(null,'Engine Bay Detail','degrease & dress')}
+            ${opt(null,'Headlight Restoration','sand, polish, seal')}
+            ${opt(null,'Water Spot Removal','glass & paint')}
+            ${opt(null,'Chrome Delete / Wrap Accents','')}
+            ${opt('wrap','Color Change Wrap','pick color below')}
+          </div>
 
           <div id="wrapOptions" class="hidden" aria-label="Wrap color picker">
             <div class="wrap-picker">
               <div>
-                <div style="font-weight:700;color:#0f172a;margin-top:6px">Choose a color</div>
+                <div style="font-weight:700;color:#0f172a;margin-top:6px">Wrap color</div>
                 <div class="swatches" id="wrapSwatches">
                   ${swatch('#000000')}${swatch('#FFFFFF')}${swatch('#FF0000')}${swatch('#00A3FF')}
                   ${swatch('#00C853')}${swatch('#FF6F00')}${swatch('#8E24AA')}${swatch('#FFC0CB')}
@@ -282,14 +299,13 @@
             </div>
           </div>
 
-          <div class="section-title">➕ Add-Ons</div>
-          ${opt(null,'Engine Bay Detail')}
-          ${opt(null,'Headlight Restoration')}
-          ${opt(null,'Pet Hair Removal')}
-          ${opt(null,'Carpet & Seat Shampoo')}
-          ${opt(null,'Ozone Odor Elimination')}
+          <!-- Live summary BEFORE date/time -->
+          <div class="summary-card" id="summaryCard">
+            <h5>Selected Services</h5>
+            <ul class="summary-list" id="summaryList"><li style="color:#64748b">Nothing selected yet.</li></ul>
+          </div>
 
-          <div class="request-section"><span id="selectedCount">Select services to request a quote</span></div>
+          <div class="safe-gap"></div>
 
           <!-- Preferred date/time + zip + notes -->
           <div class="inline-fields" aria-label="Preferred date and time">
@@ -313,8 +329,7 @@
     document.body.insertAdjacentHTML('beforeend', mobileFooter);
     document.body.insertAdjacentHTML('beforeend', desktopButtons);
     document.body.insertAdjacentHTML('beforeend', calculatorModal);
-    // Mark footer present to enable padding
-    document.body.classList.add('ab-foot-visible');
+    document.body.classList.add('ab-foot-visible'); // padding enabled
 
     // Hide footer when keyboard/pickers open + add modal bottom room (prevents cutoff)
     if (window.visualViewport){
@@ -353,40 +368,38 @@
     window.closeCalculator = function(){
       const m = document.getElementById('calculatorModal');
       m.classList.remove('active'); document.body.style.overflow='';
-      document.querySelectorAll('.service-option input[type="checkbox"]').forEach((cb,i)=>{
-        setTimeout(()=>{ cb.checked=false; cb.closest('.service-option').classList.remove('selected'); }, i*20);
+      document.querySelectorAll('.option input[type="checkbox"]').forEach((cb,i)=>{
+        setTimeout(()=>{ cb.checked=false; cb.closest('.option').classList.remove('selected'); }, i*10);
       });
-      // Reset wrap/tint UIs
       toggleWrapUI(false); toggleTintUI(false);
-      updateCount();
+      updateSummary();
     };
 
     window.handleSelection = function (){
-      const checked = [...document.querySelectorAll('.service-option input[type="checkbox"]:checked')];
-      // Bundle exclusivity: uncheck interior/exterior if a bundle is chosen
+      const checked = [...document.querySelectorAll('.option input[type="checkbox"]:checked')];
+      // Bundle exclusivity: uncheck interior/exterior groups when a bundle is chosen
       const hasBundle = checked.some(cb=>cb.dataset.service==='bundle');
       if (hasBundle){
-        document.querySelectorAll('.service-option input[data-service="interior"], .service-option input[data-service="exterior"]').forEach(cb=>{
-          if (cb.checked){ cb.checked=false; cb.closest('.service-option').classList.remove('selected'); }
+        document.querySelectorAll('.option input[data-service="interior"], .option input[data-service="exterior"]').forEach(cb=>{
+          if (cb.checked){ cb.checked=false; cb.closest('.option').classList.remove('selected'); }
         });
       }
-      // Show/hide wrap/tint sections
       toggleWrapUI( checked.some(cb=>cb.dataset.service==='wrap') );
       toggleTintUI( checked.some(cb=>cb.dataset.service==='tint') );
-      updateCount();
+      updateSummary();
     };
 
-    function updateCount(){
-      const finalChecked = document.querySelectorAll('.service-option input[type="checkbox"]:checked');
-      const el = document.getElementById('selectedCount');
-      el.textContent = finalChecked.length === 0
-        ? 'Select services to request a quote'
-        : finalChecked.length === 1 ? '1 service selected' : `${finalChecked.length} services selected`;
+    function updateSummary(){
+      const list = document.getElementById('summaryList');
+      const items = [...document.querySelectorAll('.option input:checked')].map(cb=>{
+        const span = cb.closest('.option').querySelector('.opt-label').textContent.trim();
+        return `<li>${span}</li>`;
+      });
+      list.innerHTML = items.length ? items.join('') : '<li style="color:#64748b">Nothing selected yet.</li>';
     }
 
     // ------- Wrap color UI -------
     let selectedWrapColor = ''; // hex string
-
     function selectWrapColor(hex){
       selectedWrapColor = hex;
       const chip = document.getElementById('wrapColorChip');
@@ -395,15 +408,14 @@
       chip.classList.remove('hidden');
       dot.style.background = hex;
       txt.textContent = `Selected: ${hex.toUpperCase()}`;
-      // highlight swatch
       document.querySelectorAll('#wrapSwatches .swatch').forEach(s=>{
         s.classList.toggle('selected', s.getAttribute('data-color').toLowerCase() === hex.toLowerCase());
       });
-      // sync color input
       const picker = document.getElementById('wrapColorCustom');
       if (picker && picker.value.toLowerCase() !== hex.toLowerCase()){
         picker.value = hex;
       }
+      updateSummary();
     }
     function setupWrapUI(){
       const sw = document.getElementById('wrapSwatches');
@@ -412,22 +424,18 @@
           const btn = e.target.closest('.swatch');
           if (!btn) return;
           selectWrapColor(btn.getAttribute('data-color'));
-          pushEvent('wrap_color_select', { color: selectedWrapColor });
         });
       }
       const picker = document.getElementById('wrapColorCustom');
       if (picker){
-        picker.addEventListener('input', ()=>{
-          selectWrapColor(picker.value);
-          pushEvent('wrap_color_custom', { color: selectedWrapColor });
-        });
+        picker.addEventListener('input', ()=> selectWrapColor(picker.value));
       }
     }
     function toggleWrapUI(show){
       const el = document.getElementById('wrapOptions');
       if (!el) return;
       if (show){ el.classList.remove('hidden'); if (!selectedWrapColor) selectWrapColor('#00A3FF'); setupWrapUI(); }
-      else { el.classList.add('hidden'); /* keep color so it can persist if they re-open */ }
+      else { el.classList.add('hidden'); }
     }
 
     // ------- Tint % UI -------
@@ -461,10 +469,11 @@
       const tintPercent = document.getElementById('tintPercent')?.value || '';
       const tintNotes   = document.getElementById('tintNotes')?.value?.trim() || '';
 
-      const checked = [...document.querySelectorAll('.service-option input[type="checkbox"]:checked')];
+      const checked = [...document.querySelectorAll('.option input[type="checkbox"]:checked')];
       if (!checked.length){ alert('Please select at least one service'); return; }
 
-      const services = checked.map(cb => `• ${cb.closest('label').querySelector('span').textContent.trim()}`);
+      const services = checked.map(cb => cb.closest('.option').querySelector('.opt-label').textContent.trim())
+                              .map(s => `• ${s}`);
 
       const details = [];
       if (date) details.push(`Preferred Date: ${date}`);
@@ -489,7 +498,6 @@
         'Thank you!'
       ].join('\n');
 
-      // Open SMS app with a clean, encoded message
       location.href = buildSMSHref(AB.phone, smsBody);
 
       // Desktop fallback
@@ -504,7 +512,7 @@
       }, 500);
     };
 
-    // Wire “Text” buttons (mobile + desktop) to use the same SMS flow
+    // Wire “Text” buttons (mobile + desktop)
     ['ab-text-btn','ab-text-btn-desktop'].forEach(id=>{
       const el = document.getElementById(id);
       if (!el) return;
@@ -515,13 +523,12 @@
       });
     });
 
-    // Checkbox visuals
-    document.querySelectorAll('.service-option input[type="checkbox"]').forEach(cb=>{
-      cb.addEventListener('change', function(){
-        const opt = this.closest('.service-option');
-        if (this.checked){ opt.classList.add('selected'); }
-        else { opt.classList.remove('selected'); }
-      });
+    // Checkbox visuals + selection tracking
+    document.addEventListener('change', (e)=>{
+      const cb = e.target.closest('.option input[type="checkbox"]');
+      if (!cb) return;
+      cb.closest('.option').classList.toggle('selected', cb.checked);
+      window.handleSelection();
     });
 
     // Close on backdrop
@@ -529,29 +536,27 @@
 
     // Esc
     document.addEventListener('keydown', (e)=>{ if (e.key==='Escape' && document.getElementById('calculatorModal').classList.contains('active')) window.closeCalculator(); });
-
-    // Gentle desktop nudge
-    if (window.innerWidth>768){
-      setInterval(()=>{
-        const p = document.querySelector('.floating-btn.primary');
-        if (p){ p.style.transform='scale(1.05)'; setTimeout(()=>p.style.transform='',300); }
-      }, 5000);
-    }
   } // end init()
 
-  // ------- Helpers / icons / GTM push -------
-  function pushEvent(event, params={}){ window.dataLayer = window.dataLayer || []; window.dataLayer.push({event, ...params}); }
-
+  // ------- Icons -------
   function iconCalendar(s=24){return `<svg width="${s}" height="${s}" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12z"/></svg>`;}
   function iconPhone(s=24){return `<svg width="${s}" height="${s}" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.95.68l1.5 4.49a1 1 0 01-.5 1.21l-2.26 1.13a11.04 11.04 0 005.52 5.52l1.13-2.26a1 1 0 011.21-.5l4.49 1.5a1 1 0 01.68.95V19a2 2 0 01-2 2h-1C9.72 21 3 14.28 3 6V5z"/></svg>`;}
   function iconChat(s=24){return `<svg width="${s}" height="${s}" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.86 9.86 0 01-4.26-.95L3 20l1.4-3.72A7.96 7.96 0 013 12c0-4.42 4.03-8 9-8s9 3.58 9 8z"/></svg>`;}
   function iconClipboard(s=24){return `<svg width="${s}" height="${s}" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg>`;}
   function iconInfo(s=16){return `<svg width="${s}" height="${s}" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>`;}
 
+  // ------- Small helpers -------
   function swatch(hex){ return `<button class="swatch" type="button" data-color="${hex}" style="background:${hex}"></button>`; }
-  function opt(dataService,label){
+  function opt(dataService,label,sub=''){
     const dsAttr = dataService ? ` data-service="${dataService}"` : '';
-    return `<div class="service-option"><label><input type="checkbox"${dsAttr} onchange="window.handleSelection()"><span>${label}</span></label></div>`;
+    return `
+      <label class="option">
+        <input type="checkbox"${dsAttr} onchange="window.handleSelection()">
+        <span>
+          <span class="opt-label">${label}</span>
+          ${sub ? `<span class="opt-sub">${sub}</span>` : ``}
+        </span>
+      </label>`;
   }
 
   // Initialize when DOM is ready
