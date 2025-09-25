@@ -11,7 +11,7 @@
     bookingUrl: 'https://booknow.shinedesignauto.com/',
     footerMode: 'flush', // 'floating' or 'flush'
     barHeightPx: 84,
-    version: 'wrapbrands-3'
+    version: 'wrapbrands-3+tint-1'
   };
 
   // Prevent duplicate loading (versioned so new builds override old)
@@ -261,6 +261,26 @@
             ${opt('ppf','Full Body PPF','maximum coverage')}
           </div>
 
+
+<div class="section-title">🪟 Window Tint</div>
+<div class="grid">
+  ${opt('tint','Ceramic Tint','')}
+  ${opt('tint','Dyed Tint','')}
+  ${opt('tint','Front Windshield Tint','')}
+</div>
+
+<div id="tintOptions" class="hidden" aria-label="Tint percentages">
+  <div style="font-weight:700;color:#0f172a;margin-top:8px">Tint Percentage</div>
+  <div class="chips" id="tintPercentChips" role="group" aria-label="Tint percent">
+    <button type="button" class="chip" data-percent="5%">5%</button>
+    <button type="button" class="chip" data-percent="15%">15%</button>
+    <button type="button" class="chip" data-percent="20%">20%</button>
+    <button type="button" class="chip" data-percent="35%">35%</button>
+    <button type="button" class="chip" data-percent="50%">50%</button>
+    <button type="button" class="chip" data-percent="70%">70%</button>
+  </div>
+</div>
+
           <div class="section-title">🖼️ Vinyl Wrap</div>
           <div class="grid">
             ${opt('wrap','Full Vehicle Wrap','')}
@@ -390,6 +410,8 @@
       }
       // Show/hide wrap detail UI
       toggleWrapUI( checked.some(cb=>cb.dataset.service==='wrap') );
+      // Show/hide tint percentage UI
+      toggleTintUI( checked.some(cb=>cb.dataset.service==='tint') );
       updateSummary();
     };
 
@@ -410,6 +432,10 @@
         ].filter(Boolean).join(' • ');
         if (details) items.push(`<li>Wrap Details — ${details}</li>`);
       }
+      // Append tint details if selected
+      if (selectedTintPercent){
+        items.push(`<li>Tint — ${selectedTintPercent}</li>`);
+      }
 
       list.innerHTML = items.length ? items.join('') : '<li style="color:#64748b">Nothing selected yet.</li>';
     }
@@ -418,6 +444,9 @@
     let selectedWrapColor = '';   // hex string
     let selectedWrapFinish = '';  // string
     let selectedWrapBrandChip = '';// from chip (optional)
+
+    // Tint state
+    let selectedTintPercent = '';
 
     function selectWrapColor(hex){
       selectedWrapColor = hex;
@@ -445,6 +474,25 @@
           selectWrapColor(btn.getAttribute('data-color'));
         });
       }
+
+function setupTintUI(){
+  const chips = document.getElementById('tintPercentChips');
+  if (!chips) return;
+  chips.addEventListener('click', (e)=>{
+    const btn = e.target.closest('.chip');
+    if (!btn) return;
+    chips.querySelectorAll('.chip').forEach(c=>c.classList.remove('selected'));
+    btn.classList.add('selected');
+    selectedTintPercent = btn.getAttribute('data-percent') || '';
+    updateSummary();
+  });
+}
+function toggleTintUI(show){
+  const el = document.getElementById('tintOptions');
+  if (!el) return;
+  if (show){ el.classList.remove('hidden'); if (!selectedTintPercent) setupTintUI(); }
+  else { el.classList.add('hidden'); }
+}
       const picker = document.getElementById('wrapColorCustom');
       if (picker){
         picker.addEventListener('input', ()=> selectWrapColor(picker.value));
@@ -530,6 +578,10 @@
         if (selectedWrapColor) details.push(`Wrap Color: ${selectedWrapColor.toUpperCase()}`);
         if (selectedWrapFinish) details.push(`Wrap Finish: ${selectedWrapFinish}`);
         if (wrapBrand) details.push(`Wrap Brand: ${wrapBrand}`);
+      }
+      // Tint specifics if any tint service is selected
+      if (checked.some(cb=>cb.dataset.service==='tint')){
+        if (selectedTintPercent) details.push(`Tint Percent: ${selectedTintPercent}`);
       }
       if (notes) details.push(`Notes: ${notes}`);
 
