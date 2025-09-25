@@ -10,12 +10,14 @@
     phone: '+14805288227',
     bookingUrl: 'https://booknow.shinedesignauto.com/',
     footerMode: 'flush', // 'floating' or 'flush'
-    barHeightPx: 84
+    barHeightPx: 84,
+    version: 'wrapbrands-3'
   };
 
-  // Prevent duplicate loading
-  if (window.shineActionButtonsLoaded) return;
-  window.shineActionButtonsLoaded = true;
+  // Prevent duplicate loading (versioned so new builds override old)
+  if (window.shineActionButtonsLoaded_v3) return;
+  window.shineActionButtonsLoaded_v3 = AB.version;
+  try { console.log('[Shine AB] Loaded', AB.version); } catch {}
 
   function init() {
     // ------- Styles --------
@@ -70,7 +72,7 @@
           position:fixed;bottom:24px;right:20px;z-index:1100;display:flex;flex-direction:column-reverse;gap:14px;
         }
         .floating-btn{
-          width:64px;height:64px;border-radius:20px;background:#fff;border:1px solid #e2e8f0;
+          width:64px;height:64px;border-radius:20px;background:#fff;border:1.5px solid #e2e8f0;
           display:flex;align-items:center;justify-content:center;text-decoration:none;transition:.25s;
           box-shadow:0 8px 24px rgba(0,0,0,.12)
         }
@@ -188,7 +190,7 @@
       </div>
     `;
 
-    // ------- Modal (vehicle-first + grouped options + Vinyl Wrap w/ finishes & brand) -------
+    // ------- Modal (Vinyl Wrap is its own section) -------
     const calculatorModal = `
       <div class="calculator-modal" id="calculatorModal">
         <div class="calculator-content" role="dialog" aria-modal="true" aria-labelledby="calcTitle">
