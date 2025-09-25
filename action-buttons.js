@@ -11,7 +11,7 @@
     bookingUrl: 'https://booknow.shinedesignauto.com/',
     footerMode: 'flush', // 'floating' or 'flush'
     barHeightPx: 84,
-    version: 'wrapbrands-3+tint-1'
+    version: 'wrapbrands-3+tint-1+ns1'
   };
 
   // Prevent duplicate loading (versioned so new builds override old)
@@ -52,17 +52,17 @@
           animation:slideUpSmooth .4s cubic-bezier(.34,1.56,.64,1);
         }
         @keyframes slideUpSmooth { from{transform:translateY(120%);opacity:0} to{transform:translateY(0);opacity:1} }
-        .footer-grid{display:flex;align-items:center;justify-content:center;gap:8px;padding:12px 16px;max-width:420px;margin:0 auto}
-        .footer-item{
+        .mobile-sticky-footer .ab-footer-grid{display:flex;align-items:center;justify-content:center;gap:8px;padding:12px 16px;max-width:420px;margin:0 auto}
+        .mobile-sticky-footer .ab-footer-item{
           position:relative;background:#fff;border:1.5px solid #e2e8f0;
           padding:10px 8px;text-align:center;cursor:pointer;transition:all .2s ease;
           text-decoration:none;color:#0f172a;border-radius:14px;-webkit-tap-highlight-color:transparent;overflow:hidden;flex:1;min-width:0;
         }
-        .footer-item.primary{background:linear-gradient(135deg,#0ea5e9,#0284c7);color:#fff;border-color:rgba(14,165,233,.3)}
-        .footer-item:active{transform:scale(.97)}
-        .footer-item svg{width:22px;height:22px;margin-bottom:4px}
-        .footer-item.primary svg{color:#fff}
-        .footer-item span{display:block;font-weight:700;letter-spacing:-.01em}
+        .mobile-sticky-footer .ab-footer-item.primary{background:linear-gradient(135deg,#0ea5e9,#0284c7);color:#fff;border-color:rgba(14,165,233,.3)}
+        .mobile-sticky-footer .ab-footer-item:active{transform:scale(.97)}
+        .mobile-sticky-footer .ab-footer-item svg{width:22px;height:22px;margin-bottom:4px}
+        .mobile-sticky-footer .ab-footer-item.primary svg{color:#fff}
+        .mobile-sticky-footer .ab-footer-item span{display:block;font-weight:700;letter-spacing:-.01em}
         .desktop-floating-buttons{display:none!important}
       }
 
@@ -80,8 +80,8 @@
         .floating-btn svg{width:28px;height:28px;color:#0ea5e9}
         .floating-btn.primary{width:76px;height:76px;background:linear-gradient(135deg,#0ea5e9,#0284c7);border:2px solid rgba(255,255,255,.4)}
         .floating-btn.primary svg{color:#fff;width:34px;height:34px}
-        .tooltip{position:absolute;right:80px;background:rgba(15,23,42,.95);color:#fff;padding:8px 12px;border-radius:8px;font-size:13px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .2s}
-        .floating-btn:hover .tooltip{opacity:1}
+        .desktop-floating-buttons .tooltip{position:absolute;right:80px;background:rgba(15,23,42,.95);color:#fff;padding:8px 12px;border-radius:8px;font-size:13px;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .2s}
+        .floating-btn:hover .desktop-floating-buttons .tooltip{opacity:1}
       }
 
       .ab-hide-footer .mobile-sticky-footer{ display:none !important; }
@@ -155,17 +155,17 @@
     // ------- UI: Mobile footer -------
     const mobileFooter = `
       <div class="mobile-sticky-footer" role="region" aria-label="Quick actions">
-        <div class="footer-grid">
-          <button class="footer-item" data-gtm-event="open_calculator" onclick="window.openCalculator()" aria-label="Service Selector">
+        <div class="ab-footer-grid">
+          <button class="ab-footer-item" data-gtm-event="open_calculator" onclick="window.openCalculator()" aria-label="Service Selector">
             ${iconClipboard()}<span>Services</span>
           </button>
-          <a href="${AB.bookingUrl}" class="footer-item primary" data-gtm-event="book_click" aria-label="Book Online">
+          <a href="${AB.bookingUrl}" class="ab-footer-item primary" data-gtm-event="book_click" aria-label="Book Online">
             ${iconCalendar()}<span>Book</span>
           </a>
-          <a href="tel:${AB.phone}" class="footer-item" data-gtm-event="call_click" aria-label="Call">
+          <a href="tel:${AB.phone}" class="ab-footer-item" data-gtm-event="call_click" aria-label="Call">
             ${iconPhone()}<span>Call</span>
           </a>
-          <button type="button" class="footer-item" id="ab-text-btn" data-gtm-event="sms_click" aria-label="Text Us">
+          <button type="button" class="ab-footer-item" id="ab-text-btn" data-gtm-event="sms_click" aria-label="Text Us">
             ${iconChat()}<span>Text</span>
           </button>
         </div>
