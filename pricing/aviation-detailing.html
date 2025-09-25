@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+  <title>Shine Design Aircraft Detailing | Professional Aviation Services - 2025 Price Sheet</title>
+  <meta name="description" content="Professional aircraft detailing, ceramic coating, paint protection for jets, helicopters, and aviation. Serving Phoenix, Scottsdale, and Arizona airports.">
+  <link rel="canonical" href="https://shinedesignauto.com/aircraft-detailing">
+  <link rel="icon" href="/assets/images/favicon.ico">
+  <meta name="theme-color" content="#0ea5e9">
+
+  <style>
+    /* ===== Design tokens ===== */
+    :root {
+      --brand: #0ea5e9;
+      --brand-dark: #0284c7;
+      --text: #0f172a;
+      --muted: #475569;
+      --bg: #fff;
+      --header-h: 72px;
+    }
+
+    /* ===== Base Reset ===== */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { overflow-x: hidden; }
+    img, video { max-width: 100%; height: auto; display: block; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+      overscroll-behavior-x: none;
+    }
+
+    /* Focus styles */
+    a:focus-visible, button:focus-visible {
+      outline: 3px solid rgba(14, 165, 233, .35);
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
+
+    /* ===== Announcement Bar ===== */
+    .announcement-bar {
+      background: linear-gradient(90deg, var(--brand), var(--brand-dark));
+      color: white;
+      padding: 8px 16px;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 600;
+      position: relative;
+      z-index: 1001;
+    }
+    .announcement-bar a { color: white; text-decoration: underline; }
+
+    /* ===== Header Styles ===== */
+    .main-header {
+      position: sticky; top: 0; z-index: 1000; width: 100%;
+      background: rgba(255, 255, 255, .98);
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(0, 0, 0, .08);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, .04);
+    }
+    .header-container { max-width: 1280px; margin: 0 auto; padding: 0 20px; }
+    .header-content { display: flex; align-items: center; justify-content: space-between; min-height: var(--header-h); gap: 32px; }
+
+    /* Logo/Brand */
+    .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; transition: transform .2s; }
+    .brand:hover { transform: translateY(-1px); }
+    .brand img { height: 42px; width: auto; display: block; }
+    .brand-text { display: flex; flex-direction: column; line-height: 1.2; }
+    .brand-name { font-size: 20px; font-weight: 700; color: var(--text); letter-spacing: -0.5px; }
+    .brand-tagline { font-size: 11px; color: var(--muted); font-weight: 500; letter-spacing: 0.5px; }
+
+    /* Desktop Navigation */
+    .nav-links { display: none; gap: 24px; align-items: center; flex: 1; justify-content: flex-end; }
+    .nav-links > a, .nav-dropdown > a {
+      font-weight: 600; font-size: 15px; color: var(--text); text-decoration: none;
+      transition: color .2s; padding: 8px 12px; border-radius: 8px; display: flex; align-items: center; gap: 6px;
+    }
+    .nav-links > a:hover, .nav-dropdown > a:hover { color: var(--brand); background: rgba(14, 165, 233, .08); }
+
+    /* Service Pills (Core Services) */
+    .service-pills { display: flex; gap: 8px; align-items: center; padding: 0 16px; border-left: 1px solid rgba(0,0,0,.1); border-right: 1px solid rgba(0,0,0,.1); }
+    .service-pill {
+      padding: 6px 12px; background: rgba(14,165,233,.08); color: var(--brand);
+      font-size: 13px; font-weight: 600; border-radius: 999px; text-decoration: none; transition: all .2s; white-space: nowrap;
+    }
+    .service-pill:hover { background: var(--brand); color: white; transform: translateY(-1px); }
+
+    /* Dropdown Styles */
+    .nav-dropdown { position: relative; }
+    .nav-dropdown .arrow { font-size: 10px; transition: transform .3s; }
+    .nav-dropdown:hover .arrow { transform: rotate(180deg); }
+    .dropdown-menu {
+      position: absolute; top: calc(100% + 8px); left: 50%; transform: translateX(-50%);
+      background: white; border: 1px solid rgba(0,0,0,.08); border-radius: 12px;
+      box-shadow: 0 12px 48px rgba(0,0,0,.12); padding: 12px; min-width: 280px;
+      opacity: 0; visibility: hidden; transition: all .25s cubic-bezier(0.4,0,0.2,1); pointer-events: none;
+    }
+    .nav-dropdown:hover .dropdown-menu { opacity: 1; visibility: visible; pointer-events: auto; }
+
+    /* Primary Services Grid */
+    .services-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px solid rgba(0,0,0,.06); }
+    .service-card {
+      display: flex; align-items: center; gap: 12px; padding: 12px; border-radius: 8px; text-decoration: none;
+      transition: all .2s; background: rgba(14,165,233,.04);
+    }
+    .service-card:hover { background: rgba(14,165,233,.12); transform: translateX(4px); }
+    .service-icon { width: 32px; height: 32px; background: var(--brand); border-radius: 8px; display:flex; align-items:center; justify-content:center; color:white; font-size:18px; flex-shrink:0; }
+    .service-info { flex: 1; }
+    .service-title { font-weight: 600; color: var(--text); font-size: 14px; line-height: 1.2; display: block; }
+    .service-desc { font-size: 11px; color: var(--muted); margin-top: 2px; }
+
+    /* Secondary Services */
+    .dropdown-label { padding: 8px 12px 4px; font-size: 11px; font-weight: 700; text-transform: uppercase; color: var(--muted); letter-spacing: .5px; }
+    .dropdown-menu a { display: block; padding: 10px 16px; color: var(--text); font-size: 14px; font-weight: 500; border-radius: 8px; transition: all .2s; text-decoration: none; }
+    .dropdown-menu a:hover { background: rgba(14,165,233,.08); color: var(--brand); padding-left: 20px; }
+
+    /* CTA Buttons */
+    .cta-group { display: flex; gap: 12px; align-items: center; }
+    .cta-primary {
+      background: var(--brand); color: white !important; padding: 12px 24px; border-radius: 999px; font-weight: 700; font-size: 15px;
+      text-decoration: none; transition: all .2s; display: inline-flex; align-items: center; gap: 8px;
+    }
+    .cta-primary:hover { background: var(--brand-dark); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(14,165,233,.25); }
+    .cta-phone {
+      display:flex; align-items:center; gap:8px; padding:10px 16px; border:2px solid rgba(14,165,233,.2); border-radius:999px;
+      color:var(--brand); font-weight:600; text-decoration:none; transition: all .2s;
+    }
+    .cta-phone:hover { background: rgba(14,165,233,.08); border-color: var(--brand); }
+
+    /* Mobile Menu Button */
+    .menu-btn {
+      display: flex; align-items: center; justify-content: center; width: 44px; height: 44px;
+      border: 2px solid rgba(0,0,0,.1); border-radius: 12px; background: white; color: var(--text); cursor: pointer; transition: all .2s;
+    }
+    .menu-btn:hover { background: rgba(14,165,233,.08); border-color: var(--brand); color: var(--brand); }
+    .menu-btn svg { width: 24px; height: 24px; }
+
+    /* Mobile Navigation */
+    #mobile-nav {
+      position: fixed; top: var(--header-h); left: 0; right: 0; bottom: 0; background: white; z-index: 999;
+      overflow-y: auto; padding: 20px; transform: translateX(100%); transition: transform .3s cubic-bezier(0.4,0,0.2,1);
+      box-shadow: -4px 0 24px rgba(0,0,0,.1);
+    }
+    #mobile-nav.active { transform: translateX(0); }
+    .mobile-nav-content a { 
+      display:block; padding:14px 0; color:var(--text); font-weight:600; font-size:16px; 
+      text-decoration:none; border-bottom:1px solid rgba(0,0,0,.06); transition: all .2s; 
+    }
+    .mobile-nav-content a:hover { color: var(--brand); padding-left: 12px; }
+
+    .mobile-services { display: grid; gap: 12px; margin: 20px 0; padding: 20px 0; border-top: 1px solid rgba(0,0,0,.08); border-bottom: 1px solid rgba(0,0,0,.08); }
+    .mobile-service-btn {
+      display:flex; align-items:center; justify-content:space-between; padding:16px; background: rgba(14,165,233,.04);
+      border:1px solid rgba(14,165,233,.1); border-radius:12px; color:var(--text); text-decoration:none; font-weight:600; transition: all .2s;
+    }
+    .mobile-service-btn:hover { background: rgba(14,165,233,.1); border-color: var(--brand); transform: translateX(4px); }
+
+    /* Responsive */
+    @media (min-width: 960px) {
+      .nav-links { display: flex; }
+      .menu-btn { display: none; }
+      #mobile-nav { display: none; }
+    }
+    @media (max-width: 959px) {
+      .service-pills { display: none; }
+      .cta-phone { display: none; }
+      .announcement-bar { font-size: 12px; }
+    }
+
+    /* ===== Page Styles ===== */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    .section { padding: 40px 0; }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(135deg, var(--brand), var(--brand-dark));
+      color: white;
+      padding: 60px 0;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: clamp(32px, 5vw, 48px);
+      margin-bottom: 20px;
+      font-weight: 800;
+    }
+    .hero-subtitle {
+      font-size: clamp(18px, 3vw, 24px);
+      opacity: 0.95;
+      margin-bottom: 30px;
+    }
+
+    /* Important Alert */
+    .alert-box {
+      padding: 15px 20px;
+      margin: 20px 0;
+      border-radius: 12px;
+      font-weight: 600;
+      text-align: center;
+    }
+    .alert-important {
+      background: #f8d7da;
+      border: 2px solid #dc3545;
+      color: #721c24;
+    }
+
+    /* Aircraft Reference Section */
+    .reference-section {
+      background: #f8f9fa;
+      padding: 30px 20px;
+      border-radius: 12px;
+      margin: 30px 0;
+    }
+    .reference-title {
+      font-size: 24px;
+      color: var(--brand);
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+    .ref-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+    }
+    .ref-item {
+      background: white;
+      padding: 15px;
+      border-left: 4px solid var(--brand);
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    .ref-category {
+      font-weight: bold;
+      color: var(--text);
+      margin-bottom: 5px;
+    }
+    .ref-examples {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* Pricing Table */
+    .pricing-section {
+      padding: 40px 0;
+    }
+    .section-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .section-header h2 {
+      font-size: 36px;
+      color: var(--text);
+      margin-bottom: 10px;
+    }
+    .section-header p {
+      color: var(--muted);
+      font-size: 18px;
+    }
+    
+    .table-container {
+      overflow-x: auto;
+      margin: 30px 0;
+    }
+    .pricing-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 800px;
+      background: white;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    }
+    .pricing-table thead {
+      background: var(--brand);
+      color: white;
+    }
+    .pricing-table th {
+      padding: 15px 10px;
+      text-align: left;
+      font-weight: bold;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .pricing-table td {
+      padding: 12px 10px;
+      border-bottom: 1px solid #e9ecef;
+      font-size: 14px;
+    }
+    .pricing-table td:first-child {
+      font-weight: 600;
+      background: #f8f9fa;
+      color: var(--text);
+    }
+    .pricing-table tr:nth-child(even) {
+      background: #fafbfc;
+    }
+    .pricing-table tr:hover {
+      background: #e8f4ff;
+    }
+    .price-value {
+      color: var(--brand);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    /* Add-ons Grid */
+    .addons-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin: 30px 0;
+    }
+    .addon-card {
+      background: white;
+      border: 1px solid #dee2e6;
+      border-radius: 12px;
+      padding: 20px;
+      transition: all 0.3s;
+    }
+    .addon-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    }
+    .addon-name {
+      font-weight: bold;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+    .addon-price {
+      color: #dc3545;
+      font-weight: bold;
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+    .addon-description {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* Terms Section */
+    .terms-section {
+      background: #2c3442;
+      color: white;
+      padding: 40px;
+      margin-top: 40px;
+      border-radius: 12px;
+    }
+    .terms-title {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    .terms-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+    }
+    .term-item {
+      padding-left: 25px;
+      position: relative;
+      line-height: 1.6;
+    }
+    .term-item:before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--brand);
+      font-weight: bold;
+    }
+    .term-item.important {
+      color: #ffc107;
+      font-weight: bold;
+    }
+
+    /* Footer */
+    footer { 
+      background:#0b1220; 
+      color:#d1d5db; 
+      padding:60px 0 30px; 
+    }
+    .footer-grid { 
+      display:grid; 
+      grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); 
+      gap:40px; 
+      margin-bottom:40px; 
+    }
+    .footer-column h3 { 
+      color:white; 
+      margin-bottom:20px; 
+      font-size:18px; 
+    }
+    .footer-column a { 
+      display:block; 
+      color:#94a3b8; 
+      text-decoration:none; 
+      padding:6px 0; 
+      transition: color .3s; 
+    }
+    .footer-column a:hover { 
+      color:var(--brand); 
+    }
+    .footer-bottom { 
+      text-align:center; 
+      padding-top:30px; 
+      border-top:1px solid rgba(255,255,255,.1); 
+      font-size:14px; 
+      color:#64748b; 
+    }
+
+    /* Mobile Responsive */
+    @media (max-width: 768px) {
+      .ref-grid { grid-template-columns: 1fr; }
+      .addons-grid { grid-template-columns: 1fr; }
+      .terms-grid { grid-template-columns: 1fr; }
+      .pricing-table { font-size: 12px; }
+      .pricing-table th, .pricing-table td { padding: 8px 5px; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Announcement Bar -->
+  <div class="announcement-bar">
+    ✈️ Now Offering Aircraft Detailing Services - Professional Aviation Care
+  </div>
+
+  <!-- HEADER -->
+  <header class="main-header">
+    <div class="header-container">
+      <div class="header-content">
+        <!-- Logo/Brand -->
+        <a href="/" class="brand" aria-label="ShineDesign Home">
+          <img src="/logo.ico" alt="ShineDesign" width="140" height="42">
+          <div class="brand-text">
+            <span class="brand-name">ShineDesign</span>
+            <span class="brand-tagline">DETAILING • TINT • PPF • CERAMIC</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="nav-links" aria-label="Primary Navigation">
+          <div class="nav-dropdown">
+            <a href="/services/">Services <span class="arrow">▼</span></a>
+            <div class="dropdown-menu">
+              <div class="services-grid">
+                <a href="/ceramic-coating" class="service-card"><div class="service-icon">🛡️</div><div class="service-info"><span class="service-title">Ceramic Coating</span><span class="service-desc">9H Protection • 5 Year Warranty</span></div></a>
+                <a href="/paint-protection-film" class="service-card"><div class="service-icon">💎</div><div class="service-info"><span class="service-title">Paint Protection Film</span><span class="service-desc">XPEL • 3M • Clear Bra</span></div></a>
+                <a href="/window-tinting" class="service-card"><div class="service-icon">🔲</div><div class="service-info"><span class="service-title">Window Tinting</span><span class="service-desc">Ceramic • Carbon • Dyed</span></div></a>
+                <a href="/auto-detailing" class="service-card"><div class="service-icon">✨</div><div class="service-info"><span class="service-title">Auto Detailing</span><span class="service-desc">Interior • Exterior • Mobile</span></div></a>
+              </div>
+              <div class="dropdown-label">Specialty Services</div>
+              <a href="/paint-correction">Paint Correction</a>
+              <a href="/mobile-detailing">Mobile Detailing</a>
+              <a href="/rv-detailing">RV & Motorhome</a>
+              <a href="/boat-detailing">Marine Detailing</a>
+              <a href="/fleet-services">Fleet Services</a>
+            </div>
+          </div>
+          <div class="service-pills">
+            <a href="/ceramic-coating" class="service-pill">Ceramic</a>
+            <a href="/paint-protection-film" class="service-pill">PPF</a>
+            <a href="/window-tinting" class="service-pill">Tint</a>
+            <a href="/auto-detailing" class="service-pill">Detail</a>
+          </div>
+          <a href="/gallery">Gallery</a>
+          <a href="#pricing">Pricing</a>
+          <div class="nav-dropdown">
+            <a href="/locations/">Locations <span class="arrow">▼</span></a>
+            <div class="dropdown-menu">
+              <div class="dropdown-label">East Valley</div>
+              <a href="/gilbert">Gilbert</a>
+              <a href="/mesa">Mesa</a>
+              <a href="/chandler">Chandler</a>
+              <a href="/tempe">Tempe</a>
+              <div class="dropdown-label">Phoenix Metro</div>
+              <a href="/scottsdale">Scottsdale</a>
+              <a href="/phoenix">Phoenix</a>
+              <a href="/queen-creek">Queen Creek</a>
+            </div>
+          </div>
+          <a href="/about">About</a>
+          <div class="cta-group">
+            <a href="tel:4805288227" class="cta-phone"><span>📞</span><span>(480) 528-8227</span></a>
+            <a href="https://booknow.shinedesignauto.com/" class="cta-primary">Book Online<span>→</span></a>
+          </div>
+        </nav>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="menu-btn" aria-label="Menu" onclick="toggleMobileMenu()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation -->
+  <nav id="mobile-nav">
+    <div class="mobile-nav-content">
+      <div class="mobile-services">
+        <a href="/ceramic-coating" class="mobile-service-btn">Ceramic Coating<span>→</span></a>
+        <a href="/paint-protection-film" class="mobile-service-btn">Paint Protection Film (PPF)<span>→</span></a>
+        <a href="/window-tinting" class="mobile-service-btn">Window Tinting<span>→</span></a>
+        <a href="/auto-detailing" class="mobile-service-btn">Auto Detailing<span>→</span></a>
+      </div>
+      <a href="/services">All Services</a>
+      <a href="/gallery">Gallery</a>
+      <a href="#pricing">Pricing</a>
+      <a href="/locations">Locations</a>
+      <a href="/about">About Us</a>
+      <a href="/contact">Contact</a>
+      <div style="margin-top:24px; display:grid; gap:12px;">
+        <a href="tel:+14805288227" class="cta-primary" style="justify-content:center;">📞 Call (480) 528-8227</a>
+        <a href="sms:+14805288227" class="cta-primary" style="background:#25D366;justify-content:center;">💬 Text Us</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <h1>✈️ Professional Aircraft Detailing Services</h1>
+        <p class="hero-subtitle">2025 Price Sheet • Jets • Helicopters • Props • Aviation Services</p>
+        <div class="alert-box alert-important">
+          ⚠️ IMPORTANT: Aircraft owner/operator MUST arrange hangar/ramp access. Security badges or gate codes required prior to service.
+        </div>
+      </div>
+    </section>
+
+    <!-- Aircraft Types Section -->
+    <section id="aircraft-types" class="section">
+      <div class="container">
+        <div class="reference-section">
+          <div class="reference-title">✈️ Aircraft Classification Guide</div>
+          <div class="ref-grid">
+            <div class="ref-item">
+              <div class="ref-category">Long Range Jets</div>
+              <div class="ref-examples">Falcon 7X, Global Express, Gulfstream IV/V/650</div>
+            </div>
+            <div class="ref-item">
+              <div class="ref-category">Large Jets</div>
+              <div class="ref-examples">Challenger 600/650, Falcon 900/2000, Embraer Legacy, Citation Longitude</div>
+            </div>
+            <div class="ref-item">
+              <div class="ref-category">Super Mid-Size Jets</div>
+              <div class="ref-examples">Challenger 300/350, Citation X, Sovereign, Falcon 50, Hawker 4000</div>
+            </div>
+            <div class="ref-item">
+              <div class="ref-category">Mid-Size Jets</div>
+              <div class="ref-examples">Citation Excel/XLS, Hawker 800, Learjet 45/60</div>
+            </div>
+            <div class="ref-item">
+              <div class="ref-category">Light Jets</div>
+              <div class="ref-examples">CJ1/2/3, Citation V, Learjet 31/40, Phenom 300, Pilatus PC-24</div>
+            </div>
+            <div class="ref-item">
+              <div class="ref-category">Very Light Jets</div>
+              <div class="ref-examples">Eclipse, Mustang, HondaJet</div>
+            </div>
+            <div class="ref-item">
+              <div class="ref-category">Mid-Size Turbo Props</div>
+              <div class="ref-examples">King Air 250/300/350, Pilatus PC-12, Cheyenne</div>
+            </div>
+            <div class="ref-item">
+              <div class="ref-category">Light Turbo Props</div>
+              <div class="ref-examples">King Air 90/100, Grand Caravan</div>
+            </div>
+            <div class="ref-item">
+              <div class="ref-category">Twin Engine</div>
+              <div class="ref-examples">Baron, Seneca, Beechcraft</div>
+            </div>
+            <div class="ref-item">
+              <div class="ref-category">Single Engine</div>
+              <div class="ref-examples">Cessna 150/152/172/182, Piper Cherokee</div>
+            </div>
+            <div class="ref-item">
+              <div class="ref-category">Helicopters</div>
+              <div class="ref-examples">Robinson R22/R44/R66, Bell 206/407</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing-section">
+      <div class="container">
+        <div class="section-header">
+          <h2>💎 Core Service Pricing</h2>
+          <p>Professional aircraft detailing services by type</p>
+        </div>
+
+        <div class="table-container">
+          <table class="pricing-table">
+            <thead>
+              <tr>
+                <th>Service</th>
+                <th>Long Range Jets</th>
+                <th>Large Jets</th>
+                <th>Super Mid-Size</th>
+                <th>Mid-Size Jets</th>
+                <th>Light Jets</th>
+                <th>Very Light Jets</th>
+                <th>Mid Turbo Props</th>
+                <th>Light Turbo Props</th>
+                <th>Twin Engine</th>
+                <th>Single Engine</th>
+                <th>Helicopters</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Exterior Wash</td>
+                <td class="price-value">$1,800–$2,500</td>
+                <td class="price-value">$1,500–$2,200</td>
+                <td class="price-value">$1,200–$1,800</td>
+                <td class="price-value">$1,000–$1,500</td>
+                <td class="price-value">$800–$1,200</td>
+                <td class="price-value">$650–$900</td>
+                <td class="price-value">$700–$1,000</td>
+                <td class="price-value">$650–$950</td>
+                <td class="price-value">$500–$800</td>
+                <td class="price-value">$400–$600</td>
+                <td class="price-value">$500–$750</td>
+              </tr>
+              <tr>
+                <td>Wash & Wax</td>
+                <td class="price-value">$3,000–$4,500</td>
+                <td class="price-value">$2,500–$3,800</td>
+                <td class="price-value">$2,000–$3,200</td>
+                <td class="price-value">$1,600–$2,500</td>
+                <td class="price-value">$1,200–$1,800</td>
+                <td class="price-value">$950–$1,400</td>
+                <td class="price-value">$1,000–$1,600</td>
+                <td class="price-value">$950–$1,400</td>
+                <td class="price-value">$800–$1,200</td>
+                <td class="price-value">$650–$900</td>
+                <td class="price-value">$800–$1,200</td>
+              </tr>
+              <tr>
+                <td>Interior Basic Clean</td>
+                <td class="price-value">$600–$1,000</td>
+                <td class="price-value">$500–$900</td>
+                <td class="price-value">$400–$800</td>
+                <td class="price-value">$350–$650</td>
+                <td class="price-value">$300–$600</td>
+                <td class="price-value">$250–$500</td>
+                <td class="price-value">$250–$500</td>
+                <td class="price-value">$200–$400</td>
+                <td class="price-value">$200–$400</td>
+                <td class="price-value">$150–$300</td>
+                <td class="price-value">$200–$350</td>
+              </tr>
+              <tr>
+                <td>Interior Deep Clean</td>
+                <td class="price-value">$1,200–$2,000</td>
+                <td class="price-value">$1,000–$1,600</td>
+                <td class="price-value">$800–$1,400</td>
+                <td class="price-value">$700–$1,200</td>
+                <td class="price-value">$600–$1,000</td>
+                <td class="price-value">$450–$750</td>
+                <td class="price-value">$500–$800</td>
+                <td class="price-value">$450–$700</td>
+                <td class="price-value">$350–$600</td>
+                <td class="price-value">$300–$500</td>
+                <td class="price-value">$400–$650</td>
+              </tr>
+              <tr>
+                <td>Carpet Steam Clean</td>
+                <td class="price-value">$400–$600</td>
+                <td class="price-value">$350–$500</td>
+                <td class="price-value">$300–$450</td>
+                <td class="price-value">$250–$400</td>
+                <td class="price-value">$200–$300</td>
+                <td class="price-value">$150–$250</td>
+                <td class="price-value">$200–$300</td>
+                <td class="price-value">$175–$275</td>
+                <td class="price-value">$150–$250</td>
+                <td class="price-value">$125–$200</td>
+                <td class="price-value">$150–$250</td>
+              </tr>
+              <tr>
+                <td>Seat Deep Clean</td>
+                <td class="price-value">$75–$125/seat</td>
+                <td class="price-value">$75–$100/seat</td>
+                <td class="price-value">$65–$95/seat</td>
+                <td class="price-value">$55–$85/seat</td>
+                <td class="price-value">$45–$75/seat</td>
+                <td class="price-value">$40–$60/seat</td>
+                <td class="price-value">$40–$60/seat</td>
+                <td class="price-value">$35–$55/seat</td>
+                <td class="price-value">$30–$50/seat</td>
+                <td class="price-value">$30–$45/seat</td>
+                <td class="price-value">$40–$60/seat</td>
+              </tr>
+              <tr>
+                <td>Brightwork/Metal Polish</td>
+                <td class="price-value">$2,500–$3,500</td>
+                <td class="price-value">$2,000–$3,000</td>
+                <td class="price-value">$1,800–$2,500</td>
+                <td class="price-value">$1,400–$2,000</td>
+                <td class="price-value">$1,000–$1,600</td>
+                <td class="price-value">$800–$1,200</td>
+                <td class="price-value">$900–$1,400</td>
+                <td class="price-value">$800–$1,200</td>
+                <td class="price-value">$600–$1,000</td>
+                <td class="price-value">$500–$800</td>
+                <td class="price-value">$600–$1,000</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>🔧 Specialty Services & Add-Ons</h2>
+          <p>Premium aircraft care options</p>
+        </div>
+
+        <div class="addons-grid">
+          <div class="addon-card">
+            <div class="addon-name">Ceramic Coating (3–7 Years)</div>
+            <div class="addon-price">$2,000–$7,500+</div>
+            <div class="addon-description">Premium UV & chemical protection with warranty</div>
+          </div>
+          <div class="addon-card">
+            <div class="addon-name">Oxidation Removal & Paint Polish</div>
+            <div class="addon-price">$600–$2,500</div>
+            <div class="addon-description">Restores faded/oxidized paint surfaces</div>
+          </div>
+          <div class="addon-card">
+            <div class="addon-name">Paint Protection Film (PPF)</div>
+            <div class="addon-price">$1,500–$5,000+</div>
+            <div class="addon-description">Leading edges, struts, high-impact areas</div>
+          </div>
+          <div class="addon-card">
+            <div class="addon-name">De-Icer Boot Strip & Reseal</div>
+            <div class="addon-price">$500–$1,500</div>
+            <div class="addon-description">Restores and protects rubber boots</div>
+          </div>
+          <div class="addon-card">
+            <div class="addon-name">Engine Wash & Degrease</div>
+            <div class="addon-price">$300–$1,000</div>
+            <div class="addon-description">Removes grease, oil, carbon buildup</div>
+          </div>
+          <div class="addon-card">
+            <div class="addon-name">Landing Gear Deep Clean</div>
+            <div class="addon-price">$300–$800</div>
+            <div class="addon-description">Hydraulic fluid & brake dust removal</div>
+          </div>
+          <div class="addon-card">
+            <div class="addon-name">Exhaust Stain Removal</div>
+            <div class="addon-price">$150–$500</div>
+            <div class="addon-description">Restores fuselage & wing surfaces</div>
+          </div>
+          <div class="addon-card">
+            <div class="addon-name">Windshield / Canopy Polish</div>
+            <div class="addon-price">$100–$400</div>
+            <div class="addon-description">Removes haze, improves clarity</div>
+          </div>
+          <div class="addon-card">
+            <div class="addon-name">Interior Sanitization / Ozone</div>
+            <div class="addon-price">$200–$600</div>
+            <div class="addon-description">Removes odors, mold, bacteria</div>
+          </div>
+          <div class="addon-card">
+            <div class="addon-name">Leather Reconditioning</div>
+            <div class="addon-price">$250–$800</div>
+            <div class="addon-description">Restores suppleness & UV resistance</div>
+          </div>
+          <div class="addon-card">
+            <div class="addon-name">Carpet Dye / Stain Guard</div>
+            <div class="addon-price">$200–$700</div>
+            <div class="addon-description">Extends carpet life, hides wear</div>
+          </div>
+          <div class="addon-card">
+            <div class="addon-name">Cabin Brightwork Polishing</div>
+            <div class="addon-price">$200–$700</div>
+            <div class="addon-description">Buckles, trim, galley surfaces</div>
+          </div>
+          <div class="addon-card">
+            <div class="addon-name">Decal / Sticker Removal</div>
+            <div class="addon-price">$250–$1,000+</div>
+            <div class="addon-description">Hourly, depends on adhesive</div>
+          </div>
+          <div class="addon-card">
+            <div class="addon-name">Airstair & Entryway Detail</div>
+            <div class="addon-price">$100–$300</div>
+            <div class="addon-description">High-touch first impression upgrade</div>
+          </div>
+          <div class="addon-card">
+            <div class="addon-name">Travel Fee</div>
+            <div class="addon-price">$100–$300</div>
+            <div class="addon-description">Based on airport location</div>
+          </div>
+          <div class="addon-card">
+            <div class="addon-name">Hangar Discount</div>
+            <div class="addon-price" style="color: #28a745;">–10%</div>
+            <div class="addon-description">Applies if service is done indoors</div>
+          </div>
+        </div>
+
+        <div class="terms-section">
+          <h3 class="terms-title">✅ Terms & Conditions</h3>
+          <div class="terms-grid">
+            <div class="term-item important">CLIENT MUST arrange property/hangar access</div>
+            <div class="term-item">All prices are estimates subject to inspection</div>
+            <div class="term-item">Bundle discounts for multiple services</div>
+            <div class="term-item">Regular maintenance plans save 15-20%</div>
+            <div class="term-item">Rush service available (+25% surcharge)</div>
+            <div class="term-item">All work fully guaranteed and insured</div>
+            <div class="term-item">FAA compliant materials and procedures</div>
+            <div class="term-item">Written estimates provided upon request</div>
+            <div class="term-item">Corporate accounts and contracts welcome</div>
+            <div class="term-item">Payment due upon completion</div>
+            <div class="term-item">Fleet pricing available</div>
+            <div class="term-item">Certificates of insurance available</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer id="contact">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-column">
+          <h3>Aircraft Services</h3>
+          <a href="#pricing">Detailing Packages</a>
+          <a href="#services">Ceramic Coating</a>
+          <a href="#services">Paint Protection Film</a>
+          <a href="#services">Interior Deep Clean</a>
+          <a href="#services">Exterior Polish</a>
+          <a href="#services">Brightwork</a>
+        </div>
+        <div class="footer-column">
+          <h3>Aircraft Types</h3>
+          <a href="#aircraft-types">Jets</a>
+          <a href="#aircraft-types">Turboprops</a>
+          <a href="#aircraft-types">Helicopters</a>
+          <a href="#aircraft-types">Single Engine</a>
+          <a href="#aircraft-types">Twin Engine</a>
+          <a href="#aircraft-types">Business Jets</a>
+        </div>
+        <div class="footer-column">
+          <h3>Service Areas</h3>
+          <a href="/locations/phoenix">Phoenix Sky Harbor</a>
+          <a href="/locations/scottsdale">Scottsdale Airport</a>
+          <a href="/locations/mesa">Falcon Field</a>
+          <a href="/locations/chandler">Chandler Airport</a>
+          <a href="/locations/deer-valley">Deer Valley Airport</a>
+          <a href="/locations">All Locations</a>
+        </div>
+        <div class="footer-column">
+          <h3>Contact Us</h3>
+          <p style="color:#94a3b8; margin-bottom:12px;">📞 <a href="tel:4805288227">(480) 528-8227</a></p>
+          <p style="color:#94a3b8; margin-bottom:12px;">✉️ <a href="mailto:aviation@shinedesignauto.com">aviation@shinedesignauto.com</a></p>
+          <p style="color:#94a3b8; margin-bottom:12px;">⏰ Mon-Sun 7AM-7PM</p>
+          <div style="display:flex; gap:12px; margin-top:20px;">
+            <a href="https://facebook.com/shinedesigndetail" aria-label="Facebook">FB</a>
+            <a href="https://instagram.com/shinedesigndetail" aria-label="Instagram">IG</a>
+            <a href="https://youtube.com/@shinedesigndetail" aria-label="YouTube">YT</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Shine Design Aircraft Detailing. All rights reserved. | Professional Aviation Services | Licensed & Insured | FAA Compliant</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // Mobile Menu Toggle
+    function toggleMobileMenu() {
+      const mobileNav = document.getElementById('mobile-nav');
+      const menuBtn = document.querySelector('.menu-btn');
+
+      if (mobileNav.classList.contains('active')) {
+        mobileNav.classList.remove('active');
+        menuBtn.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      } else {
+        mobileNav.classList.add('active');
+        menuBtn.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          // Close mobile menu if open
+          const mobileNav = document.getElementById('mobile-nav');
+          if (mobileNav.classList.contains('active')) {
+            toggleMobileMenu();
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>
