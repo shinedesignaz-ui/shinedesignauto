@@ -52,22 +52,17 @@
         @keyframes slideUpSmooth { from{transform:translateY(120%);opacity:0} to{transform:translateY(0);opacity:1} }
         .footer-grid{display:flex;align-items:center;justify-content:center;gap:8px;padding:12px 16px;max-width:420px;margin:0 auto}
         .footer-item{
-          position:relative;background:linear-gradient(145deg,#fff,#f8fafc);
-          padding:10px 8px;text-align:center;cursor:pointer;transition:all .3s cubic-bezier(.4,0,.2,1);
-          text-decoration:none;color:#0f172a;border:2px solid rgba(226,232,240,.8);
+          position:relative;background:#fff;
+          padding:10px 8px;text-align:center;cursor:pointer;transition:all .25s cubic-bezier(.4,0,.2,1);
+          text-decoration:none;color:#0f172a;border:1.5px solid #e2e8f0;
           font-family: system-ui,-apple-system,Segoe UI,Roboto,Inter,Helvetica,Arial,sans-serif;
-          font-size:10px;border-radius:14px;-webkit-tap-highlight-color:transparent;overflow:hidden;flex:1;min-width:0;box-shadow:0 2px 8px rgba(0,0,0,.04)
+          font-size:11px;border-radius:14px;-webkit-tap-highlight-color:transparent;overflow:hidden;flex:1;min-width:0;box-shadow:0 1px 6px rgba(0,0,0,.05)
         }
-        .footer-item::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,#0ea5e9,#0284c7);opacity:0;transition:opacity .3s ease;border-radius:14px}
-        .footer-item.primary{background:linear-gradient(135deg,#0ea5e9,#0284c7);color:#fff;border-color:rgba(14,165,233,.3);box-shadow:0 4px 16px rgba(14,165,233,.25),0 2px 8px rgba(0,0,0,.08);transform:scale(1.02)}
-        .footer-item:active{transform:scale(.96)} .footer-item.primary:active{transform:scale(.98)}
-        .footer-item svg{width:22px;height:22px;margin-bottom:4px;color:#0ea5e9;position:relative;z-index:1;transition:all .3s ease}
-        .footer-item.primary svg{color:#fff;width:24px;height:24px;filter:drop-shadow(0 1px 2px rgba(0,0,0,.1))}
-        .footer-item span{display:block;font-size:10px;font-weight:600;color:#475569;line-height:1.2;position:relative;z-index:1;letter-spacing:-.02em}
-        .footer-item.primary span{color:#fff;font-weight:700;font-size:11px}
-        .footer-item:hover:not(.primary)::before{opacity:.06}
-        .footer-item.pulse{animation:subtlePulse 2.5s infinite}
-        @keyframes subtlePulse {0%,100%{transform:scale(1.02);box-shadow:0 4px 16px rgba(14,165,233,.25),0 2px 8px rgba(0,0,0,.08)}50%{transform:scale(1.05);box-shadow:0 6px 20px rgba(14,165,233,.35),0 2px 10px rgba(0,0,0,.1)}}
+        .footer-item.primary{background:linear-gradient(135deg,#0ea5e9,#0284c7);color:#fff;border-color:rgba(14,165,233,.3);box-shadow:0 6px 18px rgba(14,165,233,.28)}
+        .footer-item:active{transform:scale(.97)}
+        .footer-item svg{width:22px;height:22px;margin-bottom:4px}
+        .footer-item.primary svg{color:#fff}
+        .footer-item span{display:block;font-weight:700;letter-spacing:-.01em}
         .desktop-floating-buttons{display:none!important}
       }
 
@@ -85,15 +80,10 @@
         }
         .floating-btn:nth-child(1){--index:0}.floating-btn:nth-child(2){--index:1}.floating-btn:nth-child(3){--index:2}.floating-btn:nth-child(4){--index:3}
         @keyframes floatButton {0%,100%{transform:translateY(0)}50%{transform:translateY(-3px)}}
-        .floating-btn::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,#0ea5e9,#0284c7);opacity:0;transition:opacity .3s ease;border-radius:20px}
-        .floating-btn:hover{transform:translateY(-4px) scale(1.05);box-shadow:0 12px 40px rgba(0,0,0,.15),inset 0 1px 0 rgba(255,255,255,.9);border-color:#0ea5e9}
-        .floating-btn:hover::before{opacity:.06}
-        .floating-btn svg{width:28px;height:28px;color:#0ea5e9;position:relative;z-index:1;transition:all .3s ease}
-        .floating-btn:hover svg{transform:scale(1.1) rotate(5deg)}
-        .floating-btn.primary{width:76px;height:76px;background:linear-gradient(135deg,#0ea5e9,#0284c7);border:2px solid rgba(255,255,255,.3);animation:primaryPulse 2.5s ease-in-out infinite}
-        @keyframes primaryPulse {0%,100%{box-shadow:0 8px 32px rgba(14,165,233,.4),0 0 0 0 rgba(14,165,233,.4)}50%{box-shadow:0 12px 40px rgba(14,165,233,.5),0 0 0 12px rgba(14,165,233,0)}}
-        .floating-btn.primary svg{color:#fff;width:34px;height:34px;filter:drop-shadow(0 2px 8px rgba(0,0,0,.2))}
-        .floating-btn.primary:hover{transform:translateY(-6px) scale(1.08) rotate(-2deg);background:linear-gradient(135deg,#0284c7,#0369a1)}
+        .floating-btn:hover{transform:translateY(-4px) scale(1.05)}
+        .floating-btn svg{width:28px;height:28px;color:#0ea5e9}
+        .floating-btn.primary{width:76px;height:76px;background:linear-gradient(135deg,#0ea5e9,#0284c7);border:2px solid rgba(255,255,255,.3)}
+        .floating-btn.primary svg{color:#fff;width:34px;height:34px}
         .tooltip{position:absolute;right:80px;background:rgba(15,23,42,.95);color:#fff;padding:8px 12px;border-radius:8px;font-size:13px;font-weight:500;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .3s ease;backdrop-filter:blur(12px)}
         .floating-btn:hover .tooltip{opacity:1}
       }
@@ -106,42 +96,48 @@
       .calculator-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);z-index:2000;animation:fadeIn .3s ease}
       @keyframes fadeIn{from{opacity:0}to{opacity:1}}
       .calculator-modal.active{display:flex;align-items:center;justify-content:center;padding:20px}
-      .calculator-content{background:#fff;border-radius:24px;padding:28px;width:100%;max-width:520px;max-height:90vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,.3);animation:slideUpCalc .4s cubic-bezier(.34,1.56,.64,1);font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Helvetica,Arial,sans-serif}
-      @keyframes slideUpCalc{from{opacity:0;transform:translateY(40px) scale(.95)}to{opacity:1;transform:translateY(0) scale(1)}}
-      .calculator-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;padding-bottom:16px;border-bottom:2px solid #f1f5f9}
-      .calculator-header h3{color:#0f172a;font-size:24px;margin:0;font-weight:800;background:linear-gradient(135deg,#0ea5e9,#0284c7);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-      .close-btn{background:linear-gradient(145deg,#f8fafc,#e2e8f0);border:none;font-size:24px;color:#64748b;cursor:pointer;width:40px;height:40px;border-radius:12px;transition:all .3s ease;display:flex;align-items:center;justify-content:center}
-      .close-btn:hover{background:linear-gradient(145deg,#e2e8f0,#cbd5e1);transform:rotate(90deg);color:#ef4444}
-      .vehicle-select{width:100%;padding:14px 16px;border:2px solid #e2e8f0;border-radius:12px;margin-bottom:24px;font-size:15px;background:#fff;color:#0f172a;font-weight:600;cursor:pointer;transition:all .3s ease}
-      .vehicle-select:hover{border-color:#0ea5e9;box-shadow:0 0 0 3px rgba(14,165,233,.1)}
-      .vehicle-select:focus{outline:none;border-color:#0ea5e9;box-shadow:0 0 0 3px rgba(14,165,233,.2)}
-      .calculator-content h4{margin:22px 0 10px;color:#475569;font-size:12px;text-transform:uppercase;letter-spacing:.8px;font-weight:800;display:flex;align-items:center;gap:8px}
-      .calculator-content h4.bundle-header{color:#22c55e;font-size:13px;background:linear-gradient(145deg,#f0fdf4,#dcfce7);padding:8px 12px;border-radius:8px;margin-top:18px}
-      .service-option{padding:0;margin-bottom:8px;border:2px solid transparent;border-radius:12px;cursor:pointer;transition:all .3s cubic-bezier(.4,0,.2,1);background:linear-gradient(145deg,#f8fafc,#f1f5f9);position:relative;overflow:hidden}
-      .service-option::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,#0ea5e9,#0284c7);opacity:0;transition:opacity .3s ease}
-      .service-option:hover{border-color:#0ea5e9;transform:translateX(4px);box-shadow:0 4px 12px rgba(14,165,233,.15)}
-      .service-option.selected{border-color:#0ea5e9;background:linear-gradient(145deg,#f0f9ff,#e0f2fe);box-shadow:0 4px 16px rgba(14,165,233,.2)}
-      .service-option.selected::before{opacity:.05}
-      .service-option label{display:flex;align-items:center;cursor:pointer;font-size:14px;color:#0f172a;margin:0;padding:14px;position:relative;z-index:1;font-weight:600}
-      .service-option input[type="checkbox"]{margin-right:12px;width:20px;height:20px;cursor:pointer;accent-color:#0ea5e9}
+      .calculator-content{
+        background:#fff;border-radius:24px;padding:28px;width:100%;max-width:520px;max-height:90vh;overflow-y:auto;
+        box-shadow:0 20px 60px rgba(0,0,0,.3);animation:slideUpCalc .4s cubic-bezier(.34,1.56,.64,1);
+        font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Helvetica,Arial,sans-serif;
+        /* Keep focused inputs clear of browser chrome/keyboard */
+        scroll-padding-bottom: calc(160px + env(safe-area-inset-bottom,0px));
+      }
+      /* Extra padding at the bottom when keyboard is open */
+      .kb-open .calculator-content{ padding-bottom: calc(180px + env(safe-area-inset-bottom,0px)); }
 
-      .request-section{margin-top:20px;padding:18px;background:linear-gradient(135deg,#0ea5e9,#0284c7);border-radius:16px;text-align:center;box-shadow:0 8px 24px rgba(14,165,233,.25);color:#fff;font-weight:700}
-      .cta-button{width:100%;padding:16px;background:linear-gradient(135deg,#0ea5e9,#0284c7);color:#fff;border:none;border-radius:999px;font-size:16px;font-weight:800;cursor:pointer;margin-top:16px;transition:all .3s cubic-bezier(.4,0,.2,1);box-shadow:0 8px 24px rgba(14,165,233,.3);letter-spacing:-.02em;position:relative;overflow:hidden}
-      .cta-button:hover{background:linear-gradient(135deg,#0284c7,#0369a1);transform:translateY(-2px);box-shadow:0 12px 32px rgba(14,165,233,.4)}
+      @keyframes slideUpCalc{from{opacity:0;transform:translateY(40px) scale(.95)}to{opacity:1;transform:translateY(0) scale(1)}}
+      .calculator-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px;padding-bottom:14px;border-bottom:2px solid #f1f5f9}
+      .calculator-header h3{color:#0f172a;font-size:22px;margin:0;font-weight:800}
+      .close-btn{background:#f1f5f9;border:none;font-size:22px;color:#64748b;cursor:pointer;width:40px;height:40px;border-radius:12px;transition:all .2s ease;display:flex;align-items:center;justify-content:center}
+      .close-btn:hover{background:#e2e8f0;color:#ef4444}
+
+      /* Streamlined option cards */
+      .section-title{margin:18px 0 8px;color:#0f172a;font-size:13px;font-weight:900;text-transform:uppercase;letter-spacing:.8px}
+      .service-option{padding:0;margin-bottom:8px;border:1.5px solid #e2e8f0;border-radius:12px;cursor:pointer;transition:all .18s cubic-bezier(.4,0,.2,1);background:#fff;position:relative;overflow:hidden}
+      .service-option:hover{border-color:#0ea5e9}
+      .service-option.selected{border-color:#0ea5e9;box-shadow:0 4px 14px rgba(14,165,233,.18)}
+      .service-option label{display:flex;align-items:center;gap:10px;cursor:pointer;font-size:15px;color:#0f172a;margin:0;padding:14px;position:relative;font-weight:700}
+      .service-option small{font-weight:600;color:#64748b}
+      .service-option input[type="checkbox"]{margin-right:4px;width:20px;height:20px;cursor:pointer;accent-color:#0ea5e9;border-radius:6px}
+
+      .request-section{margin-top:18px;padding:14px;background:linear-gradient(135deg,#0ea5e9,#0284c7);border-radius:16px;text-align:center;box-shadow:0 8px 24px rgba(14,165,233,.25);color:#fff;font-weight:800}
+      .cta-button{width:100%;padding:16px;background:linear-gradient(135deg,#0ea5e9,#0284c7);color:#fff;border:none;border-radius:999px;font-size:16px;font-weight:900;cursor:pointer;margin-top:14px;transition:all .25s cubic-bezier(.4,0,.2,1);box-shadow:0 8px 24px rgba(14,165,233,.3);letter-spacing:-.02em}
+      .cta-button:hover{background:linear-gradient(135deg,#0284c7,#0369a1)}
       .sms-notice{font-size:13px;color:#64748b;text-align:center;margin-top:10px;display:flex;align-items:center;justify-content:center;gap:6px;padding:8px;background:#f8fafc;border-radius:8px}
 
       .inline-fields{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
-      .input{width:100%;padding:12px 14px;border:2px solid #e2e8f0;border-radius:12px;font-size:14px;background:#fff;color:#0f172a;transition:.2s}
-      .input:focus{outline:none;border-color:#0ea5e9;box-shadow:0 0 0 3px rgba(14,165,233,.15)}
-      .textarea{width:100%;padding:12px 14px;border:2px solid #e2e8f0;border-radius:12px;font-size:14px;min-height:64px;resize:vertical}
-      .textarea:focus{outline:none;border-color:#0ea5e9;box-shadow:0 0 0 3px rgba(14,165,233,.15)}
+      .input{width:100%;padding:12px 14px;border:1.5px solid #e2e8f0;border-radius:12px;font-size:14px;background:#fff;color:#0f172a;transition:.2s}
+      .input:focus{outline:none;border-color:#0ea5e9;box-shadow:0 0 0 3px rgba(14,165,233,.12)}
+      .textarea{width:100%;padding:12px 14px;border:1.5px solid #e2e8f0;border-radius:12px;font-size:14px;min-height:64px;resize:vertical}
+      .textarea:focus{outline:none;border-color:#0ea5e9;box-shadow:0 0 0 3px rgba(14,165,233,.12)}
 
       /* Wrap color UI */
       .swatches{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
       .swatch{width:32px;height:32px;border-radius:8px;border:2px solid rgba(0,0,0,.1);cursor:pointer;box-shadow:0 1px 4px rgba(0,0,0,.08)}
       .swatch.selected{outline:3px solid rgba(14,165,233,.5)}
       .wrap-picker{display:grid;grid-template-columns:1fr auto;gap:10px;margin-top:10px;align-items:center}
-      .wrap-chip{display:inline-flex;align-items:center;gap:8px;padding:8px 10px;border-radius:10px;background:#f8fafc;border:1px solid #e2e8f0;font-size:12px;color:#0f172a;margin-top:8px}
+      .wrap-chip{display:inline-flex;align-items:center;gap:8px;padding:8px 10px;border-radius:10px;background:#f8fafc;border:1.5px solid #e2e8f0;font-size:12px;color:#0f172a;margin-top:8px}
       .wrap-chip .chip-dot{width:12px;height:12px;border-radius:50%;border:1px solid rgba(0,0,0,.2)}
     `;
 
@@ -156,7 +152,7 @@
           <button class="footer-item" data-gtm-event="open_calculator" onclick="window.openCalculator()" aria-label="Service Selector">
             ${iconClipboard()}<span>Services</span>
           </button>
-          <a href="${AB.bookingUrl}" class="footer-item primary pulse" data-gtm-event="book_click" aria-label="Book Online">
+          <a href="${AB.bookingUrl}" class="footer-item primary" data-gtm-event="book_click" aria-label="Book Online">
             ${iconCalendar()}<span>Book</span>
           </a>
           <a href="tel:${AB.phone}" class="footer-item" data-gtm-event="call_click" aria-label="Call">
@@ -188,7 +184,7 @@
       </div>
     `;
 
-    // ------- Modal (adds wrap color + tint %) -------
+    // ------- Modal (with expanded vehicle types) -------
     const calculatorModal = `
       <div class="calculator-modal" id="calculatorModal">
         <div class="calculator-content" role="dialog" aria-modal="true" aria-labelledby="calcTitle">
@@ -203,34 +199,37 @@
             <option value="medium">🚙 Medium (Small SUV/Crossover)</option>
             <option value="large">🚚 Large (Full-Size Truck/Large Sedan)</option>
             <option value="xl">🚐 XL (Full-Size SUV/Minivan)</option>
-            <option value="xxl">🚌 XXL (Extended Van/RV)</option>
+            <option value="xxl">🚌 XXL (Extended Van)</option>
+            <option value="rv">🏕️ RV / Motorhome</option>
+            <option value="boat">🛥️ Boat</option>
+            <option value="aircraft">✈️ Aircraft</option>
           </select>
 
-          <h4 class="bundle-header">💰 Bundle Packages (Best Value)</h4>
+          <div class="section-title">💰 Bundle Packages</div>
           ${opt('bundle','Silver Package (Interior L1 + Exterior L1)')}
           ${opt('bundle','Gold Package (Interior L2 + Exterior L2)')}
           ${opt('bundle','Platinum Package (Interior L3 + Exterior L2)')}
 
-          <h4>🧹 Interior Services</h4>
-          ${opt('interior','Level 1: Refresh & Clean')}
-          ${opt('interior','Level 2: Deep Clean & Restore')}
-          ${opt('interior','Level 3: Elite Transformation')}
+          <div class="section-title">🧹 Interior</div>
+          ${opt('interior','Level 1: Refresh & Clean <small>vacuum, wipe-down, windows</small>')}
+          ${opt('interior','Level 2: Deep Clean & Restore <small>steam, plastics, leather care</small>')}
+          ${opt('interior','Level 3: Elite Transformation <small>full shampoo & extraction</small>')}
 
-          <h4>✨ Exterior Services</h4>
-          ${opt('exterior','Level 1: Maintenance Wash')}
-          ${opt('exterior','Level 2: Deep Clean & Seal')}
+          <div class="section-title">✨ Exterior</div>
+          ${opt('exterior','Level 1: Maintenance Wash <small>foam wash, protection</small>')}
+          ${opt('exterior','Level 2: Deep Clean & Seal <small>iron/clay decon + 6-mo sealant</small>')}
 
-          <h4>🛠 Paint Correction</h4>
+          <div class="section-title">🛠 Paint Correction</div>
           ${opt(null,'Enhancement Polish (≈70% correction)')}
           ${opt(null,'Paint Correction (≈85% correction)')}
           ${opt(null,'Show Car Finish (≈95% perfection)')}
 
-          <h4>🛡️ Ceramic Coating</h4>
+          <div class="section-title">🛡️ Ceramic Coating</div>
           ${opt(null,'Essential – 3 Year Protection')}
           ${opt(null,'Premium – 5+ Year Protection')}
           ${opt(null,'Elite – 7+ Year / Lifetime')}
 
-          <h4>🎨 Window Tint</h4>
+          <div class="section-title">🎨 Window Tint</div>
           ${opt('tint','Sedan – Ceramic Tint')}
           ${opt('tint','Truck – Ceramic Tint')}
           ${opt('tint','SUV – Ceramic Tint')}
@@ -243,7 +242,7 @@
             <input id="tintNotes" class="input" placeholder="Windows (front/rear/windshield)" />
           </div>
 
-          <h4>🧭 Bigger Vehicles & Specialty</h4>
+          <div class="section-title">🧭 Specialty</div>
           ${opt('special','RV / Motorhome – Exterior Detail')}
           ${opt('special','RV / Motorhome – Interior Detail')}
           ${opt('special','Boat (≤20 ft) – Wash & Protect')}
@@ -251,14 +250,14 @@
           ${opt('special','Aircraft – Exterior Wash & Dry')}
           ${opt('special','Aircraft – Interior Detail')}
 
-          <h4>🛡️ PPF / Paint Protection Film</h4>
+          <div class="section-title">🛡️ PPF / Paint Protection Film</div>
           ${opt('ppf','Front Bumper')}
           ${opt('ppf','Partial Front (Bumper, 18–24" Hood/Fenders, Mirrors)')}
           ${opt('ppf','Full Front (Bumper, Full Hood/Fenders, Mirrors)')}
           ${opt('ppf','High-Impact (Rocker Panels, A-Pillars, Door Cups)')}
           ${opt('ppf','Full Body PPF')}
 
-          <h4>🖼️ Vinyl Wraps</h4>
+          <div class="section-title">🖼️ Vinyl Wraps</div>
           ${opt('wrap','Full Vehicle Wrap')}
           ${opt('wrap','Partial Wrap (Sides / Hood / Roof)')}
           ${opt('wrap','Logos & Decals Only')}
@@ -283,7 +282,7 @@
             </div>
           </div>
 
-          <h4>➕ Add-Ons</h4>
+          <div class="section-title">➕ Add-Ons</div>
           ${opt(null,'Engine Bay Detail')}
           ${opt(null,'Headlight Restoration')}
           ${opt(null,'Pet Hair Removal')}
@@ -310,24 +309,31 @@
       </div>
     `;
 
-    // Inject
+    // Inject UI
     document.body.insertAdjacentHTML('beforeend', mobileFooter);
     document.body.insertAdjacentHTML('beforeend', desktopButtons);
     document.body.insertAdjacentHTML('beforeend', calculatorModal);
     // Mark footer present to enable padding
     document.body.classList.add('ab-foot-visible');
 
-    // Hide footer when keyboard/pickers open (prevents cutoff)
+    // Hide footer when keyboard/pickers open + add modal bottom room (prevents cutoff)
     if (window.visualViewport){
       const onViewport = () => {
         const keyboardOpen = (window.innerHeight - window.visualViewport.height) > 150;
         document.body.classList.toggle('ab-hide-footer', keyboardOpen);
+        document.body.classList.toggle('kb-open', keyboardOpen);
       };
       window.visualViewport.addEventListener('resize', onViewport);
       window.visualViewport.addEventListener('scroll', onViewport);
       window.addEventListener('focusin', onViewport);
       window.addEventListener('focusout', onViewport);
     }
+    // Ensure focused inputs are visible
+    document.addEventListener('focusin', (e)=>{
+      const input = e.target;
+      if (!input.closest('.calculator-content')) return;
+      setTimeout(()=>{ try{ input.scrollIntoView({block:'center', behavior:'smooth'});}catch(_){/* no-op */} }, 50);
+    });
 
     // ------- GTM events -------
     document.addEventListener('click', (e) => {
@@ -357,7 +363,7 @@
 
     window.handleSelection = function (){
       const checked = [...document.querySelectorAll('.service-option input[type="checkbox"]:checked')];
-      // Bundle exclusivity
+      // Bundle exclusivity: uncheck interior/exterior if a bundle is chosen
       const hasBundle = checked.some(cb=>cb.dataset.service==='bundle');
       if (hasBundle){
         document.querySelectorAll('.service-option input[data-service="interior"], .service-option input[data-service="exterior"]').forEach(cb=>{
@@ -513,7 +519,7 @@
     document.querySelectorAll('.service-option input[type="checkbox"]').forEach(cb=>{
       cb.addEventListener('change', function(){
         const opt = this.closest('.service-option');
-        if (this.checked){ opt.classList.add('selected'); opt.style.transform='scale(1.02)'; setTimeout(()=>opt.style.transform='',200); }
+        if (this.checked){ opt.classList.add('selected'); }
         else { opt.classList.remove('selected'); }
       });
     });
