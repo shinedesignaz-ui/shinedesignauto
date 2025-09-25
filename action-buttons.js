@@ -1,5 +1,6 @@
 // /action-buttons.js — Shine Design Mobile Detailing
-// Vehicle-first flow, grouped options, live summary, safe gap above date/time
+// Vehicle-first flow, grouped options, live summary, footer-safe on mobile
+// Vinyl Wrap: color + finishes + brand chips (3M/Avery/Inozetek/KPMF/Hexis) + custom brand
 // Single-file, drop-in script (no external dependencies)
 (function () {
   'use strict';
@@ -29,7 +30,6 @@
       }
 
       @media(max-width:768px){
-        /* Only reserve space when our footer is mounted & visible */
         body.ab-foot-visible{
           padding-bottom:calc(var(--ab-bar-h) + env(safe-area-inset-bottom,0px))!important
         }
@@ -82,7 +82,6 @@
         .floating-btn:hover .tooltip{opacity:1}
       }
 
-      /* Hide footer & remove padding when keyboard is open */
       .ab-hide-footer .mobile-sticky-footer{ display:none !important; }
       .ab-hide-footer.ab-foot-visible{ padding-bottom:0 !important; }
 
@@ -93,9 +92,9 @@
       .calculator-content{
         background:#fff;border-radius:24px;padding:24px 24px 28px;width:100%;max-width:560px;max-height:90vh;overflow-y:auto;
         box-shadow:0 20px 60px rgba(0,0,0,.3);font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Helvetica,Arial,sans-serif;
-        scroll-padding-bottom: calc(220px + env(safe-area-inset-bottom,0px));
+        scroll-padding-bottom: calc(160px + env(safe-area-inset-bottom,0px));
       }
-      .kb-open .calculator-content{ padding-bottom: calc(240px + env(safe-area-inset-bottom,0px)); }
+      .kb-open .calculator-content{ padding-bottom: calc(180px + env(safe-area-inset-bottom,0px)); }
 
       .calculator-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;padding-bottom:12px;border-bottom:2px solid #f1f5f9}
       .calculator-header h3{color:#0f172a;font-size:22px;margin:0;font-weight:800}
@@ -125,9 +124,7 @@
       .summary-list li{font-size:13px;color:#334155;margin:2px 0}
 
       /* Inputs */
-      .inline-fields{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
       .input{width:100%;padding:12px 14px;border:1.5px solid #e2e8f0;border-radius:12px;font-size:14px;background:#fff;color:#0f172a}
-      .input:focus{outline:none;border-color:#0ea5e9;box-shadow:0 0 0 3px rgba(14,165,233,.12)}
       .textarea{width:100%;padding:12px 14px;border:1.5px solid #e2e8f0;border-radius:12px;font-size:14px;min-height:64px;resize:vertical}
 
       .cta-button{width:100%;padding:16px;background:linear-gradient(135deg,#0ea5e9,#0284c7);color:#fff;border:none;border-radius:999px;font-size:16px;font-weight:900;cursor:pointer;margin-top:14px}
@@ -141,8 +138,12 @@
       .wrap-chip{display:inline-flex;align-items:center;gap:8px;padding:8px 10px;border-radius:10px;background:#f8fafc;border:1.5px solid #e2e8f0;font-size:12px;color:#0f172a;margin-top:8px}
       .wrap-chip .chip-dot{width:12px;height:12px;border-radius:50%;border:1px solid rgba(0,0,0,.2)}
 
-      /* Guaranteed bottom space BEFORE date/time */
-      .safe-gap{height:24px}
+      /* Chips (finish / brand) */
+      .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+      .chip{
+        border:1.5px solid #e2e8f0;border-radius:999px;padding:8px 12px;font-size:13px;font-weight:700;color:#0f172a;background:#fff;cursor:pointer;
+      }
+      .chip.selected{border-color:#0ea5e9;background:#f0f9ff;box-shadow:0 2px 8px rgba(14,165,233,.16)}
     `;
 
     const styleSheet = document.createElement('style');
@@ -187,7 +188,7 @@
       </div>
     `;
 
-    // ------- Modal (vehicle-first + grouped options + summary) -------
+    // ------- Modal (vehicle-first + grouped options + Vinyl Wrap w/ finishes & brand) -------
     const calculatorModal = `
       <div class="calculator-modal" id="calculatorModal">
         <div class="calculator-content" role="dialog" aria-modal="true" aria-labelledby="calcTitle">
@@ -217,7 +218,7 @@
 
           <div class="section-title">🧹 Interior</div>
           <div class="grid">
-            ${opt('interior','Vacuum & Wipe Down','all carpets, seats, mats, windows')}
+            ${opt('interior','Vacuum & Wipe Down','carpets, seats, mats, windows')}
             ${opt('interior','Shampoo / Extraction','carpet & upholstery')}
             ${opt('interior','Stain Treatment','spot stains & spills')}
             ${opt('interior','Pet Hair Removal','moderate to heavy')}
@@ -227,7 +228,7 @@
 
           <div class="section-title">✨ Exterior</div>
           <div class="grid">
-            ${opt('exterior','Maintenance Wash','foam, hand wash, basic protect')}
+            ${opt('exterior','Maintenance Wash','foam wash + protection')}
             ${opt('exterior','Iron Decon','removes embedded iron')}
             ${opt('exterior','Clay Bar','smooths surface')}
             ${opt('exterior','One-Step Polish','gloss boost, light defects')}
@@ -258,32 +259,18 @@
             ${opt('ppf','Full Body PPF','maximum coverage')}
           </div>
 
-          <div class="section-title">🎨 Window Tint</div>
+          <div class="section-title">🖼️ Vinyl Wrap</div>
           <div class="grid">
-            ${opt('tint','Sedan – Ceramic Tint','')}
-            ${opt('tint','Truck – Ceramic Tint','')}
-            ${opt('tint','SUV – Ceramic Tint','')}
-          </div>
-          <div id="tintOptions" class="inline-fields hidden" aria-label="Tint preferences" style="margin-top:8px">
-            <select id="tintPercent" class="input" aria-label="Tint percentage">
-              <option value="">Tint % (optional)</option>
-              <option>5%</option><option>15%</option><option>20%</option>
-              <option>35%</option><option>50%</option><option>70%</option>
-            </select>
-            <input id="tintNotes" class="input" placeholder="Windows (front/rear/windshield)" />
+            ${opt('wrap','Full Vehicle Wrap','')}
+            ${opt('wrap','Partial Wrap (Sides / Hood / Roof)','')}
+            ${opt('wrap','Logos & Decals Only','')}
+            ${opt('wrap','Chrome Delete','')}
+            ${opt('wrap','Roof or Hood Accent','')}
+            ${opt('wrap','Color Change (Specify color)','')}
           </div>
 
-          <div class="section-title">🧭 Specialty & Add-Ons</div>
-          <div class="grid">
-            ${opt(null,'Engine Bay Detail','degrease & dress')}
-            ${opt(null,'Headlight Restoration','sand, polish, seal')}
-            ${opt(null,'Water Spot Removal','glass & paint')}
-            ${opt(null,'Chrome Delete / Wrap Accents','')}
-            ${opt('wrap','Color Change Wrap','pick color below')}
-          </div>
-
-          <div id="wrapOptions" class="hidden" aria-label="Wrap color picker">
-            <div class="wrap-picker">
+          <div id="wrapOptions" class="hidden" aria-label="Wrap details">
+            <div class="wrap-picker" style="margin-top:8px">
               <div>
                 <div style="font-weight:700;color:#0f172a;margin-top:6px">Wrap color</div>
                 <div class="swatches" id="wrapSwatches">
@@ -293,26 +280,41 @@
               </div>
               <input type="color" id="wrapColorCustom" class="input" value="#00A3FF" aria-label="Custom wrap color" />
             </div>
+
+            <div class="chips" id="wrapFinishChips" role="group" aria-label="Wrap finish">
+              <button type="button" class="chip" data-finish="Gloss">Gloss</button>
+              <button type="button" class="chip" data-finish="Satin">Satin</button>
+              <button type="button" class="chip" data-finish="Matte">Matte</button>
+              <button type="button" class="chip" data-finish="Metallic">Metallic</button>
+              <button type="button" class="chip" data-finish="Color-Shift">Color-Shift</button>
+            </div>
+
+            <div style="margin-top:12px">
+              <div style="font-weight:700;color:#0f172a;margin-bottom:6px">Brand</div>
+              <div class="chips" id="wrapBrandChips" role="group" aria-label="Wrap brand">
+                <button type="button" class="chip" data-brand="3M">3M</button>
+                <button type="button" class="chip" data-brand="Avery Dennison">Avery Dennison</button>
+                <button type="button" class="chip" data-brand="Inozetek">Inozetek</button>
+                <button type="button" class="chip" data-brand="KPMF">KPMF</button>
+                <button type="button" class="chip" data-brand="Hexis">Hexis</button>
+              </div>
+              <input type="text" id="wrapBrandOther" class="input" placeholder="Other brand — optional" style="margin-top:8px" />
+            </div>
+
             <div id="wrapColorChip" class="wrap-chip hidden" aria-live="polite">
               <span class="chip-dot" id="wrapChipDot"></span>
               <span id="wrapChipText">Selected: #00A3FF</span>
             </div>
           </div>
 
-          <!-- Live summary BEFORE date/time -->
+          <!-- Live summary -->
           <div class="summary-card" id="summaryCard">
             <h5>Selected Services</h5>
             <ul class="summary-list" id="summaryList"><li style="color:#64748b">Nothing selected yet.</li></ul>
           </div>
 
-          <div class="safe-gap"></div>
-
-          <!-- Preferred date/time + zip + notes -->
-          <div class="inline-fields" aria-label="Preferred date and time">
-            <input class="input" type="date" id="preferredDate" placeholder="Preferred date" />
-            <input class="input" type="time" id="preferredTime" placeholder="Preferred time" />
-          </div>
-          <div style="margin-top:10px">
+          <!-- Contact details (no date/time) -->
+          <div style="margin-top:12px">
             <input class="input" type="text" id="zipCode" inputmode="numeric" pattern="[0-9]*" placeholder="ZIP code (optional)" />
           </div>
           <div style="margin-top:10px">
@@ -331,7 +333,7 @@
     document.body.insertAdjacentHTML('beforeend', calculatorModal);
     document.body.classList.add('ab-foot-visible'); // padding enabled
 
-    // Hide footer when keyboard/pickers open + add modal bottom room (prevents cutoff)
+    // Hide footer when keyboard opens (prevents cutoff)
     if (window.visualViewport){
       const onViewport = () => {
         const keyboardOpen = (window.innerHeight - window.visualViewport.height) > 150;
@@ -343,12 +345,6 @@
       window.addEventListener('focusin', onViewport);
       window.addEventListener('focusout', onViewport);
     }
-    // Ensure focused inputs are visible
-    document.addEventListener('focusin', (e)=>{
-      const input = e.target;
-      if (!input.closest('.calculator-content')) return;
-      setTimeout(()=>{ try{ input.scrollIntoView({block:'center', behavior:'smooth'});}catch(_){/* no-op */} }, 50);
-    });
 
     // ------- GTM events -------
     document.addEventListener('click', (e) => {
@@ -371,7 +367,13 @@
       document.querySelectorAll('.option input[type="checkbox"]').forEach((cb,i)=>{
         setTimeout(()=>{ cb.checked=false; cb.closest('.option').classList.remove('selected'); }, i*10);
       });
-      toggleWrapUI(false); toggleTintUI(false);
+      toggleWrapUI(false);
+      selectedWrapColor = '';
+      selectedWrapFinish = '';
+      selectedWrapBrandChip = '';
+      const chips = document.querySelectorAll('#wrapFinishChips .chip, #wrapBrandChips .chip');
+      chips.forEach(c=>c.classList.remove('selected'));
+      const brandOther = document.getElementById('wrapBrandOther'); if (brandOther) brandOther.value = '';
       updateSummary();
     };
 
@@ -384,8 +386,8 @@
           if (cb.checked){ cb.checked=false; cb.closest('.option').classList.remove('selected'); }
         });
       }
+      // Show/hide wrap detail UI
       toggleWrapUI( checked.some(cb=>cb.dataset.service==='wrap') );
-      toggleTintUI( checked.some(cb=>cb.dataset.service==='tint') );
       updateSummary();
     };
 
@@ -395,11 +397,26 @@
         const span = cb.closest('.option').querySelector('.opt-label').textContent.trim();
         return `<li>${span}</li>`;
       });
+
+      // Append wrap details preview if any
+      const brandText = getWrapBrand();
+      if (selectedWrapColor || selectedWrapFinish || brandText){
+        const details = [
+          selectedWrapColor ? `Color: ${selectedWrapColor.toUpperCase()}` : '',
+          selectedWrapFinish ? `Finish: ${selectedWrapFinish}` : '',
+          brandText ? `Brand: ${brandText}` : ''
+        ].filter(Boolean).join(' • ');
+        if (details) items.push(`<li>Wrap Details — ${details}</li>`);
+      }
+
       list.innerHTML = items.length ? items.join('') : '<li style="color:#64748b">Nothing selected yet.</li>';
     }
 
-    // ------- Wrap color UI -------
-    let selectedWrapColor = ''; // hex string
+    // ------- Wrap details (color + finish + brand) -------
+    let selectedWrapColor = '';   // hex string
+    let selectedWrapFinish = '';  // string
+    let selectedWrapBrandChip = '';// from chip (optional)
+
     function selectWrapColor(hex){
       selectedWrapColor = hex;
       const chip = document.getElementById('wrapColorChip');
@@ -430,19 +447,52 @@
       if (picker){
         picker.addEventListener('input', ()=> selectWrapColor(picker.value));
       }
+      const finishChips = document.getElementById('wrapFinishChips');
+      if (finishChips){
+        finishChips.addEventListener('click', (e)=>{
+          const btn = e.target.closest('.chip');
+          if (!btn) return;
+          finishChips.querySelectorAll('.chip').forEach(c=>c.classList.remove('selected'));
+          btn.classList.add('selected');
+          selectedWrapFinish = btn.getAttribute('data-finish');
+          updateSummary();
+        });
+      }
+      const brandChips = document.getElementById('wrapBrandChips');
+      if (brandChips){
+        brandChips.addEventListener('click', (e)=>{
+          const btn = e.target.closest('.chip');
+          if (!btn) return;
+          brandChips.querySelectorAll('.chip').forEach(c=>c.classList.remove('selected'));
+          btn.classList.add('selected');
+          selectedWrapBrandChip = btn.getAttribute('data-brand') || '';
+          const txt = document.getElementById('wrapBrandOther');
+          if (txt){ txt.value = ''; } // chip takes precedence, clear custom
+          updateSummary();
+        });
+      }
+      const brandOther = document.getElementById('wrapBrandOther');
+      if (brandOther){
+        brandOther.addEventListener('input', ()=>{
+          // Custom brand overrides chip selection
+          if (brandOther.value.trim()){
+            const brandChips = document.getElementById('wrapBrandChips');
+            if (brandChips) brandChips.querySelectorAll('.chip').forEach(c=>c.classList.remove('selected'));
+            selectedWrapBrandChip = '';
+          }
+          updateSummary();
+        });
+      }
+    }
+    function getWrapBrand(){
+      const custom = document.getElementById('wrapBrandOther')?.value.trim() || '';
+      return custom || selectedWrapBrandChip || '';
     }
     function toggleWrapUI(show){
       const el = document.getElementById('wrapOptions');
       if (!el) return;
       if (show){ el.classList.remove('hidden'); if (!selectedWrapColor) selectWrapColor('#00A3FF'); setupWrapUI(); }
       else { el.classList.add('hidden'); }
-    }
-
-    // ------- Tint % UI -------
-    function toggleTintUI(show){
-      const el = document.getElementById('tintOptions');
-      if (!el) return;
-      el.classList.toggle('hidden', !show);
     }
 
     // ------- SMS helpers (clean iOS/Android prefill) -------
@@ -461,13 +511,9 @@
       const vehicleTypeEl = document.getElementById('vehicleType');
       const vehicleLabel = vehicleTypeEl.options[vehicleTypeEl.selectedIndex].text;
 
-      const date = document.getElementById('preferredDate')?.value || '';
-      const time = document.getElementById('preferredTime')?.value || '';
       const zip  = document.getElementById('zipCode')?.value?.trim() || '';
       const notes = document.getElementById('notes')?.value?.trim() || '';
-
-      const tintPercent = document.getElementById('tintPercent')?.value || '';
-      const tintNotes   = document.getElementById('tintNotes')?.value?.trim() || '';
+      const wrapBrand = getWrapBrand();
 
       const checked = [...document.querySelectorAll('.option input[type="checkbox"]:checked')];
       if (!checked.length){ alert('Please select at least one service'); return; }
@@ -476,11 +522,13 @@
                               .map(s => `• ${s}`);
 
       const details = [];
-      if (date) details.push(`Preferred Date: ${date}`);
-      if (time) details.push(`Preferred Time: ${time}`);
       if (zip)  details.push(`ZIP: ${zip}`);
-      if (selectedWrapColor && checked.some(cb=>cb.dataset.service==='wrap')) details.push(`Wrap Color: ${selectedWrapColor.toUpperCase()}`);
-      if (tintPercent && checked.some(cb=>cb.dataset.service==='tint')) details.push(`Tint: ${tintPercent}${tintNotes?` (${tintNotes})`:''}`);
+      // Wrap specifics if any wrap service is selected
+      if (checked.some(cb=>cb.dataset.service==='wrap')){
+        if (selectedWrapColor) details.push(`Wrap Color: ${selectedWrapColor.toUpperCase()}`);
+        if (selectedWrapFinish) details.push(`Wrap Finish: ${selectedWrapFinish}`);
+        if (wrapBrand) details.push(`Wrap Brand: ${wrapBrand}`);
+      }
       if (notes) details.push(`Notes: ${notes}`);
 
       const smsBody = [
