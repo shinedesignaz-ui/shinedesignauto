@@ -257,9 +257,9 @@ ErrorDocument 500 /500.html
 # ===================================================================
 
 # Redirect old service pages to new structure
-Redirect 301 /auto-detailing.html /services/mobile-detailing.html
-Redirect 301 /ceramic.html /services/ceramic-coating.html
-Redirect 301 /ppf.html /services/paint-protection-film.html
+Redirect 301 /auto-detailing.html /services//mobile-detailing.html
+Redirect 301 /ceramic.html /services//ceramic-coating.html
+Redirect 301 /ppf.html /services//paint-protection-film.html
 
 # ===================================================================
 # SPEED OPTIMIZATIONS FOR WORDPRESS (if applicable)

@@ -13,39 +13,50 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
-  <title>Contact Shine Design | Quotes, Scheduling & Questions</title>
-  <meta name="description" content="Contact Shine Design Mobile Detailing for quotes, scheduling, and questions about ceramic coating, PPF, tint, or detailing. Call/text (480) 528-8227 or use the form.">
-  <link rel="canonical" href="https://shinedesignauto.com/contact">
+  <title>Pricing & Packages | Shine Design Mobile Detailing</title>
+  <meta name="description" content="Explore Shine Design’s services and navigate to pricing pages for detailing, ceramic coating, PPF, tint, and more. Click a service to see package options.">
+  <link rel="canonical" href="https://shinedesignauto.com/pricing">
   <link rel="icon" href="/assets/images/favicon.ico">
   <meta name="theme-color" content="#0ea5e9">
 
   <!-- Social Meta Tags -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Contact Shine Design | Quotes, Scheduling & Questions">
-  <meta property="og:description" content="Call/text (480) 528-8227 or use the quick contact form for quotes on detailing, ceramic coating, PPF, and window tint.">
-  <meta property="og:url" content="https://shinedesignauto.com/contact">
+  <meta property="og:title" content="Pricing & Packages | Shine Design Mobile Detailing">
+  <meta property="og:description" content="Select a service to view detailed pricing and package options.">
+  <meta property="og:url" content="https://shinedesignauto.com/pricing">
   <meta property="og:image" content="/assets/images/og-image.jpg">
 
-  <!-- ContactPage structured data -->
+  <!-- Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "ContactPage",
-    "name": "Contact – Shine Design Mobile Detailing",
-    "description": "Contact Shine Design for quotes, scheduling and questions.",
-    "url": "https://shinedesignauto.com/contact",
-    "breadcrumb": {
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://shinedesignauto.com/" },
-        { "@type": "ListItem", "position": 2, "name": "Contact", "item": "https://shinedesignauto.com/contact" }
-      ]
-    }
+    "@type": "CollectionPage",
+    "name": "Pricing – Shine Design Services",
+    "url": "https://shinedesignauto.com/pricing",
+    "hasPart": [
+      {"@type": "WebPage", "name": "Auto Detailing Pricing", "url": "https://shinedesignauto.com/pricing/auto-detailing"},
+      {"@type": "WebPage", "name": "Interior Detailing Pricing", "url": "https://shinedesignauto.com/pricing/interior-detailing"},
+      {"@type": "WebPage", "name": "Exterior Detailing Pricing", "url": "https://shinedesignauto.com/pricing/exterior-detailing"},
+      {"@type": "WebPage", "name": "Full Detail Pricing", "url": "https://shinedesignauto.com/pricing/full-detail"},
+      {"@type": "WebPage", "name": "Ceramic Coating Pricing", "url": "https://shinedesignauto.com/pricing/ceramic-coating"},
+      {"@type": "WebPage", "name": "Paint Correction Pricing", "url": "https://shinedesignauto.com/pricing/paint-correction"},
+      {"@type": "WebPage", "name": "Paint Protection Film Pricing", "url": "https://shinedesignauto.com/pricing/paint-protection-film"},
+      {"@type": "WebPage", "name": "Window Tint Pricing", "url": "https://shinedesignauto.com/pricing/window-tinting"},
+      {"@type": "WebPage", "name": "Headlight Restoration Pricing", "url": "https://shinedesignauto.com/pricing/headlight-restoration"},
+      {"@type": "WebPage", "name": "Engine Bay Detailing Pricing", "url": "https://shinedesignauto.com/pricing/engine-bay"},
+      {"@type": "WebPage", "name": "Odor Removal Pricing", "url": "https://shinedesignauto.com/pricing/odor-removal"},
+      {"@type": "WebPage", "name": "Pet Hair Removal Pricing", "url": "https://shinedesignauto.com/pricing/pet-hair-removal"},
+      {"@type": "WebPage", "name": "RV Detailing Pricing", "url": "https://shinedesignauto.com/pricing/rv-detailing"},
+      {"@type": "WebPage", "name": "Boat/Marine Detailing Pricing", "url": "https://shinedesignauto.com/pricing/boat-detailing"},
+      {"@type": "WebPage", "name": "Aircraft Detailing Pricing", "url": "https://shinedesignauto.com/pricing/aircraft-detailing"},
+      {"@type": "WebPage", "name": "Fleet Services Pricing", "url": "https://shinedesignauto.com/pricing/fleet-services"},
+      {"@type": "WebPage", "name": "Vinyl Wrap Pricing", "url": "https://shinedesignauto.com/pricing/vinyl-wrap"},
+      {"@type": "WebPage", "name": "Memberships Pricing", "url": "https://shinedesignauto.com/pricing/memberships"}
+    ]
   }
   </script>
 
   <style>
-    /* ===== Design tokens (copied to match site chrome) ===== */
     :root {
       --brand: #0ea5e9;
       --brand-dark: #0284c7;
@@ -78,7 +89,7 @@
     }
     .announcement-bar a { color: white; text-decoration: underline; }
 
-    /* ===== Header (copied to match site) ===== */
+    /* Header */
     .main-header {
       position: sticky; top: 0; z-index: 1000; width: 100%;
       background: rgba(255, 255, 255, .98);
@@ -120,17 +131,6 @@
       opacity: 0; visibility: hidden; transition: all .25s cubic-bezier(0.4,0,0.2,1); pointer-events: none;
     }
     .nav-dropdown:hover .dropdown-menu { opacity: 1; visibility: visible; pointer-events: auto; }
-
-    .services-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px solid rgba(0,0,0,.06); }
-    .service-card {
-      display: flex; align-items: center; gap: 12px; padding: 12px; border-radius: 8px; text-decoration: none;
-      transition: all .2s; background: rgba(14,165,233,.04);
-    }
-    .service-card:hover { background: rgba(14,165,233,.12); transform: translateX(4px); }
-    .service-icon { width: 32px; height: 32px; background: var(--brand); border-radius: 8px; display:flex; align-items:center; justify-content:center; color:white; font-size:18px; flex-shrink:0; }
-    .service-info { flex: 1; }
-    .service-title { font-weight: 600; color: var(--text); font-size: 14px; line-height: 1.2; display: block; }
-    .service-desc { font-size: 11px; color: var(--muted); margin-top: 2px; }
 
     .dropdown-label { padding: 8px 12px 4px; font-size: 11px; font-weight: 700; text-transform: uppercase; color: var(--muted); letter-spacing: .5px; }
     .dropdown-menu a { display: block; padding: 10px 16px; color: var(--text); font-size: 14px; font-weight: 500; border-radius: 8px; transition: all .2s; text-decoration: none; }
@@ -184,42 +184,47 @@
     .section { padding: 60px 0; }
     @media (max-width: 768px) { .section { padding: 40px 0; } }
 
-    /* Contact hero */
-    .contact-hero {
+    /* Hero */
+    .hero {
       background: linear-gradient(135deg, rgba(14,165,233,.12), rgba(2,132,199,.08));
       border-bottom: 1px solid rgba(0,0,0,.06);
     }
     .breadcrumbs { font-size: 13px; color: var(--muted); margin-bottom: 8px; }
     .breadcrumbs a { color: var(--muted); text-decoration: none; }
     .breadcrumbs a:hover { text-decoration: underline; }
-    .contact-hero h1 { font-size: 40px; line-height: 1.1; margin-bottom: 10px; }
-    .contact-hero p { font-size: 18px; color: var(--muted); }
+    .hero h1 { font-size: 40px; line-height: 1.1; margin-bottom: 10px; }
+    .hero p { font-size: 18px; color: var(--muted); }
 
-    /* 2-column contact layout */
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap: 40px;
-      align-items: start;
-    }
-    @media (max-width: 960px){ .contact-grid { grid-template-columns: 1fr; } }
+    /* Grid of services */
+    .grid { display:grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    @media (max-width: 1024px){ .grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 640px){ .grid { grid-template-columns: 1fr; } }
 
     .card {
       background: #fff;
       border: 1px solid #e2e8f0;
       border-radius: 16px;
-      padding: 20px;
+      padding: 18px;
       box-shadow: 0 8px 24px rgba(2,6,23,.04);
+      display: flex; gap: 14px; align-items: center; text-decoration: none;
+      transition: transform .2s, box-shadow .2s, border-color .2s;
     }
-    .card h2 { font-size: 22px; margin-bottom: 6px; }
-    .card p { color: var(--muted); }
+    .card:hover { transform: translateY(-2px); border-color: rgba(14,165,233,.4); box-shadow: 0 12px 30px rgba(2,6,23,.08); }
+    .icon { width: 44px; height: 44px; border-radius: 12px; display:flex; align-items:center; justify-content:center; background: rgba(14,165,233,.1); font-size: 22px; }
+    .info { flex: 1; }
+    .title { font-weight: 700; color: var(--text); letter-spacing: -.2px; }
+    .desc { font-size: 13px; color: var(--muted); margin-top: 2px; }
+    .arrow { font-weight: 800; color: var(--brand); }
 
-    .contact-list { display: grid; gap: 14px; margin-top: 14px; }
-    .contact-list a { text-decoration: none; color: var(--text); display: inline-flex; align-items: center; gap: 10px; font-weight: 600; }
-    .contact-list a:hover { color: var(--brand); }
-
-    .hours { display: grid; grid-template-columns: 1fr auto; gap: 8px 16px; margin-top: 12px; font-size: 14px; color: var(--muted); }
-    .map-embed { border: 0; width: 100%; height: 280px; border-radius: 12px; }
+    /* CTA / Help */
+    .cta-panel{
+      background: linear-gradient(135deg, rgba(14,165,233,.12), rgba(2,132,199,.08));
+      border: 1px solid rgba(2,132,199,.2); border-radius: 16px; padding: 20px; display:flex; align-items:center; justify-content:space-between; gap:16px;
+    }
+    .cta-buttons{ display:flex; gap:12px; flex-wrap: wrap; }
+    .btn{ display:inline-flex; align-items:center; gap:8px; text-decoration:none; font-weight:700; padding:12px 18px; border-radius:999px; }
+    .btn.primary{ background: var(--brand); color:white; }
+    .btn.secondary{ background: white; color: var(--brand); border:2px solid rgba(14,165,233,.2); }
 
     /* Footer */
     footer { background:#0b1220; color:#d1d5db; padding:60px 0 30px; margin-top: 40px; }
@@ -257,15 +262,14 @@
 
         <nav class="nav-links" aria-label="Primary Navigation">
           <div class="nav-dropdown">
-            <a href="/services//">Services <span class="arrow">▼</span></a>
+            <a href="/services/">Services <span class="arrow">▼</span></a>
             <div class="dropdown-menu">
-              <div class="services-grid">
-                <a href="/ceramic-coating" class="service-card"><div class="service-icon">🛡️</div><div class="service-info"><span class="service-title">Ceramic Coating</span><span class="service-desc">9H Protection • 5 Year Warranty</span></div></a>
-                <a href="/paint-protection-film" class="service-card"><div class="service-icon">💎</div><div class="service-info"><span class="service-title">Paint Protection Film</span><span class="service-desc">XPEL • 3M • Clear Bra</span></div></a>
-                <a href="/window-tinting" class="service-card"><div class="service-icon">🔲</div><div class="service-info"><span class="service-title">Window Tinting</span><span class="service-desc">Ceramic • Carbon • Dyed</span></div></a>
-                <a href="/auto-detailing" class="service-card"><div class="service-icon">✨</div><div class="service-info"><span class="service-title">Auto Detailing</span><span class="service-desc">Interior • Exterior • Mobile</span></div></a>
-              </div>
-              <div class="dropdown-label">Specialty Services</div>
+              <div class="dropdown-label">Core Services</div>
+              <a href="/auto-detailing">Auto Detailing</a>
+              <a href="/ceramic-coating">Ceramic Coating</a>
+              <a href="/paint-protection-film">Paint Protection Film (PPF)</a>
+              <a href="/window-tinting">Window Tinting</a>
+              <div class="dropdown-label">Specialties</div>
               <a href="/paint-correction">Paint Correction</a>
               <a href="/mobile-detailing">Mobile Detailing</a>
               <a href="/rv-detailing">RV & Motorhome</a>
@@ -280,7 +284,7 @@
             <a href="/auto-detailing" class="service-pill">Detail</a>
           </div>
           <a href="/gallery">Gallery</a>
-          <a href="/pricing">Pricing</a>
+          <a href="/pricing" aria-current="page">Pricing</a>
           <div class="nav-dropdown">
             <a href="/locations/">Locations <span class="arrow">▼</span></a>
             <div class="dropdown-menu">
@@ -296,10 +300,10 @@
             </div>
           </div>
           <a href="/about">About</a>
-          <a href="/contact" aria-current="page">Contact</a>
+          <a href="/contact">Contact</a>
           <div class="cta-group">
             <a href="tel:4805288227" class="cta-phone"><span>📞</span><span>(480) 528-8227</span></a>
-            <a href="https://booknow.shinedesignauto.com/" class="cta-primary">Book Online<span>→</span></a>
+            <a href="/book" class="cta-primary">Book Online<span>→</span></a>
           </div>
         </nav>
 
@@ -319,12 +323,12 @@
         <a href="/window-tinting" class="mobile-service-btn">Window Tinting<span>→</span></a>
         <a href="/auto-detailing" class="mobile-service-btn">Auto Detailing<span>→</span></a>
       </div>
-      <a href="/services/">All Services</a>
+      <a href="/services">All Services</a>
       <a href="/gallery">Gallery</a>
-      <a href="/pricing">Pricing</a>
+      <a href="/pricing" aria-current="page">Pricing</a>
       <a href="/locations">Locations</a>
       <a href="/about">About Us</a>
-      <a href="/contact" aria-current="page">Contact</a>
+      <a href="/contact">Contact</a>
       <div style="margin-top:24px; display:grid; gap:12px;">
         <a href="tel:+14805288227" class="cta-primary" style="justify-content:center;">📞 Call (480) 528-8227</a>
         <a href="sms:+14805288227" class="cta-primary" style="background:#25D366;justify-content:center;">💬 Text Us</a>
@@ -333,118 +337,200 @@
   </nav>
 
   <main id="main">
-    <!-- Contact Hero -->
-    <section class="section contact-hero">
+    <!-- Hero -->
+    <section class="section hero">
       <div class="container">
         <nav class="breadcrumbs" aria-label="Breadcrumb">
-          <a href="/">Home</a> &nbsp;•&nbsp; <span>Contact</span>
+          <a href="/">Home</a> &nbsp;•&nbsp; <span>Pricing</span>
         </nav>
-        <h1>Contact Shine Design</h1>
-        <p>Have questions or want a fast quote? Call/text, or use the quick form — we typically reply within minutes during business hours.</p>
+        <h1>Pricing & Packages</h1>
+        <p>Select a service to view package options and pricing. No surprises — transparent, value‑packed options for every vehicle.</p>
       </div>
     </section>
 
-    <!-- Contact Content -->
+    <!-- Services Grid -->
     <section class="section">
-      <div class="container contact-grid">
-        <!-- Left: Form -->
-        <div class="card" id="contact-form">
-          <h2>Quick Contact Form</h2>
-          <p>Tell us about your vehicle and what you need. We’ll text you back ASAP.</p>
-          <div style="margin-top:12px; min-height: 1020px;">
-            <iframe
-              src="https://api.leadconnectorhq.com/widget/form/KoKp3qNivWtAbw20b38X"
-              style="width:100%;height:1000px;border:none;border-radius:0px"
-              id="inline-KoKp3qNivWtAbw20b38X"
-              data-layout="{'id':'INLINE'}"
-              data-trigger-type="alwaysShow"
-              data-trigger-value=""
-              data-activation-type="alwaysActivated"
-              data-activation-value=""
-              data-deactivation-type="neverDeactivate"
-              data-deactivation-value=""
-              data-form-name="Automotive Detailing Request Form"
-              data-height="995"
-              data-layout-iframe-id="inline-KoKp3qNivWtAbw20b38X"
-              data-form-id="KoKp3qNivWtAbw20b38X"
-              title="Automotive Detailing Request Form">
-            </iframe>
-            <script src="https://link.msgsndr.com/js/form_embed.js"></script>
-            <script>
-              // --- GTM: GHL form tracking ---
-              window.dataLayer = window.dataLayer || [];
-              (function trackGHL(){
-                try {
-                  // Fire when iframe itself finishes loading
-                  var f = document.getElementById('inline-KoKp3qNivWtAbw20b38X');
-                  if (f) {
-                    f.addEventListener('load', function(){
-                      window.dataLayer.push({
-                        event: 'ghl_form_loaded',
-                        formId: 'KoKp3qNivWtAbw20b38X',
-                        formName: 'Automotive Detailing Request Form',
-                        page: window.location.pathname
-                      });
-                    }, { once: true });
-                  }
+      <div class="container">
+        <div class="grid">
 
-                  // Listen for postMessage events from LeadConnector form
-                  window.addEventListener('message', function(e){
-                    var d = e && e.data;
-                    var text = (typeof d === 'string') ? d : JSON.stringify(d || {});
-                    var isSubmit =
-                      (d && (d.eventName === 'formSubmitted' ||
-                             d.type === 'formSubmitted' ||
-                             d.event === 'formSubmission' ||
-                             d.action === 'submitted')) ||
-                      /submitted|formsubmit|onformsubmitted/i.test(text);
+          <a class="card" href="/pricing/auto-detailing">
+            <div class="icon">✨</div>
+            <div class="info">
+              <div class="title">Auto Detailing</div>
+              <div class="desc">Interior, exterior, and full detail packages.</div>
+            </div>
+            <div class="arrow">→</div>
+          </a>
 
-                    if (isSubmit) {
-                      window.dataLayer.push({
-                        event: 'ghl_form_submitted',
-                        formId: 'KoKp3qNivWtAbw20b38X',
-                        formName: 'Automotive Detailing Request Form',
-                        page: window.location.pathname
-                      });
-                    }
-                  });
-                } catch(err) {
-                  console && console.warn && console.warn('GHL tracking init error:', err);
-                }
-              })();
-            </script>
+          <a class="card" href="/pricing/interior-detailing">
+            <div class="icon">🧼</div>
+            <div class="info">
+              <div class="title">Interior Detailing</div>
+              <div class="desc">Refresh, deep clean, or elite restoration.</div>
+            </div>
+            <div class="arrow">→</div>
+          </a>
 
+          <a class="card" href="/pricing/exterior-detailing">
+            <div class="icon">🚿</div>
+            <div class="info">
+              <div class="title">Exterior Detailing</div>
+              <div class="desc">Decon wash, clay bar, sealant, and more.</div>
+            </div>
+            <div class="arrow">→</div>
+          </a>
+
+          <a class="card" href="/pricing/full-detail">
+            <div class="icon">💎</div>
+            <div class="info">
+              <div class="title">Full Detail</div>
+              <div class="desc">Complete inside & out transformation.</div>
+            </div>
+            <div class="arrow">→</div>
+          </a>
+
+          <a class="card" href="/pricing/ceramic-coating">
+            <div class="icon">🛡️</div>
+            <div class="info">
+              <div class="title">Ceramic Coating</div>
+              <div class="desc">Long‑term gloss and protection.</div>
+            </div>
+            <div class="arrow">→</div>
+          </a>
+
+          <a class="card" href="/pricing/paint-correction">
+            <div class="icon">🧩</div>
+            <div class="info">
+              <div class="title">Paint Correction</div>
+              <div class="desc">Remove swirls and restore clarity.</div>
+            </div>
+            <div class="arrow">→</div>
+          </a>
+
+          <a class="card" href="/pricing/paint-protection-film">
+            <div class="icon">📈</div>
+            <div class="info">
+              <div class="title">Paint Protection Film (PPF)</div>
+              <div class="desc">Self‑healing, rock‑chip defense.</div>
+            </div>
+            <div class="arrow">→</div>
+          </a>
+
+          <a class="card" href="/pricing/window-tinting">
+            <div class="icon">🔲</div>
+            <div class="info">
+              <div class="title">Window Tinting</div>
+              <div class="desc">Ceramic, carbon, and dyed films.</div>
+            </div>
+            <div class="arrow">→</div>
+          </a>
+
+          <a class="card" href="/pricing/headlight-restoration">
+            <div class="icon">🔦</div>
+            <div class="info">
+              <div class="title">Headlight Restoration</div>
+              <div class="desc">Clarity + UV protection sealing.</div>
+            </div>
+            <div class="arrow">→</div>
+          </a>
+
+          <a class="card" href="/pricing/engine-bay">
+            <div class="icon">🔧</div>
+            <div class="info">
+              <div class="title">Engine Bay Detailing</div>
+              <div class="desc">Degrease, clean, and dress safely.</div>
+            </div>
+            <div class="arrow">→</div>
+          </a>
+
+          <a class="card" href="/pricing/odor-removal">
+            <div class="icon">🌬️</div>
+            <div class="info">
+              <div class="title">Odor Removal</div>
+              <div class="desc">Ozone/shock treatment available.</div>
+            </div>
+            <div class="arrow">→</div>
+          </a>
+
+          <a class="card" href="/pricing/pet-hair-removal">
+            <div class="icon">🐾</div>
+            <div class="info">
+              <div class="title">Pet Hair Removal</div>
+              <div class="desc">Heavy hair & dander solutions.</div>
+            </div>
+            <div class="arrow">→</div>
+          </a>
+
+          <a class="card" href="/pricing/rv-detailing">
+            <div class="icon">🏕️</div>
+            <div class="info">
+              <div class="title">RV & Motorhome</div>
+              <div class="desc">Wash, oxidation removal, protection.</div>
+            </div>
+            <div class="arrow">→</div>
+          </a>
+
+          <a class="card" href="/pricing/boat-detailing">
+            <div class="icon">🛥️</div>
+            <div class="info">
+              <div class="title">Boat / Marine</div>
+              <div class="desc">Gel‑coat polishing, ceramic options.</div>
+            </div>
+            <div class="arrow">→</div>
+          </a>
+
+          <a class="card" href="/pricing/aircraft-detailing">
+            <div class="icon">✈️</div>
+            <div class="info">
+              <div class="title">Aircraft Detailing</div>
+              <div class="desc">Single‑engine to corporate jets.</div>
+            </div>
+            <div class="arrow">→</div>
+          </a>
+
+          <a class="card" href="/pricing/fleet-services">
+            <div class="icon">🚚</div>
+            <div class="info">
+              <div class="title">Fleet Services</div>
+              <div class="desc">On‑site maintenance detailing plans.</div>
+            </div>
+            <div class="arrow">→</div>
+          </a>
+
+          <a class="card" href="/pricing/vinyl-wrap">
+            <div class="icon">🎨</div>
+            <div class="info">
+              <div class="title">Vinyl Wrap</div>
+              <div class="desc">Color change, accents, branding.</div>
+            </div>
+            <div class="arrow">→</div>
+          </a>
+
+          <a class="card" href="/pricing/memberships">
+            <div class="icon">♻️</div>
+            <div class="info">
+              <div class="title">Shine Club Memberships</div>
+              <div class="desc">Maintenance plans: monthly, bi‑monthly, quarterly.</div>
+            </div>
+            <div class="arrow">→</div>
+          </a>
+
+        </div>
+
+        <!-- Help CTA -->
+        <div class="section" style="padding-top:32px; padding-bottom:0;">
+          <div class="cta-panel">
+            <div>
+              <strong>Not sure which package fits?</strong><br>
+              Text us a few photos and we’ll recommend the right option.
+            </div>
+            <div class="cta-buttons">
+              <a class="btn primary" href="https://booknow.shinedesignauto.com/">Book Now →</a>
+              <a class="btn secondary" href="sms:+14805288227">Text Photos</a>
+            </div>
           </div>
         </div>
 
-        <!-- Right: Contact Info -->
-        <aside class="card">
-          <h2>Call / Text</h2>
-          <div class="contact-list">
-            <a href="tel:+14805288227">📞 (480) 528-8227</a>
-            <a href="sms:+14805288227">💬 Text Us</a>
-            <a href="mailto:info@shinedesignauto.com">✉️ info@shinedesignauto.com</a>
-          </div>
-
-          <h2 style="margin-top:18px;">Hours</h2>
-          <div class="hours">
-            <div>Mon–Sun</div><div>7:00 AM – 7:00 PM</div>
-          </div>
-
-          <h2 style="margin-top:18px;">Service Area</h2>
-          <p>Mobile across Gilbert, Mesa, Chandler, Queen Creek, San Tan Valley, and nearby.</p>
-
-          <h2 style="margin-top:18px;">Find Us</h2>
-          <iframe class="map-embed"
-            loading="lazy" allowfullscreen
-            referrerpolicy="no-referrer-when-downgrade"
-            src="https://www.google.com/maps?q=Shine+Design+Mobile+Detailing,+Gilbert,+AZ&output=embed">
-          </iframe>
-
-          <div style="margin-top:18px;">
-            <a class="cta-primary" href="https://booknow.shinedesignauto.com/" style="display:inline-flex;align-items:center;gap:8px;">Book Online<span>→</span></a>
-          </div>
-        </aside>
       </div>
     </section>
   </main>
@@ -478,11 +564,11 @@
         </div>
         <div class="footer-column">
           <h3>Book</h3>
-          <a href="https://booknow.shinedesignauto.com/">Book Online</a>
+          <a href="/book">Book Online</a>
           <a href="/contact">Contact</a>
           <a href="/about">About</a>
           <a href="/gallery">Gallery</a>
-          <a href="/pricing">Pricing</a>
+          <a href="/pricing" aria-current="page">Pricing</a>
         </div>
       </div>
       <div class="footer-bottom">
@@ -498,14 +584,7 @@
       var isOpen = nav.classList.toggle('active');
       document.body.classList.toggle('menu-open', isOpen);
     }
-    function openCalculator(){
-      // Stub for parity with other pages
-      window.location.href = 'https://booknow.shinedesignauto.com/';
-    }
     (function(){document.getElementById('year-copy').textContent = new Date().getFullYear();})();
   </script>
-
-  <!-- Optional action buttons bar if used site-wide -->
-  <script src="/action-buttons.js" defer></script>
 </body>
 </html>
