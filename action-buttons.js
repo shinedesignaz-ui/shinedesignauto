@@ -661,7 +661,20 @@ function toggleTintUI(show){
       </label>`;
   }
 
-  // Initialize when DOM is ready
-  if (document.readyState==='loading') document.addEventListener('DOMContentLoaded', init);
-  else init();
+  // Initialize when DOM is ready with lazy-load (8–20s). Override with window.__shineABDelayMs.
+  function scheduleInit(){
+    try {
+      const MIN = 8000; // 8s
+      const MAX = 20000; // 20s
+      const override = (typeof window.__shineABDelayMs === 'number') ? window.__shineABDelayMs : null;
+      const delay = override !== null ? Math.max(0, override) : Math.floor(Math.random()*(MAX - MIN + 1)) + MIN;
+      setTimeout(init, delay);
+      try { console.log('[Shine AB] scheduled init in', delay, 'ms'); } catch {}
+    } catch(e){
+      // Fallback to immediate init on any error
+      init();
+    }
+  }
+  if (document.readyState==='loading') document.addEventListener('DOMContentLoaded', scheduleInit);
+  else scheduleInit();
 })();
