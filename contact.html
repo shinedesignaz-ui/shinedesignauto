@@ -13,7 +13,27 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
-  <title>Contact Shine Design | Quotes, Scheduling & Questions</title>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { brand: { DEFAULT: '#0ea5e9', dark: '#0b85bb' } },
+          boxShadow: { card: '0 10px 30px rgba(2, 8, 23, 0.08)' }
+        }
+      }
+    }
+  </script>
+  <style>
+    .container-tight{max-width:1200px}
+    .brand-text{display:flex;flex-direction:column;line-height:1.1}
+    .brand-name{font-weight:800;font-size:1.125rem;letter-spacing:-0.01em;color:#0f172a}
+    @media(min-width:768px){.brand-name{font-size:1.5rem}}
+    .brand-tagline{margin-top:1px;font-weight:700;font-size:0.75rem;letter-spacing:.08em;color:#475569;text-transform:uppercase;line-height:1}
+    [id]{scroll-margin-top:90px}
+  </style>
+<title>Contact Shine Design | Quotes, Scheduling & Questions</title>
   <meta name="description" content="Contact Shine Design Mobile Detailing for quotes, scheduling, and questions about ceramic coating, PPF, tint, or detailing. Call/text (480) 528-8227 or use the form.">
   <link rel="canonical" href="https://shinedesignauto.com/contact">
   <link rel="icon" href="/assets/images/favicon.ico">
@@ -230,7 +250,7 @@
     .footer-bottom { text-align:center; padding-top:30px; border-top:1px solid rgba(255,255,255,.1); font-size:14px; color:#64748b; }
   </style>
 </head>
-<body>
+<body class="antialiased text-slate-900">
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P4LZ4N28"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -244,68 +264,43 @@
   </div>
 
   <!-- HEADER -->
-  <header class="main-header">
-    <div class="header-container">
-      <div class="header-content">
-        <a href="/" class="brand" aria-label="ShineDesign Home">
-          <img src="/logo.ico" alt="ShineDesign" width="140" height="42">
-          <div class="brand-text">
-            <span class="brand-name">ShineDesign</span>
-            <span class="brand-tagline">DETAILING • TINT • PPF • CERAMIC</span>
-          </div>
-        </a>
-
-        <nav class="nav-links" aria-label="Primary Navigation">
-          <div class="nav-dropdown">
-            <a href="/services//">Services <span class="arrow">▼</span></a>
-            <div class="dropdown-menu">
-              <div class="services-grid">
-                <a href="/ceramic-coating" class="service-card"><div class="service-icon">🛡️</div><div class="service-info"><span class="service-title">Ceramic Coating</span><span class="service-desc">9H Protection • 5 Year Warranty</span></div></a>
-                <a href="/paint-protection-film" class="service-card"><div class="service-icon">💎</div><div class="service-info"><span class="service-title">Paint Protection Film</span><span class="service-desc">XPEL • 3M • Clear Bra</span></div></a>
-                <a href="/window-tinting" class="service-card"><div class="service-icon">🔲</div><div class="service-info"><span class="service-title">Window Tinting</span><span class="service-desc">Ceramic • Carbon • Dyed</span></div></a>
-                <a href="/auto-detailing" class="service-card"><div class="service-icon">✨</div><div class="service-info"><span class="service-title">Auto Detailing</span><span class="service-desc">Interior • Exterior • Mobile</span></div></a>
-              </div>
-              <div class="dropdown-label">Specialty Services</div>
-              <a href="/paint-correction">Paint Correction</a>
-              <a href="/mobile-detailing">Mobile Detailing</a>
-              <a href="/rv-detailing">RV & Motorhome</a>
-              <a href="/boat-detailing">Marine Detailing</a>
-              <a href="/fleet-services">Fleet Services</a>
-            </div>
-          </div>
-          <div class="service-pills">
-            <a href="/ceramic-coating" class="service-pill">Ceramic</a>
-            <a href="/paint-protection-film" class="service-pill">PPF</a>
-            <a href="/window-tinting" class="service-pill">Tint</a>
-            <a href="/auto-detailing" class="service-pill">Detail</a>
-          </div>
-          <a href="/gallery">Gallery</a>
-          <a href="/pricing">Pricing</a>
-          <div class="nav-dropdown">
-            <a href="/locations/">Locations <span class="arrow">▼</span></a>
-            <div class="dropdown-menu">
-              <div class="dropdown-label">East Valley</div>
-              <a href="/gilbert">Gilbert</a>
-              <a href="/mesa">Mesa</a>
-              <a href="/chandler">Chandler</a>
-              <a href="/tempe">Tempe</a>
-              <div class="dropdown-label">Phoenix Metro</div>
-              <a href="/scottsdale">Scottsdale</a>
-              <a href="/phoenix">Phoenix</a>
-              <a href="/queen-creek">Queen Creek</a>
-            </div>
-          </div>
-          <a href="/about">About</a>
-          <a href="/contact" aria-current="page">Contact</a>
-          <div class="cta-group">
-            <a href="tel:4805288227" class="cta-phone"><span>📞</span><span>(480) 528-8227</span></a>
-            <a href="https://booknow.shinedesignauto.com/" class="cta-primary">Book Online<span>→</span></a>
-          </div>
-        </nav>
-
-        <button class="menu-btn" aria-label="Menu" onclick="toggleMobileMenu()">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h18M3 6h18M3 18h18"/></svg>
-        </button>
+  <header class="fixed top-0 inset-x-0 z-50 bg-white/90 backdrop-blur border-b border-slate-200">
+    <div class="mx-auto container-tight px-4 h-16 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-3 px-1 py-1">
+        <img src="/logo.ico" alt="Shine Design" class="h-8 w-8" />
+        <div class="brand-text">
+          <span class="brand-name">Shine Design</span>
+          <span class="brand-tagline">DETAILING • TINT • PPF • CERAMIC</span>
+        </div>
+      </a>
+      <nav class="hidden md:flex items-center gap-6 text-sm">
+        <a href="/services/auto-detailing" class="text-brand font-semibold">Detail</a> 
+        <a href="/services/ceramic-coating" class="hover:text-brand">Ceramic</a>
+        <a href="/services/ppf" class="hover:text-brand">PPF</a>
+        <a href="/services/window-tint" class="hover:text-brand">Tint</a>
+        <a href="/services" class="hover:text-brand">More Services</a> 
+        <a href="/gallery" class="hover:text-brand">Gallery</a>
+        <a href="/locations" class="hover:text-brand">Locations</a>
+        <a href="/about" class="hover:text-brand">About</a>
+        <button id="bookNowBtn" class="ml-1 inline-flex items-center px-4 py-2 rounded-xl bg-brand text-white shadow-card">Book Now</button>
+      </nav>
+      <button id="menuBtn" class="md:hidden inline-flex items-center justify-center h-12 w-12 rounded-2xl border-2 border-slate-200/80 shadow-sm">≡</button>
+    </div>
+    
+   <!-- Mobile drawer -->
+    <div id="mobileNav" class="hidden md:hidden border-t border-slate-200 bg-white">
+      <div class="px-6 py-6 flex flex-col gap-5 text-lg font-semibold">
+        <a href="/services/auto-detailing">1. Auto Detailing →</a>
+        <a href="/services/ceramic-coating">2. Ceramic Coating →</a>
+        <a href="/services/ppf" class="text-brand">3. Paint Protection Film (PPF) →</a>
+        <a href="/services/window-tint">4. Window Tinting →</a>
+        <a href="/services">5. All Services</a>
+        <a href="#packages">6. Packages</a>
+        <a href="/gallery">7. Gallery</a>
+        <a href="/locations">8. Locations</a>
+        <a href="/about">9. About Us</a>
+        <a href="/contact">10. Contact</a>
+        <button id="bookNowBtnMobile" class="mt-2 w-full py-4 rounded-full bg-slate-900 text-white">BOOK NOW</button>
       </div>
     </div>
   </header>
@@ -332,7 +327,7 @@
     </div>
   </nav>
 
-  <main id="main">
+  <main class="pt-16" id="main">
     <!-- Contact Hero -->
     <section class="section contact-hero">
       <div class="container">
@@ -507,5 +502,19 @@
 
   <!-- Optional action buttons bar if used site-wide -->
   <script src="/action-buttons.js" defer></script>
+
+<script>
+  (function(){
+    var menuBtn = document.getElementById('menuBtn');
+    var mobileNav = document.getElementById('mobileNav');
+    if(menuBtn && mobileNav){
+      menuBtn.addEventListener('click', function(e){
+        e.preventDefault();
+        mobileNav.classList.toggle('hidden');
+      });
+    }
+  })();
+</script>
+
 </body>
 </html>
