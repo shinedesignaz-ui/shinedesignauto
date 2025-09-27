@@ -5,6 +5,95 @@
 (function () {
   'use strict';
 
+  // ------- Booking modal bootstrap (works even if init() hasn't run yet) -------
+  (function(){
+    if (window.__shineABBootstrap) return; // idempotent
+    window.__shineABBootstrap = true;
+
+    function ensureBaseStyles(){
+      if (document.getElementById('ab-bootstrap-css')) return;
+      const css = `
+        .ab-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);z-index:2000}
+        .ab-modal.active{display:flex;align-items:center;justify-content:center;padding:20px}
+        .ab-modal .ab-modal-content{background:#fff;border-radius:24px;padding:0;width:100%;max-width:760px;max-height:90vh;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.3);font-family:system-ui,-apple-system,Segoe UI,Roboto,Inter,Helvetica,Arial,sans-serif}
+        .ab-modal .ab-modal-header{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;border-bottom:2px solid #f1f5q9}
+        .ab-modal .ab-modal-title{color:#0f172a;font-size:18px;margin:0;font-weight:900}
+        .ab-close-btn{background:#f1f5f9;border:none;font-size:20px;color:#64748b;cursor:pointer;width:40px;height:40px;border-radius:12px;display:flex;align-items:center;justify-content:center}
+        .ab-close-btn:hover{background:#e2e8f0;color:#ef4444}
+        .ab-modal .ab-modal-body{height:min(75vh,680px);}
+        .ab-modal .ab-iframe{width:100%;height:100%;border:none;display:block}
+      `;
+      const s = document.createElement('style'); s.id = 'ab-bootstrap-css'; s.textContent = css; document.head.appendChild(s);
+    }
+
+    function ensureModal(){
+      let m = document.getElementById('bookingModal');
+      if (!m){
+        const tpl = `
+          <div class="ab-modal" id="bookingModal">
+            <div class="ab-modal-content" role="dialog" aria-modal="true" aria-labelledby="bookingTitle">
+              <div class="ab-modal-header">
+                <h3 class="ab-modal-title" id="bookingTitle">📅 Book with Shine Design</h3>
+                <button class="ab-close-btn" id="ab-close-btn">✕</button>
+              </div>
+              <div class="ab-modal-body">
+                <iframe
+                  class="ab-iframe"
+                  src="https://api.leadconnectorhq.com/widget/form/iOAJA6wWRWJ3ycF2AUKI"
+                  id="inline-iOAJA6wWRWJ3ycF2AUKI"
+                  title="phonenumber"
+                  style="border:none;border-radius:3px"
+                  data-layout="{'id':'INLINE'}"
+                  data-trigger-type="alwaysShow"
+                  data-trigger-value=""
+                  data-activation-type="alwaysActivated"
+                  data-activation-value=""
+                  data-deactivation-type="neverDeactivate"
+                  data-deactivation-value=""
+                  data-form-name="phonenumber"
+                  data-height="492"
+                  data-layout-iframe-id="inline-iOAJA6wWRWJ3ycF2AUKI"
+                  data-form-id="iOAJA6wWRWJ3ycF2AUKI"
+                ></iframe>
+              </div>
+            </div>
+          </div>`;
+        const wrap = document.createElement('div'); wrap.innerHTML = tpl;
+        m = wrap.firstElementChild;
+        document.body.appendChild(m);
+        m.addEventListener('click', (e)=>{ if (e.target.id==='bookingModal') window.closeBookingModal(); });
+        document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') window.closeBookingModal(); });
+        m.querySelector('#ab-close-btn').addEventListener('click', window.closeBookingModal);
+      }
+      return m;
+    }
+
+    // Fallback functions if main ones aren't defined yet
+    if (typeof window.openBookingModal !== 'function'){
+      window.openBookingModal = function(){
+        ensureBaseStyles();
+        const m = ensureModal();
+        m.classList.add('active');
+        document.body.style.overflow='hidden';
+        if (!document.querySelector('script[src*="link.msgsndr.com/js/form_embed.js"]')){
+          const s = document.createElement('script');
+          s.src = 'https://link.msgsndr.com/js/form_embed.js';
+          s.async = true;
+          document.body.appendChild(s);
+        }
+      };
+    }
+    if (typeof window.closeBookingModal !== 'function'){
+      window.closeBookingModal = function(){
+        const m = document.getElementById('bookingModal');
+        if (!m) return;
+        m.classList.remove('active');
+        document.body.style.overflow='';
+      };
+    }
+  })();
+
+
   // ------- Quick config -------
   const AB = {
     phone: '+14805288227',
@@ -661,20 +750,7 @@ function toggleTintUI(show){
       </label>`;
   }
 
-  // Initialize when DOM is ready with lazy-load (8–20s). Override with window.__shineABDelayMs.
-  function scheduleInit(){
-    try {
-      const MIN = 8000; // 8s
-      const MAX = 20000; // 20s
-      const override = (typeof window.__shineABDelayMs === 'number') ? window.__shineABDelayMs : null;
-      const delay = override !== null ? Math.max(0, override) : Math.floor(Math.random()*(MAX - MIN + 1)) + MIN;
-      setTimeout(init, delay);
-      try { console.log('[Shine AB] scheduled init in', delay, 'ms'); } catch {}
-    } catch(e){
-      // Fallback to immediate init on any error
-      init();
-    }
-  }
-  if (document.readyState==='loading') document.addEventListener('DOMContentLoaded', scheduleInit);
-  else scheduleInit();
+  // Initialize when DOM is ready
+  if (document.readyState==='loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
 })();
