@@ -1,0 +1,1369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Auto Detailing Services | Ceramic Coating, PPF, Tint - Shine Design</title>
+  <meta name="description" content="Complete auto detailing services in Gilbert, AZ. Interior/exterior detailing, ceramic coating, paint protection film, window tinting. Mobile service - we come to you!" />
+  <link rel="canonical" href="https://shinedesignauto.com/services/" />
+  <meta name="theme-color" content="#0ea5e9" />
+  
+  <!-- SEO Meta Tags -->
+  <meta name="robots" content="index, follow" />
+  <meta name="keywords" content="auto detailing services, ceramic coating Gilbert, PPF installation, window tinting, paint correction, interior detailing, mobile detailing packages" />
+  
+  <!-- Open Graph Tags -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Professional Auto Detailing Services - Shine Design" />
+  <meta property="og:description" content="Comprehensive mobile detailing services. From basic wash to ceramic coating and PPF. Serving all of East Valley." />
+  <meta property="og:url" content="https://shinedesignauto.com/services/" />
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <style>
+/* Core Variables */
+:root {
+  --brand: #0ea5e9;
+  --brand-dark: #0284c7;
+  --brand-light: #38bdf8;
+  --dark: #0b1320;
+  --gray: #64748b;
+  --light: #f1f5f9;
+  --white: #ffffff;
+  --shadow: 0 20px 40px rgba(0,0,0,0.1);
+  --shadow-hover: 0 30px 60px rgba(0,0,0,0.15);
+  --success: #10b981;
+  --warning: #f59e0b;
+}
+
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  color: #1e293b;
+  overflow-x: hidden;
+  background: #ffffff;
+}
+
+/* Navigation Bar */
+.navbar {
+  background: white;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  font-size: 1.5rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, var(--brand), var(--brand-dark));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav-link {
+  color: var(--gray);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: var(--brand);
+}
+
+.nav-link.active {
+  color: var(--brand);
+}
+
+.nav-cta {
+  padding: 0.625rem 1.5rem;
+  background: linear-gradient(135deg, var(--brand), var(--brand-dark));
+  color: white;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: all 0.3s;
+}
+
+.nav-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(14,165,233,0.3);
+}
+
+/* Hero Banner */
+.page-hero {
+  background: linear-gradient(135deg, var(--dark) 0%, #1e293b 100%);
+  padding: 5rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.page-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
+  opacity: 0.5;
+}
+
+.hero-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+  position: relative;
+  z-index: 1;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: rgba(255,255,255,0.7);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.breadcrumb a {
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.breadcrumb a:hover {
+  color: var(--brand-light);
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 900;
+  color: white;
+  margin-bottom: 1.25rem;
+  background: linear-gradient(135deg, white, var(--brand-light));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  color: rgba(255,255,255,0.9);
+  max-width: 600px;
+  line-height: 1.7;
+}
+
+/* Service Categories */
+.service-category {
+  padding: 5rem 0;
+  position: relative;
+}
+
+.service-category:nth-child(even) {
+  background: var(--light);
+}
+
+.category-header {
+  max-width: 1200px;
+  margin: 0 auto 3rem;
+  padding: 0 1.25rem;
+  text-align: center;
+}
+
+.category-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #e0f2fe, #bae6fd);
+  color: var(--brand);
+  padding: 0.5rem 1.25rem;
+  border-radius: 50px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 1rem;
+}
+
+.category-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 900;
+  margin-bottom: 1.25rem;
+  background: linear-gradient(135deg, var(--dark), var(--brand));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.category-description {
+  font-size: 1.125rem;
+  color: var(--gray);
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* Service Grid */
+.services-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.service-card {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--brand), var(--brand-light));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-hover);
+}
+
+.service-card:hover::before {
+  transform: scaleX(1);
+}
+
+.service-image {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.service-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s;
+}
+
+.service-card:hover .service-image img {
+  transform: scale(1.1);
+}
+
+.service-label {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: white;
+  color: var(--brand);
+  padding: 0.375rem 0.75rem;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.service-content {
+  padding: 1.75rem;
+}
+
+.service-name {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 0.75rem;
+  color: var(--dark);
+}
+
+.service-excerpt {
+  color: var(--gray);
+  margin-bottom: 1.25rem;
+  line-height: 1.6;
+}
+
+.service-features {
+  list-style: none;
+  margin-bottom: 1.5rem;
+}
+
+.service-features li {
+  padding: 0.5rem 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  color: #475569;
+}
+
+.service-features li svg {
+  color: var(--success);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.service-time {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--gray);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.service-time svg {
+  color: var(--brand);
+}
+
+.service-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e2e8f0;
+}
+
+.service-price {
+  font-size: 1.75rem;
+  font-weight: 900;
+  color: var(--brand);
+}
+
+.service-price small {
+  font-size: 0.875rem;
+  color: var(--gray);
+  font-weight: 400;
+}
+
+.service-cta {
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, var(--brand), var(--brand-dark));
+  color: white;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: all 0.3s;
+  display: inline-block;
+}
+
+.service-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(14,165,233,0.3);
+}
+
+/* Process Section */
+.process-section {
+  padding: 5rem 0;
+  background: linear-gradient(135deg, var(--dark), #1e293b);
+  position: relative;
+  overflow: hidden;
+}
+
+.process-grid {
+  max-width: 1200px;
+  margin: 3rem auto 0;
+  padding: 0 1.25rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.process-step {
+  text-align: center;
+  position: relative;
+}
+
+.process-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1.5rem;
+  background: linear-gradient(135deg, var(--brand), var(--brand-light));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 2rem;
+  font-weight: 900;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(14,165,233,0.3);
+}
+
+.process-step:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 40px;
+  left: 60%;
+  width: calc(40% + 2rem);
+  height: 2px;
+  background: linear-gradient(90deg, var(--brand), transparent);
+  z-index: -1;
+}
+
+.process-title {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: white;
+  margin-bottom: 0.75rem;
+}
+
+.process-text {
+  color: rgba(255,255,255,0.8);
+  line-height: 1.6;
+}
+
+/* Add-ons Section */
+.addons-section {
+  padding: 5rem 0;
+}
+
+.addons-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.addon-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 16px;
+  text-align: center;
+  border: 2px solid #e2e8f0;
+  transition: all 0.3s;
+}
+
+.addon-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--brand);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.addon-icon {
+  width: 50px;
+  height: 50px;
+  margin: 0 auto 1rem;
+  background: linear-gradient(135deg, #e0f2fe, #bae6fd);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.addon-name {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--dark);
+}
+
+.addon-price {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--brand);
+}
+
+/* CTA Section */
+.cta-section {
+  background: linear-gradient(135deg, var(--brand), var(--brand-dark));
+  padding: 5rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-section::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(255,255,255,0.1), transparent);
+  border-radius: 50%;
+  animation: pulse 3s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 0.5; }
+  50% { transform: scale(1.1); opacity: 0.3; }
+}
+
+.cta-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+  position: relative;
+  z-index: 1;
+}
+
+.cta-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 900;
+  color: white;
+  margin-bottom: 1.25rem;
+}
+
+.cta-text {
+  font-size: 1.25rem;
+  color: rgba(255,255,255,0.95);
+  margin-bottom: 2.5rem;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-white {
+  background: white;
+  color: var(--brand);
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.btn-white:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.btn-outline {
+  background: transparent;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-weight: 700;
+  text-decoration: none;
+  border: 2px solid white;
+  transition: all 0.3s;
+}
+
+.btn-outline:hover {
+  background: white;
+  color: var(--brand);
+  transform: translateY(-3px);
+}
+
+/* Footer */
+.footer {
+  background: var(--dark);
+  color: white;
+  padding: 3rem 0 1.5rem;
+  text-align: center;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+.footer-text {
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 1rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.footer-link {
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-link:hover {
+  color: var(--brand-light);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+  
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .process-step:not(:last-child)::after {
+    display: none;
+  }
+  
+  .process-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+  }
+  
+  .btn-white,
+  .btn-outline {
+    width: 100%;
+  }
+}
+
+/* Animations */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="/" class="nav-logo">SHINE DESIGN</a>
+      <div class="nav-links">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/services" class="nav-link active">Services</a>
+        <a href="/pricing" class="nav-link">Pricing</a>
+        <a href="/gallery" class="nav-link">Gallery</a>
+        <a href="/about" class="nav-link">About</a>
+        <a href="/contact" class="nav-link">Contact</a>
+        <a href="tel:4805288227" class="nav-cta">Call Now</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="hero-content">
+      <div class="breadcrumb">
+        <a href="/">Home</a>
+        <span>/</span>
+        <span>Services</span>
+      </div>
+      <h1 class="hero-title">Our Professional Services</h1>
+      <p class="hero-subtitle">From basic maintenance to complete transformations - we offer comprehensive auto care solutions that come to you</p>
+    </div>
+  </section>
+
+  <!-- Auto Detailing Services -->
+  <section class="service-category">
+    <div class="category-header">
+      <div class="category-badge">Complete Care</div>
+      <h2 class="category-title">Auto Detailing Services</h2>
+      <p class="category-description">Professional detailing that brings your vehicle back to showroom condition. We use premium products and proven techniques to deliver exceptional results.</p>
+    </div>
+    
+    <div class="services-grid">
+      <!-- Express Detail -->
+      <div class="service-card fade-in">
+        <div class="service-image">
+          <img src="/assets/images/express-detail.webp" alt="Express car detailing service" loading="lazy">
+          <span class="service-label">Quick Service</span>
+        </div>
+        <div class="service-content">
+          <h3 class="service-name">Express Detail</h3>
+          <p class="service-excerpt">Perfect for regular maintenance. Quick but thorough cleaning inside and out.</p>
+          <ul class="service-features">
+            <li>
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              Hand wash & dry
+            </li>
+            <li>
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              Interior vacuum & wipe
+            </li>
+            <li>
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              Windows & mirrors
+            </li>
+          </ul>
+          <div class="service-time">
+            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+            90-120 minutes
+          </div>
+          <div class="service-footer">
+            <div class="service-price">$99<small>+</small></div>
+            <a href="/book" class="service-cta">Book Now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Full Interior Detail -->
+      <div class="service-card fade-in">
+        <div class="service-image">
+          <img src="/assets/images/interior-detail.webp" alt="Full interior car detailing" loading="lazy">
+          <span class="service-label">Most Popular</span>
+        </div>
+        <div class="service-content">
+          <h3 class="service-name">Full Interior Detail</h3>
+          <p class="service-excerpt">Deep cleaning and conditioning of all interior surfaces. Remove stains, odors, and restore that new car feel.</p>
+          <ul class="service-features">
+            <li>
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              Complete shampoo & extraction
+            </li>
+            <li>
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              Leather conditioning
+            </li>
+            <li>
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              Odor elimination
+            </li>
+          </ul>
+          <div class="service-time">
+            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+            3-4 hours
+          </div>
+          <div class="service-footer">
+            <div class="service-price">$249<small>+</small></div>
+            <a href="/book" class="service-cta">Book Now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Paint Correction -->
+      <div class="service-card fade-in">
+        <div class="service-image">
+          <img src="/assets/images/paint-correction.webp" alt="Paint correction and polishing" loading="lazy">
+          <span class="service-label">Premium</span>
+        </div>
+        <div class="service-content">
+          <h3 class="service-name">Paint Correction</h3>
+          <p class="service-excerpt">Remove swirls, scratches, and oxidation. Multi-stage polishing for mirror-like finish.</p>
+          <ul class="service-features">
+            <li>
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              Multi-stage compound & polish
+            </li>
+            <li>
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              Swirl & scratch removal
+            </li>
+            <li>
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              High-gloss finish
+            </li>
+          </ul>
+          <div class="service-time">
+            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+            5-8 hours
+          </div>
+          <div class="service-footer">
+            <div class="service-price">$499<small>+</small></div>
+            <a href="/book" class="service-cta">Book Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ceramic Coating -->
+  <section class="service-category">
+    <div class="category-header">
+      <div class="category-badge">Ultimate Protection</div>
+      <h2 class="category-title">Ceramic Coating</h2>
+      <p class="category-description">Professional-grade ceramic coatings that provide years of protection against UV rays, chemicals, and environmental contaminants.</p>
+    </div>
+    
+    <div class="services-grid">
+      <!-- 1 Year Coating -->
+      <div class="service-card fade-in">
+        <div class="service-image">
+          <img src="/assets/images/ceramic-1year.webp" alt="1 year ceramic coating" loading="lazy">
+          <span class="service-label">Entry Level</span>
+        </div>
+        <div class="service-content">
+          <h3 class="service-name">1-Year Ceramic Coating</h3>
+          <p class="service-excerpt">Great entry-level protection with hydrophobic properties and enhanced gloss.</p>
+          <ul class="service-features">
+            <li>
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              Paint decontamination
+            </li>
+            <li>
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              Single layer application
+            </li>
+            <li>
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              1-year warranty
+            </li>
+          </ul>
+          <div class="service-time">
+            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+            4-5 hours
+          </div>
+          <div class="service-footer">
+            <div class="service-price">$599<small>+</small></div>
+            <a href="/book" class="service-cta">Book Now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 Year Coating -->
+      <div class="service-card fade-in">
+        <div class="service-image">
+          <img src="/assets/images/ceramic-3year.webp" alt="3 year ceramic coating" loading="lazy">
+          <span class="service-label">Best Value</span>
+        </div>
+        <div class="service-content">
+          <h3 class="service-name">3-Year Ceramic Coating</h3>
+          <p class="service-excerpt">Our most popular option. Superior protection with self-cleaning properties.</p>
+          <ul class="service-features">
+            <li>
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              Paint correction included
+            </li>
+            <li>
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              Two layer application
+            </li>
+            <li>
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              3-year warranty
+            </li>
+          </ul>
+          <div class="service-time">
+            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+            6-8 hours
+          </div>
+          <div class="service-footer">
+            <div class="service-price">$999<small>+</small></div>
+            <a href="/book" class="service-cta">Book Now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7 Year Coating -->
+      <div class="service-card fade-in">
+        <div class="service-image">
+          <img src="/assets/images/ceramic-7year.webp" alt="7 year ceramic coating" loading="lazy">
+          <span class="service-label">Ultimate</span>
+        </div>
+        <div class="service-content">
+          <h3 class="service-name">7-Year Ceramic Pro</h3>
+          <p class="service-excerpt">The ultimate in paint protection. Multi-layer system with lifetime warranty option.</p>
+          <ul class="service-features">
+            <li>
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              Full paint correction
+            </li>
+            <li>
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              4+ layer application
+            </li>
+            <li>
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              7-year warranty
+            </li>
+          </ul>
+          <div class="service-time">
+            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+            1-2 days
+          </div>
+          <div class="service-footer">
+            <div class="service-price">$1,799<small>+</small></div>
+            <a href="/book" class="service-cta">Book Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Paint Protection Film -->
+  <section class="service-category">
+    <div class="category-header">
+      <div class="category-badge">Physical Protection</div>
+      <h2 class="category-title">Paint Protection Film (PPF)</h2>
+      <p class="category-description">Self-healing clear film that provides unmatched protection against rock chips, scratches, and road debris.</p>
+    </div>
+    
+    <div class="services-grid">
+      <!-- Partial Front -->
+      <div class="service-card fade-in">
+        <div class="service-image">
+          <img src="/assets/images/ppf-partial.webp" alt="Partial front PPF installation" loading="lazy">
+          <span class="service-label">Popular</span>
+        </div>
+        <div class="service-content">
+          <h3 class="service-name">Partial Front PPF</h3>
+          <p class="service-excerpt">Protect high-impact areas including partial hood, front bumper, and mirrors.</p>
+          <ul class="service-features">
+            <li>
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              18-24" hood coverage
+            </li>
+            <li>
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              Front bumper & mirrors
+            </li>
+            <li>
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              10-year warranty
+            </li>
+          </ul>
+          <div class="service-time">
+            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+            4-6 hours
+          </div>
+          <div class="service-footer">
+            <div class="service-price">$899<small>+</small></div>
+            <a href="/book" class="service-cta">Book Now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Full Front -->
+      <div class="service-card fade-in">
+        <div class="service-image">
+          <img src="/assets/images/ppf-full-front.webp" alt="Full front PPF installation" loading="lazy">
+          <span class="service-label">Recommended</span>
+        </div>
+        <div class="service-content">
+          <h3 class="service-name">Full Front PPF</h3>
+          <p class="service-excerpt">Complete front-end protection including full hood, fenders, and bumper.</p>
+          <ul class="service-features">
+            <li>
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              Full hood & fenders
+            </li>
+            <li>
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              Bumper, mirrors, headlights
+            </li>
+            <li>
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              10-year warranty
+            </li>
+          </ul>
+          <div class="service-time">
+            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+            8-10 hours
+          </div>
+          <div class="service-footer">
+            <div class="service-price">$1,899<small>+</small></div>
+            <a href="/book" class="service-cta">Book Now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Full Vehicle -->
+      <div class="service-card fade-in">
+        <div class="service-image">
+          <img src="/assets/images/ppf-full-car.webp" alt="Full vehicle PPF wrap" loading="lazy">
+          <span class="service-label">Ultimate</span>
+        </div>
+        <div class="service-content">
+          <h3 class="service-name">Full Vehicle PPF</h3>
+          <p class="service-excerpt">Complete vehicle coverage for maximum protection and peace of mind.</p>
+          <ul class="service-features">
+            <li>
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              Every painted surface
+            </li>
+            <li>
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              Door edges & sills included
+            </li>
+            <li>
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              10-year warranty
+            </li>
+          </ul>
+          <div class="service-time">
+            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+            3-5 days
+          </div>
+          <div class="service-footer">
+            <div class="service-price">$4,999<small>+</small></div>
+            <a href="/book" class="service-cta">Book Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Window Tinting -->
+  <section class="service-category">
+    <div class="category-header">
+      <div class="category-badge">Heat Rejection</div>
+      <h2 class="category-title">Window Tinting</h2>
+      <p class="category-description">Premium ceramic window films that block heat and UV rays while maintaining clarity and reducing glare.</p>
+    </div>
+    
+    <div class="services-grid">
+      <!-- Standard Tint -->
+      <div class="service-card fade-in">
+        <div class="service-image">
+          <img src="/assets/images/tint-standard.webp" alt="Standard window tinting" loading="lazy">
+          <span class="service-label">Budget Friendly</span>
+        </div>
+        <div class="service-content">
+          <h3 class="service-name">Standard Dyed Tint</h3>
+          <p class="service-excerpt">Quality dyed film for privacy and basic heat rejection. Great value option.</p>
+          <ul class="service-features">
+            <li>
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              All windows
+            </li>
+            <li>
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              Legal tint levels
+            </li>
+            <li>
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              3-year warranty
+            </li>
+          </ul>
+          <div class="service-time">
+            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+            2-3 hours
+          </div>
+          <div class="service-footer">
+            <div class="service-price">$199<small>+</small></div>
+            <a href="/book" class="service-cta">Book Now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carbon Tint -->
+      <div class="service-card fade-in">
+        <div class="service-image">
+          <img src="/assets/images/tint-carbon.webp" alt="Carbon window tinting" loading="lazy">
+          <span class="service-label">Popular Choice</span>
+        </div>
+        <div class="service-content">
+          <h3 class="service-name">Carbon Window Tint</h3>
+          <p class="service-excerpt">Superior heat rejection with carbon technology. No signal interference.</p>
+          <ul class="service-features">
+            <li>
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              50% heat rejection
+            </li>
+            <li>
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              99% UV protection
+            </li>
+            <li>
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              Lifetime warranty
+            </li>
+          </ul>
+          <div class="service-time">
+            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+            2-3 hours
+          </div>
+          <div class="service-footer">
+            <div class="service-price">$299<small>+</small></div>
+            <a href="/book" class="service-cta">Book Now</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ceramic Tint -->
+      <div class="service-card fade-in">
+        <div class="service-image">
+          <img src="/assets/images/tint-ceramic.webp" alt="Ceramic window tinting" loading="lazy">
+          <span class="service-label">Best Performance</span>
+        </div>
+        <div class="service-content">
+          <h3 class="service-name">Ceramic Window Tint</h3>
+          <p class="service-excerpt">Maximum heat rejection with nano-ceramic technology. The best available.</p>
+          <ul class="service-features">
+            <li>
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              85% infrared rejection
+            </li>
+            <li>
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              99.9% UV protection
+            </li>
+            <li>
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              Lifetime warranty
+            </li>
+          </ul>
+          <div class="service-time">
+            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+            2-3 hours
+          </div>
+          <div class="service-footer">
+            <div class="service-price">$449<small>+</small></div>
+            <a href="/book" class="service-cta">Book Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process Section -->
+  <section class="process-section">
+    <div class="category-header">
+      <div class="category-badge" style="background: rgba(255,255,255,0.2); color: white;">Our Process</div>
+      <h2 class="category-title" style="color: white;">How We Work</h2>
+      <p class="category-description" style="color: rgba(255,255,255,0.9);">Every service follows our proven process to ensure exceptional results</p>
+    </div>
+    
+    <div class="process-grid">
+      <div class="process-step">
+        <div class="process-icon">1</div>
+        <h3 class="process-title">Inspection</h3>
+        <p class="process-text">Thorough assessment of your vehicle's condition and discuss your goals</p>
+      </div>
+      <div class="process-step">
+        <div class="process-icon">2</div>
+        <h3 class="process-title">Preparation</h3>
+        <p class="process-text">Decontamination, washing, and surface preparation for optimal results</p>
+      </div>
+      <div class="process-step">
+        <div class="process-icon">3</div>
+        <h3 class="process-title">Application</h3>
+        <p class="process-text">Expert application of chosen service using professional techniques</p>
+      </div>
+      <div class="process-step">
+        <div class="process-icon">4</div>
+        <h3 class="process-title">Quality Check</h3>
+        <p class="process-text">Final inspection and walkthrough with care instructions provided</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Add-ons Section -->
+  <section class="addons-section">
+    <div class="category-header">
+      <div class="category-badge">Enhance Your Service</div>
+      <h2 class="category-title">Popular Add-Ons</h2>
+      <p class="category-description">Complement your service with these popular additions</p>
+    </div>
+    
+    <div class="addons-grid">
+      <div class="addon-card">
+        <div class="addon-icon">🚗</div>
+        <h3 class="addon-name">Engine Bay Detail</h3>
+        <div class="addon-price">+$79</div>
+      </div>
+      <div class="addon-card">
+        <div class="addon-icon">💺</div>
+        <h3 class="addon-name">Headlight Restoration</h3>
+        <div class="addon-price">+$89</div>
+      </div>
+      <div class="addon-card">
+        <div class="addon-icon">🌟</div>
+        <h3 class="addon-name">Trim Restoration</h3>
+        <div class="addon-price">+$59</div>
+      </div>
+      <div class="addon-card">
+        <div class="addon-icon">🛡️</div>
+        <h3 class="addon-name">Wheel Coating</h3>
+        <div class="addon-price">+$149</div>
+      </div>
+      <div class="addon-card">
+        <div class="addon-icon">🎨</div>
+        <h3 class="addon-name">Plastic Coating</h3>
+        <div class="addon-price">+$99</div>
+      </div>
+      <div class="addon-card">
+        <div class="addon-icon">🔧</div>
+        <h3 class="addon-name">Glass Treatment</h3>
+        <div class="addon-price">+$69</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="cta-content">
+      <h2 class="cta-title">Ready to Book Your Service?</h2>
+      <p class="cta-text">Get instant pricing and schedule your appointment online</p>
+      <div class="cta-buttons">
+        <a href="/book" class="btn-white">Book Online</a>
+        <a href="tel:4805288227" class="btn-outline">Call (480) 528-8227</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p class="footer-text">© 2025 Shine Design Mobile Detailing. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="/privacy" class="footer-link">Privacy Policy</a>
+        <a href="/terms" class="footer-link">Terms of Service</a>
+        <a href="/contact" class="footer-link">Contact Us</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+// Fade in animation on scroll
+const observerOptions = {
+  threshold: 0.1,
+  rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.animationPlayState = 'running';
+      observer.unobserve(entry.target);
+    }
+  });
+}, observerOptions);
+
+document.querySelectorAll('.fade-in').forEach(el => {
+  el.style.animationPlayState = 'paused';
+  observer.observe(el);
+});
+  </script>
+</body>
+</html>

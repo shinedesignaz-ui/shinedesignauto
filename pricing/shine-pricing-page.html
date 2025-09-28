@@ -1,0 +1,1606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Detailing Pricing & Packages | Shine Design Gilbert AZ</title>
+  <meta name="description" content="Transparent pricing for auto detailing, ceramic coating, PPF & window tinting. No hidden fees. Instant quotes for all vehicle sizes. Mobile service in East Valley." />
+  <link rel="canonical" href="https://shinedesignauto.com/pricing/" />
+  <meta name="theme-color" content="#0ea5e9" />
+  
+  <!-- SEO Meta Tags -->
+  <meta name="robots" content="index, follow" />
+  <meta name="keywords" content="auto detailing prices, ceramic coating cost, PPF pricing, window tinting prices, mobile detailing packages, car detailing cost Gilbert" />
+  
+  <!-- Open Graph Tags -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Auto Detailing Pricing - Shine Design" />
+  <meta property="og:description" content="Clear, upfront pricing for all our services. No hidden fees. Get an instant quote for your vehicle." />
+  <meta property="og:url" content="https://shinedesignauto.com/pricing/" />
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <style>
+/* Core Variables */
+:root {
+  --brand: #0ea5e9;
+  --brand-dark: #0284c7;
+  --brand-light: #38bdf8;
+  --dark: #0b1320;
+  --gray: #64748b;
+  --light: #f1f5f9;
+  --white: #ffffff;
+  --shadow: 0 20px 40px rgba(0,0,0,0.1);
+  --shadow-hover: 0 30px 60px rgba(0,0,0,0.15);
+  --success: #10b981;
+  --warning: #f59e0b;
+}
+
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  color: #1e293b;
+  overflow-x: hidden;
+  background: #ffffff;
+}
+
+/* Navigation Bar */
+.navbar {
+  background: white;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-logo {
+  font-size: 1.5rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, var(--brand), var(--brand-dark));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-decoration: none;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.nav-link {
+  color: var(--gray);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--brand);
+}
+
+.nav-cta {
+  padding: 0.625rem 1.5rem;
+  background: linear-gradient(135deg, var(--brand), var(--brand-dark));
+  color: white;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 700;
+  transition: all 0.3s;
+}
+
+.nav-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(14,165,233,0.3);
+}
+
+/* Page Hero */
+.page-hero {
+  background: linear-gradient(135deg, var(--dark) 0%, #1e293b 100%);
+  padding: 5rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.page-hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(14,165,233,0.2), transparent);
+  border-radius: 50%;
+  animation: float 20s infinite ease-in-out;
+}
+
+@keyframes float {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-30px, -30px) scale(1.1); }
+}
+
+.hero-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+  position: relative;
+  z-index: 1;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: rgba(255,255,255,0.7);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.breadcrumb a {
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.breadcrumb a:hover {
+  color: var(--brand-light);
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 900;
+  color: white;
+  margin-bottom: 1.25rem;
+  background: linear-gradient(135deg, white, var(--brand-light));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  color: rgba(255,255,255,0.9);
+  max-width: 600px;
+  line-height: 1.7;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+.section {
+  padding: 5rem 0;
+}
+
+/* Vehicle Size Selector */
+.size-selector-section {
+  background: var(--light);
+  padding: 3rem 0;
+  position: sticky;
+  top: 60px;
+  z-index: 100;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+.size-selector-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.selector-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--dark);
+  margin-bottom: 0.5rem;
+}
+
+.selector-subtitle {
+  color: var(--gray);
+  font-size: 0.9rem;
+}
+
+.size-buttons {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.size-btn {
+  background: white;
+  border: 2px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 1.25rem 1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.size-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, var(--brand), var(--brand-light));
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.size-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  border-color: var(--brand);
+}
+
+.size-btn.active {
+  border-color: var(--brand);
+  background: linear-gradient(135deg, var(--brand), var(--brand-light));
+  color: white;
+}
+
+.size-btn.active .size-icon,
+.size-btn.active .size-name,
+.size-btn.active .size-desc,
+.size-btn.active .size-multiplier {
+  color: white;
+}
+
+.size-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.size-name {
+  font-weight: 800;
+  font-size: 1.125rem;
+  margin-bottom: 0.25rem;
+  position: relative;
+  z-index: 1;
+}
+
+.size-desc {
+  font-size: 0.8125rem;
+  color: var(--gray);
+  margin-bottom: 0.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.size-multiplier {
+  font-size: 0.75rem;
+  color: var(--brand);
+  font-weight: 700;
+  position: relative;
+  z-index: 1;
+}
+
+/* Pricing Tables */
+.pricing-section {
+  padding: 5rem 0;
+}
+
+.pricing-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.pricing-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #e0f2fe, #bae6fd);
+  color: var(--brand);
+  padding: 0.5rem 1.25rem;
+  border-radius: 50px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 1rem;
+}
+
+.pricing-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 900;
+  margin-bottom: 1.25rem;
+  background: linear-gradient(135deg, var(--dark), var(--brand));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.pricing-subtitle {
+  font-size: 1.125rem;
+  color: var(--gray);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* Package Cards */
+.packages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 5rem;
+}
+
+.package-card {
+  background: white;
+  border-radius: 24px;
+  padding: 2.5rem;
+  position: relative;
+  transition: all 0.3s;
+  border: 2px solid #e2e8f0;
+  display: flex;
+  flex-direction: column;
+}
+
+.package-card.featured {
+  border-color: var(--brand);
+  transform: scale(1.05);
+  box-shadow: var(--shadow);
+}
+
+.package-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--brand);
+}
+
+.package-label {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, var(--brand), var(--brand-light));
+  color: white;
+  padding: 0.375rem 1.25rem;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.package-name {
+  font-size: 1.75rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  color: var(--dark);
+}
+
+.package-description {
+  color: var(--gray);
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.package-price {
+  font-size: 3rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, var(--brand), var(--brand-dark));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.price-currency {
+  font-size: 1.5rem;
+}
+
+.price-value {
+  transition: all 0.3s;
+}
+
+.price-period {
+  font-size: 1rem;
+  opacity: 0.7;
+  font-weight: 400;
+}
+
+.package-features {
+  list-style: none;
+  margin-bottom: 2rem;
+  flex-grow: 1;
+}
+
+.package-features li {
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #f1f5f9;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.95rem;
+  color: #475569;
+}
+
+.package-features li:last-child {
+  border-bottom: none;
+}
+
+.package-features svg {
+  color: var(--success);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.package-cta {
+  width: 100%;
+  padding: 1rem;
+  background: linear-gradient(135deg, var(--brand), var(--brand-dark));
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1.05rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.package-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(14,165,233,0.3);
+}
+
+.package-cta.secondary {
+  background: white;
+  color: var(--brand);
+  border: 2px solid var(--brand);
+}
+
+.package-cta.secondary:hover {
+  background: linear-gradient(135deg, var(--brand), var(--brand-dark));
+  color: white;
+}
+
+/* Comparison Table */
+.comparison-section {
+  background: var(--light);
+  padding: 5rem 0;
+}
+
+.comparison-table {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  background: linear-gradient(135deg, var(--dark), #1e293b);
+  color: white;
+  padding: 1.25rem;
+  text-align: left;
+  font-weight: 700;
+  position: sticky;
+  top: 0;
+}
+
+th:first-child {
+  width: 40%;
+}
+
+td {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+tr:hover td {
+  background: #f8fafc;
+}
+
+.feature-name {
+  font-weight: 600;
+  color: var(--dark);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.feature-tooltip {
+  width: 16px;
+  height: 16px;
+  background: var(--gray);
+  color: white;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  cursor: help;
+}
+
+.check {
+  color: var(--success);
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.times {
+  color: #cbd5e1;
+  font-size: 1.25rem;
+}
+
+/* Add-ons Grid */
+.addons-section {
+  padding: 5rem 0;
+}
+
+.addons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.addon-card {
+  background: white;
+  padding: 1.75rem;
+  border-radius: 16px;
+  border: 2px solid #e2e8f0;
+  transition: all 0.3s;
+  text-align: center;
+}
+
+.addon-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--brand);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.addon-icon {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 1rem;
+  background: linear-gradient(135deg, #e0f2fe, #bae6fd);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.75rem;
+}
+
+.addon-name {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--dark);
+  font-size: 1.05rem;
+}
+
+.addon-description {
+  font-size: 0.85rem;
+  color: var(--gray);
+  margin-bottom: 1rem;
+  line-height: 1.4;
+}
+
+.addon-price {
+  font-size: 1.75rem;
+  font-weight: 900;
+  color: var(--brand);
+}
+
+/* Savings Banner */
+.savings-banner {
+  background: linear-gradient(135deg, var(--success), #059669);
+  padding: 1.5rem;
+  border-radius: 16px;
+  color: white;
+  text-align: center;
+  margin: 3rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.savings-banner::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -5%;
+  width: 200px;
+  height: 200px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 50%;
+}
+
+.savings-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.savings-text {
+  font-size: 1.125rem;
+  opacity: 0.95;
+  position: relative;
+  z-index: 1;
+}
+
+/* FAQ Section */
+.faq-section {
+  background: var(--light);
+  padding: 5rem 0;
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.faq-card {
+  background: white;
+  padding: 1.75rem;
+  border-radius: 16px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.faq-question {
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 0.75rem;
+  font-size: 1.05rem;
+}
+
+.faq-answer {
+  color: var(--gray);
+  line-height: 1.6;
+}
+
+/* CTA Section */
+.cta-section {
+  background: linear-gradient(135deg, var(--brand), var(--brand-dark));
+  padding: 5rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-section::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -10%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(255,255,255,0.1), transparent);
+  border-radius: 50%;
+  animation: pulse 3s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 0.5; }
+  50% { transform: scale(1.1); opacity: 0.3; }
+}
+
+.cta-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+  position: relative;
+  z-index: 1;
+}
+
+.cta-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 900;
+  color: white;
+  margin-bottom: 1.25rem;
+}
+
+.cta-text {
+  font-size: 1.25rem;
+  color: rgba(255,255,255,0.95);
+  margin-bottom: 2.5rem;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-white {
+  background: white;
+  color: var(--brand);
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s;
+  display: inline-block;
+}
+
+.btn-white:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.btn-outline {
+  background: transparent;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-weight: 700;
+  text-decoration: none;
+  border: 2px solid white;
+  transition: all 0.3s;
+  display: inline-block;
+}
+
+.btn-outline:hover {
+  background: white;
+  color: var(--brand);
+  transform: translateY(-3px);
+}
+
+/* Footer */
+.footer {
+  background: var(--dark);
+  color: white;
+  padding: 3rem 0 1.5rem;
+  text-align: center;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+.footer-text {
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 1rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.footer-link {
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-link:hover {
+  color: var(--brand-light);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .package-card.featured {
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+  
+  .size-buttons {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
+  
+  .packages-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .table-wrapper {
+    overflow-x: scroll;
+  }
+  
+  .faq-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+  }
+  
+  .btn-white,
+  .btn-outline {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Animations */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="/" class="nav-logo">SHINE DESIGN</a>
+      <div class="nav-links">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/services" class="nav-link">Services</a>
+        <a href="/pricing" class="nav-link active">Pricing</a>
+        <a href="/gallery" class="nav-link">Gallery</a>
+        <a href="/about" class="nav-link">About</a>
+        <a href="/contact" class="nav-link">Contact</a>
+        <a href="tel:4805288227" class="nav-cta">Call Now</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="hero-content">
+      <div class="breadcrumb">
+        <a href="/">Home</a>
+        <span>/</span>
+        <span>Pricing</span>
+      </div>
+      <h1 class="hero-title">Transparent Pricing</h1>
+      <p class="hero-subtitle">No hidden fees, no surprises. Select your vehicle size below to see accurate pricing for all services.</p>
+    </div>
+  </section>
+
+  <!-- Vehicle Size Selector -->
+  <section class="size-selector-section">
+    <div class="container">
+      <div class="size-selector-header">
+        <h2 class="selector-title">Select Your Vehicle Size</h2>
+        <p class="selector-subtitle">Prices adjust automatically based on your selection</p>
+      </div>
+      <div class="size-buttons">
+        <button class="size-btn active" data-size="small" data-multiplier="1">
+          <div class="size-icon">🚗</div>
+          <div class="size-name">Small</div>
+          <div class="size-desc">Sedan/Coupe</div>
+          <div class="size-multiplier">Base Price</div>
+        </button>
+        <button class="size-btn" data-size="medium" data-multiplier="1.15">
+          <div class="size-icon">🚙</div>
+          <div class="size-name">Medium</div>
+          <div class="size-desc">Small SUV/Crossover</div>
+          <div class="size-multiplier">+15%</div>
+        </button>
+        <button class="size-btn" data-size="large" data-multiplier="1.35">
+          <div class="size-icon">🚛</div>
+          <div class="size-name">Large</div>
+          <div class="size-desc">Truck/Large Sedan</div>
+          <div class="size-multiplier">+35%</div>
+        </button>
+        <button class="size-btn" data-size="xl" data-multiplier="1.55">
+          <div class="size-icon">🚐</div>
+          <div class="size-name">XL</div>
+          <div class="size-desc">Large SUV/Van</div>
+          <div class="size-multiplier">+55%</div>
+        </button>
+        <button class="size-btn" data-size="xxl" data-multiplier="1.85">
+          <div class="size-icon">🚌</div>
+          <div class="size-name">XXL</div>
+          <div class="size-desc">Oversized/RV</div>
+          <div class="size-multiplier">+85%</div>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Detailing Packages -->
+  <section class="pricing-section">
+    <div class="container">
+      <div class="pricing-header">
+        <div class="pricing-badge">Detailing Packages</div>
+        <h2 class="pricing-title">Choose Your Detail Package</h2>
+        <p class="pricing-subtitle">Professional detailing services that bring your vehicle back to life</p>
+      </div>
+      
+      <div class="packages-grid">
+        <!-- Silver Package -->
+        <div class="package-card fade-in">
+          <h3 class="package-name">Silver Package</h3>
+          <p class="package-description">Essential cleaning for regular maintenance</p>
+          <div class="package-price">
+            <span class="price-currency">$</span>
+            <span class="price-value" data-base="179">179</span>
+            <span class="price-period">/vehicle</span>
+          </div>
+          <ul class="package-features">
+            <li>
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              Exterior hand wash & dry
+            </li>
+            <li>
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              Interior vacuum & wipe down
+            </li>
+            <li>
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              Wheel & tire cleaning
+            </li>
+            <li>
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              Window cleaning inside & out
+            </li>
+            <li>
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              Tire shine application
+            </li>
+            <li>
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              Door jamb cleaning
+            </li>
+          </ul>
+          <button class="package-cta secondary">Book Silver</button>
+        </div>
+
+        <!-- Gold Package -->
+        <div class="package-card featured fade-in">
+          <span class="package-label">Most Popular</span>
+          <h3 class="package-name">Gold Package</h3>
+          <p class="package-description">Complete detail with protection</p>
+          <div class="package-price">
+            <span class="price-currency">$</span>
+            <span class="price-value" data-base="299">299</span>
+            <span class="price-period">/vehicle</span>
+          </div>
+          <ul class="package-features">
+            <li>
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              Everything in Silver Package
+            </li>
+            <li>
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              Deep interior steam cleaning
+            </li>
+            <li>
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              Clay bar treatment
+            </li>
+            <li>
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              6-month paint sealant
+            </li>
+            <li>
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              Leather conditioning
+            </li>
+            <li>
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              Engine bay detail
+            </li>
+            <li>
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              Trim restoration
+            </li>
+          </ul>
+          <button class="package-cta">Book Gold</button>
+        </div>
+
+        <!-- Platinum Package -->
+        <div class="package-card fade-in">
+          <span class="package-label" style="background: linear-gradient(135deg, #10b981, #059669);">Best Value</span>
+          <h3 class="package-name">Platinum Package</h3>
+          <p class="package-description">Ultimate detail with paint correction</p>
+          <div class="package-price">
+            <span class="price-currency">$</span>
+            <span class="price-value" data-base="449">449</span>
+            <span class="price-period">/vehicle</span>
+          </div>
+          <ul class="package-features">
+            <li>
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              Everything in Gold Package
+            </li>
+            <li>
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              Single-stage paint correction
+            </li>
+            <li>
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              Full carpet & upholstery shampoo
+            </li>
+            <li>
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              Headlight restoration
+            </li>
+            <li>
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              1-year ceramic sealant
+            </li>
+            <li>
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              Odor elimination treatment
+            </li>
+            <li style="color: var(--success); font-weight: 700;">
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              FREE: Glass treatment ($69 value)
+            </li>
+          </ul>
+          <button class="package-cta secondary">Book Platinum</button>
+        </div>
+      </div>
+
+      <!-- Savings Banner -->
+      <div class="savings-banner">
+        <h3 class="savings-title">💰 Save with Package Bundles!</h3>
+        <p class="savings-text">Combine services and save up to 20% off individual pricing</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparison Table -->
+  <section class="comparison-section">
+    <div class="container">
+      <div class="pricing-header">
+        <div class="pricing-badge">Compare Packages</div>
+        <h2 class="pricing-title">What's Included</h2>
+        <p class="pricing-subtitle">Detailed comparison of all package features</p>
+      </div>
+      
+      <div class="comparison-table">
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Service Features</th>
+                <th>Silver</th>
+                <th>Gold</th>
+                <th>Platinum</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  <div class="feature-name">
+                    Hand Wash & Dry
+                    <span class="feature-tooltip" title="Professional hand wash with pH-neutral soap">?</span>
+                  </div>
+                </td>
+                <td><span class="check">✓</span></td>
+                <td><span class="check">✓</span></td>
+                <td><span class="check">✓</span></td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="feature-name">Interior Vacuum</div>
+                </td>
+                <td><span class="check">✓</span></td>
+                <td><span class="check">✓</span></td>
+                <td><span class="check">✓</span></td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="feature-name">Windows & Mirrors</div>
+                </td>
+                <td><span class="check">✓</span></td>
+                <td><span class="check">✓</span></td>
+                <td><span class="check">✓</span></td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="feature-name">Clay Bar Treatment</div>
+                </td>
+                <td><span class="times">×</span></td>
+                <td><span class="check">✓</span></td>
+                <td><span class="check">✓</span></td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="feature-name">Interior Steam Cleaning</div>
+                </td>
+                <td><span class="times">×</span></td>
+                <td><span class="check">✓</span></td>
+                <td><span class="check">✓</span></td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="feature-name">Paint Sealant</div>
+                </td>
+                <td><span class="times">×</span></td>
+                <td>6 months</td>
+                <td>1 year ceramic</td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="feature-name">Paint Correction</div>
+                </td>
+                <td><span class="times">×</span></td>
+                <td><span class="times">×</span></td>
+                <td><span class="check">✓</span></td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="feature-name">Headlight Restoration</div>
+                </td>
+                <td><span class="times">×</span></td>
+                <td><span class="times">×</span></td>
+                <td><span class="check">✓</span></td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="feature-name">Service Time</div>
+                </td>
+                <td>2-3 hours</td>
+                <td>3-5 hours</td>
+                <td>5-7 hours</td>
+              </tr>
+              <tr>
+                <td>
+                  <div class="feature-name">Warranty</div>
+                </td>
+                <td>30 days</td>
+                <td>90 days</td>
+                <td>6 months</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Protection Services -->
+  <section class="pricing-section">
+    <div class="container">
+      <div class="pricing-header">
+        <div class="pricing-badge">Protection Services</div>
+        <h2 class="pricing-title">Ceramic Coating & PPF</h2>
+        <p class="pricing-subtitle">Long-term protection for your investment</p>
+      </div>
+      
+      <div class="packages-grid">
+        <!-- Ceramic Coating 1 Year -->
+        <div class="package-card fade-in">
+          <h3 class="package-name">1-Year Ceramic</h3>
+          <p class="package-description">Entry-level ceramic protection</p>
+          <div class="package-price">
+            <span class="price-currency">$</span>
+            <span class="price-value" data-base="599">599</span>
+            <span class="price-period">starting</span>
+          </div>
+          <ul class="package-features">
+            <li>
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              Full paint decontamination
+            </li>
+            <li>
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              Single layer application
+            </li>
+            <li>
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              9H hardness rating
+            </li>
+            <li>
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              1-year warranty
+            </li>
+          </ul>
+          <button class="package-cta secondary">Get Quote</button>
+        </div>
+
+        <!-- Ceramic Coating 3 Year -->
+        <div class="package-card featured fade-in">
+          <span class="package-label">Most Popular</span>
+          <h3 class="package-name">3-Year Ceramic</h3>
+          <p class="package-description">Professional grade protection</p>
+          <div class="package-price">
+            <span class="price-currency">$</span>
+            <span class="price-value" data-base="999">999</span>
+            <span class="price-period">starting</span>
+          </div>
+          <ul class="package-features">
+            <li>
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              Paint correction included
+            </li>
+            <li>
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              Two layer application
+            </li>
+            <li>
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              Self-healing properties
+            </li>
+            <li>
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              3-year warranty
+            </li>
+          </ul>
+          <button class="package-cta">Get Quote</button>
+        </div>
+
+        <!-- PPF Partial -->
+        <div class="package-card fade-in">
+          <h3 class="package-name">Partial Front PPF</h3>
+          <p class="package-description">Protect high-impact areas</p>
+          <div class="package-price">
+            <span class="price-currency">$</span>
+            <span class="price-value" data-base="899">899</span>
+            <span class="price-period">starting</span>
+          </div>
+          <ul class="package-features">
+            <li>
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              18-24" hood coverage
+            </li>
+            <li>
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              Front bumper & mirrors
+            </li>
+            <li>
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              Self-healing technology
+            </li>
+            <li>
+              <svg width="16" height="16" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              10-year warranty
+            </li>
+          </ul>
+          <button class="package-cta secondary">Get Quote</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Add-ons -->
+  <section class="addons-section">
+    <div class="container">
+      <div class="pricing-header">
+        <div class="pricing-badge">Enhance Your Service</div>
+        <h2 class="pricing-title">Popular Add-Ons</h2>
+        <p class="pricing-subtitle">Additional services to complement any package</p>
+      </div>
+      
+      <div class="addons-grid">
+        <div class="addon-card">
+          <div class="addon-icon">🔧</div>
+          <h3 class="addon-name">Engine Bay Detail</h3>
+          <p class="addon-description">Deep clean and dressing</p>
+          <div class="addon-price">+$79</div>
+        </div>
+        <div class="addon-card">
+          <div class="addon-icon">💡</div>
+          <h3 class="addon-name">Headlight Restoration</h3>
+          <p class="addon-description">Remove oxidation & yellowing</p>
+          <div class="addon-price">+$89</div>
+        </div>
+        <div class="addon-card">
+          <div class="addon-icon">✨</div>
+          <h3 class="addon-name">Trim Restoration</h3>
+          <p class="addon-description">Restore faded plastic trim</p>
+          <div class="addon-price">+$59</div>
+        </div>
+        <div class="addon-card">
+          <div class="addon-icon">🛞</div>
+          <h3 class="addon-name">Wheel Coating</h3>
+          <p class="addon-description">Ceramic coating for wheels</p>
+          <div class="addon-price">+$149</div>
+        </div>
+        <div class="addon-card">
+          <div class="addon-icon">🪟</div>
+          <h3 class="addon-name">Glass Treatment</h3>
+          <p class="addon-description">Hydrophobic rain repellent</p>
+          <div class="addon-price">+$69</div>
+        </div>
+        <div class="addon-card">
+          <div class="addon-icon">🦨</div>
+          <h3 class="addon-name">Odor Elimination</h3>
+          <p class="addon-description">Ozone treatment</p>
+          <div class="addon-price">+$99</div>
+        </div>
+        <div class="addon-card">
+          <div class="addon-icon">🐕</div>
+          <h3 class="addon-name">Pet Hair Removal</h3>
+          <p class="addon-description">Complete fur extraction</p>
+          <div class="addon-price">+$89</div>
+        </div>
+        <div class="addon-card">
+          <div class="addon-icon">🎨</div>
+          <h3 class="addon-name">Touch-Up Paint</h3>
+          <p class="addon-description">Minor chip repair</p>
+          <div class="addon-price">+$149</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="faq-section">
+    <div class="container">
+      <div class="pricing-header">
+        <div class="pricing-badge">Questions?</div>
+        <h2 class="pricing-title">Pricing FAQs</h2>
+        <p class="pricing-subtitle">Common questions about our pricing and services</p>
+      </div>
+      
+      <div class="faq-grid">
+        <div class="faq-card">
+          <h3 class="faq-question">Why do prices vary by vehicle size?</h3>
+          <p class="faq-answer">Larger vehicles require more time, products, and effort to detail properly. Our size-based pricing ensures fair rates for all customers while maintaining the same high quality standards.</p>
+        </div>
+        <div class="faq-card">
+          <h3 class="faq-question">Are there any hidden fees?</h3>
+          <p class="faq-answer">Never! The price you see is the price you pay. We're completely transparent with our pricing. Any additional charges would only apply for excessive conditions discussed before service.</p>
+        </div>
+        <div class="faq-card">
+          <h3 class="faq-question">Do you offer any discounts?</h3>
+          <p class="faq-answer">Yes! We offer 10% off for first-time customers, 15% off for monthly maintenance plans, and special rates for fleet accounts. Military and first responders receive 10% off all services.</p>
+        </div>
+        <div class="faq-card">
+          <h3 class="faq-question">Can I customize a package?</h3>
+          <p class="faq-answer">Absolutely! We can create custom packages tailored to your specific needs. Just let us know what you're looking for, and we'll provide a custom quote.</p>
+        </div>
+        <div class="faq-card">
+          <h3 class="faq-question">What's your cancellation policy?</h3>
+          <p class="faq-answer">We understand plans change. You can cancel or reschedule up to 24 hours before your appointment at no charge. Same-day cancellations may incur a fee.</p>
+        </div>
+        <div class="faq-card">
+          <h3 class="faq-question">Do you price match?</h3>
+          <p class="faq-answer">While we don't directly match prices, we're confident our quality and service provide the best value. We encourage you to compare not just price, but also products, techniques, and warranties.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="cta-content">
+      <h2 class="cta-title">Ready to Transform Your Vehicle?</h2>
+      <p class="cta-text">Book online in 60 seconds or call for a custom quote</p>
+      <div class="cta-buttons">
+        <a href="/book" class="btn-white">Book Online</a>
+        <a href="tel:4805288227" class="btn-outline">Call (480) 528-8227</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p class="footer-text">© 2025 Shine Design Mobile Detailing. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="/privacy" class="footer-link">Privacy Policy</a>
+        <a href="/terms" class="footer-link">Terms of Service</a>
+        <a href="/contact" class="footer-link">Contact Us</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+// Price calculator based on vehicle size
+const basePrices = {
+  // Detailing packages
+  'silver': 179,
+  'gold': 299,
+  'platinum': 449,
+  // Protection services
+  'ceramic1': 599,
+  'ceramic3': 999,
+  'ceramic7': 1799,
+  'ppf-partial': 899,
+  'ppf-full': 1899,
+  'ppf-complete': 4999,
+  // Window tinting
+  'tint-standard': 199,
+  'tint-carbon': 299,
+  'tint-ceramic': 449
+};
+
+const sizeMultipliers = {
+  'small': 1,
+  'medium': 1.15,
+  'large': 1.35,
+  'xl': 1.55,
+  'xxl': 1.85
+};
+
+let currentMultiplier = 1;
+
+// Initialize size selector
+document.querySelectorAll('.size-btn').forEach(button => {
+  button.addEventListener('click', function() {
+    // Remove active class from all buttons
+    document.querySelectorAll('.size-btn').forEach(btn => {
+      btn.classList.remove('active');
+    });
+    
+    // Add active class to clicked button
+    this.classList.add('active');
+    
+    // Get multiplier
+    currentMultiplier = parseFloat(this.dataset.multiplier);
+    
+    // Update all prices
+    updateAllPrices();
+    
+    // Animate price change
+    animatePrices();
+  });
+});
+
+// Update all prices based on multiplier
+function updateAllPrices() {
+  document.querySelectorAll('.price-value').forEach(element => {
+    const basePrice = parseFloat(element.dataset.base);
+    const newPrice = Math.round(basePrice * currentMultiplier);
+    element.textContent = newPrice;
+  });
+}
+
+// Animate price changes
+function animatePrices() {
+  document.querySelectorAll('.package-price').forEach(element => {
+    element.style.transform = 'scale(1.05)';
+    element.style.transition = 'transform 0.3s';
+    setTimeout(() => {
+      element.style.transform = 'scale(1)';
+    }, 300);
+  });
+}
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    const targetId = this.getAttribute('href');
+    if (targetId !== '#') {
+      const target = document.querySelector(targetId);
+      if (target) {
+        target.scrollIntoView({ 
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    }
+  });
+});
+
+// Fade in animation on scroll
+const observerOptions = {
+  threshold: 0.1,
+  rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.animationPlayState = 'running';
+      observer.unobserve(entry.target);
+    }
+  });
+}, observerOptions);
+
+document.querySelectorAll('.fade-in').forEach(el => {
+  el.style.animationPlayState = 'paused';
+  observer.observe(el);
+});
+  </script>
+</body>
+</html>
