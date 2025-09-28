@@ -1,7 +1,7 @@
 :root{--brand:#0ea5e9;--brand-dark:#0284c7;--text:#0f172a;--muted:#475569;--bg:#fff;--header-h:72px;--max:1200px}
 *{box-sizing:border-box;margin:0;padding:0}html,body{overflow-x:hidden}
 body{font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial;color:var(--text);background:var(--bg);line-height:1.6}
-header{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.98);border-bottom:1px solid rgba(0,0,0,.08)}
+.site-chrome{position:sticky;top:0;z-index:2000;background:rgba(255,255,255,.98);border-bottom:1px solid rgba(0,0,0,.08)}
 .wrap{max-width:var(--max);margin:auto;padding:0 20px}
 .row{min-height:var(--header-h);display:flex;align-items:center;justify-content:space-between;gap:24px}
 .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
@@ -27,34 +27,6 @@ footer h4{color:#fff;margin-bottom:12px}footer a{color:#94a3b8;text-decoration:n
 footer a:hover{color:var(--brand)}.copy{margin-top:24px;border-top:1px solid rgba(255,255,255,.08);padding-top:18px;text-align:center;color:#64748b;font-size:14px}
 
 
-/* === Footer (updated to user's spec) === */
-.footer{background:#0b1220;color:#d1d5db;padding:56px 0 28px}
-.footer .container{max-width:1200px;margin:0 auto;padding:0 20px}
-.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:28px}
-.footer h4{color:#fff;margin-bottom:12px;font-weight:800}
-.footer a{color:#94a3b8;text-decoration:none}
-.footer a:hover{color:var(--brand)}
-.footer-links{list-style:none;margin:0;padding:0;display:grid;gap:8px}
-.social-links{display:flex;gap:10px}
-.social-link{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:9999px;
-  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:#fff;font-weight:900;text-decoration:none}
-.social-link:hover{background:rgba(255,255,255,.12)}
-.footer-bottom{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;margin-top:22px;padding-top:18px;border-top:1px solid rgba(255,255,255,.08)}
-.footer-bottom .copyright{color:#64748b;font-size:14px;margin:6px 0}
-.footer-legal{display:flex;gap:18px}
-.footer-legal a{color:#64748b}
-.footer-legal a:hover{color:#d1d5db}
-
-
-/* Header brand text to match PPF page */
-.brand-text{display:flex;flex-direction:column;line-height:1.2}
-.brand-name{font-size:20px;font-weight:700;color:var(--text);letter-spacing:-.5px}
-.brand-tagline{font-size:11px;color:var(--muted);font-weight:500;letter-spacing:.5px}
-/* put at END of /header-styles.css */
-body > header{position:sticky;top:0;z-index:1100}
-html,body{overflow-y:auto}
-.site, .page, .page-wrapper, main{overflow:visible !important}
-
-/* fallback if sticky is broken */
-.no-sticky body{padding-top:var(--header-h)}
-.no-sticky body > header{position:fixed;top:0;left:0;right:0}
+/* tagline + brand sizing */
+.site-chrome .brand img{height:56px}
+.site-chrome .brand .t{font:700 11px/1 ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial;text-transform:uppercase;letter-spacing:.18em;color:var(--muted)}
