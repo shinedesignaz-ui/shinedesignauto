@@ -153,3 +153,10 @@
     mobile?.addEventListener('click', e => { if (e.target.closest('a')) closeDrawer(); });
   });
 })();
+// after inserting header/footer
+const t=document.createElement('div');
+t.style.cssText='position:sticky;top:0;height:0';
+document.body.appendChild(t);
+const ok=getComputedStyle(t).position==='sticky';
+t.remove();
+if(!ok) document.documentElement.classList.add('no-sticky');
