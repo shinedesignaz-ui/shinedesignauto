@@ -27,7 +27,7 @@
   
   <!-- Open Graph Tags -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Shine Design — Detailing, Coatings, PPF & Tint in the East Valley" />
+  <meta property="og:title" content="Shine Design – Detailing, Coatings, PPF & Tint in the East Valley" />
   <meta property="og:description" content="We come to you. Ceramic coating, PPF, tint, and full detailing. Transparent pricing and fast booking across Gilbert, Mesa, Chandler, and Queen Creek." />
   <meta property="og:url" content="https://shinedesignauto.com/" />
   <meta property="og:site_name" content="Shine Design Mobile Detailing" />
@@ -54,7 +54,10 @@
   <!-- Preconnect for Performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://cdn.tailwindcss.com">
-  <link rel="dns-prefetch" href="https://api.leadconnectorhq.com">
+  <link rel="preconnect" href="https://link.msgsndr.com" crossorigin>
+  <link rel="preconnect" href="https://api.leadconnectorhq.com" crossorigin>
+  <link rel="dns-prefetch" href="//link.msgsndr.com">
+  <link rel="dns-prefetch" href="//api.leadconnectorhq.com">
   
   <!-- JSON-LD Schema Markup -->
   <script type="application/ld+json">
@@ -204,7 +207,7 @@
         {
           "@type": "Question",
           "name": "Do you come to my home or office?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Yes — we're mobile across Gilbert, Mesa, Chandler, Queen Creek and the East Valley. Our fully equipped mobile units bring everything needed including water and power." }
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes – we're mobile across Gilbert, Mesa, Chandler, Queen Creek and the East Valley. Our fully equipped mobile units bring everything needed including water and power." }
         },
         {
           "@type": "Question",
@@ -762,7 +765,7 @@ body {
 }
 
 .pricing-features li::before {
-  content: '✓';
+  content: '✔';
   color: #10b981;
   font-weight: bold;
   font-size: 1.2rem;
@@ -1411,113 +1414,6 @@ body {
   }
 }
 
-/* Modal Popup Styles */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 10000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0,0,0,0.8);
-  animation: modalFadeIn 0.3s;
-}
-
-@keyframes modalFadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-.modal-content {
-  background-color: white;
-  margin: 2% auto;
-  padding: 0;
-  border-radius: 20px;
-  width: 90%;
-  max-width: 600px;
-  position: relative;
-  animation: modalSlideIn 0.3s;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-}
-
-@keyframes modalSlideIn {
-  from { 
-    transform: translateY(-50px);
-    opacity: 0;
-  }
-  to { 
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-.modal-header {
-  padding: 30px 30px 20px;
-  text-align: center;
-  background: linear-gradient(135deg, var(--brand), var(--brand-light));
-  border-radius: 20px 20px 0 0;
-  color: white;
-}
-
-.modal-header h2 {
-  margin: 0 0 10px;
-  font-size: 2rem;
-  font-weight: 900;
-}
-
-.modal-header p {
-  margin: 0;
-  opacity: 0.9;
-}
-
-.modal-body {
-  padding: 20px;
-  background: #f8f9fa;
-  border-radius: 0 0 20px 20px;
-}
-
-.modal-close {
-  color: white;
-  position: absolute;
-  right: 20px;
-  top: 20px;
-  font-size: 35px;
-  font-weight: bold;
-  cursor: pointer;
-  z-index: 1;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(255,255,255,0.2);
-  border-radius: 50%;
-  transition: all 0.3s;
-}
-
-.modal-close:hover,
-.modal-close:focus {
-  background: rgba(255,255,255,0.3);
-  transform: scale(1.1);
-}
-
-@media (max-width: 768px) {
-  .modal-content {
-    width: 95%;
-    margin: 10% auto;
-  }
-  
-  .modal-header {
-    padding: 20px;
-  }
-  
-  .modal-header h2 {
-    font-size: 1.5rem;
-  }
-}
-
 /* Loading Animation */
 .loader {
   width: 50px;
@@ -1561,7 +1457,7 @@ body {
           </svg>
           Watch How We Work
         </button>
-        <button class="btn btn-secondary" onclick="document.getElementById('bookingModal').style.display='block'" aria-label="Get instant quote for detailing services">Get Instant Quote →</button>
+        <button class="btn btn-secondary" aria-label="Get instant quote for detailing services">Get Instant Quote →</button>
       </nav>
       <div class="hero-stats">
         <div class="stat" itemscope itemtype="https://schema.org/Review">
@@ -1569,7 +1465,7 @@ body {
           <div class="stat-label">Happy Customers</div>
         </div>
         <div class="stat" itemscope itemtype="https://schema.org/AggregateRating">
-          <div class="stat-number" itemprop="ratingValue">4.9★</div>
+          <div class="stat-number" itemprop="ratingValue">4.9☆</div>
           <div class="stat-label">Google Rating</div>
         </div>
         <div class="stat">
@@ -1780,7 +1676,7 @@ body {
             <li>Tire dressing</li>
             <li>Basic protection</li>
           </ul>
-          <button class="btn btn-secondary" style="width: 100%;" onclick="document.getElementById('bookingModal').style.display='block'">Book Silver</button>
+          <button class="btn btn-secondary" style="width: 100%;">Book Silver</button>
         </div>
         <div class="pricing-card featured">
           <div class="pricing-label">Most Popular</div>
@@ -1794,7 +1690,7 @@ body {
             <li>Leather conditioning</li>
             <li>Engine bay detail</li>
           </ul>
-          <button class="btn btn-primary" style="width: 100%;" onclick="document.getElementById('bookingModal').style.display='block'">Book Gold</button>
+          <button class="btn btn-primary" style="width: 100%;">Book Gold</button>
         </div>
         <div class="pricing-card">
           <div class="pricing-label" style="background: #10b981;">Best Value</div>
@@ -1809,7 +1705,7 @@ body {
             <li>Odor elimination</li>
             <li style="color: #10b981; font-weight: 700;">FREE: Engine Bay + Glass Treatment</li>
           </ul>
-          <button class="btn btn-secondary" style="width: 100%;" onclick="document.getElementById('bookingModal').style.display='block'">Book Platinum</button>
+          <button class="btn btn-secondary" style="width: 100%;">Book Platinum</button>
         </div>
       </div>
       
@@ -1908,19 +1804,8 @@ body {
     </div>
   </section>
 
-  <!-- Testimonials Section -->
-  <section class="section" id="reviews" style="background: var(--light);">
-    <div class="container">
-      <div class="section-header">
-        <div class="section-badge">Reviews</div>
-        <h2 class="section-title">What Our Customers Say</h2>
-        <p class="section-subtitle">500+ five-star reviews across all platforms</p>
-      </div>
-     <script type='text/javascript' src='https://reputationhub.site/reputation/assets/review-widget.js'></script><iframe class='lc_reviews_widget' src='https://reputationhub.site/reputation/widgets/review_widget/DwrSXekhK8QADmd0oVRN?widgetId=68d863b134cd378b77e1dd7a' frameborder='0' scrolling='no' style='min-width: 100%; width: 100%;'></iframe>
-  </section>
-
-  <!-- FAQ Section -->
-  <section class="section">
+  <!-- Review Widget Section -->
+  <section class="section" id="reviews" style="background: #fff;">
     <div class="container">
       <div class="section-header">
         <div class="section-badge">FAQ</div>
@@ -1994,12 +1879,31 @@ body {
         <h2 class="cta-title">Ready to Transform Your Vehicle?</h2>
         <p class="cta-subtitle">Book online in 60 seconds or call for immediate service</p>
         <div class="hero-buttons" style="justify-content: center;">
-          <button class="btn btn-primary" onclick="document.getElementById('bookingModal').style.display='block'">Book Online Now</button>
+          <button class="btn btn-primary">Book Online Now</button>
           <a href="tel:4805288227" class="btn btn-secondary">📞 (480) 528-8227</a>
         </div>
       </div>
     </div>
   </section>
+
+<!-- Review Widget Section -->
+<section class="section" id="reviews" style="background: #fff;">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-badge">Customer Reviews</div>
+      <h2 class="section-title">What Our Customers Say</h2>
+      <p class="section-subtitle">Read real reviews from satisfied customers across the East Valley</p>
+    </div>
+    
+    <!-- Review Widget Container -->
+    <div id="review-widget-container" style="margin: 40px 0;">
+      <div id="review-widget-loading" style="text-align: center; padding: 40px;">
+     <script type='text/javascript' src='https://reputationhub.site/reputation/assets/review-widget.js'></script><iframe class='lc_reviews_widget' src='https://reputationhub.site/reputation/widgets/review_widget/DwrSXekhK8QADmd0oVRN?widgetId=68d863b134cd378b77e1dd7a' frameborder='0' scrolling='no' style='min-width: 100%; width: 100%;'></iframe>
+  </section>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- Comprehensive Service Areas Section -->
 <section class="section" id="locations" style="background: var(--light);">
@@ -2007,18 +1911,18 @@ body {
     <div class="section-header">
       <div class="section-badge">Service Coverage</div>
       <h2 class="section-title">Serving All of East Valley, Maricopa &amp; Pinal County</h2>
-      <p class="section-subtitle">Professional mobile detailing at your home or office — we come to you.</p>
+      <p class="section-subtitle">Professional mobile detailing at your home or office – we come to you.</p>
     </div>
 
     <!-- Primary Service Areas -->
-    <h3 style="text-align: center; margin: 30px 0 20px; color: var(--brand);">Primary Service Areas — Same Day Available</h3>
+    <h3 style="text-align: center; margin: 30px 0 20px; color: var(--brand);">Primary Service Areas – Same Day Available</h3>
     <div class="grid grid-4" style="margin-bottom: 40px;">
       <article class="location-card">
         <h4>Gilbert</h4>
         <p class="muted">85233, 85234, 85295, 85296, 85297, 85298</p>
         <ul style="font-size:0.9rem;color:var(--gray);margin:10px 0;">
           <li>Agritopia</li><li>Power Ranch</li><li>Val Vista Lakes</li>
-          <li>Seville</li><li>Morrison Ranch</li><li>Cooley Station</li><li>Lyon’s Gate</li>
+          <li>Seville</li><li>Morrison Ranch</li><li>Cooley Station</li><li>Lyon's Gate</li>
         </ul>
         <a href="/locations/gilbert" class="btn btn-secondary" style="width:100%;">View Gilbert →</a>
       </article>
@@ -2271,15 +2175,15 @@ function updatePrices(size) {
   const platinumPrice = document.getElementById('platinum-price');
   
   if (silverPrice) {
-    silverPrice.innerHTML = `${packagePrices.silver[size]}<small>/vehicle</small>`;
+    silverPrice.innerHTML = `$${packagePrices.silver[size]}<small>/vehicle</small>`;
   }
   
   if (goldPrice) {
-    goldPrice.innerHTML = `${packagePrices.gold[size]}<small>/vehicle</small>`;
+    goldPrice.innerHTML = `$${packagePrices.gold[size]}<small>/vehicle</small>`;
   }
   
   if (platinumPrice) {
-    platinumPrice.innerHTML = `${packagePrices.platinum[size]}<small>/vehicle</small>`;
+    platinumPrice.innerHTML = `$${packagePrices.platinum[size]}<small>/vehicle</small>`;
   }
 }
 
@@ -2377,13 +2281,6 @@ document.querySelectorAll('.gallery-item').forEach(item => {
   });
 });
 
-// Dynamic pricing based on vehicle type
-const vehiclePrices = {
-  sedan: { silver: 179, gold: 299, platinum: 449 },
-  suv: { silver: 229, gold: 349, platinum: 519 },
-  truck: { silver: 249, gold: 399, platinum: 599 }
-};
-
 // Video play button
 document.querySelectorAll('.btn-primary').forEach(button => {
   if (button.textContent.includes('Watch')) {
@@ -2430,25 +2327,7 @@ if ('IntersectionObserver' in window) {
 }
   </script>
 
-  <!-- Popup Form -->
-  <iframe
-    src="https://api.leadconnectorhq.com/widget/form/k8Bo37hhzHmAqbAjcQ3F"
-    style="display:none;width:100%;height:100%;border:none;border-radius:0px"
-    id="popup-k8Bo37hhzHmAqbAjcQ3F" 
-    data-layout="{'id':'POPUP'}"
-    data-trigger-type="showAfter"
-    data-trigger-value="18"
-    data-activation-type="alwaysActivated"
-    data-activation-value=""
-    data-deactivation-type="leadCollected"
-    data-deactivation-value=""
-    data-form-name="Automotive Detailing Request Form - pop up"
-    data-height="342"
-    data-layout-iframe-id="popup-k8Bo37hhzHmAqbAjcQ3F"
-    data-form-id="k8Bo37hhzHmAqbAjcQ3F"
-    title="Automotive Detailing Request Form - pop up"
-  >
-  </iframe>
-  <script src="https://link.msgsndr.com/js/form_embed.js"></script>
+  <!-- Site Chrome Script - Handles header, footer, and popup modal -->
+  <script defer src="/site-chrome.js" data-chrome-version="v3"></script>
 </body>
 </html>
