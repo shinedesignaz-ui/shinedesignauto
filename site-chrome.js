@@ -1,13 +1,17 @@
-// Inject header, mobile drawer, footer
+// Inject header, drawer, footer, and handle “Book Now” modal.
 (() => {
+  const FORM_URL = "https://api.leadconnectorhq.com/widget/form/iOAJA6wWRWJ3ycF2AUKI";
+
   const headerHTML = `
   <header class="site-chrome" role="navigation" aria-label="Site">
     <div class="wrap">
       <div class="row">
         <a class="brand" href="/" aria-label="Shine Design Home">
           <img src="/logo.ico" alt="Shine Design">
-          <div><div class="n">Shine Design</div>
-          <div class="t">DETAILING • TINT • PPF • CERAMIC</div></div>
+          <div>
+            <div class="n">ShineDesign</div>
+            <div class="t">DETAILING • TINT • PPF • CERAMIC</div>
+          </div>
         </a>
         <nav class="links" aria-label="Primary">
           <a href="/services/">Services</a>
@@ -27,7 +31,6 @@
   </header>`;
 
   const scrimHTML = `<div class="scrim" id="scrim"></div>`;
-
   const mobileHTML = `
   <nav id="mobile" aria-hidden="true">
     <div class="mhd">
@@ -67,8 +70,8 @@
         <a href="/ceramic-coating">Ceramic Coating</a>
         <a href="/paint-protection-film">Paint Protection Film</a>
         <a href="/window-tinting">Window Tinting</a></div>
-      <div><h4>Locations</h4> 
-      <a href="/locations/">Service Areas</a><a href="/scottsdale">Scottsdale</a>
+      <div><h4>Locations</h4>
+        <a href="/locations/">Service Areas</a><a href="/scottsdale">Scottsdale</a>
         <a href="/gilbert">Gilbert</a><a href="/mesa">Mesa</a>
         <a href="/chandler">Chandler</a><a href="/queen-creek">Queen Creek</a></div>
       <div><h4>Book</h4>
@@ -77,29 +80,31 @@
     <div class="wrap copy">© <span id="y"></span> Shine Design. All rights reserved.</div>
   </footer>`;
 
-  document.addEventListener('DOMContentLoaded', () => {
+  function injectChrome(){
     if (!document.querySelector('header.site-chrome')) {
       document.body.insertAdjacentHTML('afterbegin', headerHTML);
       document.body.insertAdjacentHTML('beforeend', scrimHTML + mobileHTML + footerHTML);
     }
     const y = document.getElementById('y'); if (y) y.textContent = new Date().getFullYear();
+  }
 
+  function bindNav(){
     const menuBtn = document.querySelector('.menu');
     const mobile = document.getElementById('mobile');
-    const scrim = document.getElementById('scrim');
+    const scrim  = document.getElementById('scrim');
     const closeBtn = document.getElementById('closeBtn');
 
-    function openDrawer(){
+    const openDrawer = () => {
       mobile.classList.add('active'); document.body.classList.add('noscroll');
       scrim.classList.add('show'); menuBtn?.setAttribute('aria-expanded','true');
       mobile.setAttribute('aria-hidden','false');
-    }
-    function closeDrawer(){
+    };
+    const closeDrawer = () => {
       mobile.classList.remove('active'); document.body.classList.remove('noscroll');
       scrim.classList.remove('show'); menuBtn?.setAttribute('aria-expanded','false');
       mobile.setAttribute('aria-hidden','true');
-    }
-    function toggle(){ mobile.classList.contains('active') ? closeDrawer() : openDrawer(); }
+    };
+    const toggle = () => (mobile.classList.contains('active') ? closeDrawer() : openDrawer());
 
     menuBtn?.addEventListener('click', toggle);
     closeBtn?.addEventListener('click', closeDrawer);
@@ -107,84 +112,64 @@
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
     mobile?.addEventListener('click', e => { if (e.target.closest('a')) closeDrawer(); });
 
-    // Scroll shadow on header
+    // Sticky shadow
     const hdr = document.querySelector('header.site-chrome');
     const onScroll = () => hdr?.classList.toggle('scrolled', window.scrollY > 4);
-    onScroll(); // init
-    document.addEventListener('scroll', onScroll, {passive:true});
-  });
-})();
+    onScroll(); document.addEventListener('scroll', onScroll, {passive:true});
+  }
 
-// Booking / Instant Quote modal + click interception
-(() => {
-  const FORM_URL = "https://api.leadconnectorhq.com/widget/form/iOAJA6wWRWJ3ycF2AUKI";
-
-  function injectBookModal(){
-    if (document.getElementById("sd-book-modal")) return;
-    const modalHTML = `
-    <div id="sd-book-modal" class="sd-modal" role="dialog" aria-modal="true" aria-labelledby="sd-book-title" hidden>
-      <div class="sd-modal__scrim" data-close></div>
-      <div class="sd-modal__panel" role="document">
-        <button class="sd-modal__close" type="button" aria-label="Close" data-close>✕</button>
-        <h2 id="sd-book-title" class="sr-only">Book or Get Instant Quote</h2>
-        <iframe id="sd-book-iframe" src="${FORM_URL}" title="Shine Design Booking"></iframe>
-      </div>
-    </div>`;
-    document.body.insertAdjacentHTML("beforeend", modalHTML);
-
-    // load vendor script once
-    if (!document.querySelector('script[src*="form_embed.js"]')) {
-      const s = document.createElement("script");
-      s.src = "https://link.msgsndr.com/js/form_embed.js";
-      s.defer = true;
-      document.body.appendChild(s);
+  function bookingModal(){
+    // open + lazy inject
+    function inject(){
+      if (document.getElementById("sd-book-modal")) return;
+      const modalHTML = `
+      <div id="sd-book-modal" class="sd-modal" role="dialog" aria-modal="true" aria-labelledby="sd-book-title" hidden>
+        <div class="sd-modal__scrim" data-close></div>
+        <div class="sd-modal__panel" role="document">
+          <button class="sd-modal__close" type="button" aria-label="Close" data-close>✕</button>
+          <h2 id="sd-book-title" class="sr-only">Book or Get Instant Quote</h2>
+          <iframe id="sd-book-iframe" src="${FORM_URL}" title="Shine Design Booking"></iframe>
+        </div>
+      </div>`;
+      document.body.insertAdjacentHTML("beforeend", modalHTML);
+      if (!document.querySelector('script[src*="form_embed.js"]')) {
+        const s = document.createElement("script");
+        s.src = "https://link.msgsndr.com/js/form_embed.js";
+        s.defer = true;
+        document.body.appendChild(s);
+      }
     }
+    const open = () => { inject(); const m = document.getElementById("sd-book-modal"); m.hidden = false; document.body.classList.add("noscroll"); };
+    const close = () => { const m = document.getElementById("sd-book-modal"); if (!m) return; m.hidden = true; document.body.classList.remove("noscroll"); };
+
+    document.addEventListener("click", (e) => { if (e.target.closest("[data-close]")) close(); });
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") close(); });
+
+    // Intercept common “book/quote” triggers
+    document.addEventListener("click", (e) => {
+      const el = e.target.closest("a, button"); if (!el) return;
+      const label = (el.getAttribute("aria-label") || el.textContent || "").toLowerCase();
+      const href  = (el.getAttribute("href") || "").toLowerCase();
+
+      const matchesText = /\bbook\b|\bbook now\b|\bget instant quote\b|\binstant quote\b|\bquote\b|\bestimate\b/.test(label);
+      const matchesHref = /book|schedule|quote|get-quote|estimate/.test(href);
+      const forced = el.dataset.book === "true" || el.dataset.quote === "true";
+
+      if (matchesText || matchesHref || forced) {
+        if (/^(tel:|sms:|mailto:)/.test(href)) return;
+        e.preventDefault();
+        document.getElementById("scrim")?.classList.remove("show");
+        document.getElementById("mobile")?.classList.remove("active");
+        document.querySelector(".menu")?.setAttribute("aria-expanded","false");
+        document.body.classList.remove("noscroll");
+        open();
+      }
+    });
   }
 
-  function openBookModal(){
-    injectBookModal();
-    const m = document.getElementById("sd-book-modal");
-    m.hidden = false;
-    document.body.classList.add("noscroll");
-  }
-  function closeBookModal(){
-    const m = document.getElementById("sd-book-modal");
-    if (!m) return;
-    m.hidden = true;
-    document.body.classList.remove("noscroll");
-  }
-
-  // Close handlers
-  document.addEventListener("click", (e) => {
-    if (e.target.closest("[data-close]")) closeBookModal();
-  });
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape") closeBookModal();
-  });
-
-  // Intercept clicks that look like “book / quote”
-  document.addEventListener("click", (e) => {
-    const el = e.target.closest("a, button");
-    if (!el) return;
-
-    const label = (el.getAttribute("aria-label") || el.textContent || "").toLowerCase();
-    const href = (el.getAttribute("href") || "").toLowerCase();
-
-    const matchesText = /\bbook\b|\bbook now\b|\bget instant quote\b|\binstant quote\b|\bquote\b|\bestimate\b/.test(label);
-    const matchesHref = /book|schedule|quote|get-quote|estimate/.test(href);
-    const forced = el.dataset.book === "true" || el.dataset.quote === "true";
-
-    if (matchesText || matchesHref || forced) {
-      if (/^(tel:|sms:|mailto:)/.test(href)) return; // allow phone/sms/email
-      e.preventDefault();
-
-      // close mobile if open
-      document.getElementById("scrim")?.classList.remove("show");
-      document.getElementById("mobile")?.classList.remove("active");
-      document.querySelector(".menu")?.setAttribute("aria-expanded", "false");
-      document.body.classList.remove("noscroll");
-
-      openBookModal();
-    }
+  document.addEventListener('DOMContentLoaded', () => {
+    injectChrome();
+    bindNav();
+    bookingModal();
   });
 })();
