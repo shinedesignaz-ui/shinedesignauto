@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Motorcycle Detailing Gilbert AZ | Mobile Bike Detail | ShineDesign</title>
+<meta name="description" content="Professional motorcycle detailing in Gilbert, Mesa, Chandler. Chrome polishing, engine cleaning, leather care. Mobile service - we come to you! Starting $99.">
+<link rel="canonical" href="https://shinedesignauto.com/motorcycle-detailing">
+<link rel="icon" href="/assets/images/favicon.ico">
+<meta name="theme-color" content="#0ea5e9">
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
+<!-- End Google Tag Manager -->
+
+<!-- Preload header styles -->
+<link rel="preload" href="/header-styles.css" as="style">
+<link rel="stylesheet" href="/header-styles.css">
+
+<!-- Site Chrome Script -->
+<script defer src="/site-chrome.js" data-chrome-version="v3"></script>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+  /* ===== Design tokens ===== */
+  :root {
+    --brand: #0ea5e9;
+    --brand-dark: #0284c7;
+    --text: #0f172a;
+    --muted: #475569;
+    --bg: #fff;
+    --moto-accent: #dc2626;
+    --moto-dark: #b91c1c;
+  }
+
+  /* ===== Base Reset ===== */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  html, body { overflow-x: hidden; }
+  img, video { max-width: 100%; height: auto; display: block; }
+  
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    line-height: 1.6;
+    overscroll-behavior-x: none;
+  }
+
+  /* Focus styles */
+  a:focus-visible, button:focus-visible {
+    outline: 3px solid rgba(14, 165, 233, .35);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  /* ===== Page Styles ===== */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .section {
+    padding: 60px 0;
+  }
+
+  @media (max-width: 768px) {
+    .section {
+      padding: 40px 0;
+    }
+  }
+
+  /* Breadcrumb */
+  .breadcrumb {
+    padding: 20px 0;
+    font-size: 14px;
+    color: var(--muted);
+  }
+
+  .breadcrumb a {
+    color: var(--brand);
+    text-decoration: none;
+  }
+
+  .breadcrumb a:hover {
+    text-decoration: underline;
+  }
+
+  /* Service Hero */
+  .service-hero {
+    background: linear-gradient(135deg, #dc2626, #b91c1c);
+    color: white;
+    padding: 80px 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .service-hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 600px;
+    height: 600px;
+    background: rgba(255, 255, 255, .1);
+    border-radius: 50%;
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  @media (max-width: 768px) {
+    .hero-grid {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+  }
+
+  .hero-content h1 {
+    font-size: 48px;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    font-weight: 800;
+  }
+
+  @media (max-width: 768px) {
+    .hero-content h1 {
+      font-size: 32px;
+    }
+  }
+
+  .hero-subtitle {
+    font-size: 20px;
+    opacity: 0.95;
+    margin-bottom: 30px;
+  }
+
+  .hero-bullets {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+  }
+
+  .hero-bullets li {
+    padding: 8px 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 16px;
+  }
+
+  .hero-bullets li::before {
+    content: '✔';
+    width: 24px;
+    height: 24px;
+    background: rgba(255, 255, 255, .2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+
+  .hero-cta-group {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .hero-cta {
+    background: white;
+    color: var(--moto-accent);
+    padding: 16px 32px;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 16px;
+    text-decoration: none;
+    transition: all .3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .hero-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .2);
+  }
+
+  .hero-cta.secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+  }
+
+  .hero-cta.secondary:hover {
+    background: white;
+    color: var(--moto-accent);
+  }
+
+  .hero-image {
+    position: relative;
+  }
+
+  .hero-image img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, .2);
+  }
+
+  .badge-float {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: white;
+    color: var(--moto-accent);
+    padding: 12px 20px;
+    border-radius: 999px;
+    font-weight: 700;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .2);
+  }
+
+  /* Trust Bar */
+  .trust-bar {
+    background: #f8fafc;
+    border-bottom: 1px solid #e2e8f0;
+    padding: 24px 0;
+  }
+
+  .trust-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    text-align: center;
+  }
+
+  .trust-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .trust-icon {
+    font-size: 32px;
+  }
+
+  .trust-text {
+    font-weight: 600;
+    color: var(--text);
+    font-size: 14px;
+  }
+
+  .trust-subtext {
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  /* Package Cards */
+  .package-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+  }
+
+  .package-card {
+    border: 2px solid #e2e8f0;
+    border-radius: 20px;
+    padding: 32px;
+    position: relative;
+    transition: all .3s;
+    background: white;
+  }
+
+  .package-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, .1);
+  }
+
+  .package-card.featured {
+    border-color: var(--moto-accent);
+    transform: scale(1.05);
+    box-shadow: 0 20px 40px rgba(220, 38, 38, .15);
+  }
+
+  .popular-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--moto-accent);
+    color: white;
+    padding: 6px 20px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
+  .package-name {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--text);
+    text-align: center;
+  }
+
+  .package-subtitle {
+    text-align: center;
+    color: var(--muted);
+    margin-bottom: 20px;
+    font-size: 14px;
+  }
+
+  .package-price {
+    font-size: 48px;
+    font-weight: 800;
+    color: var(--moto-accent);
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  .package-price span {
+    font-size: 18px;
+    color: var(--muted);
+    font-weight: 400;
+  }
+
+  .package-features {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 30px;
+  }
+
+  .package-features li {
+    padding: 12px 0;
+    border-bottom: 1px solid #f1f5f9;
+    display: flex;
+    align-items: start;
+    gap: 10px;
+    font-size: 15px;
+  }
+
+  .package-features li::before {
+    content: '✔';
+    color: #22c55e;
+    font-weight: 700;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+
+  .package-cta {
+    width: 100%;
+    padding: 14px;
+    background: var(--moto-accent);
+    color: white;
+    border: none;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    transition: all .3s;
+  }
+
+  .package-cta:hover {
+    background: var(--moto-dark);
+    transform: translateY(-1px);
+  }
+
+  /* Process Steps */
+  .process-timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 50px auto;
+  }
+
+  .timeline-item {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 40px;
+    position: relative;
+  }
+
+  .timeline-number {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, var(--moto-accent), var(--moto-dark));
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: 700;
+    flex-shrink: 0;
+    position: relative;
+  }
+
+  .timeline-item:not(:last-child) .timeline-number::after {
+    content: '';
+    position: absolute;
+    top: 60px;
+    left: 50%;
+    width: 2px;
+    height: 40px;
+    background: var(--moto-accent);
+    opacity: 0.3;
+    transform: translateX(-50%);
+  }
+
+  .timeline-content {
+    flex: 1;
+    padding-bottom: 20px;
+  }
+
+  .timeline-content h3 {
+    font-size: 20px;
+    margin-bottom: 8px;
+    color: var(--text);
+  }
+
+  .timeline-content p {
+    color: var(--muted);
+  }
+
+  /* Benefits Grid */
+  .benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    margin-top: 50px;
+  }
+
+  .benefit-card {
+    text-align: center;
+  }
+
+  .benefit-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--moto-accent), var(--moto-dark));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 36px;
+  }
+
+  .benefit-card h3 {
+    font-size: 20px;
+    margin-bottom: 12px;
+    color: var(--text);
+  }
+
+  .benefit-card p {
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  /* FAQ Grid */
+  .faq-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 50px;
+  }
+
+  @media (max-width: 768px) {
+    .faq-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .faq-item {
+    background: white;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .05);
+  }
+
+  .faq-question {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 12px;
+  }
+
+  .faq-answer {
+    color: var(--muted);
+    line-height: 1.8;
+    font-size: 15px;
+  }
+
+  /* CTA Section */
+  .cta-section {
+    background: linear-gradient(135deg, var(--moto-accent), var(--moto-dark));
+    color: white;
+    border-radius: 20px;
+    padding: 60px;
+    text-align: center;
+    margin: 60px 0;
+  }
+
+  .cta-section h2 {
+    font-size: 36px;
+    margin-bottom: 12px;
+  }
+
+  .cta-section p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    opacity: 0.95;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 768px) {
+    .cta-section {
+      padding: 40px 20px;
+    }
+    
+    .cta-section h2 {
+      font-size: 28px;
+    }
+  }
+
+  /* Section Headers */
+  .section-header {
+    text-align: center;
+    margin-bottom: 50px;
+  }
+
+  .section-header h2 {
+    font-size: 36px;
+    margin-bottom: 12px;
+    color: var(--text);
+  }
+
+  .section-header p {
+    font-size: 18px;
+    color: var(--muted);
+  }
+</style>
+</head>
+
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <main>
+    <!-- Breadcrumb -->
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="/">Home</a> → <a href="/services/">Services</a> → Motorcycle Detailing
+      </div>
+    </div>
+
+    <!-- Service Hero -->
+    <section class="service-hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-content">
+            <h1>Professional Motorcycle Detailing in Gilbert</h1>
+            <p class="hero-subtitle">Specialized bike detailing that brings out the shine. Chrome polishing, engine cleaning, leather care - we come to you!</p>
+            
+            <ul class="hero-bullets">
+              <li>Mobile service to your location</li>
+              <li>Sport bikes, cruisers, touring bikes</li>
+              <li>Chrome & aluminum polishing</li>
+              <li>Starting at just $99</li>
+            </ul>
+
+            <div class="hero-cta-group">
+              <a href="tel:480-555-0123" class="hero-cta">
+                Call (480) 555-0123
+              </a>
+              <a href="https://booknow.shinedesignauto.com/" class="hero-cta secondary">
+                Book Online
+              </a>
+            </div>
+          </div>
+
+          <div class="hero-image">
+            <img src="/assets/images/motorcycle-detail-hero.jpg" alt="Professional motorcycle detailing">
+            <div class="badge-float">20% OFF First Detail!</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust Bar -->
+    <section class="trust-bar">
+      <div class="container">
+        <div class="trust-items">
+          <div class="trust-item">
+            <div class="trust-icon">🏍️</div>
+            <div class="trust-text">1,000+ Bikes</div>
+            <div class="trust-subtext">Detailed since 2019</div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-icon">⭐</div>
+            <div class="trust-text">5.0 Rating</div>
+            <div class="trust-subtext">Rider approved</div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-icon">🛡️</div>
+            <div class="trust-text">Fully Insured</div>
+            <div class="trust-subtext">Your bike is safe</div>
+          </div>
+          <div class="trust-item">
+            <div class="trust-icon">📍</div>
+            <div class="trust-text">Mobile Service</div>
+            <div class="trust-subtext">We come to you</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Packages -->
+    <section class="section" id="pricing">
+      <div class="container">
+        <div class="section-header">
+          <h2>Motorcycle Detail Packages</h2>
+          <p>Professional care for every type of rider</p>
+        </div>
+
+        <div class="package-grid">
+          <!-- Quick Wash -->
+          <div class="package-card">
+            <h3 class="package-name">Quick Wash</h3>
+            <p class="package-subtitle">Basic cleaning for regular riders</p>
+            <div class="package-price">
+              $99
+              <span>most bikes</span>
+            </div>
+            <ul class="package-features">
+              <li>Full bike rinse and wash</li>
+              <li>Wheel and tire cleaning</li>
+              <li>Chain cleaning & lube</li>
+              <li>Windshield cleaning</li>
+              <li>Quick dry and tire shine</li>
+              <li>30-45 minute service</li>
+            </ul>
+            <a href="https://booknow.shinedesignauto.com/" class="package-cta">Book Quick Wash</a>
+          </div>
+
+          <!-- Full Detail -->
+          <div class="package-card featured">
+            <span class="popular-badge">MOST POPULAR</span>
+            <h3 class="package-name">Full Detail</h3>
+            <p class="package-subtitle">Complete bike transformation</p>
+            <div class="package-price">
+              $199
+              <span>most bikes</span>
+            </div>
+            <ul class="package-features">
+              <li>Everything in Quick Wash</li>
+              <li>Engine bay detailing</li>
+              <li>Chrome & aluminum polish</li>
+              <li>Leather conditioning</li>
+              <li>Paint decontamination</li>
+              <li>Wax or sealant application</li>
+              <li>All plastics restored</li>
+              <li>90-minute service</li>
+            </ul>
+            <a href="https://booknow.shinedesignauto.com/" class="package-cta">Book Full Detail</a>
+          </div>
+
+          <!-- Show Prep -->
+          <div class="package-card">
+            <h3 class="package-name">Show Prep</h3>
+            <p class="package-subtitle">Competition-level perfection</p>
+            <div class="package-price">
+              $349
+              <span>all bikes</span>
+            </div>
+            <ul class="package-features">
+              <li>Everything in Full Detail</li>
+              <li>Paint correction</li>
+              <li>Ceramic coating application</li>
+              <li>Exhaust polishing</li>
+              <li>Spoke cleaning (if applicable)</li>
+              <li>Undercarriage detail</li>
+              <li>Show-quality finish</li>
+              <li>3-hour service</li>
+            </ul>
+            <a href="https://booknow.shinedesignauto.com/" class="package-cta">Book Show Prep</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section class="section" style="background: #f8fafc;">
+      <div class="container">
+        <div class="section-header">
+          <h2>Our Motorcycle Detailing Process</h2>
+          <p>Careful attention to every detail of your ride</p>
+        </div>
+
+        <div class="process-timeline">
+          <div class="timeline-item">
+            <div class="timeline-number">1</div>
+            <div class="timeline-content">
+              <h3>Initial Assessment</h3>
+              <p>Inspect your bike, note any concerns, and discuss your expectations for the detail.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-number">2</div>
+            <div class="timeline-content">
+              <h3>Pre-Rinse & Degrease</h3>
+              <p>Carefully rinse and apply degreaser to engine, chain, and heavily soiled areas.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-number">3</div>
+            <div class="timeline-content">
+              <h3>Hand Wash</h3>
+              <p>Two-bucket wash method with motorcycle-specific soaps to safely clean all surfaces.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-number">4</div>
+            <div class="timeline-content">
+              <h3>Detail Work</h3>
+              <p>Polish chrome, clean wheels, condition leather, restore plastics, and clean hard-to-reach areas.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-number">5</div>
+            <div class="timeline-content">
+              <h3>Protection</h3>
+              <p>Apply wax or sealant to painted surfaces, dress tires, and protect exposed metal.</p>
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-number">6</div>
+            <div class="timeline-content">
+              <h3>Final Inspection</h3>
+              <p>Walk through the completed detail with you and provide maintenance tips.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Why Professional Motorcycle Detailing?</h2>
+          <p>Keep your ride looking and performing its best</p>
+        </div>
+
+        <div class="benefits-grid">
+          <div class="benefit-card">
+            <div class="benefit-icon">💎</div>
+            <h3>Preserve Value</h3>
+            <p>Regular detailing maintains your bike's resale value and prevents costly damage from neglect.</p>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon">⚙️</div>
+            <h3>Better Performance</h3>
+            <p>Clean chains, lubricated cables, and debris-free components mean smoother, safer rides.</p>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon">🛡️</div>
+            <h3>Corrosion Protection</h3>
+            <p>Remove salt, brake dust, and road grime that causes rust and deterioration of components.</p>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon">✨</div>
+            <h3>Show-Ready Shine</h3>
+            <p>Whether for a bike night or just weekend rides, roll up with confidence on a pristine machine.</p>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon">🏠</div>
+            <h3>Convenient Service</h3>
+            <p>We come to your home or office with all equipment needed - no trailer or truck required.</p>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon">👨‍🔧</div>
+            <h3>Bike Specialists</h3>
+            <p>We understand motorcycles - from sport bikes to cruisers, we know what each bike needs.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQs -->
+    <section class="section" style="background: #f8fafc;">
+      <div class="container">
+        <div class="section-header">
+          <h2>Motorcycle Detailing FAQs</h2>
+          <p>Common questions about our bike detailing service</p>
+        </div>
+
+        <div class="faq-grid">
+          <div class="faq-item">
+            <h3 class="faq-question">Do you detail all types of motorcycles?</h3>
+            <p class="faq-answer">Yes! We detail sport bikes, cruisers, touring bikes, adventure bikes, and even scooters. Each gets specialized care based on its unique needs.</p>
+          </div>
+
+          <div class="faq-item">
+            <h3 class="faq-question">How long does motorcycle detailing take?</h3>
+            <p class="faq-answer">Quick wash takes 30-45 minutes, Full Detail is about 90 minutes, and Show Prep requires 3 hours. We work efficiently while ensuring quality.</p>
+          </div>
+
+          <div class="faq-item">
+            <h3 class="faq-question">Can you remove scratches from my bike?</h3>
+            <p class="faq-answer">Minor scratches in paint and chrome can often be polished out. Deep scratches may require touch-up paint or professional repair, which we can advise on.</p>
+          </div>
+
+          <div class="faq-item">
+            <h3 class="faq-question">Do you offer ceramic coating for motorcycles?</h3>
+            <p class="faq-answer">Yes! Ceramic coating is included in our Show Prep package or available as an add-on. It provides long-lasting protection and makes cleaning easier.</p>
+          </div>
+
+          <div class="faq-item">
+            <h3 class="faq-question">Will you clean the chain?</h3>
+            <p class="faq-answer">Absolutely. Chain cleaning and lubrication is included in all packages. We use motorcycle-specific chain cleaners and lubricants.</p>
+          </div>
+
+          <div class="faq-item">
+            <h3 class="faq-question">Is it safe to wash my motorcycle?</h3>
+            <p class="faq-answer">Yes, when done properly. We avoid high-pressure water near bearings and electronics, and ensure everything is properly dried to prevent issues.</p>
+          </div>
+
+          <div class="faq-item">
+            <h3 class="faq-question">How often should I detail my motorcycle?</h3>
+            <p class="faq-answer">For regular riders, monthly quick washes with quarterly full details work well. Garage queens may only need detailing before rides or shows.</p>
+          </div>
+
+          <div class="faq-item">
+            <h3 class="faq-question">Do you work on vintage motorcycles?</h3>
+            <p class="faq-answer">Yes, and we take extra care with vintage bikes. We use gentle products and techniques appropriate for older finishes and materials.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="container">
+      <div class="cta-section">
+        <h2>Ready to Make Your Bike Shine?</h2>
+        <p>Book your motorcycle detail today - 20% off for first-time riders!</p>
+        
+        <div class="cta-buttons">
+          <a href="tel:480-555-0123" class="hero-cta">
+            Call (480) 555-0123
+          </a>
+          <a href="https://booknow.shinedesignauto.com/" class="hero-cta secondary">
+            Book Online Now
+          </a>
+        </div>
+
+        <p style="margin-top: 20px; font-size: 14px; opacity: 0.9;">
+          🏍️ All bike types • 📍 Mobile service • ⭐ 5-star rated
+        </p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
