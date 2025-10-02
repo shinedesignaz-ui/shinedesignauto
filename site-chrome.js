@@ -181,10 +181,7 @@
       </div>
     </div>
     <script 
-  src="https://beta.leadconnectorhq.com/loader.js"  
-  data-resources-url="https://beta.leadconnectorhq.com/chat-widget/loader.js" 
- data-widget-id="68de22a3721466f47cf4ef63"   > 
- </script>
+    </script>
   </footer>`;
 
   // Inject chrome elements
