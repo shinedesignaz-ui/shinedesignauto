@@ -50,6 +50,9 @@
         </svg>
       </button>
     </div>
+    <div class="mcta" style="padding:12px">
+      <a class="mbtn" href="/booking/" data-book="true" aria-label="Book Now">🚀 Book Now</a>
+    </div>
     <div class="mgrid" role="menu">
       <a class="mbtn" href="/auto-detailing" role="menuitem">
         Auto Detailing <span>→</span>
@@ -69,7 +72,7 @@
       <a class="mbtn" href="/boat-detailing" role="menuitem">
         Boat Detailing <span>→</span>
       </a>
-      <a class="mbtn" href="/airplane-detailing" role="menuitem">
+      <a class="mbtn" href="/aircraft-detailing" role="menuitem">
         Airplane Detailing <span>→</span>
       </a>
       <a class="mbtn" href="/paint-correction" role="menuitem">
@@ -90,6 +93,17 @@
       <a class="mbtn" href="/contact/" role="menuitem">
         Contact <span>→</span>
       </a>
+      <div class="mgroup" aria-label="Top Cities" style="margin-top:8px;padding-top:8px;border-top:1px solid rgba(148,163,184,.2)">
+        <div style="font-size:12px;color:#94a3b8;margin-bottom:6px">Top Cities</div>
+        <div class="mcols" style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+          <a class="mbtn" href="/locations/gilbert" role="menuitem">Gilbert</a>
+          <a class="mbtn" href="/locations/mesa" role="menuitem">Mesa</a>
+          <a class="mbtn" href="/locations/chandler" role="menuitem">Chandler</a>
+          <a class="mbtn" href="/locations/queen-creek" role="menuitem">Queen Creek</a>
+          <a class="mbtn" href="/locations/scottsdale" role="menuitem">Scottsdale</a>
+          <a class="mbtn" href="/locations/phoenix" role="menuitem">Phoenix</a>
+        </div>
+      </div>
     </div>
     <div class="mcta">
       <a class="call" href="tel:+14805288227">
@@ -107,13 +121,16 @@
       <div class="fgrid">
         <div>
           <h4>Shine Design</h4>
-          <p style="margin-bottom: 12px; color: #94a3b8;">
-            Professional Auto Detailing<br>
-            Ceramic Coating • PPF • Tint
-          </p>
-          <a href="tel:+14805288227" style="font-weight: 600; color: var(--brand);">
-            📞 (480) 528-8227
-          </a>
+          <p style="margin-bottom:12px;color:#94a3b8">Professional Auto Detailing<br/>Ceramic Coating • PPF • Tint</p>
+          <a href="tel:+14805288227" style="font-weight:600;color:var(--brand)">📞 (480) 528-8227</a>
+          <nav class="socials" aria-label="Social links" style="margin-top:12px;display:flex;gap:10px">
+            <a href="https://www.facebook.com/yourpage" aria-label="Facebook" rel="noopener" target="_blank">Facebook</a>
+            <a href="https://www.instagram.com/yourpage" aria-label="Instagram" rel="noopener" target="_blank">Instagram</a>
+            <a href="https://www.youtube.com/@yourchannel" aria-label="YouTube" rel="noopener" target="_blank">YouTube</a>
+            <a href="https://www.tiktok.com/@yourhandle" aria-label="TikTok" rel="noopener" target="_blank">TikTok</a>
+            <a href="https://www.yelp.com/biz/yourbiz" aria-label="Yelp" rel="noopener" target="_blank">Yelp</a>
+            <a href="https://g.page/r/yourgmbshort" aria-label="Google Business Profile" rel="noopener" target="_blank">Google</a>
+          </nav>
         </div>
         <div>
           <h4>Services</h4>
@@ -125,24 +142,42 @@
         </div>
         <div>
           <h4>Service Areas</h4>
-          <a href="/gilbert">Gilbert</a>
-          <a href="/mesa">Mesa</a>
-          <a href="/chandler">Chandler</a>
-          <a href="/scottsdale">Scottsdale</a>
-          <a href="/queen-creek">Queen Creek</a>
-          <a href="/phoenix">Phoenix</a>
+          <a href="/locations/gilbert">Gilbert</a>
+          <a href="/locations/mesa">Mesa</a>
+          <a href="/locations/chandler">Chandler</a>
+          <a href="/locations/scottsdale">Scottsdale</a>
+          <a href="/locations/queen-creek">Queen Creek</a>
+          <a href="/locations/phoenix">Phoenix</a>
         </div>
         <div>
           <h4>Information</h4>
-          <a href="/pricing/">Pricing & Packages</a>
+          <a href="/pricing/">Pricing &amp; Packages</a>
           <a href="/gallery">Work Gallery</a>
           <a href="/about/">About Us</a>
           <a href="/contact">Contact</a>
+          <a href="/faq">FAQ</a> 
+          <a href="/blog">Blog</a>
+
+        </div>
+        <div>
+          <h4>Get Started</h4>
+          <a href="/contact/">Contact Us</a>
+          <a href="/locations/">Our Locations</a>
           <a href="/booking/" data-book="true">Book Online</a>
         </div>
       </div>
       <div class="copy">
-        © <span id="year"></span> ShineDesign. All rights reserved. | Professional Auto Detailing in Gilbert, AZ
+        <div class="micro" style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+          <span>© <span id="year"></span> ShineDesign. All rights reserved.</span>
+          <nav class="socials" aria-label="Social links" style="display:flex;gap:12px">
+            <a href="https://www.facebook.com/yourpage" aria-label="Facebook" rel="noopener" target="_blank">Facebook</a>
+            <a href="https://www.instagram.com/yourpage" aria-label="Instagram" rel="noopener" target="_blank">Instagram</a>
+            <a href="https://www.youtube.com/@yourchannel" aria-label="YouTube" rel="noopener" target="_blank">YouTube</a>
+            <a href="https://www.tiktok.com/@yourhandle" aria-label="TikTok" rel="noopener" target="_blank">TikTok</a>
+            <a href="https://www.yelp.com/biz/yourbiz" aria-label="Yelp" rel="noopener" target="_blank">Yelp</a>
+            <a href="https://g.page/r/yourgmbshort" aria-label="Google Business Profile" rel="noopener" target="_blank">Google</a>
+          </nav>
+        </div>
       </div>
     </div>
   </footer>`;
