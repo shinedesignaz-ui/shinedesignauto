@@ -153,7 +153,7 @@
           <h4>Information</h4>
           <a href="/pricing/">Pricing &amp; Packages</a>
           <a href="/gallery">Work Gallery</a>
-          <a href="/about/">About Us</a>
+          <a href="/about">About Us</a>
           <a href="/contact">Contact</a>
           <a href="/faq">FAQ</a> 
           <a href="/blog">Blog</a>
@@ -161,9 +161,11 @@
         </div>
         <div>
           <h4>Get Started</h4>
-          <a href="/contact/">Contact Us</a>
+          <a href="/contact">Contact Us</a>
           <a href="/locations/">Our Locations</a>
-          <a href="/booking/" data-book="true">Book Online</a>
+          <a href="/booking" data-book="true">Book Online</a>
+          <a href="/quote" data-quote="true">Get Instant Quote</a>
+          <a href="/sitemap">Sitemap</a>
         </div>
       </div>
       <div class="copy">
