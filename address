@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Enter Address</title>
+  <style>
+    html,body{height:100%;margin:0}
+    #map{height:70vh;width:100%}
+    .searchbox{
+      position:absolute;top:16px;left:50%;transform:translateX(-50%);
+      width:clamp(280px,92vw,560px);display:flex;gap:8px;align-items:center;
+      background:#fff;border-radius:999px;padding:10px 14px;box-shadow:0 8px 24px rgba(0,0,0,.12);z-index:2
+    }
+    .searchbox input{flex:1;border:0;outline:0;font-size:16px}
+    .searchbox button{background:#0ea5e9;color:#fff;border:0;border-radius:999px;padding:10px 14px;cursor:pointer;font-weight:700}
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+
+  <div class="searchbox">
+    <input id="addr" placeholder="Enter the street number and full address" autocomplete="off" />
+    <button id="go">→</button>
+  </div>
+
+  <script>
+    window.initMap = function(){
+      const center = { lat: 33.3528, lng: -111.7890 };
+      const map = new google.maps.Map(document.getElementById("map"), {
+        center, zoom: 12, disableDefaultUI: true
+      });
+      const marker = new google.maps.Marker({ map });
+
+      const input = document.getElementById('addr');
+      const ac = new google.maps.places.Autocomplete(input, {
+        fields: ["geometry", "formatted_address", "address_components", "place_id"]
+      });
+
+      ac.addListener("place_changed", () => {
+        const place = ac.getPlace();
+        if (!place.geometry) return;
+        map.setCenter(place.geometry.location);
+        map.setZoom(15);
+        marker.setPosition(place.geometry.location);
+
+        const comp = place.address_components || [];
+        const get = (t)=> (comp.find(c=>c.types.includes(t))||{}).long_name || "";
+        const payload = {
+          place_id: place.place_id || "",
+          formatted: place.formatted_address || "",
+          street_number: get("street_number"),
+          route: get("route"),
+          city: get("locality") || get("sublocality") || get("postal_town"),
+          state: get("administrative_area_level_1"),
+          zip: get("postal_code"),
+          country: get("country"),
+          lat: place.geometry.location.lat(),
+          lng: place.geometry.location.lng()
+        };
+        localStorage.setItem("lead_address", JSON.stringify(payload));
+      });
+
+      document.getElementById('go').addEventListener('click', () => {
+        const stored = localStorage.getItem("lead_address");
+        if (stored) {
+          const addr = JSON.parse(stored);
+          window.location.href = "/thank-you.html?address=" + encodeURIComponent(addr.formatted);
+        }
+      });
+    };
+  </script>
+
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDQnyddD6hcC6jsJvVLj9Lw2GVwni8hoxU&libraries=places&callback=initMap"></script>
+
+</body>
+</html>
