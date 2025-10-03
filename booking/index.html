@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-P4LZ4N28');</script>
+  <!-- End Google Tag Manager -->
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { brand: { DEFAULT: '#0ea5e9', dark: '#0b85bb' } },
+          boxShadow: { card: '0 10px 30px rgba(2, 8, 23, 0.08)' }
+        }
+      }
+    }
+  </script>
+  <style>
+    .container-tight{max-width:1200px}
+    .brand-text{display:flex;flex-direction:column;line-height:1.1}
+    .brand-name{font-weight:800;font-size:1.125rem;letter-spacing:-0.01em;color:#0f172a}
+    @media(min-width:768px){.brand-name{font-size:1.5rem}}
+    .brand-tagline{margin-top:1px;font-weight:700;font-size:0.75rem;letter-spacing:.08em;color:#475569;text-transform:uppercase;line-height:1}
+    [id]{scroll-margin-top:90px}
+  </style>
+<title>Book Online | Shine Design Mobile Detailing</title>
+  <meta name="description" content="Book mobile detailing, ceramic coating, PPF, and window tint online with Shine Design. Fast, easy scheduling with instant confirmation.">
+  <link rel="canonical" href="https://shinedesignauto.com/book">
+  <link rel="icon" href="/assets/images/favicon.ico">
+  <meta name="theme-color" content="#0ea5e9">
+
+  <!-- Social Meta Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Book Online | Shine Design Mobile Detailing">
+  <meta property="og:description" content="Schedule detailing, ceramic coating, PPF, or tint in minutes.">
+  <meta property="og:url" content="https://shinedesignauto.com/booking">
+  <meta property="og:image" content="/assets/images/og-image.jpg">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Book Online – Shine Design Mobile Detailing",
+    "url": "https://shinedesignauto.com/booking",
+    "description": "Book mobile detailing, ceramic coating, PPF, and tint."
+  }
+  </script>
+
+  <style>
+    :root {
+      --brand: #0ea5e9;
+      --brand-dark: #0284c7;
+      --text: #0f172a;
+      --muted: #475569;
+      --bg: #fff;
+      --header-h: 72px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { overflow-x: hidden; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+      overscroll-behavior-x: none;
+    }
+    .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+
+    /* Announcement Bar */
+    .announcement-bar {
+      background: linear-gradient(90deg, var(--brand), var(--brand-dark));
+      color: white; padding: 8px 16px; text-align: center; font-size: 14px; font-weight: 600;
+      position: relative; z-index: 1001;
+    }
+    .announcement-bar a { color: white; text-decoration: underline; }
+
+    /* Header */
+    .main-header {
+      position: sticky; top: 0; z-index: 1000; width: 100%;
+      background: rgba(255, 255, 255, .98);
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(0, 0, 0, .08);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, .04);
+    }
+    .header-container { max-width: 1280px; margin: 0 auto; padding: 0 20px; }
+    .header-content { display: flex; align-items: center; justify-content: space-between; min-height: var(--header-h); gap: 32px; }
+    .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; transition: transform .2s; }
+    .brand:hover { transform: translateY(-1px); }
+    .brand img { height: 42px; width: auto; display: block; }
+    .brand-text { display: flex; flex-direction: column; line-height: 1.2; }
+    .brand-name { font-size: 20px; font-weight: 700; color: var(--text); letter-spacing: -0.5px; }
+    .brand-tagline { font-size: 11px; color: var(--muted); font-weight: 500; letter-spacing: 0.5px; }
+
+    .nav-links { display: none; gap: 24px; align-items: center; flex: 1; justify-content: flex-end; }
+    .nav-links > a, .nav-dropdown > a {
+      font-weight: 600; font-size: 15px; color: var(--text); text-decoration: none;
+      transition: color .2s; padding: 8px 12px; border-radius: 8px; display: flex; align-items: center; gap: 6px;
+    }
+    .nav-links > a:hover, .nav-dropdown > a:hover { color: var(--brand); background: rgba(14, 165, 233, .08); }
+    .service-pills { display: flex; gap: 8px; align-items: center; padding: 0 16px; border-left: 1px solid rgba(0,0,0,.1); border-right: 1px solid rgba(0,0,0,.1); }
+    .service-pill { padding: 6px 12px; background: rgba(14,165,233,.08); color: var(--brand); font-size: 13px; font-weight: 600; border-radius: 999px; text-decoration: none; transition: all .2s; white-space: nowrap; }
+    .service-pill:hover { background: var(--brand); color: white; transform: translateY(-1px); }
+
+    .nav-dropdown { position: relative; }
+    .nav-dropdown .arrow { font-size: 10px; transition: transform .3s; }
+    .nav-dropdown:hover .arrow { transform: rotate(180deg); }
+    .dropdown-menu {
+      position: absolute; top: calc(100% + 8px); left: 50%; transform: translateX(-50%);
+      background: white; border: 1px solid rgba(0,0,0,.08); border-radius: 12px;
+      box-shadow: 0 12px 48px rgba(0,0,0,.12); padding: 12px; min-width: 280px;
+      opacity: 0; visibility: hidden; transition: all .25s cubic-bezier(0.4,0,0.2,1); pointer-events: none;
+    }
+    .nav-dropdown:hover .dropdown-menu { opacity: 1; visibility: visible; pointer-events: auto; }
+
+    .services-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 12px; padding-bottom: 12px; border-bottom: 1px solid rgba(0,0,0,.06); }
+    .service-card { display: flex; align-items: center; gap: 12px; padding: 12px; border-radius: 8px; text-decoration: none; transition: all .2s; background: rgba(14,165,233,.04); }
+    .service-card:hover { background: rgba(14,165,233,.12); transform: translateX(4px); }
+    .service-icon { width: 32px; height: 32px; background: var(--brand); border-radius: 8px; display:flex; align-items:center; justify-content:center; color:white; font-size:18px; flex-shrink:0; }
+    .service-info { flex: 1; }
+    .service-title { font-weight: 600; color: var(--text); font-size: 14px; line-height: 1.2; display: block; }
+    .service-desc { font-size: 11px; color: var(--muted); margin-top: 2px; }
+    .dropdown-label { padding: 8px 12px 4px; font-size: 11px; font-weight: 700; text-transform: uppercase; color: var(--muted); letter-spacing: .5px; }
+    .dropdown-menu a { display: block; padding: 10px 16px; color: var(--text); font-size: 14px; font-weight: 500; border-radius: 8px; transition: all .2s; text-decoration: none; }
+    .dropdown-menu a:hover { background: rgba(14,165,233,.08); color: var(--brand); padding-left: 20px; }
+
+    .cta-group { display: flex; gap: 12px; align-items: center; }
+    .cta-primary {
+      background: var(--brand); color: white !important; padding: 12px 24px; border-radius: 999px; font-weight: 700; font-size: 15px;
+      text-decoration: none; transition: all .2s; display: inline-flex; align-items: center; gap: 8px;
+    }
+    .cta-primary:hover { background: var(--brand-dark); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(14,165,233,.25); }
+    .cta-phone { display:flex; align-items:center; gap:8px; padding:10px 16px; border:2px solid rgba(14,165,233,.2); border-radius:999px; color:var(--brand); font-weight:600; text-decoration:none; transition: all .2s; }
+    .cta-phone:hover { background: rgba(14,165,233,.08); border-color: var(--brand); }
+
+    .menu-btn { display: flex; align-items: center; justify-content: center; width: 44px; height: 44px;
+      border: 2px solid rgba(0,0,0,.1); border-radius: 12px; background: white; color: var(--text); cursor: pointer; transition: all .2s; }
+    .menu-btn:hover { background: rgba(14,165,233,.08); border-color: var(--brand); color: var(--brand); }
+    .menu-btn svg { width: 24px; height: 24px; }
+
+    #mobile-nav {
+      position: fixed; top: var(--header-h); left: 0; right: 0; bottom: 0; background: white; z-index: 999;
+      overflow-y: auto; padding: 20px; transform: translateX(100%); transition: transform .3s cubic-bezier(0.4,0,0.2,1);
+      box-shadow: -4px 0 24px rgba(0,0,0,.1);
+    }
+    #mobile-nav.active { transform: translateX(0); }
+    .mobile-nav-content a { display:block; padding:14px 0; color:var(--text); font-weight:600; font-size:16px; text-decoration:none; border-bottom:1px solid rgba(0,0,0,.06); transition: all .2s; }
+    .mobile-nav-content a:hover { color: var(--brand); padding-left: 12px; }
+    .mobile-services { display: grid; gap: 12px; margin: 20px 0; padding: 20px 0; border-top: 1px solid rgba(0,0,0,.08); border-bottom: 1px solid rgba(0,0,0,.08); }
+    .mobile-service-btn { display:flex; align-items:center; justify-content:space-between; padding:16px; background: rgba(14,165,233,.04); border:1px solid rgba(14,165,233,.1); border-radius:12px; color:var(--text); text-decoration:none; font-weight:600; transition: all .2s; }
+    .mobile-service-btn:hover { background: rgba(14,165,233,.1); border-color: var(--brand); transform: translateX(4px); }
+
+    @media (min-width: 960px) {
+      .nav-links { display: flex; }
+      .menu-btn { display: none; }
+      #mobile-nav { display: none; }
+    }
+    @media (max-width: 959px) {
+      .service-pills { display: none; }
+      .cta-phone { display: none; }
+      .announcement-bar { font-size: 12px; }
+    }
+
+    /* Page layout */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    .section { padding: 60px 0; }
+    @media (max-width: 768px) { .section { padding: 40px 0; } }
+
+    /* Booking hero */
+    .hero {
+      background: linear-gradient(135deg, rgba(14,165,233,.12), rgba(2,132,199,.08));
+      border-bottom: 1px solid rgba(0,0,0,.06);
+    }
+    .breadcrumbs { font-size: 13px; color: var(--muted); margin-bottom: 8px; }
+    .breadcrumbs a { color: var(--muted); text-decoration: none; }
+    .breadcrumbs a:hover { text-decoration: underline; }
+    .hero h1 { font-size: 40px; line-height: 1.1; margin-bottom: 10px; }
+    .hero p { font-size: 18px; color: var(--muted); }
+
+    /* Booking iframe wrapper */
+    .booking-wrap {
+      min-height: calc(100vh - var(--header-h) - 220px);
+    }
+    .booking-card {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 0;
+      overflow: hidden;
+      box-shadow: 0 8px 24px rgba(2,6,23,.04);
+    }
+
+    /* Footer */
+    footer { background:#0b1220; color:#d1d5db; padding:60px 0 30px; margin-top: 40px; }
+    .footer-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(250px,1fr)); gap:40px; margin-bottom:40px; }
+    .footer-column h3 { color:white; margin-bottom:20px; font-size:18px; }
+    .footer-column a { display:block; color:#94a3b8; text-decoration:none; padding:6px 0; transition: color .3s; }
+    .footer-column a:hover { color:var(--brand); }
+    .footer-bottom { text-align:center; padding-top:30px; border-top:1px solid rgba(255,255,255,.1); font-size:14px; color:#64748b; }
+  </style>
+</head>
+<body class="antialiased text-slate-900">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P4LZ4N28"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+   
+    <!-- Hero -->
+    <section class="section hero">
+      <div class="container">
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href="/">Home</a> &nbsp;•&nbsp; <span>Book</span>
+        </nav>
+        <h1>Book Online</h1>
+        <p>Choose your service and time — we’ll confirm by text and email.</p>
+      </div>
+    </section>
+
+    <!-- Booking -->
+    <section class="section">
+      <div class="container booking-wrap">
+        <div class="booking-card">
+          <iframe src="https://api.leadconnectorhq.com/booking/shine-design-mobile-detailing?heightMode=full&showHeader=false"
+                  style="width: 100%; border: none; overflow: hidden; height: 100vh;"
+                  scrolling="no"
+                  id="DwrSXekhK8QADmd0oVRN_1758879607817"
+                  title="Shine Design Booking"></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-column">
+          <h3>Shine Design</h3>
+          <p>Your Car, Our Passion, Your Place.</p>
+          <a href="tel:+14805288227">Call: (480) 528-8227</a>
+          <a href="sms:+14805288227">Text: (480) 528-8227</a>
+          <a href="mailto:info@shinedesignauto.com">Email: info@shinedesignauto.com</a>
+        </div>
+        <div class="footer-column">
+          <h3>Services</h3>
+          <a href="/auto-detailing/">Auto Detailing</a>
+          <a href="/ceramic-coating/">Ceramic Coating</a>
+          <a href="/paint-protection-film/">Paint Protection Film (PPF)</a>
+          <a href="/window-tinting/">Window Tinting</a>
+          <a href="/paint-correction/">Paint Correction</a>
+        </div>
+        <div class="footer-column">
+          <h3>Locations</h3>
+          <a href="/gilbert/">Gilbert</a>
+          <a href="/mesa/">Mesa</a>
+          <a href="/chandler/">Chandler</a>
+          <a href="/queen-creek/">Queen Creek</a>
+          <a href="/san-tan-valley/">San Tan Valley</a>
+        </div>
+        <div class="footer-column">
+          <h3>Book</h3>
+          <a href="/book/">Book Online</a>
+          <a href="/contact/">Contact</a>
+          <a href="/about/">About</a>
+          <a href="/gallery/">Gallery</a>
+          <a href="/pricing/">Pricing</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        © <span id="year-copy"></span> Shine Design Mobile Detailing • All Rights Reserved
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    function toggleMobileMenu(){
+      var nav = document.getElementById('mobile-nav');
+      var isOpen = nav.classList.toggle('active');
+      document.body.classList.toggle('menu-open', isOpen);
+    }
+    (function(){document.getElementById('year-copy').textContent = new Date().getFullYear();})();
+  </script>
+
+  <!-- LeadConnector embed (required for bookings) -->
+  <script src="https://link.msgsndr.com/js/form_embed.js" type="text/javascript"></script>
+
+<script>
+  (function(){
+    var menuBtn = document.getElementById('menuBtn');
+    var mobileNav = document.getElementById('mobileNav');
+    if(menuBtn && mobileNav){
+      menuBtn.addEventListener('click', function(e){
+        e.preventDefault();
+        mobileNav.classList.toggle('hidden');
+      });
+    }
+  })();
+</script>
+
+
+  <!-- Chat Widget -->
+  <script 
+  src="https://beta.leadconnectorhq.com/loader.js"  
+  data-resources-url="https://beta.leadconnectorhq.com/chat-widget/loader.js" 
+ data-widget-id="68de22a3721466f47cf4ef63"   > 
+ </script>
+</body>
+</html>

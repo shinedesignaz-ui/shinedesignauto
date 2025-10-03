@@ -1,0 +1,39 @@
+{
+  "posts": [
+    {
+      "url": "/blog/post/remove-water-spots.html",
+      "date": "2025-09-01",
+      "type": "guide"
+    },
+    {
+      "url": "/blog/post/monsoon-paint-protection.html",
+      "date": "2025-08-20",
+      "type": "seasonal"
+    },
+    {
+      "url": "/blog/post/ceramic-coating-worth-it.html",
+      "date": "2025-08-05",
+      "type": "explainer"
+    },
+    {
+      "url": "/blog/post/snowbird-vehicle-prep.html",
+      "date": "2025-07-15",
+      "type": "checklist"
+    },
+    {
+      "url": "/blog/post/ppf-vs-ceramic.html",
+      "date": "2025-07-01",
+      "type": "explainer"
+    },
+    {
+      "url": "/blog/post/interior-care-tips.html",
+      "date": "2025-06-10",
+      "type": "guide"
+    },
+    {
+      "url": "/blog/post/best-detailing-gilbert.html",
+      "date": "2025-05-22",
+      "type": "guide"
+    }
+  ]
+}

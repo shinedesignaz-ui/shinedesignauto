@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HTML Visual Sitemap | Shine Design</title>
+  <meta name="description" content="Human-friendly, searchable visual sitemap generated from sitemap.xml" />
+  <link rel="canonical" href="https://shinedesignauto.com/sitemap" />
+  <meta name="robots" content="index,follow" />
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-P4LZ4N28');</script>
+  <!-- End Google Tag Manager -->
+
+  <!-- Site chrome: styles first, then script -->
+  <link rel="preload" href="/header-styles.css" as="style">
+  <link rel="stylesheet" href="/header-styles.css">
+  <script defer src="/site-chrome.js" data-chrome-version="v3"></script>
+
+  <!-- OG for clean shares -->
+  <meta property="og:title" content="Visual Sitemap | Shine Design" />
+  <meta property="og:description" content="Navigate all services, pricing, and locations for Shine Design." />
+  <meta property="og:url" content="https://shinedesignauto.com/sitemap" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <style>
+    /* Global tokens can stay dark for the header */
+    :root{--bg:#0b1220;--card:#0f172a;--muted:#26282c;--text:#2c2d2e;--brand:#38bdf8;--chip:#1e293b}
+
+    /* Light theme ONLY inside the sitemap area */
+    #sitemap{--bg:#ffffff;--card:#f8fafc;--muted:#475569;--text:#0f172a;--brand:#0ea5e9;--chip:#eef2f7;
+      max-width:1200px;margin:0 auto;padding:24px;background:var(--bg);color:var(--text);
+      font-family:Inter,ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Arial}
+    #sitemap a{color:var(--brand);text-decoration:none}
+    #sitemap a:hover{text-decoration:underline}
+
+    #sitemap .hero{display:flex;gap:16px;flex-wrap:wrap;align-items:flex-end;margin-bottom:20px}
+    #sitemap h1{font-size:28px;line-height:1.1;margin:0}
+    #sitemap .muted{color:var(--muted)}
+
+    #sitemap .card{background:var(--card);border:1px solid rgba(15,23,42,.08);border-radius:16px;padding:16px}
+    #sitemap .toolbar{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+    #sitemap input[type="search"]{flex:1;min-width:240px;padding:10px 12px;border-radius:12px;border:1px solid rgba(15,23,42,.15);background:#fff;color:var(--text)}
+    #sitemap .pill{background:var(--chip);border:1px solid rgba(15,23,42,.08);color:var(--text);padding:6px 10px;border-radius:999px;font-size:12px;cursor:pointer;user-select:none}
+    #sitemap .pill[data-active="true"]{outline:2px solid var(--brand)}
+
+    #sitemap .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+    #sitemap .col-3{grid-column:span 3}
+    #sitemap .col-9{grid-column:span 9}
+    @media(max-width:960px){#sitemap .col-3,#sitemap .col-9{grid-column:span 12}}
+
+    #sitemap details.group{border:1px solid rgba(15,23,42,.08);border-radius:14px;background:#fff}
+    #sitemap details.group+details.group{margin-top:12px}
+    #sitemap summary{list-style:none;cursor:pointer;padding:14px 16px;display:flex;align-items:center;gap:10px}
+    #sitemap summary::-webkit-details-marker{display:none}
+    #sitemap .count{font-size:12px;background:#eef2f7;padding:4px 8px;border-radius:999px;color:var(--muted)}
+
+    #sitemap .urls{display:grid;grid-template-columns:1.1fr .55fr .55fr .35fr;gap:10px;padding:0 14px 14px}
+    #sitemap .urls .h{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+    #sitemap .row{display:contents}
+    #sitemap .loc a{word-break:break-all}
+    #sitemap .badge{font-size:11px;padding:3px 8px;border-radius:8px;border:1px solid rgba(15,23,42,.12);background:#f8fafc;color:#0f172a}
+    #sitemap .prio{color:#0f172a}
+
+    #sitemap .stat{display:flex;flex-direction:column;gap:6px}
+    #sitemap .stat .big{font-size:20px;font-weight:600}
+    #sitemap .stat .lbl{font-size:12px;color:var(--muted)}
+    #sitemap .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+    @media(max-width:720px){#sitemap .kpis{grid-template-columns:repeat(2,1fr)}}
+
+    #sitemap .btn{background:var(--brand);color:#fff;border:0;border-radius:10px;padding:10px 12px;font-weight:600;cursor:pointer}
+    #sitemap .btn.ghost{background:#fff;color:#0f172a;border:1px solid rgba(15,23,42,.15)}
+    #sitemap .small{font-size:12px}
+  </style>
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P4LZ4N28" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <main id="sitemap">
+    <div class="hero">
+      <h1>Visual Sitemap</h1>
+      <span class="muted">Auto-generated from <code>/sitemap.xml</code></span>
+    </div>
+
+    <div class="card toolbar" role="region" aria-label="Sitemap controls">
+      <input id="q" type="search" placeholder="Search URLs, e.g. 'tint', 'pricing', 'gilbert'" aria-label="Search sitemap" />
+      <div id="chips" class="chips" style="display:flex;gap:8px;flex-wrap:wrap"></div>
+      <div style="flex:1"></div>
+      <button id="exportBtn" class="btn ghost small" title="Export visible rows to CSV">Export CSV</button>
+    </div>
+
+    <div class="grid" style="margin-top:16px">
+      <section class="col-3 kpis">
+        <div class="card stat"><div class="big" id="total">0</div><div class="lbl">Total URLs</div></div>
+        <div class="card stat"><div class="big" id="weekly">0</div><div class="lbl">Weekly updates</div></div>
+        <div class="card stat"><div class="big" id="monthly">0</div><div class="lbl">Monthly updates</div></div>
+        <div class="card stat"><div class="big" id="yearly">0</div><div class="lbl">Yearly updates</div></div>
+      </section>
+
+      <section class="col-9" id="groups"></section>
+    </div>
+  </main>
+
+  <script>
+    // Grouping config
+    const CATS = [
+      { key:'Homepage',   match: u => u.path===''},
+      { key:'Main Services', match: u => ['auto-detailing','ceramic-coating','paint-protection-film','window-tinting','paint-correction'].includes(u.path)},
+      { key:'Service Directory', match: u => u.path==='services' },
+      { key:'Additional Services', match: u => ['aircraft-detailing','boat-detailing','rv-detailing','motorcycle-detailing','engine-bay-detailing','headlight-restoration','exterior-detailing','vinyl-wrap','fabric-protection','leather-repair','scratch-removal','odor-removal','pet-hair-removal','fleet-services','full-detail'].includes(u.path)},
+      { key:'Pricing',    match: u => u.path.startsWith('pricing') },
+      { key:'Locations',  match: u => u.path.startsWith('locations') },
+      { key:'Business',   match: u => ['contact','booking','quote','packages','memberships'].includes(u.path)},
+      { key:'Legal',      match: u => ['privacy-policy','sms-terms'].includes(u.path)},
+      { key:'Other',      match: u => true },
+    ];
+
+    const CHIP_ORDER = ['All','Homepage','Main Services','Service Directory','Additional Services','Pricing','Locations','Business','Legal','Other'];
+
+    const state = { urls: [], filtered: [], chip:'All', query:'' };
+
+    const el = sel => document.querySelector(sel);
+    const fmtDate = s => s ? new Date(s.trim()).toISOString().slice(0,10) : '';
+
+    function pathFromLoc(loc){
+      try{
+        const u = new URL(loc);
+        const clean = u.pathname.replace(/^\/+|\/+$/g,'');
+        return clean;
+      }catch(e){ return loc; }
+    }
+
+    async function load(){
+      const res = await fetch('/sitemap.xml', {headers:{'Accept':'application/xml'}});
+      const txt = await res.text();
+      const doc = new DOMParser().parseFromString(txt, 'application/xml');
+      const nodes = [...doc.querySelectorAll('url')];
+      state.urls = nodes.map(n=>({
+        loc: n.querySelector('loc')?.textContent?.trim()||'',
+        lastmod: fmtDate(n.querySelector('lastmod')?.textContent||''),
+        changefreq: n.querySelector('changefreq')?.textContent?.trim()||'',
+        priority: n.querySelector('priority')?.textContent?.trim()||'',
+      })).map(u=>({ ...u, path: pathFromLoc(u.loc) }));
+      render();
+    }
+
+    function filter(){
+      const q = state.query.toLowerCase();
+      const inChip = (u)=> state.chip==='All' ? true : catFor(u)===state.chip;
+      state.filtered = state.urls.filter(u=> inChip(u) && (
+        !q || u.loc.toLowerCase().includes(q) || u.path.toLowerCase().includes(q) ||
+        (u.changefreq||'').toLowerCase().includes(q)
+      ));
+    }
+
+    function catFor(u){
+      for(const c of CATS){ if(c.match(u)) return c.key; }
+      return 'Other';
+    }
+
+    function group(){
+      const m = new Map();
+      for(const u of state.filtered){
+        const k = catFor(u);
+        if(!m.has(k)) m.set(k,[]);
+        m.get(k).push(u);
+      }
+      return m;
+    }
+
+    function stat(){
+      el('#total').textContent = state.urls.length;
+      el('#weekly').textContent = state.urls.filter(u=>u.changefreq==='weekly').length;
+      el('#monthly').textContent = state.urls.filter(u=>u.changefreq==='monthly').length;
+      el('#yearly').textContent = state.urls.filter(u=>u.changefreq==='yearly').length;
+    }
+
+    function makeChip(name){
+      const b = document.createElement('button');
+      b.className='pill'; b.textContent=name; b.dataset.active = (state.chip===name);
+      b.onclick = ()=>{ state.chip=name; document.querySelectorAll('.pill').forEach(p=>p.dataset.active='false'); b.dataset.active='true'; render(); };
+      return b;
+    }
+
+    function renderChips(){
+      const c = el('#chips'); c.innerHTML='';
+      for(const n of CHIP_ORDER){ c.appendChild(makeChip(n)); }
+    }
+
+    function render(){
+      filter(); stat();
+      renderChips();
+      const groups = group();
+      const container = el('#groups');
+      container.innerHTML='';
+      for(const key of CHIP_ORDER.filter(k=>k!=='All')){
+        const arr = groups.get(key)||[];
+        if(!arr.length) continue;
+        const d = document.createElement('details'); d.className='group'; d.open=true;
+        const s = document.createElement('summary');
+        s.innerHTML = `<strong>${key}</strong> <span class="count">${arr.length}</span>`;
+        d.appendChild(s);
+
+        const grid = document.createElement('div'); grid.className='urls';
+        grid.innerHTML = `
+          <div class="h">URL</div>
+          <div class="h">Last Modified</div>
+          <div class="h">Changefreq</div>
+          <div class="h">Priority</div>
+        `;
+        arr.forEach(u=>{
+          const row = document.createElement('div'); row.className='row';
+          const loc = document.createElement('div'); loc.className='loc'; loc.innerHTML = `<a href="${u.loc}" target="_blank" rel="noopener">${u.loc}</a>`;
+          const lm  = document.createElement('div'); lm.textContent = u.lastmod||'';
+          const cf  = document.createElement('div'); cf.innerHTML = u.changefreq ? `<span class="badge">${u.changefreq}</span>` : '';
+          const pr  = document.createElement('div'); pr.innerHTML = u.priority ? `<span class="badge prio" data-val="${u.priority}">${u.priority}</span>` : '';
+          row.appendChild(loc); row.appendChild(lm); row.appendChild(cf); row.appendChild(pr);
+          grid.appendChild(row);
+        });
+        d.appendChild(grid);
+        container.appendChild(d);
+      }
+    }
+
+    // Events
+    el('#q').addEventListener('input', (e)=>{ state.query = e.target.value; render(); });
+
+    // CSV export of visible rows
+    el('#exportBtn').addEventListener('click', ()=>{
+      const rows = state.filtered.map(u=>[u.loc,u.lastmod,u.changefreq,u.priority,catFor(u)].join(','));
+      const csv = ['url,lastmod,changefreq,priority,category',...rows].join('\n');
+      const blob = new Blob([csv],{type:'text/csv'});
+      const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'sitemap_export.csv'; a.click();
+    });
+
+    load();
+  </script>
+
+  <!-- Chat Widget -->
+  <script 
+  src="https://beta.leadconnectorhq.com/loader.js"  
+  data-resources-url="https://beta.leadconnectorhq.com/chat-widget/loader.js" 
+ data-widget-id="68de22a3721466f47cf4ef63"   > 
+ </script>
+</body>
+</html>

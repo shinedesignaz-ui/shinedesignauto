@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-P4LZ4N28');</script>
+  <!-- End Google Tag Manager -->
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Search | Find Services, Pricing, and Availability — Shine Design</title>
+  <meta name="description" content="Use AI Search to find detailing services, pricing, and availability across the East Valley.">
+  <link rel="canonical" href="https://shinedesignauto.com/ai-search">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#0ea5e9">
+  <link rel="icon" href="/assets/images/favicon.ico">
+
+  <!-- Preload + Inject site chrome -->
+  <link rel="preload" href="/header-styles.css" as="style">
+  <link rel="stylesheet" href="/header-styles.css">
+  <script defer src="/site-chrome.js" data-chrome-version="v3"></script>
+
+  <!-- Tailwind for layout tokens -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="AI Search | Shine Design">
+  <meta property="og:description" content="Use AI Search to find detailing services, pricing, and availability across the East Valley.">
+  <meta property="og:url" content="https://shinedesignauto.com/ai-search">
+  <meta property="og:site_name" content="Shine Design Mobile Detailing">
+  <meta property="og:image" content="https://shinedesignauto.com/assets/images/og-image.jpg">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI Search | Shine Design">
+  <meta name="twitter:description" content="Use AI Search to find detailing services, pricing, and availability across the East Valley.">
+
+  <style>
+    :root{--brand:#0ea5e9;--brand-dark:#0284c7;--text:#0f172a;--muted:#475569}
+    html,body{overflow-x:hidden}
+    .pill{display:inline-flex;align-items:center;gap:.5rem;padding:.25rem .6rem;border-radius:9999px;background:#f0f9ff;color:#0369a1;font-weight:700;font-size:.7rem;text-transform:uppercase;letter-spacing:.02em;border:1px solid #bae6fd}
+    .card{background:#fff;border:1px solid #e5e7eb;border-radius:1rem;overflow:hidden;transition:transform .2s, box-shadow .2s}
+    .card:hover{transform:translateY(-4px);box-shadow:0 10px 30px rgba(2,8,23,.08)}
+    .card a{color:var(--brand);font-weight:700;text-decoration:none}
+    .quick a{border:1px solid #e5e7eb;border-radius:9999px;padding:.5rem .8rem;text-decoration:none}
+    .quick a:hover{background:#f8fafc}
+    .grid-cols-fit{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem}
+    .deep-links{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.5rem}
+    .deep-links a{font-size:.85rem;color:#0ea5e9;text-decoration:none}
+    .deep-links a:hover{text-decoration:underline}
+  </style>
+
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","name":"AI Search — Shine Design","description":"Find services, pricing, and availability fast."}
+</script>
+
+</head>
+<body>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P4LZ4N28"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<main>
+
+  <section class="py-16 bg-gradient-to-br from-sky-500 to-sky-700 text-white">
+    <div class="max-w-6xl mx-auto px-5">
+      <p class="pill bg-white/15 border-white/30 text-white">AI</p>
+      <h1 class="mt-4 text-4xl md:text-5xl font-extrabold leading-tight">AI Search</h1>
+      <p class="mt-3 text-white/90 max-w-3xl">Type what you need. Get instant paths to services, prices, and booking.</p>
+    </div>
+  </section>
+  <section class="py-12">
+    <div class="max-w-6xl mx-auto px-5">
+      <div class="card p-5">
+        <label for="q" class="sr-only">Search</label>
+        <input id="q" type="search" placeholder="Example: same-day interior in Gilbert" class="w-full border rounded-full px-4 py-3" />
+        <div id="results" class="mt-4 grid-cols-fit"></div>
+      </div>
+      <script>
+        const data=[
+          {t:"Auto Detailing",d:"Interior, exterior, full",u:"/services/auto-detailing/"},
+          {t:"Ceramic Coating",d:"1–5 year options",u:"/services/ceramic-coating/"},
+          {t:"Paint Protection Film",d:"Partial and full front",u:"/services/paint-protection-film/"},
+          {t:"Window Tint",d:"Heat-rejecting films",u:"/services/window-tinting/"},
+          {t:"Same-Day Detailing",d:"Limited rush slots",u:"/services/same-day-detailing/"}
+        ];
+        const q=document.getElementById('q'),res=document.getElementById('results');
+        function render(list){res.innerHTML=''; list.forEach(i=>{const a=document.createElement('a');a.href=i.u;a.className='card';a.innerHTML='<div class="p-5"><strong>'+i.t+'</strong><p class="text-slate-600">'+i.d+'</p></div>';res.appendChild(a);});}
+        q.addEventListener('input',()=>{const v=q.value.toLowerCase().trim();render(data.filter(i=>!v||i.t.toLowerCase().includes(v)||i.d.toLowerCase().includes(v))); window.dataLayer=window.dataLayer||[]; window.dataLayer.push({event:'ai_search',query:v});});
+        render(data);
+      </script>
+    </div>
+  </section>
+
+</main>
+
+  <!-- Chat Widget -->
+  <script 
+  src="https://beta.leadconnectorhq.com/loader.js"  
+  data-resources-url="https://beta.leadconnectorhq.com/chat-widget/loader.js" 
+ data-widget-id="68de22a3721466f47cf4ef63"   > 
+ </script>
+</body>
+</html>

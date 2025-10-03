@@ -19,7 +19,7 @@
         <nav class="links" aria-label="Primary Navigation">
           <a href="/services/">Services</a>
           <a href="/pricing/">Pricing</a>
-          <a href="/gallery">Gallery</a>
+          <a href="/gallery/">Gallery</a>
           <a href="/locations/">Locations</a>
           <a href="/about/">About</a>
           <a href="/contact/">Contact</a>
@@ -53,35 +53,39 @@
     <div class="mcta" style="padding:12px">
       <a class="mbtn" href="/booking/" data-book="true" aria-label="Book Now">🚀 Book Now</a>
     </div>
+     <div class="mgrid" role="menu">
+      <a class="mbtn" href="/services/" role="menuitem">
+        All Services <span>→</span>
+        </a>
     <div class="mgrid" role="menu">
-      <a class="mbtn" href="/auto-detailing" role="menuitem">
+      <a class="mbtn" href="/auto-detailing/" role="menuitem">
         Auto Detailing <span>→</span>
       </a>
-      <a class="mbtn" href="/ceramic-coating" role="menuitem">
+      <a class="mbtn" href="/ceramic-coating/" role="menuitem">
         Ceramic Coating <span>→</span>
       </a>
-      <a class="mbtn" href="/paint-protection-film" role="menuitem">
+      <a class="mbtn" href="/paint-protection-film/" role="menuitem">
         Paint Protection Film <span>→</span>
       </a>
-      <a class="mbtn" href="/window-tinting" role="menuitem">
+      <a class="mbtn" href="/window-tinting/" role="menuitem">
         Window Tinting <span>→</span>
       </a>
-      <a class="mbtn" href="/rv-detailing" role="menuitem">
+      <a class="mbtn" href="/rv-detailing/" role="menuitem">
         RV Detailing <span>→</span>
       </a>
-      <a class="mbtn" href="/boat-detailing" role="menuitem">
+      <a class="mbtn" href="/boat-detailing/" role="menuitem">
         Boat Detailing <span>→</span>
       </a>
-      <a class="mbtn" href="/aircraft-detailing" role="menuitem">
+      <a class="mbtn" href="/aircraft-detailing/" role="menuitem">
         Airplane Detailing <span>→</span>
       </a>
-      <a class="mbtn" href="/paint-correction" role="menuitem">
+      <a class="mbtn" href="/paint-correction/" role="menuitem">
         Paint Correction <span>→</span>
       </a>
       <a class="mbtn" href="/pricing/" role="menuitem">
         Pricing <span>→</span>
       </a>
-      <a class="mbtn" href="/gallery" role="menuitem">
+      <a class="mbtn" href="/gallery/" role="menuitem">
         Gallery <span>→</span>
       </a>
       <a class="mbtn" href="/locations/" role="menuitem">
@@ -96,12 +100,12 @@
       <div class="mgroup" aria-label="Top Cities" style="margin-top:8px;padding-top:8px;border-top:1px solid rgba(148,163,184,.2)">
         <div style="font-size:12px;color:#94a3b8;margin-bottom:6px">Top Cities</div>
         <div class="mcols" style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
-          <a class="mbtn" href="/locations/gilbert" role="menuitem">Gilbert</a>
-          <a class="mbtn" href="/locations/mesa" role="menuitem">Mesa</a>
-          <a class="mbtn" href="/locations/chandler" role="menuitem">Chandler</a>
-          <a class="mbtn" href="/locations/queen-creek" role="menuitem">Queen Creek</a>
-          <a class="mbtn" href="/locations/scottsdale" role="menuitem">Scottsdale</a>
-          <a class="mbtn" href="/locations/phoenix" role="menuitem">Phoenix</a>
+          <a class="mbtn" href="/gilbert/" role="menuitem">Gilbert</a>
+          <a class="mbtn" href="/mesa/" role="menuitem">Mesa</a>
+          <a class="mbtn" href="/chandler/" role="menuitem">Chandler</a>
+          <a class="mbtn" href="/queen-creek/" role="menuitem">Queen Creek</a>
+          <a class="mbtn" href="/scottsdale/" role="menuitem">Scottsdale</a>
+          <a class="mbtn" href="/phoenix/" role="menuitem">Phoenix</a>
         </div>
       </div>
     </div>
@@ -134,38 +138,38 @@
         </div>
         <div>
           <h4>Services</h4>
-          <a href="/auto-detailing">Auto Detailing</a>
-          <a href="/ceramic-coating">Ceramic Coating</a>
-          <a href="/paint-protection-film">Paint Protection Film</a>
-          <a href="/window-tinting">Window Tinting</a>
-          <a href="/paint-correction">Paint Correction</a>
+          <a href="/auto-detailing/">Auto Detailing</a>
+          <a href="/ceramic-coating/">Ceramic Coating</a>
+          <a href="/paint-protection-film/">Paint Protection Film</a>
+          <a href="/window-tinting/">Window Tinting</a>
+          <a href="/paint-correction/">Paint Correction</a>
         </div>
         <div>
           <h4>Service Areas</h4>
-          <a href="/locations/gilbert">Gilbert</a>
-          <a href="/locations/mesa">Mesa</a>
-          <a href="/locations/chandler">Chandler</a>
-          <a href="/locations/scottsdale">Scottsdale</a>
-          <a href="/locations/queen-creek">Queen Creek</a>
-          <a href="/locations/phoenix">Phoenix</a>
+          <a href="/gilbert/">Gilbert</a>
+          <a href="/mesa/">Mesa</a>
+          <a href="/chandler/">Chandler</a>
+          <a href="/scottsdale/">Scottsdale</a>
+          <a href="/queen-creek/">Queen Creek</a>
+          <a href="/phoenix/">Phoenix</a>
         </div>
         <div>
           <h4>Information</h4>
           <a href="/pricing/">Pricing &amp; Packages</a>
-          <a href="/gallery">Work Gallery</a>
-          <a href="/about">About Us</a>
-          <a href="/contact">Contact</a>
-          <a href="/faq">FAQ</a> 
-          <a href="/blog">Blog</a>
+          <a href="/gallery/">Work Gallery</a>
+          <a href="/about/">About Us</a>
+          <a href="/contact/">Contact</a>
+          <a href="/faq/">FAQ</a> 
+          <a href="/blog/">Blog</a>
 
         </div>
         <div>
           <h4>Get Started</h4>
-          <a href="/contact">Contact Us</a>
+          <a href="/contact/">Contact Us</a>
           <a href="/locations/">Our Locations</a>
-          <a href="/booking" data-book="true">Book Online</a>
-          <a href="/quote" data-quote="true">Get Instant Quote</a>
-          <a href="/sitemap">Sitemap</a>
+          <a href="/booking/" data-book="true">Book Online</a>
+          <a href="/hiring/" data-quote="true">Get Instant Quote</a>
+          <a href="/hub-page/">Sitemap</a>
         </div>
       </div>
       <div class="copy">

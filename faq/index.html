@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-P4LZ4N28');</script>
+  <!-- End Google Tag Manager -->
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+
+  <title>FAQ | Auto Detailing, Ceramic Coating, PPF, Window Tint – Shine Design</title>
+  <meta name="description" content="Answers to the most common questions about mobile detailing, ceramic coatings, paint correction, PPF, and tint in the East Valley. Get fast, clear answers." />
+  <link rel="canonical" href="https://shinedesignauto.com/faq" />
+
+  <!-- Prime SEO -->
+  <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="FAQ | Shine Design Mobile Detailing" />
+  <meta property="og:description" content="Everything you need to know about detailing, coatings, PPF, and tint. Searchable FAQ." />
+  <meta property="og:url" content="https://shinedesignauto.com/faq" />
+  <meta property="og:image" content="/assets/images/og-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="theme-color" content="#0ea5e9" />
+
+  <!-- Site chrome CSS -->
+  <link rel="preload" href="/header-styles.css" as="style">
+  <link rel="stylesheet" href="/header-styles.css">
+
+  <!-- Tailwind for quick layout -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { theme: { extend: { colors: { brand: { DEFAULT: '#0ea5e9', dark:'#0b85bb'} }, boxShadow:{ card:'0 10px 30px rgba(2,8,23,.08)'} } } }
+  </script>
+
+  <style>
+    :root{ --brand:#0ea5e9; --text:#0f172a }
+    html,body{overflow-x:hidden}
+    body{font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial;color:var(--text)}
+    .container-tight{max-width:1200px}
+    .card{background:#fff;border:1px solid #e2e8f0;border-radius:16px;box-shadow:0 8px 24px rgba(2,6,23,.04)}
+    .kbd{border:1px solid #cbd5e1;border-bottom-width:2px;border-radius:.5rem;padding:.15rem .45rem;font-size:.75rem}
+    .faq-details[open] summary .twist{transform:rotate(90deg)}
+    mark{background:rgba(14,165,233,.2); padding:.05rem .15rem; border-radius:.25rem}
+  </style>
+
+  <!-- FAQ Schema injected at runtime from data -->
+  <script id="faq-schema" type="application/ld+json"></script>
+</head>
+<body class="antialiased text-slate-900">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P4LZ4N28" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <!-- Site Chrome Header -->
+  <script defer src="/site-chrome.js" data-chrome-version="v3"></script>
+
+  <main class="pt-20">
+    <!-- Hero -->
+    <section class="bg-gradient-to-br from-sky-500 to-cyan-600 text-white">
+      <div class="container-tight mx-auto px-4 py-12 md:py-16">
+        <nav class="text-white/80 text-sm mb-3" aria-label="Breadcrumb">
+          <a class="underline" href="/">Home</a> → FAQ
+        </nav>
+        <h1 class="text-3xl md:text-5xl font-extrabold leading-tight">Frequently Asked Questions</h1>
+        <p class="mt-3 text-white/90 text-lg">Search answers about detailing, ceramic coatings, PPF, and tint.</p>
+        <div class="mt-6 max-w-3xl">
+          <label class="sr-only" for="faqSearch">Search FAQ</label>
+          <div class="flex items-center gap-2 bg-white/95 text-slate-800 rounded-2xl p-2 shadow-card">
+            <svg class="h-6 w-6 ml-1" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 21l-4.3-4.3M10.5 18a7.5 7.5 0 1 1 0-15 7.5 7.5 0 0 1 0 15Z" stroke="currentColor" stroke-width="1.6"/></svg>
+            <input id="faqSearch" type="search" placeholder="Type to search pricing, coatings, PPF, tint, timelines…" class="w-full bg-transparent px-1 py-3 outline-none" autocomplete="off" />
+            <span class="kbd">/</span>
+          </div>
+          <p class="text-white/80 text-sm mt-2">Try: “rain after coating”, “PPF thickness”, “AZ tint law”, “mobile power”.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ List -->
+    <section class="bg-gradient-to-br from-white to-slate-50">
+      <div class="container-tight mx-auto px-4 py-10 md:py-14">
+        <div id="faqContainer" class="grid md:grid-cols-2 gap-6"></div>
+        <div id="noResults" class="hidden text-center text-slate-600 mt-8">No results. Adjust your search.</div>
+
+        <div class="mt-12 text-center">
+          <a href="tel:+14805288227" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl bg-slate-900 text-white shadow-card">Still need help? Call (480) 528-8227</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Micro Footer (keeps chrome minimal) -->
+  <footer class="py-8 text-center text-xs text-slate-500">
+    © <span id="year"></span> Shine Design Mobile Detailing • Gilbert AZ
+  </footer>
+
+  <script>
+    // FAQ data
+    const FAQS = [
+      // Detailing basics
+      ["Do you come to my location?", "Yes. We are fully mobile across Gilbert, Mesa, Chandler, Queen Creek, San Tan Valley, Scottsdale, Tempe, and nearby areas."],
+      ["Do you bring water and power?", "Yes. Our vans are self-contained with pure water, power, and lighting. We only need safe access to the vehicle."],
+      ["How long does an interior detail take?", "Typical interior services take 2–3 hours. Heavy stain removal, pet hair, and odor treatments add time."],
+      ["How long does an exterior detail take?", "Usually 2–3 hours for wash, decon, and protection. Add time for clay, iron removal, and correction."],
+      ["What is paint decontamination?", "A two-step process: iron remover to dissolve embedded ferrous particles, followed by a clay bar to remove bonded contaminants."],
+      ["What is paint correction?", "Machine polishing that levels micro-scratches and swirls. One-step improves gloss. Multi-step targets heavier defects."],
+      ["DA vs rotary polishers?", "Dual-action polishers are safer and finish well. Rotary tools cut faster but require more skill and finish refinement."],
+      ["Can you remove deep scratches?", "We can reduce or remove many scratches. If you feel a scratch with a fingernail, full removal may require sanding or touch-up."],
+      ["Do you clean engine bays?", "Yes, on request. We use controlled rinsing and plastic-safe protection. Not performed on hot engines."],
+      ["Do you clean headliners?", "Light, low-moisture cleaning only. Aggressive scrubbing can delaminate headliner glue."],
+
+      // Ceramic coating
+      ["What does a ceramic coating do?", "It bonds to clear coat to add gloss, hydrophobics, UV and chemical resistance, and makes washing easier."],
+      ["How long do coatings last?", "Our tiers range from 1–5+ years with proper care. Longevity depends on wash method, mileage, and storage."],
+      ["Do I still need to wash a coated car?", "Yes. Coatings reduce effort but do not stop dirt. Use pH-neutral soaps and proper tools."],
+      ["Can I take a coated car through touch washes?", "We do not recommend. Touch washes add swirls and can degrade hydrophobics."],
+      ["How soon can it get wet after coating?", "Avoid water for 12–24 hours if possible. If it gets wet, gently dry to avoid spotting."],
+      ["Do coatings prevent rock chips?", "No. Coatings add hardness but do not absorb impacts. Use PPF for chip-prone zones."],
+      ["Will a coating hide scratches?", "No. It enhances gloss but does not fill defects. Correction before coating is recommended."],
+      ["Can you coat matte paint or PPF?", "Yes. We use matte-safe coatings that preserve a satin finish without adding gloss."],
+      ["Do you coat glass, wheels, and trim?", "Yes. Optional glass, wheel, and trim coatings improve clarity, brake dust release, and fade resistance."],
+      ["What maintenance is required?", "Regular hand washes, periodic decon, and topper applications restore slickness and beading."],
+
+      // PPF
+      ["What is PPF?", "Paint protection film is an 8–10 mil urethane that absorbs impacts and resists chips, stains, and etching."],
+      ["How thick is PPF?", "Most premium films are about 8 mil (200 microns) plus adhesive. Thicker options exist for track use."],
+      ["Is PPF self-healing?", "Yes. Many films self-heal light swirls with engine heat or warm sun."],
+      ["Will PPF yellow?", "Modern aliphatic TPU films resist yellowing. Proper maintenance and reputable brands minimize risk."],
+      ["Edges and seams visible?", "We wrap edges where safe and use templates or bulk installs to hide seams when possible."],
+      ["PPF coverage options?", "Partial front, full front, rocker panels, high-impact areas, or full-body. We tailor to commute and budget."],
+      ["Can you apply PPF on repainted panels?", "Yes, after proper cure. Fresh paint often needs 30–60 days to off-gas depending on system."],
+      ["PPF on headlights legal?", "In AZ, clear protective film on headlights is typically allowed. Colored tints may not be. Confirm local law."],
+      ["PPF after ceramic?", "Install PPF first, then coat on top for easier maintenance."],
+      ["PPF warranty?", "Manufacturer warranties commonly cover yellowing, cracking, and delamination. We stand behind workmanship."],
+
+      // Window tint
+      ["What tint shades do you offer?", "Multiple VLT options from very light to limo. We also offer ceramic/IR films for heat rejection."],
+      ["AZ tint law basics?", "Common guidance: front windows must be lighter than rears. Laws can vary; we offer AZ-legal setups."],
+      ["Does ceramic tint look darker?", "No. Darkness is VLT. Ceramic films block heat and IR without being darker."],
+      ["Will tint bubble or purple?", "Quality films have stable dyes and adhesives. Poor films degrade. We install premium films with warranty."],
+      ["Can you tint windshields?", "We offer legal, very light heat-rejecting films and sun strips where allowed."],
+      ["How long before rolling windows down?", "24–48 hours in warm weather. Longer if cold or humid."],
+      ["Do defroster lines or dot matrices cause issues?", "We squeegee carefully. Minor edge silvering on heavy dot matrices is normal."],
+      ["Can tint be removed later?", "Yes. We use steam and adhesive cleaners to reduce residue."],
+      ["Does tint go on the outside?", "No. Film is applied inside after cleaning and patterning."],
+      ["Tint warranty?", "Covers bubbling, peeling, color change, and adhesive failure under normal use."],
+
+      // Logistics and policies
+      ["How do I book?", "Use our online booking link, text, or call. We confirm time, address, and vehicle details."],
+      ["Do you require a deposit?", "For larger services like coatings, PPF, or fleet work we may request a deposit to hold time."],
+      ["What is your cancellation policy?", "Please give 24 hours notice. Same-day cancels may incur a fee, especially for long-block services."],
+      ["Rain policy?", "We work under shade or reschedule for coatings and PPF. Light rain does not stop most interior work."],
+      ["Access and parking needs?", "A safe, reasonably flat space with room to open doors fully. Garages or shade are ideal for correction/coating."],
+      ["HOA or gated communities?", "We comply with rules. Please arrange gate codes or access instructions."],
+      ["Do you service apartments?", "Yes where allowed. We coordinate parking and power if needed. Our vans are self-contained."],
+      ["Payment methods?", "Cards, cash, and invoice links are available. Ask about business invoicing and fleets."],
+      ["Do you work weekends?", "Yes. We schedule seven days a week when availability allows."],
+      ["Satisfaction guarantee?", "If something is missed, contact us within 48 hours. We correct it quickly."],
+
+      // Interior specifics
+      ["Can you remove pet hair?", "Yes. Heavy pet hair requires additional time and an add-on fee."],
+      ["Do you remove seats?", "Usually no. We use specialized tools to reach under rails. Some vehicles allow limited removal when justified."],
+      ["Odor removal and ozone?", "We clean source materials first. Ozone or enzyme treatments follow for stubborn odors."],
+      ["Carpet stains and salt?", "Hot-water extraction and targeted chemistry remove most staining without residue."],
+      ["Leather cleaning and protection?", "We clean with pH-balanced products and add matte protectant to resist dye transfer and UV cracking."],
+      ["Child seat policy?", "We can clean around them. For liability we do not reinstall child seats."],
+
+      // Exterior specifics
+      ["Do you remove water spots?", "Yes. Light spots polish out. Etched spots may require correction or PPF for prevention."],
+      ["Do you handle tar or overspray?", "Yes with safe solvents and clay. Overspray severity determines time and cost."],
+      ["Trim restoration?", "We clean and re-dye or coat plastics. Longevity depends on UV exposure and product used."],
+      ["Badge or decal removal?", "We use heat and adhesive removers. Ghosting may require polishing."],
+      ["Sunroof and glass care?", "We clay and polish glass and can apply dedicated glass coatings for clarity and wiper reduction."],
+      ["Wheel and caliper cleaning?", "Iron removers and pH-balanced wheel gels protect finishes. Coatings help brake dust release."],
+
+      // Specialty and fleets
+      ["Do you service RVs and boats?", "Yes. We offer exterior washing, oxidation removal, and protection for gelcoat and large vehicles."],
+      ["Motorcycles and UTVs?", "Yes. We adjust methods for plastics, wraps, and off-road finishes."],
+      ["EV-specific care?", "Yes. We avoid charge ports and use coatings that ease bug removal and reduce static dust."],
+      ["New car prep vs dealership wash?", "We remove transport film and address dealer-induced swirls before protection so the finish starts right."],
+      ["After body shop work?", "Fresh paint needs cure time. We can safely wash and later correct and protect after off-gassing."],
+      ["Do you offer fleet or business plans?", "Yes. Ask about recurring maintenance for company vehicles and mobile teams."]
+    ];
+
+    // Build FAQ DOM
+    const container = document.getElementById('faqContainer');
+    function escapeHtml(s){return s.replace(/[&<>"']/g, m=>({ "&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;" }[m]))}
+    function highlight(text, q){
+      if(!q) return text;
+      try{
+        const re = new RegExp('('+q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&').replace(/\s+/g,'|')+')','ig');
+        return text.replace(re, '<mark>$1</mark>');
+      }catch{ return text; }
+    }
+    function renderList(list){
+      container.innerHTML = '';
+      list.forEach(([q,a], idx)=>{
+        const id = 'faq-'+idx;
+        const el = document.createElement('details');
+        el.className = 'faq-details rounded-xl border border-slate-200 bg-white/90 backdrop-blur p-5 shadow-card';
+        el.dataset.q = q.toLowerCase();
+        el.dataset.a = a.toLowerCase();
+        el.innerHTML = `<summary class="font-semibold cursor-pointer flex items-center gap-2">
+          <span class="twist transition-transform select-none">▶</span>
+          <span class="question">${escapeHtml(q)}</span>
+        </summary>
+        <div class="mt-3 text-slate-700 answer">${escapeHtml(a)}</div>`;
+        container.appendChild(el);
+      });
+    }
+    renderList(FAQS);
+
+    // Search and keyboard focus
+    const input = document.getElementById('faqSearch');
+    const noResults = document.getElementById('noResults');
+    function filter(){
+      const term = input.value.trim().toLowerCase();
+      const items = Array.from(container.children);
+      let shown = 0;
+      items.forEach(el=>{
+        const q = el.dataset.q, a = el.dataset.a;
+        const hit = !term || q.includes(term) || a.includes(term);
+        el.style.display = hit ? '' : 'none';
+        if(hit){
+          const qEl = el.querySelector('.question');
+          const aEl = el.querySelector('.answer');
+          qEl.innerHTML = highlight(escapeHtml(qEl.textContent), term);
+          aEl.innerHTML = highlight(escapeHtml(aEl.textContent), term);
+          shown++;
+        }
+      });
+      noResults.classList.toggle('hidden', shown>0);
+      // Analytics
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({event:'faq_search', query:term, results:shown});
+    }
+    input.addEventListener('input', filter);
+    document.addEventListener('keydown', e=>{ if(e.key==='/' && document.activeElement!==input){ e.preventDefault(); input.focus(); input.select(); } });
+
+    // JSON-LD from FAQS
+    const schema = {
+      "@context":"https://schema.org",
+      "@type":"FAQPage",
+      "mainEntity": FAQS.map(([q,a])=>({ "@type":"Question","name":q, "acceptedAnswer":{"@type":"Answer","text":a} }))
+    };
+    document.getElementById('faq-schema').textContent = JSON.stringify(schema);
+
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+  <!-- Chat Widget -->
+  <script 
+  src="https://beta.leadconnectorhq.com/loader.js"  
+  data-resources-url="https://beta.leadconnectorhq.com/chat-widget/loader.js" 
+ data-widget-id="68de22a3721466f47cf4ef63"   > 
+ </script>
+</body>
+</html>
